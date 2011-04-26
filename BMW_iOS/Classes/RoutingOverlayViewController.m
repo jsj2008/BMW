@@ -26,6 +26,10 @@
 	NSLog(@"Added Waypoint, currently %d in route", [waypoints count]);
 }
 
+- (void)dealloc {
+    [super dealloc];
+    [waypoints release];
+}
 @end
 
 @implementation RoutingOverlayViewController

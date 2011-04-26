@@ -46,7 +46,7 @@ static BOOL sm_showDebugging = NO;
         if(sm_showDebugging) {
             NSLog(@"No program found with shaders (v: %@, f: %@), creating a new one", a_vertShader, a_fragmentShader);
         }
-        toReturn = [[ShaderProgram alloc] init];
+        toReturn = [[[ShaderProgram alloc] init] autorelease];
         BOOL result = [toReturn compileShader:a_vertShader withType:GL_VERTEX_SHADER];
         result = [toReturn compileShader:a_fragmentShader withType:GL_FRAGMENT_SHADER];
         result = [toReturn linkProgram];
