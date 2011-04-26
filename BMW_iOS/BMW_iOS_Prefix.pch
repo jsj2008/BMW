@@ -11,7 +11,7 @@
 
 //types of builds
 //#define MAP_VIEW 1
-//#define IMAGE_PROCESSING_VIEW 1
+#define IMAGE_PROCESSING_VIEW 1
 //#define EXTERNAL_APP_VIEW 1
 #define STATS_OVERLAY 1
 #define HMI_CONNECTION 1
