@@ -7,6 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#if TARGET_IPHONE_SIMULATOR
+@interface CaptureSessionManager : NSObject{
+    
+}
+
+@end
+
+#else
 #import <AVFoundation/AVFoundation.h>
 
 @protocol ImageProcessingCameraDelegate;
@@ -33,3 +41,4 @@
 - (void)cameraHasConnected;
 - (void)processNewCameraFrame:(CVImageBufferRef)cameraFrame;
 @end
+#endif

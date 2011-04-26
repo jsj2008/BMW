@@ -7,6 +7,11 @@
 //
 #import "CaptureSessionManager.h"
 
+#if TARGET_IPHONE_SIMULATOR
+@implementation CaptureSessionManager
+
+@end
+#else
 @implementation CaptureSessionManager
 @synthesize captureSession;
 @synthesize delegate;
@@ -88,3 +93,4 @@
 	[super dealloc];
 }
 @end
+#endif
