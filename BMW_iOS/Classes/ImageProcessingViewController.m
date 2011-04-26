@@ -22,8 +22,6 @@ enum {
 
 @implementation ImageProcessingViewController
 
-#define DEBUG
-
 #pragma mark -
 #pragma mark Initialization and teardown
 

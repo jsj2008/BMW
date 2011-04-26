@@ -38,14 +38,14 @@
 	{
 		if(locationManager.heading!=nil&&locationManager.location!=nil)
 		{
-			NSMutableDictionary *stats = [[NSMutableDictionary alloc] init];
-			[stats setObject:motionData forKey:DEVICE_MOTION];
-			[stats setObject:locationManager.location forKey:LOCATION];
-			[stats setObject:locationManager.heading forKey:HEADING];
-			[stats setObject:[NSDate date] forKey:DATE];
-			[[StatsTracker sharedTracker] addStats:stats];
-			[[StatsTracker sharedTracker] processStats];
-			[stats release];
+//			NSMutableDictionary *stats = [[NSMutableDictionary alloc] init];
+//			[stats setObject:motionData forKey:DEVICE_MOTION];
+//			[stats setObject:locationManager.location forKey:LOCATION];
+//			[stats setObject:locationManager.heading forKey:HEADING];
+//			[stats setObject:[NSDate date] forKey:DATE];
+//			[[StatsTracker sharedTracker] addStats:stats];
+//			[[StatsTracker sharedTracker] processStats];
+//			[stats release];
 		}
 	}];
 }
@@ -58,7 +58,12 @@
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
-	NSLog(@"%@",newLocation);
+	NSMutableDictionary *stats = [[NSMutableDictionary alloc] init];
+    [stats setObject:locationManager.location forKey:LOCATION];
+    //[stats setObject:locationManager.heading forKey:HEADING];
+    [stats setObject:[NSDate date] forKey:DATE];
+    [[StatsTracker sharedTracker] addStats:stats];
+    
 }
 
 - (void)dealloc {
