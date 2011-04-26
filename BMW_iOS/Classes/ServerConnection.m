@@ -13,6 +13,7 @@
 
 +(void)sendStats:(NSMutableDictionary *)stats
 {
+    //Will start an array with this and then send the queue
     [stats setObject:[NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]] forKey:@"Date"];
     [stats setObject:[[UIDevice currentDevice] uniqueIdentifier] forKey:@"UDID"];
     
