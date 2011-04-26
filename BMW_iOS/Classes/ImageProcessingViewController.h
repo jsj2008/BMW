@@ -8,6 +8,15 @@
 #import "ImageProcessingGLView.h"
 #import "ShaderProgram.h"
 
+#if TARGET_IPHONE_SIMULATOR
+@interface ImageProcessingViewController : UIViewController
+{
+    
+}
+
+@end
+#else
+
 @interface ImageProcessingViewController : UIViewController <ImageProcessingCameraDelegate>
 {
 	CaptureSessionManager *camera;
@@ -25,3 +34,5 @@
 - (NSURL *) fileURL;
 
 @end
+
+#endif

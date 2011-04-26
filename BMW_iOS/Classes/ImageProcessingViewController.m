@@ -20,6 +20,14 @@ enum {
     NUM_ATTRIBUTES
 };
 
+#if TARGET_IPHONE_SIMULATOR
+
+@implementation ImageProcessingViewController
+
+@end
+
+#else
+
 @implementation ImageProcessingViewController
 
 #pragma mark -
@@ -210,3 +218,5 @@ enum {
 @synthesize glView;
 
 @end
+
+#endif
