@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#define UUID @"UUID"
+#define UDID @"UDID"
 #define DEVICE_MOTION @"Device Motion"
 #define LOCATION @"Location"
 #define HEADING @"Heading"

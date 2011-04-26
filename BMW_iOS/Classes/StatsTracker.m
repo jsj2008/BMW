@@ -43,7 +43,7 @@ static StatsTracker *sharedTracker;
 		CLLocation *l = [currentStats objectForKey:LOCATION];
 		[miniStats setObject:[NSNumber numberWithDouble:l.coordinate.latitude] forKey:@"Latitude"];
 		[miniStats setObject:[NSNumber numberWithDouble:l.coordinate.longitude] forKey:@"Longitude"];
-		[miniStats setObject:[[UIDevice currentDevice] uniqueIdentifier] forKey:UUID];
+		[miniStats setObject:[[UIDevice currentDevice] uniqueIdentifier] forKey:UDID];
 		
 		NSMutableURLRequest *req = [[[NSMutableURLRequest alloc] init] autorelease];
 		NSString *post = [NSString stringWithFormat:@"data=%@",[miniStats JSONRepresentation]];
