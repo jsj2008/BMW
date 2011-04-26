@@ -24,6 +24,7 @@
 		7B80CC6E131C466900AD2BAA /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B80CC6D131C466900AD2BAA /* CoreVideo.framework */; };
 		7B80CC7C131C46A800AD2BAA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B80CC7B131C46A800AD2BAA /* AVFoundation.framework */; };
 		7B80CD8E131C5FF400AD2BAA /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B80CD8D131C5FF400AD2BAA /* AssetsLibrary.framework */; };
+		7B90C2E01366743500DC25D7 /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C2DF1366743500DC25D7 /* ServerConnection.m */; };
 		7B9BB91E133BC41100A58F52 /* default.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 7BA6FF23133B461F00940874 /* default.vsh */; };
 		7BA6FF4C133B506900940874 /* ShaderProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6FF49133B506900940874 /* ShaderProgram.m */; };
 		7BD1350C132D9E9600150AA0 /* ImageProcessingGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD13505132D9E9600150AA0 /* ImageProcessingGLView.m */; };
@@ -133,6 +134,8 @@
 		7B80CC6D131C466900AD2BAA /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		7B80CC7B131C46A800AD2BAA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		7B80CD8D131C5FF400AD2BAA /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		7B90C2DE1366743500DC25D7 /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerConnection.h; sourceTree = "<group>"; };
+		7B90C2DF1366743500DC25D7 /* ServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerConnection.m; sourceTree = "<group>"; };
 		7BA6FF23133B461F00940874 /* default.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = default.vsh; sourceTree = "<group>"; };
 		7BA6FF48133B506900940874 /* ShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderProgram.h; sourceTree = "<group>"; };
 		7BA6FF49133B506900940874 /* ShaderProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShaderProgram.m; sourceTree = "<group>"; };
@@ -314,6 +317,7 @@
 				7BD13588132DBCF800150AA0 /* AppDelegate */,
 				7BD13563132DB79200150AA0 /* Image Processing */,
 				7BD13573132DB7A800150AA0 /* Stats Tracking */,
+				7B90C2DD1366742500DC25D7 /* ServerConnection */,
 				7BD13589132DBD1600150AA0 /* Camera Input */,
 				7BD472EE133A6017001A9741 /* Routing */,
 			);
@@ -413,6 +417,15 @@
 				D43DB5CA13261DE900DCAD92 /* objective_resource */,
 			);
 			name = Libraries;
+			sourceTree = "<group>";
+		};
+		7B90C2DD1366742500DC25D7 /* ServerConnection */ = {
+			isa = PBXGroup;
+			children = (
+				7B90C2DE1366743500DC25D7 /* ServerConnection.h */,
+				7B90C2DF1366743500DC25D7 /* ServerConnection.m */,
+			);
+			name = ServerConnection;
 			sourceTree = "<group>";
 		};
 		7BD13563132DB79200150AA0 /* Image Processing */ = {
@@ -844,6 +857,7 @@
 				D4CAF779134A646E002E1B53 /* MainVC.m in Sources */,
 				D4CAF77A134A646E002E1B53 /* MenuVC.m in Sources */,
 				D4CAF77B134A646E002E1B53 /* RemoteApp.m in Sources */,
+				7B90C2E01366743500DC25D7 /* ServerConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

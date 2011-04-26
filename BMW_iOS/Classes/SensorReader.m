@@ -8,6 +8,7 @@
 
 #import "SensorReader.h"
 #include "StatsTracker.h"
+#include "ServerConnection.h"
 
 #define UPDATE_INTERVAL 5.0f/1.0f;
 #define METERS_SEC_MILES_HOUR_CONVERSION 2.2369
@@ -58,12 +59,11 @@
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
-	NSMutableDictionary *stats = [[NSMutableDictionary alloc] init];
-    [stats setObject:locationManager.location forKey:LOCATION];
-    //[stats setObject:locationManager.heading forKey:HEADING];
-    [stats setObject:[NSDate date] forKey:DATE];
-    [[StatsTracker sharedTracker] addStats:stats];
+	NSMutableDictionary *stats = [[[NSMutableDictionary alloc] init] autorelease];
+    [stats setObject:[NSNumber numberWithDouble:locationManager.location.coordinate.latitude] forKey:@"Latitude"];
+    [stats setObject:[NSNumber numberWithDouble:locationManager.location.coordinate.longitude] forKey:@"Longitude"];
     
+    [ServerConnection sendStats:stats];
 }
 
 - (void)dealloc {
