@@ -42,8 +42,6 @@
 		7BFBCB72134BCC15003ABB41 /* erosion.vert.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7BFBCB6C134BCC15003ABB41 /* erosion.vert.glsl */; };
 		7BFBCB73134BCC15003ABB41 /* hsi_threshold.frag.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7BFBCB6D134BCC15003ABB41 /* hsi_threshold.frag.glsl */; };
 		7BFBCB74134BCC15003ABB41 /* hsi_threshold.vert.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7BFBCB6E134BCC15003ABB41 /* hsi_threshold.vert.glsl */; };
-		7BFC771B1325078F004983A8 /* libcv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BFC77191325078F004983A8 /* libcv.a */; };
-		7BFC771C1325078F004983A8 /* libcxcore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BFC771A1325078F004983A8 /* libcxcore.a */; };
 		D43DB5B513261BFA00DCAD92 /* VelocityEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D43DB5B413261BFA00DCAD92 /* VelocityEvent.m */; };
 		D43DB61713261DE900DCAD92 /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = D43DB5CC13261DE900DCAD92 /* Connection.m */; };
 		D43DB61813261DE900DCAD92 /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D43DB5CE13261DE900DCAD92 /* ConnectionDelegate.m */; };
@@ -128,8 +126,6 @@
 		7B236135132FD38700548F13 /* StatsTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsTracker.h; sourceTree = "<group>"; };
 		7B236136132FD38700548F13 /* StatsTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsTracker.m; sourceTree = "<group>"; };
 		7B2E4741132B478400755B8C /* BMW_iOS-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BMW_iOS-Info.plist"; sourceTree = "<group>"; };
-		7B2E4742132B478400755B8C /* BMW_OpenCV-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BMW_OpenCV-Info.plist"; sourceTree = "<group>"; };
-		7B2E4743132B478400755B8C /* BMW_ScreenCapture-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BMW_ScreenCapture-Info.plist"; sourceTree = "<group>"; };
 		7B41784E1324926100BE9374 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		7B4EC7F61313516E00175D77 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		7B4EC7F71313516E00175D77 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -163,8 +159,6 @@
 		7BFBCB6C134BCC15003ABB41 /* erosion.vert.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = erosion.vert.glsl; sourceTree = "<group>"; };
 		7BFBCB6D134BCC15003ABB41 /* hsi_threshold.frag.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hsi_threshold.frag.glsl; sourceTree = "<group>"; };
 		7BFBCB6E134BCC15003ABB41 /* hsi_threshold.vert.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hsi_threshold.vert.glsl; sourceTree = "<group>"; };
-		7BFC77191325078F004983A8 /* libcv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcv.a; path = opencv_device/lib/libcv.a; sourceTree = "<group>"; };
-		7BFC771A1325078F004983A8 /* libcxcore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcxcore.a; path = opencv_device/lib/libcxcore.a; sourceTree = "<group>"; };
 		D43DB5B313261BFA00DCAD92 /* VelocityEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VelocityEvent.h; sourceTree = "<group>"; };
 		D43DB5B413261BFA00DCAD92 /* VelocityEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VelocityEvent.m; sourceTree = "<group>"; };
 		D43DB5CB13261DE900DCAD92 /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connection.h; sourceTree = "<group>"; };
@@ -299,8 +293,6 @@
 				7B80CD8E131C5FF400AD2BAA /* AssetsLibrary.framework in Frameworks */,
 				D4B8F1CC131CE519002C1A44 /* QuartzCore.framework in Frameworks */,
 				7B41784F1324926100BE9374 /* Accelerate.framework in Frameworks */,
-				7BFC771B1325078F004983A8 /* libcv.a in Frameworks */,
-				7BFC771C1325078F004983A8 /* libcxcore.a in Frameworks */,
 				7B053DF4132CF61200E2AB1C /* OpenGLES.framework in Frameworks */,
 				7BD47334133A609C001A9741 /* MapKit.framework in Frameworks */,
 				D4CAF69D134A61EB002E1B53 /* iDrive.framework in Frameworks */,
@@ -369,8 +361,6 @@
 				7BD472F8133A606D001A9741 /* MapViewController.xib */,
 				7BD472EF133A6031001A9741 /* RoutingOverlayViewController.xib */,
 				7B2E4741132B478400755B8C /* BMW_iOS-Info.plist */,
-				7B2E4742132B478400755B8C /* BMW_OpenCV-Info.plist */,
-				7B2E4743132B478400755B8C /* BMW_ScreenCapture-Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -421,8 +411,6 @@
 			isa = PBXGroup;
 			children = (
 				D43DB5CA13261DE900DCAD92 /* objective_resource */,
-				7BFC77191325078F004983A8 /* libcv.a */,
-				7BFC771A1325078F004983A8 /* libcxcore.a */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";

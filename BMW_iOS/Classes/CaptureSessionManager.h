@@ -8,9 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
-#import <opencv/cv.h>
-
-#ifdef OPEN_CV
 
 @protocol ImageProcessingCameraDelegate;
 
@@ -27,10 +24,6 @@
 - (NSURL *) fileURL;
 - (void) startWriting;
 - (void) finishWriting;
-- (CGImageRef) imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer;
-- (CVPixelBufferRef) pixelBufferFromCGImage: (CGImageRef) image;
-- (CGImageRef) CGImageFromIplImage:(IplImage *)image;
-- (IplImage *) CreateIplImageFromCGImage:(CGImageRef)imageRef;
 
 @property (retain) AVCaptureSession *captureSession;
 @property(nonatomic, assign) id<ImageProcessingCameraDelegate> delegate;
@@ -40,5 +33,3 @@
 - (void)cameraHasConnected;
 - (void)processNewCameraFrame:(CVImageBufferRef)cameraFrame;
 @end
-
-#endif

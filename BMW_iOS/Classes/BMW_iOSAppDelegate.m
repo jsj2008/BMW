@@ -30,20 +30,23 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 	[UIApplication sharedApplication].idleTimerDisabled = YES;
     // Add the view controller's view to the window and display.
 	//To save battery on the plane
-#if !MAP_VIEW
+#if IMAGE_PROCESSING_VIEW
 	[self.window addSubview:viewController.view];
+#endif
+#if STATS_OVERLAY
 	DataOverlayViewController *dataOverlayVC = [[DataOverlayViewController alloc] init];
 	[dataOverlayVC.view setFrame:CGRectMake(-230, 200, 500, 100)];
 	dataOverlayVC.view.transform = CGAffineTransformMakeRotation(M_PI/2);	
 	[self.window addSubview:dataOverlayVC.view];
-#else
+#endif
+#if MAP_VIEW
 	MapViewController *mapVC = [[MapViewController alloc] init];
 	[self.window addSubview:mapVC.view];
 #endif
     [self.window makeKeyAndVisible];
 	
 	self.bmwAppController = [[[RemoteAppController alloc] init] autorelease];
-#if TARGET_IPHONE_SIMULATOR
+#if TARGET_IPHONE_SIMULATOR && HMI_CONNECTION
 	[bmwAppController accessoryDidStart:nil]; // fake it
 #endif
 		

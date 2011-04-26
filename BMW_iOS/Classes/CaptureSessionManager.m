@@ -6,7 +6,6 @@
 //  Copyright 2011 Stanford University. All rights reserved.
 //
 #import "CaptureSessionManager.h"
-#ifdef OPEN_CV
 
 @implementation CaptureSessionManager
 @synthesize captureSession;
@@ -89,4 +88,3 @@
 	[super dealloc];
 }
 @end
-#endif

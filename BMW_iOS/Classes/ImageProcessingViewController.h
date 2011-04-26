@@ -8,8 +8,6 @@
 #import "ImageProcessingGLView.h"
 #import "ShaderProgram.h"
 
-#ifdef OPEN_CV
-
 @interface ImageProcessingViewController : UIViewController <ImageProcessingCameraDelegate>
 {
 	CaptureSessionManager *camera;
@@ -27,5 +25,3 @@
 - (NSURL *) fileURL;
 
 @end
-
-#endif

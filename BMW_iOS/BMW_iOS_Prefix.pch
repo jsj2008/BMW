@@ -6,19 +6,21 @@
     #import <Foundation/Foundation.h>
     #import <UIKit/UIKit.h>
 #endif
-#define MAP_VIEW 0
-#define CM_DEBUG 0
-#define CL_DEBUG 0
-#define OPEN_CV
-#ifndef OPEN_CV
-#ifndef SCREEN_CAPTURE
-#define VIDEO_SAVE 1
+
+#define DEBUG 1
+
+//types of builds
+//#define MAP_VIEW 1
+//#define IMAGE_PROCESSING_VIEW 1
+//#define EXTERNAL_APP_VIEW 1
+#define STATS_OVERLAY 1
+#define HMI_CONNECTION 1
+
+//extra image processing switches
+#ifdef IMAGE_PROCESSING_VIEW
+    #define USE_FRONT_CAMERA 0
 #endif
-#endif
-#define STATS_OVERLAY 0
-#ifdef OPEN_CV
-#define EDGE_DETECTION 1
-#define FACE_DETECTION 0
-#define RENDER_PROCESSING 1
-#define USE_FRONT_CAMERA 0
+
+#ifdef HMI_CONNECTION
+    #define SERVER @"server"
 #endif
