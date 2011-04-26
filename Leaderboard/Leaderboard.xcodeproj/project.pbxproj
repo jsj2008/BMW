@@ -1,0 +1,311 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7B90C31F1366846400DC25D7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B90C31E1366846400DC25D7 /* UIKit.framework */; };
+		7B90C3211366846400DC25D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B90C3201366846400DC25D7 /* Foundation.framework */; };
+		7B90C3231366846400DC25D7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B90C3221366846400DC25D7 /* CoreGraphics.framework */; };
+		7B90C3291366846400DC25D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B90C3271366846400DC25D7 /* InfoPlist.strings */; };
+		7B90C32C1366846400DC25D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C32B1366846400DC25D7 /* main.m */; };
+		7B90C32F1366846400DC25D7 /* LeaderboardAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C32E1366846400DC25D7 /* LeaderboardAppDelegate.m */; };
+		7B90C3321366846500DC25D7 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B90C3301366846400DC25D7 /* MainWindow.xib */; };
+		7B90C3351366846500DC25D7 /* LeaderboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C3341366846500DC25D7 /* LeaderboardViewController.m */; };
+		7B90C3381366846500DC25D7 /* LeaderboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B90C3361366846500DC25D7 /* LeaderboardViewController.xib */; };
+		7B90C36C136788EB00DC25D7 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C367136788EA00DC25D7 /* NSObject+SBJSON.m */; };
+		7B90C36D136788EB00DC25D7 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C369136788EA00DC25D7 /* NSString+SBJSON.m */; };
+		7B90C36E136788EB00DC25D7 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C36B136788EA00DC25D7 /* SBJSON.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7B90C31A1366846400DC25D7 /* Leaderboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leaderboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B90C31E1366846400DC25D7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7B90C3201366846400DC25D7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7B90C3221366846400DC25D7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7B90C3261366846400DC25D7 /* Leaderboard-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Leaderboard-Info.plist"; sourceTree = "<group>"; };
+		7B90C3281366846400DC25D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7B90C32A1366846400DC25D7 /* Leaderboard-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Leaderboard-Prefix.pch"; sourceTree = "<group>"; };
+		7B90C32B1366846400DC25D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7B90C32D1366846400DC25D7 /* LeaderboardAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeaderboardAppDelegate.h; sourceTree = "<group>"; };
+		7B90C32E1366846400DC25D7 /* LeaderboardAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeaderboardAppDelegate.m; sourceTree = "<group>"; };
+		7B90C3311366846400DC25D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		7B90C3331366846500DC25D7 /* LeaderboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeaderboardViewController.h; sourceTree = "<group>"; };
+		7B90C3341366846500DC25D7 /* LeaderboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeaderboardViewController.m; sourceTree = "<group>"; };
+		7B90C3371366846500DC25D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LeaderboardViewController.xib; sourceTree = "<group>"; };
+		7B90C365136788EA00DC25D7 /* JSONFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONFramework.h; sourceTree = "<group>"; };
+		7B90C366136788EA00DC25D7 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		7B90C367136788EA00DC25D7 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		7B90C368136788EA00DC25D7 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		7B90C369136788EA00DC25D7 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		7B90C36A136788EA00DC25D7 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		7B90C36B136788EA00DC25D7 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7B90C3171366846400DC25D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B90C31F1366846400DC25D7 /* UIKit.framework in Frameworks */,
+				7B90C3211366846400DC25D7 /* Foundation.framework in Frameworks */,
+				7B90C3231366846400DC25D7 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7B90C30F1366846400DC25D7 = {
+			isa = PBXGroup;
+			children = (
+				7B90C3241366846400DC25D7 /* Leaderboard */,
+				7B90C31D1366846400DC25D7 /* Frameworks */,
+				7B90C31B1366846400DC25D7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7B90C31B1366846400DC25D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7B90C31A1366846400DC25D7 /* Leaderboard.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7B90C31D1366846400DC25D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B90C31E1366846400DC25D7 /* UIKit.framework */,
+				7B90C3201366846400DC25D7 /* Foundation.framework */,
+				7B90C3221366846400DC25D7 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7B90C3241366846400DC25D7 /* Leaderboard */ = {
+			isa = PBXGroup;
+			children = (
+				7B90C32D1366846400DC25D7 /* LeaderboardAppDelegate.h */,
+				7B90C32E1366846400DC25D7 /* LeaderboardAppDelegate.m */,
+				7B90C3301366846400DC25D7 /* MainWindow.xib */,
+				7B90C3331366846500DC25D7 /* LeaderboardViewController.h */,
+				7B90C3341366846500DC25D7 /* LeaderboardViewController.m */,
+				7B90C3361366846500DC25D7 /* LeaderboardViewController.xib */,
+				7B90C3251366846400DC25D7 /* Supporting Files */,
+			);
+			path = Leaderboard;
+			sourceTree = "<group>";
+		};
+		7B90C3251366846400DC25D7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7B90C364136788EA00DC25D7 /* json-framework */,
+				7B90C3261366846400DC25D7 /* Leaderboard-Info.plist */,
+				7B90C3271366846400DC25D7 /* InfoPlist.strings */,
+				7B90C32A1366846400DC25D7 /* Leaderboard-Prefix.pch */,
+				7B90C32B1366846400DC25D7 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7B90C364136788EA00DC25D7 /* json-framework */ = {
+			isa = PBXGroup;
+			children = (
+				7B90C365136788EA00DC25D7 /* JSONFramework.h */,
+				7B90C366136788EA00DC25D7 /* NSObject+SBJSON.h */,
+				7B90C367136788EA00DC25D7 /* NSObject+SBJSON.m */,
+				7B90C368136788EA00DC25D7 /* NSString+SBJSON.h */,
+				7B90C369136788EA00DC25D7 /* NSString+SBJSON.m */,
+				7B90C36A136788EA00DC25D7 /* SBJSON.h */,
+				7B90C36B136788EA00DC25D7 /* SBJSON.m */,
+			);
+			path = "json-framework";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7B90C3191366846400DC25D7 /* Leaderboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B90C33B1366846500DC25D7 /* Build configuration list for PBXNativeTarget "Leaderboard" */;
+			buildPhases = (
+				7B90C3161366846400DC25D7 /* Sources */,
+				7B90C3171366846400DC25D7 /* Frameworks */,
+				7B90C3181366846400DC25D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Leaderboard;
+			productName = Leaderboard;
+			productReference = 7B90C31A1366846400DC25D7 /* Leaderboard.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7B90C3111366846400DC25D7 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 7B90C3141366846400DC25D7 /* Build configuration list for PBXProject "Leaderboard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7B90C30F1366846400DC25D7;
+			productRefGroup = 7B90C31B1366846400DC25D7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7B90C3191366846400DC25D7 /* Leaderboard */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7B90C3181366846400DC25D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B90C3291366846400DC25D7 /* InfoPlist.strings in Resources */,
+				7B90C3321366846500DC25D7 /* MainWindow.xib in Resources */,
+				7B90C3381366846500DC25D7 /* LeaderboardViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7B90C3161366846400DC25D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B90C32C1366846400DC25D7 /* main.m in Sources */,
+				7B90C32F1366846400DC25D7 /* LeaderboardAppDelegate.m in Sources */,
+				7B90C3351366846500DC25D7 /* LeaderboardViewController.m in Sources */,
+				7B90C36C136788EB00DC25D7 /* NSObject+SBJSON.m in Sources */,
+				7B90C36D136788EB00DC25D7 /* NSString+SBJSON.m in Sources */,
+				7B90C36E136788EB00DC25D7 /* SBJSON.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7B90C3271366846400DC25D7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B90C3281366846400DC25D7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7B90C3301366846400DC25D7 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B90C3311366846400DC25D7 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		7B90C3361366846500DC25D7 /* LeaderboardViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B90C3371366846500DC25D7 /* en */,
+			);
+			name = LeaderboardViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7B90C3391366846500DC25D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7B90C33A1366846500DC25D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		7B90C33C1366846500DC25D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Leaderboard/Leaderboard-Prefix.pch";
+				INFOPLIST_FILE = "Leaderboard/Leaderboard-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7B90C33D1366846500DC25D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Leaderboard/Leaderboard-Prefix.pch";
+				INFOPLIST_FILE = "Leaderboard/Leaderboard-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7B90C3141366846400DC25D7 /* Build configuration list for PBXProject "Leaderboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B90C3391366846500DC25D7 /* Debug */,
+				7B90C33A1366846500DC25D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B90C33B1366846500DC25D7 /* Build configuration list for PBXNativeTarget "Leaderboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B90C33C1366846500DC25D7 /* Debug */,
+				7B90C33D1366846500DC25D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7B90C3111366846400DC25D7 /* Project object */;
+}
