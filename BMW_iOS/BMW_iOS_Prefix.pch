@@ -9,6 +9,7 @@
 #define MAP_VIEW 0
 #define CM_DEBUG 0
 #define CL_DEBUG 0
+#define OPEN_CV
 #ifndef OPEN_CV
 #ifndef SCREEN_CAPTURE
 #define VIDEO_SAVE 1
