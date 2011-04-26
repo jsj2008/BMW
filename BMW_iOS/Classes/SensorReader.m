@@ -62,6 +62,7 @@
 	NSMutableDictionary *stats = [[[NSMutableDictionary alloc] init] autorelease];
     [stats setObject:[NSNumber numberWithDouble:locationManager.location.coordinate.latitude] forKey:@"Latitude"];
     [stats setObject:[NSNumber numberWithDouble:locationManager.location.coordinate.longitude] forKey:@"Longitude"];
+    [stats setObject:[NSNumber numberWithDouble:locationManager.location.speed] forKey:@"Velocity"];
     
     [ServerConnection sendStats:stats];
 }
