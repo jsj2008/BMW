@@ -46,11 +46,11 @@ static StatsTracker *sharedTracker;
 		[miniStats setObject:[[UIDevice currentDevice] uniqueIdentifier] forKey:UDID];
 		
 		NSMutableURLRequest *req = [[[NSMutableURLRequest alloc] init] autorelease];
-		NSString *post = [miniStats JSONRepresentation];
-		NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:NO];
+		NSString *post = [NSString stringWithFormat:@"data=%@",[miniStats JSONRepresentation]];
+		NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
 		NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
 		
-		[req setURL:[NSURL URLWithString:@"http://bunkermw.heroku.com/driving_stat/post"]];
+		[req setURL:[NSURL URLWithString:@"http://bunkermw.heroku.com/driving_stat/create"]];
 		[req setHTTPMethod:@"POST"];
 		[req setValue:postLength forHTTPHeaderField:@"Content-Length"];
 		[req setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
@@ -63,7 +63,7 @@ static StatsTracker *sharedTracker;
 		NSLog(data);
 		
 		//NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest: delegate:self startImmediately:YES];
-		NSLog(@"prev stats:%@",[miniStats JSONRepresentation]);
+		//NSLog(@"prev stats:%@",[miniStats JSONRepresentation]);
 	}
 	[currentStats release];
 	currentStats = stat;
