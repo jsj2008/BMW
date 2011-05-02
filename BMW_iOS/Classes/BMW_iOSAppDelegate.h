@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "ObjectiveResource.h"
 #import <CoreLocation/CoreLocation.h>
-#include "SensorReader.h"
 #include "StatsTracker.h"
 #import "MapViewController.h"
 #import "RemoteAppController.h"
+#import "SensorReader.h"
 
 @class ImageProcessingViewController;
 
@@ -32,7 +32,9 @@ extern NSString* BMWConnectedChanged;
 @property (nonatomic, retain) IBOutlet ImageProcessingViewController *viewController;
 @property (readonly) StatsTracker *tracker;
 @property (nonatomic, retain) RemoteAppController *bmwAppController;
-
+@property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 
 

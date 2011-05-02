@@ -153,8 +153,6 @@ enum {
 	[glView setDisplayFramebuffer];
 	[shader setAsActive];
 	
-	
-	
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
 	

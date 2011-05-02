@@ -24,6 +24,9 @@
 		7B80CC6E131C466900AD2BAA /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B80CC6D131C466900AD2BAA /* CoreVideo.framework */; };
 		7B80CC7C131C46A800AD2BAA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B80CC7B131C46A800AD2BAA /* AVFoundation.framework */; };
 		7B80CD8E131C5FF400AD2BAA /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B80CD8D131C5FF400AD2BAA /* AssetsLibrary.framework */; };
+		7B865D6A136D437100A447EC /* StatsModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 7B865D69136D437100A447EC /* StatsModel.xcdatamodel */; };
+		7B865D6D136D437B00A447EC /* DataReading.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B865D6C136D437B00A447EC /* DataReading.m */; };
+		7B865D6F136D44EF00A447EC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B865D6E136D44EF00A447EC /* CoreData.framework */; };
 		7B90C2E01366743500DC25D7 /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C2DF1366743500DC25D7 /* ServerConnection.m */; };
 		7B9BB91E133BC41100A58F52 /* default.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 7BA6FF23133B461F00940874 /* default.vsh */; };
 		7BA6FF4C133B506900940874 /* ShaderProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6FF49133B506900940874 /* ShaderProgram.m */; };
@@ -136,6 +139,10 @@
 		7B80CC6D131C466900AD2BAA /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		7B80CC7B131C46A800AD2BAA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		7B80CD8D131C5FF400AD2BAA /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		7B865D69136D437100A447EC /* StatsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StatsModel.xcdatamodel; sourceTree = "<group>"; };
+		7B865D6B136D437B00A447EC /* DataReading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataReading.h; sourceTree = "<group>"; };
+		7B865D6C136D437B00A447EC /* DataReading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataReading.m; sourceTree = "<group>"; };
+		7B865D6E136D44EF00A447EC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7B90C2DE1366743500DC25D7 /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerConnection.h; sourceTree = "<group>"; };
 		7B90C2DF1366743500DC25D7 /* ServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerConnection.m; sourceTree = "<group>"; };
 		7BA6FF23133B461F00940874 /* default.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = default.vsh; sourceTree = "<group>"; };
@@ -309,6 +316,7 @@
 				D4CAF79D134A665B002E1B53 /* CoreTelephony.framework in Frameworks */,
 				D4CAF79F134A6666002E1B53 /* ExternalAccessory.framework in Frameworks */,
 				D4CAF7A1134A666D002E1B53 /* Security.framework in Frameworks */,
+				7B865D6F136D44EF00A447EC /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +326,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				7B865D67136D42ED00A447EC /* CoreData */,
 				D4CAF758134A6442002E1B53 /* RemoteApp */,
 				7BD13588132DBCF800150AA0 /* AppDelegate */,
 				7BD13563132DB79200150AA0 /* Image Processing */,
@@ -378,6 +387,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7B865D6E136D44EF00A447EC /* CoreData.framework */,
 				D4CAF798134A664B002E1B53 /* AudioToolbox.framework */,
 				D4CAF79A134A6653002E1B53 /* CoreAudio.framework */,
 				D4CAF79C134A665B002E1B53 /* CoreTelephony.framework */,
@@ -423,6 +433,16 @@
 				D43DB5CA13261DE900DCAD92 /* objective_resource */,
 			);
 			name = Libraries;
+			sourceTree = "<group>";
+		};
+		7B865D67136D42ED00A447EC /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				7B865D6B136D437B00A447EC /* DataReading.h */,
+				7B865D6C136D437B00A447EC /* DataReading.m */,
+				7B865D69136D437100A447EC /* StatsModel.xcdatamodel */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 		7B90C2DD1366742500DC25D7 /* ServerConnection */ = {
@@ -868,6 +888,8 @@
 				D4CAF77B134A646E002E1B53 /* RemoteApp.m in Sources */,
 				7B90C2E01366743500DC25D7 /* ServerConnection.m in Sources */,
 				D4BEE7171366859D002386F0 /* DashboardViewController.m in Sources */,
+				7B865D6A136D437100A447EC /* StatsModel.xcdatamodel in Sources */,
+				7B865D6D136D437B00A447EC /* DataReading.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
