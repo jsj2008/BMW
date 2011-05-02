@@ -99,6 +99,8 @@
 		D4B8F27A131D6588002C1A44 /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B8F279131D6588002C1A44 /* CaptureSessionManager.m */; };
 		D4B8F365131E3D61002C1A44 /* DataOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B8F363131E3D61002C1A44 /* DataOverlayViewController.m */; };
 		D4B8F366131E3D61002C1A44 /* DataOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4B8F364131E3D61002C1A44 /* DataOverlayViewController.xib */; };
+		D4BEE7171366859D002386F0 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BEE7151366859D002386F0 /* DashboardViewController.m */; };
+		D4BEE7181366859D002386F0 /* DashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4BEE7161366859D002386F0 /* DashboardViewController.xib */; };
 		D4CAF69D134A61EB002E1B53 /* iDrive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CAF69C134A61EB002E1B53 /* iDrive.framework */; };
 		D4CAF764134A6442002E1B53 /* RemoteAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CAF760134A6442002E1B53 /* RemoteAppController.m */; };
 		D4CAF779134A646E002E1B53 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CAF774134A646E002E1B53 /* MainVC.m */; };
@@ -264,6 +266,9 @@
 		D4B8F362131E3D61002C1A44 /* DataOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataOverlayViewController.h; sourceTree = "<group>"; };
 		D4B8F363131E3D61002C1A44 /* DataOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataOverlayViewController.m; sourceTree = "<group>"; };
 		D4B8F364131E3D61002C1A44 /* DataOverlayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DataOverlayViewController.xib; path = Classes/DataOverlayViewController.xib; sourceTree = "<group>"; };
+		D4BEE7141366859D002386F0 /* DashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewController.h; sourceTree = "<group>"; };
+		D4BEE7151366859D002386F0 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
+		D4BEE7161366859D002386F0 /* DashboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DashboardViewController.xib; path = Classes/RemoteApp/DashboardViewController.xib; sourceTree = "<group>"; };
 		D4CAF69C134A61EB002E1B53 /* iDrive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iDrive.framework; sourceTree = "<group>"; };
 		D4CAF75F134A6442002E1B53 /* RemoteAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteAppController.h; sourceTree = "<group>"; };
 		D4CAF760134A6442002E1B53 /* RemoteAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteAppController.m; sourceTree = "<group>"; };
@@ -365,6 +370,7 @@
 				7BD472F8133A606D001A9741 /* MapViewController.xib */,
 				7BD472EF133A6031001A9741 /* RoutingOverlayViewController.xib */,
 				7B2E4741132B478400755B8C /* BMW_iOS-Info.plist */,
+				D4BEE7161366859D002386F0 /* DashboardViewController.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -712,6 +718,8 @@
 				D4CAF778134A646E002E1B53 /* RemoteApp.m */,
 				D4CAF75F134A6442002E1B53 /* RemoteAppController.h */,
 				D4CAF760134A6442002E1B53 /* RemoteAppController.m */,
+				D4BEE7141366859D002386F0 /* DashboardViewController.h */,
+				D4BEE7151366859D002386F0 /* DashboardViewController.m */,
 			);
 			path = RemoteApp;
 			sourceTree = "<group>";
@@ -798,6 +806,7 @@
 				D49C25C1134B9ACD003F493F /* DrivingProfile.png in Resources */,
 				D49C25C2134B9ACD003F493F /* Routes.psd in Resources */,
 				D49C25C3134B9ACD003F493F /* Routing.png in Resources */,
+				D4BEE7181366859D002386F0 /* DashboardViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -858,6 +867,7 @@
 				D4CAF77A134A646E002E1B53 /* MenuVC.m in Sources */,
 				D4CAF77B134A646E002E1B53 /* RemoteApp.m in Sources */,
 				7B90C2E01366743500DC25D7 /* ServerConnection.m in Sources */,
+				D4BEE7171366859D002386F0 /* DashboardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

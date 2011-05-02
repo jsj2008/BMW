@@ -46,9 +46,9 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
     [self.window makeKeyAndVisible];
 	
 	self.bmwAppController = [[[RemoteAppController alloc] init] autorelease];
-#if TARGET_IPHONE_SIMULATOR && HMI_CONNECTION
+//#if TARGET_IPHONE_SIMULATOR && HMI_CONNECTION
 	[bmwAppController accessoryDidStart:nil]; // fake it
-#endif
+//#endif
 		
 	reader = [[SensorReader alloc] init];
 	[reader startReading];

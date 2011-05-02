@@ -25,7 +25,7 @@
 {
 	self.mainVC = [[[MainVC alloc] initWithIdApplication: self 
 												hmiState: HST_Main
-											   gotoEvent: EVNT_Goto_Main
+											   focusEvent: EVNT_Goto_Main
 											  titleModel: -1] autorelease];
 	[self addViewController:mainVC];
 }
