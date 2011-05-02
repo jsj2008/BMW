@@ -64,6 +64,22 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 	[reader startReading];
 #endif
     
+    //runwide fetching        
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    request.entity = [NSEntityDescription entityForName:@"DataReading" inManagedObjectContext:self.managedObjectContext];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"readingType == %d", 1]];
+        
+    NSArray * a = [self.managedObjectContext executeFetchRequest:request error:nil];
+    float speed = 0;
+    for (id reading in a)
+    {
+        NSLog(@"%@",[reading getParsedData]);
+        CLLocation *l = [[reading getParsedData] objectForKey:@"Location"];
+        speed+=l.speed;
+    }
+    speed/=[a count];
+    //NSLog(@"%f",speed);
+    
     return YES;
 }
 
@@ -73,9 +89,11 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
      See also applicationDidEnterBackground:.
      */
 	[reader stopReading];
+#ifdef LOCAL_DB
     NSNumber *n = [[NSUserDefaults standardUserDefaults] objectForKey:@"runID"];
     [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:[n intValue]+1] forKey:@"runID"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+#endif
 }
 
 
