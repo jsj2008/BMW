@@ -18,6 +18,7 @@ float I_THRESHOLD = 100.0;
 
 float R_THRESHOLD = 100.0;
 float G_THRESHOLD = 100.0;
+//float G_THRESHOLD = 0.0;
 float Y_THRESHOLD = 150.0;
 
 float GB_THRESHOLD = 60.0;
@@ -72,7 +73,7 @@ void main()
     //Check for green traffic lights
     //} else if (hue >= GH_MIN && hue <= GH_MAX && sat >= GS_THRESHOLD && ins >= I_THRESHOLD){
     } else if (hue >= GH_MIN && hue <= GH_MAX && ins >= I_THRESHOLD){
-
+ 
         if (pixel.g > G_THRESHOLD && pixel.r < RB_THRESHOLD) {
             gl_FragColor = vec4(0, 1, 0, 1);
         } else gl_FragColor = vec4(0,0,0,1);	

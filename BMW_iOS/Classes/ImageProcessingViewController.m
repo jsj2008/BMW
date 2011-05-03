@@ -6,7 +6,6 @@
 #import "ImageProcessingViewController.h"
 #define RED_THRESHOLD 200
 #define BASE_SIZE 320*480
-#define GL_CHECK(x) { (x); GLenum error = glGetError(); if (GL_NO_ERROR != error) {printf("GL_ERROR: %s\n", gluErrorString(error));}}
 
 typedef struct BlobPoint {
 	int x;
@@ -59,14 +58,7 @@ enum {
 	[self.view addSubview:glView];
 	[glView release];
 	
-	//shaders = [[NSMutableArray alloc] init];
-	
-	//ShaderProgram *
 	[ShaderProgram enableDebugging:YES];
-//	[ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"DirectDisplayShader.fsh"];
-//	[ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"mred.fsh"];
-	//[shaders addObject:shader];
-	//[shader release];
 	
 	camera = [[CaptureSessionManager alloc] init];
 	camera.delegate = self;
@@ -230,23 +222,28 @@ bool circleTest(Blob *blob)
 	return (rMax - rMin)/(rMax + rMin) < .6;
 }
 
+bool checkFBOBounds(int x, int y)
+{
+    return x > 0 && x < FBO_WIDTH && y > 0 && y < FBO_HEIGHT;
+}
+
 void drawRectangle(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight, bool fillBlack)
 {
 	if (fillBlack) {
 		for (int i = lowerLeft.x; i <= upperRight.x; i++) {
 			for (int j = lowerLeft.y; j <= upperRight.y; j++) {
-				memset(&frame[j*4*FBO_WIDTH + i*4], 0, sizeof(GLubyte)*4);
+				if (checkFBOBounds(i, j)) memset(&frame[j*4*FBO_WIDTH + i*4], 0, sizeof(GLubyte)*4);
 			}
 		}
 	} else {
 		for (int i = lowerLeft.x; i <= upperRight.x; i++) {
-            frame[i*4 + upperRight.y*4*FBO_WIDTH + 2] = 255;
-            frame[i*4 + lowerLeft.y*4*FBO_WIDTH + 2] = 255;
+            if (checkFBOBounds(i, upperRight.y)) frame[i*4 + upperRight.y*4*FBO_WIDTH + 2] = 255;
+            if (checkFBOBounds(i, lowerLeft.y)) frame[i*4 + lowerLeft.y*4*FBO_WIDTH + 2] = 255;
 		}
         
 		for (int i = lowerLeft.y+1; i < upperRight.y; i++) {
-            frame[i*4*FBO_WIDTH + lowerLeft.x*4 + 2] = 255;
-            frame[i*4*FBO_WIDTH + upperRight.x*4 + 2] = 255;
+            if (checkFBOBounds(lowerLeft.x, i)) frame[i*4*FBO_WIDTH + lowerLeft.x*4 + 2] = 255;
+            if (checkFBOBounds(upperRight.x, i)) frame[i*4*FBO_WIDTH + upperRight.x*4 + 2] = 255;
 		}
 	}
 }
@@ -332,10 +329,10 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 	
 	// Update uniform values
 	glUniform1i([shader indexForUniform:@"inputImage"], 0);
-	glUniform1f([shader indexForUniform:@"anchorWidth"], 6.0);
-	glUniform1f([shader indexForUniform:@"elementWidth"], 11.0);
-	glUniform1f([shader indexForUniform:@"anchorHeight"], 6.0);
-	glUniform1f([shader indexForUniform:@"elementHeight"], 11.0);
+	glUniform1f([shader indexForUniform:@"anchorWidth"], 7.0);
+	glUniform1f([shader indexForUniform:@"elementWidth"], 13.0);
+	glUniform1f([shader indexForUniform:@"anchorHeight"], 7.0);
+	glUniform1f([shader indexForUniform:@"elementHeight"], 13.0);
 	glUniform2f([shader indexForUniform:@"pixelSize"], 1.0/FBO_HEIGHT,1.0/FBO_WIDTH);
 	
 	// Update attribute values.
@@ -356,10 +353,10 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 	
 	// Update uniform values
 	glUniform1i([shader indexForUniform:@"inputImage"], 0);
-	glUniform1f([shader indexForUniform:@"anchorWidth"], 7.0);
-	glUniform1f([shader indexForUniform:@"elementWidth"], 13.0);
-	glUniform1f([shader indexForUniform:@"anchorHeight"], 7.0);
-	glUniform1f([shader indexForUniform:@"elementHeight"], 13.0);
+	glUniform1f([shader indexForUniform:@"anchorWidth"], 8.0);
+	glUniform1f([shader indexForUniform:@"elementWidth"], 15.0);
+	glUniform1f([shader indexForUniform:@"anchorHeight"], 8.0);
+	glUniform1f([shader indexForUniform:@"elementHeight"], 15.0);
 	glUniform2f([shader indexForUniform:@"pixelSize"], 1.0/FBO_HEIGHT,1.0/FBO_WIDTH);
 	
 	// Update attribute values.
@@ -405,13 +402,13 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 			
 		}
 		
-		ll.x -= 2;
-		ll.y -= 2;
-		ur.x += 2;
-		ur.y += 2;
+		ll.x -= 2.0;//*(ur.x - ll.x);
+		ll.y -= 2.0;//*(ur.y - ll.y);
+		ur.x += 2.0;//*(ur.x - ll.x);
+		ur.y += 2.0;//*(ur.y - ll.y);
 		bool fillBlack = false;
 		if (!circleTest(blob)) {
-			fillBlack = true;
+			//fillBlack = true;
 		}
 		drawRectangle(rawPositionPixels, ll, ur, fillBlack);
         if (!fillBlack) {
