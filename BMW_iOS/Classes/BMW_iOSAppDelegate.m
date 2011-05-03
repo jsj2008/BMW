@@ -9,6 +9,7 @@
 #import "BMW_iOSAppDelegate.h"
 #import "ImageProcessingViewController.h"
 #import "DataOverlayViewController.h"
+#import "ServerConnection.h"
 
 NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 
@@ -56,31 +57,61 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
     [self.window makeKeyAndVisible];
 	
 	self.bmwAppController = [[[RemoteAppController alloc] init] autorelease];
-//#if TARGET_IPHONE_SIMULATOR && HMI_CONNECTION
+#if TARGET_IPHONE_SIMULATOR && HMI_CONNECTION
 	[bmwAppController accessoryDidStart:nil]; // fake it
-//#endif
-//#endif
+#endif
+
 #ifdef SENSOR_READER		
 	reader = [[SensorReader alloc] init];
 	[reader startReading];
-#endif
+#endif 
+    NSFetchRequest *request;
+    NSArray * a;
+    //FOR HEADING - stopped at 5497th element
+//    request = [[NSFetchRequest alloc] init];
+//    request.entity = [NSEntityDescription entityForName:@"DataReading" inManagedObjectContext:self.managedObjectContext];
+//    [request setPredicate:[NSPredicate predicateWithFormat:@"readingType == %d", 2]];
+//    
+//    a = [self.managedObjectContext executeFetchRequest:request error:nil];
+//    for (int count = 0; count < [a count]; count++) {
+//        id val = [a objectAtIndex:count];
+//        NSDictionary *d = [val getParsedData];
+//        NSMutableDictionary *md = [ServerConnection headingToDict:[d objectForKey:@"Heading"]];
+//        [md setObject:[NSNumber numberWithDouble:[[d objectForKey:@"Date"] timeIntervalSince1970]] forKey:@"iphone_time"];
+//        [ServerConnection sendStats:md toURL:HEADING_URL];
+//        NSLog(@"%d/%d",count+1,[a count]);
+//    }
     
-    //runwide fetching        
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    request.entity = [NSEntityDescription entityForName:@"DataReading" inManagedObjectContext:self.managedObjectContext];
-    [request setPredicate:[NSPredicate predicateWithFormat:@"readingType == %d", 1]];
-        
-    NSArray * a = [self.managedObjectContext executeFetchRequest:request error:nil];
-    float speed = 0;
-    for (id reading in a)
-    {
-        NSLog(@"%@",[reading getParsedData]);
-        CLLocation *l = [[reading getParsedData] objectForKey:@"Location"];
-        speed+=l.speed;
-    }
-    speed/=[a count];
-    //NSLog(@"%f",speed);
+    //FOR LOCATION
+//    request = [[NSFetchRequest alloc] init];
+//    request.entity = [NSEntityDescription entityForName:@"DataReading" inManagedObjectContext:self.managedObjectContext];
+//    [request setPredicate:[NSPredicate predicateWithFormat:@"readingType == %d", 1]];
+//    
+//    a = [self.managedObjectContext executeFetchRequest:request error:nil];
+//    for (int count = 0; count < [a count]; count++) {
+//        id val = [a objectAtIndex:count];
+//        NSDictionary *d = [val getParsedData];
+//        NSMutableDictionary *md = [ServerConnection locationToDict:[d objectForKey:@"Location"]];
+//        [md setObject:[NSNumber numberWithDouble:[[d objectForKey:@"Date"] timeIntervalSince1970]] forKey:@"iphone_time"];
+//        [ServerConnection sendStats:md toURL:LOCATION_URL];
+//        NSLog(@"%d/%d",count+1,[a count]);
+//    }
     
+    //FOR MOTION - DONE
+//    request = [[NSFetchRequest alloc] init];
+//    request.entity = [NSEntityDescription entityForName:@"DataReading" inManagedObjectContext:self.managedObjectContext];
+//    [request setPredicate:[NSPredicate predicateWithFormat:@"readingType == %d", 0]];
+//    
+//    a = [self.managedObjectContext executeFetchRequest:request error:nil];
+//    for (int count = 0; count < [a count]; count++) {
+//        id val = [a objectAtIndex:count];
+//        NSDictionary *d = [val getParsedData];
+//        NSMutableDictionary *md = [ServerConnection motionToDict:[d objectForKey:@"Device Motion"]];
+//        [md setObject:[NSNumber numberWithDouble:[[d objectForKey:@"Date"] timeIntervalSince1970]] forKey:@"iphone_time"];
+//        [ServerConnection sendStats:md toURL:MOTION_URL];
+//        NSLog(@"%d/%d",count+1,[a count]);
+//    }
+//    
     return YES;
 }
 

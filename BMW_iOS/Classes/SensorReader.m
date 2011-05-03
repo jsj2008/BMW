@@ -11,7 +11,7 @@
 #include "ServerConnection.h"
 #include "DataReading.h"
 
-#define UPDATE_INTERVAL 5.0f/1.0f;
+#define UPDATE_INTERVAL 1.0f/2.0f;
 #define METERS_SEC_MILES_HOUR_CONVERSION 2.2369
 
 //@class BMW_iOSAppDelegate;
