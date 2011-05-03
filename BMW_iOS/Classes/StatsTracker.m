@@ -50,7 +50,7 @@ static StatsTracker *sharedTracker;
 		NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
 		NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
 		
-		[req setURL:[NSURL URLWithString:@"http://bunkermw.heroku.com/driving_stat/create"]];
+		[req setURL:[NSURL URLWithString:@"http://bunkermw.heroku.com/driving_stat"]];
 		[req setHTTPMethod:@"POST"];
 		[req setValue:postLength forHTTPHeaderField:@"Content-Length"];
 		[req setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];

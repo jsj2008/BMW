@@ -15,7 +15,7 @@
 @interface IDViewController : NSObject <IDFlushProtocol> {
 	IDApplication* mApplication;
 	NSInteger hmiState;
-	NSInteger gotoEvent;
+	NSInteger mFocusEvent;
 	NSInteger titleModel;
 	NSMutableSet* widgets;
 	NSMutableSet* subViewControllers;
@@ -23,7 +23,7 @@
 	BOOL mVisible;
 	BOOL mFocused;
 	
-	BOOL show_dirty;
+	BOOL mFocus_dirty;
 	
 	NSString* mTitle;
 	BOOL mTitle_dirty;
@@ -42,7 +42,7 @@
  */
 -(id)initWithIdApplication:(IDApplication*)_idApplication 
 				  hmiState:(NSInteger)_hmiState 
-				 gotoEvent:(NSInteger)_gotoEvent
+				focusEvent:(NSInteger)_focusEvent
 				titleModel:(NSInteger)_titleModel;
 
 /**
@@ -53,12 +53,8 @@
 
 
 /**
- * Override in Subclass
- * Must call [super show:] after
- * custom setup and before 
- * custom post work.
  */
--(void)show;
+-(void)focus;
 
 
 /**

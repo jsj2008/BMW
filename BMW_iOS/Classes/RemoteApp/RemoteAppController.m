@@ -11,7 +11,6 @@
 
 @implementation RemoteAppController
 @synthesize app;
-@synthesize usbAccessoryMonitor;
 
 
 -(id)init {
@@ -26,46 +25,20 @@
 												 selector:@selector(accessoryDidStop:)
 													 name:ExternalAccessoryProxyWillStopNotification
 												   object:nil];
-		
-		[[NSNotificationCenter defaultCenter] addObserver:self
-												 selector:@selector(willEnterForeground:)
-													 name:UIApplicationDidFinishLaunchingNotification
-												   object:nil];
-		
-		[[NSNotificationCenter defaultCenter] addObserver:self
-												 selector:@selector(willEnterForeground:)
-													 name:UIApplicationWillEnterForegroundNotification
-												   object:nil];
-		
-		[[NSNotificationCenter defaultCenter] addObserver:self
-												 selector:@selector(didEnterBackground:)
-													 name:UIApplicationDidEnterBackgroundNotification
-												   object:nil];
+
 		
 		
 		//Startup the USB connection monitor
-		usbAccessoryMonitor = [[ExternalAccessoryMonitor alloc] initWithProxyPort:[IDConnection defaultPort]];
-		
-		// Call Start
-		[usbAccessoryMonitor start];
+		[[IDExternalAccessoryMonitor sharedMonitor] start];
 	}
 	return self;
 }
 
 -(void)dealloc {
 	self.app = nil;
-	self.usbAccessoryMonitor = nil;
 	[super dealloc];
 }
 
-
--(void)willEnterForeground:(NSNotification*) notification {
-	[usbAccessoryMonitor start];
-}
-
--(void)didEnterBackground:(NSNotification*) notification {
-	[usbAccessoryMonitor stop];
-}
 
 /**
  * Callbacks from the NSNotificationCenter because we signed up for hearing from our
@@ -96,7 +69,7 @@
 											 textDatabaseMINI:nil 
 											  devCertificates:YES
 													 delegate:self] autorelease];
-	[app connectWithHostname: @"127.0.0.0"];
+	[app connectWithHostname: @"127.0.0.1" port:[IDApplication defaultPort]];
 	// Waiting for	-idApplicationDidConnect: ...
 	// or			-idApplication: connectionFailedWithError: ...
 }	 

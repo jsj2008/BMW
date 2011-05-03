@@ -53,19 +53,20 @@ extern NSString* IDSecurityAuthService_Denial;
 	NSString*      _identifier;
     NSDictionary*  _audioSettings;
     
-	NSString* _hmiDescriptionName;
-	NSString* _imageDatabaseAllName;
-	NSString* _imageDatabaseBmwName;
-	NSString* _imageDatabaseMiniName;
-	NSString* _textDatabaseAllName;
-	NSString* _textDatabaseBmwName;
-	NSString* _textDatabaseMiniName;
+	NSData* _hmiDescription;
+	NSData* _imageDatabaseAll;
+	NSData* _imageDatabaseBmw;
+	NSData* _imageDatabaseMini;
+	NSData* _textDatabaseAll;
+	NSData* _textDatabaseBmw;
+	NSData* _textDatabaseMini;
 	BOOL _devCertificates;
 	
-    NSData*  _hmiDescription;
     NSArray* _textDatabases;
     NSArray* _imageDatabases;
-    
+	
+	BOOL _reactToUrlLaunch;
+	
     IDSecurityAuthService* _authService;
     IDHmiService* _hmiService;
 	IDAudioLine* _audioLine;
@@ -111,7 +112,7 @@ extern NSString* IDSecurityAuthService_Denial;
  * or			-idApplication: connectionFailedWithError:
  *
  */
-- (void)connectWithHostname:(NSString*)hostname;
+- (void)connectWithHostname:(NSString*)hostname port:(NSUInteger)port;
 
 
 /**
@@ -126,11 +127,24 @@ extern NSString* IDSecurityAuthService_Denial;
 
 
 /**
+ * Default hostname to connect to a car.
+ */
++(NSString*)defaultHostname;
+
+
+/**
+ * Default port to connect to a car.
+ */
++(NSUInteger)defaultPort;
+
+
+/**
  * Adds a view controller to the Application.
  * Typically the Application owns one main view
  * controller, which owns the rest in a tree-like
  * structure.
  *
+ * NOTE: STORED AS SET, CURRENTLY -focus GRABS MAIN VC BY -anyObject.
  */
 - (void)addViewController:(IDViewController*)viewController;
 
@@ -142,6 +156,18 @@ extern NSString* IDSecurityAuthService_Denial;
 - (void)removeViewController:(IDViewController*)viewController;
 
 
+/**
+ * Focus the application. Used for
+ * HMI LUM, and URL Launching.
+ */
+- (void)focus;
+
+/**
+ * True is any view controller in the
+ * App's tree is focused.
+ *
+ */
+-(BOOL)focused;
 
 #pragma mark -
 #pragma mark must be implemented
@@ -212,13 +238,6 @@ extern NSString* IDSecurityAuthService_Denial;
  */
 - (void)rhmiDidStart;
 
-
-/**
- *
- */
-- (void)lastUserMode:(NSArray*)componentPath;
-
-
 /**
  * Called when the Remote Application is disconnecting
  * (or was unplugged). Handle clean up here.
@@ -254,14 +273,10 @@ extern NSString* IDSecurityAuthService_Denial;
 @property (retain) NSOperationQueue* connectionQueue;
 @property (retain) IDSecurityAuthService* authService;
 @property (retain) NSMutableSet* viewControllers;
+- (void)handleUrlLaunch:(NSNotification*)note;
+@property BOOL reactToUrlLaunch;
 
-@property (retain) NSString* hmiDescriptionName;
-@property (retain) NSString* imageDatabaseAllName;
-@property (retain) NSString* imageDatabaseBmwName;
-@property (retain) NSString* imageDatabaseMiniName;
-@property (retain) NSString* textDatabaseAllName;
-@property (retain) NSString* textDatabaseBmwName;
-@property (retain) NSString* textDatabaseMiniName;
+
 
 
 #pragma mark -
@@ -290,6 +305,13 @@ extern NSString* IDSecurityAuthService_Denial;
  @seealso //apple_ref/occ/instp/IDApplication/textDatabase textDatabase
  */
 @property (retain) NSData* hmiDescription;
+@property (retain) NSData* imageDatabaseAll;
+@property (retain) NSData* imageDatabaseBmw;
+@property (retain) NSData* imageDatabaseMini;
+@property (retain) NSData* textDatabaseAll;
+@property (retain) NSData* textDatabaseBmw;
+@property (retain) NSData* textDatabaseMini;
+
 
 /*!
  @property textDatabase
@@ -300,7 +322,7 @@ extern NSString* IDSecurityAuthService_Denial;
  @property imageDatabase
  */
 @property (retain) NSArray* imageDatabases;
-- (void)connectBlockingWithHostname:(NSString*)hostname;
+- (void)connectBlockingWithHostname:(NSString*)hostname port:(NSUInteger)port;
 - (void)disconnectBlocking;
 @property (readonly) NSData* certificate;
 @property (readonly) NSData* keystore;

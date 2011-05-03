@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <iDrive/iDrive.h>
 #import "MenuVC.h"
+#import "DashboardViewController.h"
 
 @interface MainVC : IDViewController {
 	
@@ -18,12 +19,12 @@
 	IDButton* destButton;
 	IDButton* lookupButton;
 	
-	IDImage* viewImage;
+	IDImage* viewImage, *viewImage2;
 	IDLoadingLabel* stateLabel;
 	
 	MenuVC* menuVC;
 	NSTimer *imageTimer;
-	IBOutlet UIView *dashboardView;
+	DashboardViewController *dashboardVC;
 }
 @property(retain) IDButton* homeButton;
 @property(retain) IDButton* routeButton;
@@ -31,7 +32,7 @@
 @property(retain) IDButton* destButton;
 @property(retain) IDButton* lookupButton;
 
-@property(retain) IDImage* viewImage;
+@property(retain) IDImage* viewImage, *viewImage2;
 @property(retain) IDLabel* stateLabel;
 
 @property(retain) MenuVC* menuVC;
