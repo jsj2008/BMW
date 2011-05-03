@@ -39,6 +39,7 @@
 
 @property(retain) MenuVC* menuVC;
 
+-(void)setSpeed:(double)speed;
 
 // Button Callbacks
 -(void)homeButtonClicked:(IDButton*)button;

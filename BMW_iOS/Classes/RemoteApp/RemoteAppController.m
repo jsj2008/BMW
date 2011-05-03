@@ -34,6 +34,30 @@
 	return self;
 }
 
+
+
+- (void)speedActual:(NSDictionary*)dictionary
+{
+	NSLog(@"Got Speed with dict: %@", dictionary);
+    NSNumber *speed = [dictionary objectForKey:@"speedActual"];
+    [app.mainVC setSpeed:[speed doubleValue]];
+    }
+
+- (void)engineRPM:(NSDictionary*)dictionary
+{
+	NSLog(@"Got RPM with dict: %@", dictionary);
+    
+    //NSNumber* number = [dictionary objectForKey:[CDSEngineRPMSpeed suffix]];
+	//[value1 setText: [number stringValue] clearWhileSending:NO]; 
+}
+
+- (void)steeringWheel:(NSDictionary*)dictionary
+{
+	//NSDictionary* number = [dictionary objectForKey:[CDSDrivingSteeringwheel suffix]];
+	//NSNumber* angle = [number objectForKey: @"angle"];
+	//[value2 setText: [angle stringValue] clearWhileSending:NO]; 
+}
+
 -(void)dealloc {
 	self.app = nil;
 	[super dealloc];
@@ -87,6 +111,13 @@
 {
 	[[NSNotificationCenter defaultCenter] postNotificationName:BMWConnectedChanged object:nil userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:@"connected"]];
 	NSLog(@"Connected");
+    
+    // Bind to Properties
+    IDCarDataService* ds = [[IDCarDataService alloc] initWithApplication:app];
+    [ds bindProperty:CDSEngineRPMSpeed			target:self selector:@selector(engineRPM:)];
+    [ds bindProperty:CDSDrivingSteeringwheel	target:self selector:@selector(steeringWheel:)];
+    [ds bindProperty:CDSDrivingSpeedActual target:self selector:@selector(speedActual:)];
+
 }
 
 -(void)idApplicationDidDisconnect:(IDApplication*)appication

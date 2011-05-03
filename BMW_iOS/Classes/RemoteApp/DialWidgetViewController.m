@@ -30,7 +30,7 @@
 	NSLog(@"setting dial to %f mph", mph);
 	dial.layer.anchorPoint = CGPointMake(0.5, 0.95);
 	//double degreesFromBottom = ((mph/140.0)*300)
-	dial.transform = CGAffineTransformMakeRotation((((mph/140.0)*300.0)+30)*(M_PI/180) - (M_PI));
+	dial.transform = CGAffineTransformMakeRotation((((mph*(90.0/50.0))+53)*(M_PI/180)) - (M_PI));
 	[label setText:[NSString stringWithFormat:@"%.1f", mph]];
 }
 

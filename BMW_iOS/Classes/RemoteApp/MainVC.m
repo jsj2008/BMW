@@ -171,6 +171,10 @@
 	[stateLabel setText: @"Leaderboards"];
 }
 
+-(void)setSpeed:(double)speed {
+    [avgSpeedVC setSpeed:speed];
+}
+
 -(void)updateDashboardImage:(id)sender {
 	if (!avgSpeedVC) {
 		avgSpeedVC = [[DialWidgetViewController alloc] init];
@@ -192,7 +196,7 @@
 	[myView addSubview:myLabel];				  
 	*/
 	int r = random() % 140;
-	[avgSpeedVC setSpeed:(double)r];
+	//[avgSpeedVC setSpeed:(double)r];
 	[dashboardVC setTopText:@"Minh, Design Me!!!!"];
 	[dashboardVC setBottomText:[NSString stringWithFormat:@"%@", [NSDate date]]];
 	
