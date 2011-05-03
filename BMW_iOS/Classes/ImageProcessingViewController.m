@@ -4,8 +4,16 @@
 //
 
 #import "ImageProcessingViewController.h"
+#import "ServerConnection.h"
+
 #define RED_THRESHOLD 200
 #define BASE_SIZE 320*480
+#define RED_LIGHT @"red light"
+#define GREEN_LIGHT @"green light"
+#define YELLOW_LIGHT @"yellow light"
+#define RED 1
+#define GREEN 2
+#define YELLOW 3
 
 typedef struct BlobPoint {
 	int x;
@@ -15,6 +23,7 @@ typedef struct BlobPoint {
 
 typedef struct Blob{
 	BlobPoint *points;
+    int color;
 	int numPoints;
 } Blob;
 
@@ -172,7 +181,9 @@ enum {
 				int l = label[dst[j*4 + i*4*FBO_WIDTH]];
 				// increment number of points in boundary
 				boundaries[l]->numPoints++;
-				
+				if (r > 0) boundaries[l]->color = RED;
+                if (g > 0) boundaries[l]->color = GREEN;
+                
 				if (!left||!right||!up||!down){
 					BlobPoint* newpt = (BlobPoint*) malloc(sizeof(BlobPoint));
 					
@@ -380,6 +391,8 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
     
     Blob** trackBlobs = malloc(sizeof(Blob)*nBlob);
     int blobIndex = 0;
+    int greenBlobs = 0;
+    int redBlobs = 0;
     
     // draw rectangles
 	for (int i=1; i<= nBlob; i++){
@@ -414,9 +427,17 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
         if (!fillBlack) {
             trackBlobs[blobIndex] = blob;
             blobIndex++;
+            if (blob->color == RED) {
+                redBlobs++;
+            } else if (blob->color == GREEN) greenBlobs++;
         }
 	}
     
+    //send stats
+    NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:redBlobs],RED_LIGHT, [NSNumber numberWithInt:greenBlobs], GREEN_LIGHT nil];
+    [ServerConnection sendStats:dictionary toURL:IMAGE_PROCESSING_URL];
+    
+    //draw image to iphone
     glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
     

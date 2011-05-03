@@ -13,6 +13,7 @@
 #define HEADING_URL @"http://bunkermw.heroku.com/mobile_headings2s/create"
 #define LOCATION_URL @"http://bunkermw.heroku.com/mobile_headings2s/create"
 #define MOTION_URL @"http://bunkermw.heroku.com/mobile_headings2s/create"
+#define IMAGE_PROCESSING_URL @""
 
 @interface ServerConnection : NSObject {
 //Initially just send data as you get it.
