@@ -20,7 +20,7 @@
 //The next step is to do so asynchonously
 //The last step is to queue and send in blocks
 }
-+(void)sendStats:(NSMutableDictionary *)stats toURL:(NSURL *)url;
++(void)sendStats:(NSMutableDictionary *)stats toURL:(NSString *)url;
 +(NSMutableDictionary *)motionToDict:(CMDeviceMotion *)motion;
 +(NSMutableDictionary *)locationToDict:(CLLocation *)location;
 +(NSMutableDictionary *)headingToDict:(CLHeading *)heading;
