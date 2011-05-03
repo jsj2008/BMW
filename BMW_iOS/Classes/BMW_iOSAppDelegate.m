@@ -66,7 +66,7 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 #endif 
     NSFetchRequest *request;
     NSArray * a;
-    //FOR HEADING
+    //FOR HEADING - stopped at 5497th element
 //    request = [[NSFetchRequest alloc] init];
 //    request.entity = [NSEntityDescription entityForName:@"DataReading" inManagedObjectContext:self.managedObjectContext];
 //    [request setPredicate:[NSPredicate predicateWithFormat:@"readingType == %d", 2]];
@@ -96,7 +96,7 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 //        NSLog(@"%d/%d",count+1,[a count]);
 //    }
     
-    //FOR MOTION
+    //FOR MOTION - DONE
 //    request = [[NSFetchRequest alloc] init];
 //    request.entity = [NSEntityDescription entityForName:@"DataReading" inManagedObjectContext:self.managedObjectContext];
 //    [request setPredicate:[NSPredicate predicateWithFormat:@"readingType == %d", 0]];
@@ -110,7 +110,7 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 //        [ServerConnection sendStats:md toURL:MOTION_URL];
 //        NSLog(@"%d/%d",count+1,[a count]);
 //    }
-    
+//    
     return YES;
 }
 

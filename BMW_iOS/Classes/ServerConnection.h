@@ -10,9 +10,9 @@
 #import <CoreLocation/CoreLocation.h>
 #import <CoreMotion/CMMotionManager.h>
 
-#define HEADING_URL @"http://bunkermw.heroku.com/mobile_headings2s/create"
-#define LOCATION_URL @"http://bunkermw.heroku.com/mobile_headings2s/create"
-#define MOTION_URL @"http://bunkermw.heroku.com/mobile_headings2s/create"
+#define HEADING_URL @"http://bunkermw.heroku.com/mobile_headings/create"
+#define LOCATION_URL @"http://bunkermw.heroku.com/mobile_locations/create"
+#define MOTION_URL @"http://bunkermw.heroku.com/mobile_motions/create"
 #define IMAGE_PROCESSING_URL @""
 
 @interface ServerConnection : NSObject {

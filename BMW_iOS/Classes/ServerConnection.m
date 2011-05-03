@@ -56,8 +56,8 @@
     
     //rotations
     [stats setObject:[NSNumber numberWithDouble:motion.rotationRate.x] forKey:@"rot_rate_x"];
-    [stats setObject:[NSNumber numberWithDouble:motion.rotationRate.x] forKey:@"rot_rate_x"];
-    [stats setObject:[NSNumber numberWithDouble:motion.rotationRate.x] forKey:@"rot_rate_x"];
+    [stats setObject:[NSNumber numberWithDouble:motion.rotationRate.y] forKey:@"rot_rate_y"];
+    [stats setObject:[NSNumber numberWithDouble:motion.rotationRate.z] forKey:@"rot_rate_z"];
     [stats setObject:[NSNumber numberWithDouble:motion.attitude.roll] forKey:@"roll"];
     [stats setObject:[NSNumber numberWithDouble:motion.attitude.pitch] forKey:@"pitch"];
     [stats setObject:[NSNumber numberWithDouble:motion.attitude.yaw] forKey:@"yaw"];

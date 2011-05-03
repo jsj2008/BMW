@@ -434,7 +434,7 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 	}
     
     //send stats
-    NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:redBlobs],RED_LIGHT, [NSNumber numberWithInt:greenBlobs], GREEN_LIGHT nil];
+    NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:redBlobs],RED_LIGHT, [NSNumber numberWithInt:greenBlobs], GREEN_LIGHT, nil];
     [ServerConnection sendStats:dictionary toURL:IMAGE_PROCESSING_URL];
     
     //draw image to iphone
