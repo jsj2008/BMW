@@ -9,6 +9,7 @@
 #import "BMW_iOSAppDelegate.h"
 #import "ImageProcessingViewController.h"
 #import "DataOverlayViewController.h"
+#import "ServerConnection.h"
 
 NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 
@@ -62,23 +63,25 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 #ifdef SENSOR_READER		
 	reader = [[SensorReader alloc] init];
 	[reader startReading];
-#endif
+#endif  
     
     //runwide fetching        
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    request.entity = [NSEntityDescription entityForName:@"DataReading" inManagedObjectContext:self.managedObjectContext];
-    [request setPredicate:[NSPredicate predicateWithFormat:@"readingType == %d", 1]];
-        
-    NSArray * a = [self.managedObjectContext executeFetchRequest:request error:nil];
-    float speed = 0;
-    for (id reading in a)
-    {
-        NSLog(@"%@",[reading getParsedData]);
-        CLLocation *l = [[reading getParsedData] objectForKey:@"Location"];
-        speed+=l.speed;
-    }
-    speed/=[a count];
-    //NSLog(@"%f",speed);
+//    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+//    request.entity = [NSEntityDescription entityForName:@"DataReading" inManagedObjectContext:self.managedObjectContext];
+//    [request setPredicate:[NSPredicate predicateWithFormat:@"readingType == %d", 2]];
+//        
+//    NSArray * a = [self.managedObjectContext executeFetchRequest:request error:nil];
+//    //NSLog(@"%@",[[a objectAtIndex:50] getParsedData]);
+//    //NSLog(@"%d",[a count]);
+//    
+//    
+//    //FOR HEADING
+//    for (id val in a) {
+//        NSDictionary *d = [val getParsedData];
+//        NSMutableDictionary *md = [ServerConnection headingToDict:[d objectForKey:@"Heading"]];
+//        [md setObject:[NSNumber numberWithDouble:[[d objectForKey:@"Date"] timeIntervalSince1970]] forKey:@"iphone_time"];
+//        [ServerConnection sendStats:md toURL:HEADING_URL];
+//    }
     
     return YES;
 }
