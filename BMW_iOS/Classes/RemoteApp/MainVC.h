@@ -10,6 +10,7 @@
 #import <iDrive/iDrive.h>
 #import "MenuVC.h"
 #import "DashboardViewController.h"
+#import "DialWidgetViewController.h"
 
 @interface MainVC : IDViewController {
 	
@@ -24,6 +25,7 @@
 	
 	MenuVC* menuVC;
 	NSTimer *imageTimer;
+	DialWidgetViewController *avgSpeedVC;
 	DashboardViewController *dashboardVC;
 }
 @property(retain) IDButton* homeButton;

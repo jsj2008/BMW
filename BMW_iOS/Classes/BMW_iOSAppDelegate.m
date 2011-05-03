@@ -59,7 +59,7 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 //#if TARGET_IPHONE_SIMULATOR && HMI_CONNECTION
 	[bmwAppController accessoryDidStart:nil]; // fake it
 //#endif
-#endif
+//#endif
 #ifdef SENSOR_READER		
 	reader = [[SensorReader alloc] init];
 	[reader startReading];
