@@ -389,7 +389,7 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 
 	int nBlob = [self LabelRegions:rawPositionPixels withDestination:labels Boundaries:boundaries];
     
-    Blob** trackBlobs = malloc(sizeof(Blob)*nBlob);
+    //Blob** trackBlobs = malloc(sizeof(Blob)*nBlob);
     int blobIndex = 0;
     int greenBlobs = 0;
     int redBlobs = 0;
@@ -425,7 +425,7 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 		}
 		drawRectangle(rawPositionPixels, ll, ur, fillBlack);
         if (!fillBlack) {
-            trackBlobs[blobIndex] = blob;
+            //trackBlobs[blobIndex] = blob;
             blobIndex++;
             if (blob->color == RED) {
                 redBlobs++;
@@ -433,11 +433,12 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
         }
 	}
     
+    printf("red blobs: %d\n", redBlobs);
+    
     //send stats
-    NSMutableDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:redBlobs],RED_LIGHT, [NSNumber numberWithInt:greenBlobs], GREEN_LIGHT, nil];
-    NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:redBlobs],RED_LIGHT, [NSNumber numberWithInt:greenBlobs], GREEN_LIGHT, nil];
-    [ServerConnection sendStats:dictionary toURL:IMAGE_PROCESSING_URL];
-    [dictionary release];
+    //NSMutableDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:redBlobs],RED_LIGHT, [NSNumber numberWithInt:greenBlobs], GREEN_LIGHT, nil];
+    //[ServerConnection sendStats:dictionary toURL:IMAGE_PROCESSING_URL];
+    //[dictionary release];
     
     //draw image to iphone
     glActiveTexture(GL_TEXTURE0);
@@ -460,7 +461,7 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
     
     [glView presentFramebuffer];
     
-    free(trackBlobs);
+    //free(trackBlobs);
     FreeAllRegions(boundaries, nBlob, labels);
 }
 
