@@ -56,8 +56,8 @@
     
     //rotations
     [stats setObject:[NSNumber numberWithDouble:motion.rotationRate.x] forKey:@"rot_rate_x"];
-    [stats setObject:[NSNumber numberWithDouble:motion.rotationRate.x] forKey:@"rot_rate_x"];
-    [stats setObject:[NSNumber numberWithDouble:motion.rotationRate.x] forKey:@"rot_rate_x"];
+    [stats setObject:[NSNumber numberWithDouble:motion.rotationRate.y] forKey:@"rot_rate_y"];
+    [stats setObject:[NSNumber numberWithDouble:motion.rotationRate.z] forKey:@"rot_rate_z"];
     [stats setObject:[NSNumber numberWithDouble:motion.attitude.roll] forKey:@"roll"];
     [stats setObject:[NSNumber numberWithDouble:motion.attitude.pitch] forKey:@"pitch"];
     [stats setObject:[NSNumber numberWithDouble:motion.attitude.yaw] forKey:@"yaw"];
@@ -65,7 +65,7 @@
     return stats;
 }
 
-+(void)sendStats:(NSMutableDictionary *)stats toURL:(NSURL *)url
++(void)sendStats:(NSMutableDictionary *)stats toURL:(NSString *)url
 {
     //Will start an array with this and then send the queue
 //    [stats setObject:[NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]] forKey:@"iphone_time"];
@@ -76,7 +76,7 @@
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:NO];
     NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
     
-    [req setURL:url];
+    [req setURL:[NSURL URLWithString:url]];
     [req setHTTPMethod:@"POST"];
     [req setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [req setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
@@ -87,8 +87,8 @@
     NSData *urlData=[NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&error];
     NSString *data=[[[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding] autorelease];
 #ifdef DEBUG
-    NSLog(data);
-    NSLog(@"prev stats:%@",[stats JSONRepresentation]);
+//    NSLog(data);
+//    NSLog(@"prev stats:%@",[stats JSONRepresentation]);
 #endif
 }
 
