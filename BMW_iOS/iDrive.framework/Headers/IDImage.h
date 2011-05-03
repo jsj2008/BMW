@@ -12,6 +12,7 @@
 
 @interface IDImage : IDWidget {
 	UIImage* mImage;
+	BOOL mClearWhileSending;
 	BOOL mImage_dirty;
 	
 	NSInteger mImageID;
@@ -29,9 +30,15 @@
 
 /**
  * Set the image.
+ * Defaults to 
+ * clearWhileSending == YES.
  */
 -(void)setImage:(UIImage*)image;
 
+/**
+ * Set the image.
+ */
+-(void)setImage:(UIImage*)image clearWhileSending:(BOOL)clearWhileSending;
 
 /**
  * Set the image.

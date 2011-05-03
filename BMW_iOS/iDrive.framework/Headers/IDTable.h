@@ -118,9 +118,9 @@
 // Public
 //////////////////////////////////////////////////////////////
 -(void)rowWasSelected:(IDVariantMap *)infoMap;
-@property(retain) NSString* columnWidths;
-@property(retain) NSMutableDictionary* cells;
-@property(retain) NSTimer* timer;
+@property(nonatomic, retain) NSString* columnWidths;
+@property(nonatomic, retain) NSMutableDictionary* cells;
+@property(nonatomic, retain) NSTimer* timer;
 -(void)markTableDirty_setNeedsFlush;
 -(void)sendEmptyTable;
 -(void)setData:(IDVariantData*)data location:(IDTableLocation*)loc;

@@ -18,12 +18,12 @@
  */
 -(id)initWithIdApplication:(IDApplication*)_idApplication 
 				  hmiState:(NSInteger)_hmiState 
-				 gotoEvent:(NSInteger)_gotoEvent
+				 focusEvent:(NSInteger)_gotoEvent
 				titleModel:(NSInteger)_titleModel
 {
 	if (self = [super initWithIdApplication:_idApplication 
 								   hmiState:_hmiState 
-								  gotoEvent:_gotoEvent
+								  focusEvent:_gotoEvent
 								 titleModel:_titleModel])
 	{		
 		// Widgets

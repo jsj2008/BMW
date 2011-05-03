@@ -24,6 +24,9 @@ typedef enum IDAlignment {
 	BOOL mPosition_dirty;
 	NSString* mText;
 	BOOL mText_dirty;
+	
+	BOOL mUsePosition;
+	BOOL mClearWhileSending;
 }
 
 //////////////////////////////////////////////////////////////
@@ -35,6 +38,11 @@ typedef enum IDAlignment {
  */
 -(void)setText:(NSString*)text;
 
+
+/**
+ *
+ */
+- (void)setText:(NSString *)text clearWhileSending:(BOOL)clearWhileSending;
 
 /**
  * Set the alignment of the text.
@@ -58,7 +66,7 @@ typedef enum IDAlignment {
 // Private
 //////////////////////////////////////////////////////////////
 
-@property(retain) NSString* text;
+@property(nonatomic, retain) NSString* text;
 
 
 @end
