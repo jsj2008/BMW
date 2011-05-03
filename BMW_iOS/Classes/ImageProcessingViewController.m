@@ -4,6 +4,21 @@
 //
 
 #import "ImageProcessingViewController.h"
+#define RED_THRESHOLD 200
+#define BASE_SIZE 320*480
+#define GL_CHECK(x) { (x); GLenum error = glGetError(); if (GL_NO_ERROR != error) {printf("GL_ERROR: %s\n", gluErrorString(error));}}
+
+typedef struct BlobPoint {
+	int x;
+	int y;
+	struct BlobPoint* nextPoint;
+} BlobPoint;
+
+typedef struct Blob{
+	BlobPoint *points;
+	int numPoints;
+} Blob;
+
 // Uniform index.
 enum {
 	UNIFORM_TRANSLATE,
@@ -55,6 +70,8 @@ enum {
 	
 	camera = [[CaptureSessionManager alloc] init];
 	camera.delegate = self;
+    
+    rawPositionPixels = (GLubyte *) calloc(FBO_WIDTH * FBO_HEIGHT * 4, sizeof(GLubyte));
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -77,6 +94,185 @@ enum {
 
 #pragma mark -
 #pragma mark OpenGL ES 2.0 rendering methods
+
+-(int) blobUnion:(int*) label labelOne:(int)l1 labelTwo:(int)l2
+{
+	if (label[l1] > label[l2]) label[l1] = label[l2];
+	label[l2] = label[l1];
+	return label[l1];
+}
+
+- (int) LabelRegions:(GLubyte*)src withDestination:(GLubyte*)dst Boundaries: (Blob**)boundaries
+{
+	int *label = malloc(BASE_SIZE*sizeof(int));
+	for(int i = 0; i < BASE_SIZE; i++)
+		label[i] = BASE_SIZE+1;
+	
+	int count = 1;
+	int nred = 0;
+	
+	for (int i = 1; i < FBO_HEIGHT; i++) {
+		for (int j = 1; j < FBO_WIDTH; j++) {
+            GLubyte r = src[i*4*FBO_WIDTH + j*4];
+            GLubyte g = src[i*4*FBO_WIDTH + j*4 + 1];
+			if (r > 0 || g > 0) {
+				nred++;
+				GLubyte left = dst[(j-1)*4 + i*4*FBO_WIDTH];
+				GLubyte up = dst[j*4 + (i-1)*4*FBO_WIDTH];
+                
+				dst[j*4 + i*4*FBO_WIDTH] = left;
+				if (up != 0) {
+					if (dst[j*4 + i*4*FBO_WIDTH] == 0) {
+						dst[j*4 + i*4*FBO_WIDTH] = up;
+					} else dst[j*4 + i*4*FBO_WIDTH] = [self blobUnion: label labelOne: left labelTwo: up];
+				} else {
+					if (dst[j*4 + i*4*FBO_WIDTH] == 0) {
+						label[count] = count;
+						dst[j*4 + i*4*FBO_WIDTH] = count;
+						count++;
+					}
+				}
+			}
+		}
+	}
+	
+	int remap [count];
+	memset(remap,0,sizeof(remap));
+	
+	for(int i=1; i<count; i++){
+		remap[label[i]]=1;
+	}
+	
+	int nBlob = 0;   
+	int newcount = 1;
+	for(int i=1; i<count; i++){
+		if(remap[i]){
+			remap[i] = newcount;
+			nBlob = newcount;
+			newcount++;
+		}
+	}
+	
+	for(int i=1; i<count; i++){
+		label[i] = remap[label[i]];
+	}
+	
+	
+	for (int i=1; i<count; i++){
+		if (boundaries[label[i]] == NULL){
+			boundaries[label[i]] = (Blob *)malloc(sizeof(Blob));
+			boundaries[label[i]]->numPoints = 0;
+			boundaries[label[i]]->points = NULL;
+		}
+	}
+    
+	for (int i = 1; i < FBO_HEIGHT-1; i++) {
+		for (int j = 1; j < FBO_WIDTH-1; j++) {
+			GLubyte r = src[j*4 + i*4*FBO_WIDTH];
+            GLubyte g = src[j*4 + i*4*FBO_WIDTH + 1];
+            
+			GLubyte left = dst[(j-1)*4 + i*4*FBO_WIDTH];
+			GLubyte right = dst[(j+1)*4 + i*4*FBO_WIDTH];
+			GLubyte up = dst[j*4 + (i-1)*4*FBO_WIDTH];
+			GLubyte down = dst[j*4 + (i+1)*4*FBO_WIDTH];
+            
+			if((r > 0 || g > 0) && dst[j*4 + i*4*FBO_WIDTH] > 0){
+				int l = label[dst[j*4 + i*4*FBO_WIDTH]];
+				// increment number of points in boundary
+				boundaries[l]->numPoints++;
+				
+				if (!left||!right||!up||!down){
+					BlobPoint* newpt = (BlobPoint*) malloc(sizeof(BlobPoint));
+					
+					// give destination correct label
+					dst[j*4 + i*4*FBO_WIDTH] = l;
+					newpt->x = j;
+					newpt->y = i;
+					newpt->nextPoint = boundaries[l]->points;
+					
+					// add point to correct blob
+					boundaries[l]->points = newpt;
+				}
+			}
+		}
+	}
+    free(label);
+    return nBlob;
+}
+
+bool circleTest(Blob *blob)
+{
+	BlobPoint *next = blob->points;
+	float averageX = 0;
+	float averageY = 0;
+	float numPoints = 0;
+	while(next != NULL) {
+		averageX += next->x;
+		averageY += next->y;
+		numPoints++;
+		next = next->nextPoint;
+	}
+	averageX /= numPoints;
+	averageY /= numPoints;
+	
+	//printf("avgX: %f, avgY: %f, numP: %f\n", averageX, averageY, numPoints);
+	
+	next = blob->points;
+	float rMax = .5;
+	float rMin = 640.0/2.0;
+	while(next != NULL) {
+		float r = pow(next->x - averageX, 2) + pow(next->y - averageY, 2);
+		if (r > rMax) rMax = r;
+		if (r < rMin) rMin = r;
+		next = next->nextPoint;
+	}
+	//printf("%f %f, %f\n",rMin, rMax, rMax - rMin);
+	return (rMax - rMin)/(rMax + rMin) < .6;
+}
+
+void drawRectangle(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight, bool fillBlack)
+{
+	if (fillBlack) {
+		for (int i = lowerLeft.x; i <= upperRight.x; i++) {
+			for (int j = lowerLeft.y; j <= upperRight.y; j++) {
+				memset(&frame[j*4*FBO_WIDTH + i*4], 0, sizeof(GLubyte)*4);
+			}
+		}
+	} else {
+		for (int i = lowerLeft.x; i <= upperRight.x; i++) {
+            frame[i*4 + upperRight.y*4*FBO_WIDTH + 2] = 255;
+            frame[i*4 + lowerLeft.y*4*FBO_WIDTH + 2] = 255;
+		}
+        
+		for (int i = lowerLeft.y+1; i < upperRight.y; i++) {
+            frame[i*4*FBO_WIDTH + lowerLeft.x*4 + 2] = 255;
+            frame[i*4*FBO_WIDTH + upperRight.x*4 + 2] = 255;
+		}
+	}
+}
+
+void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
+{
+	for (int i = 1; i <= nBlob; i++){
+		{
+			Blob* blob = boundaries[i];
+			if (blob==NULL)
+				continue;
+			BlobPoint* next = blob->points;
+			while(next!=NULL)
+			{
+				BlobPoint* old = next;
+				next = old->nextPoint;
+				free(old);
+			}
+			free(boundaries[i]);
+			boundaries[i] = NULL;
+		}
+	}
+    
+    free(labels);
+}
+
 - (void)drawFrame
 {    
     // Replace the implementation of this method to do your own custom drawing.
@@ -101,7 +297,7 @@ enum {
         1.0f,  1.0f,
     };
 	
-	static float transY = 0.0f;
+	//static float transY = 0.0f;
 	ShaderProgram *shader;
     glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
@@ -116,15 +312,7 @@ enum {
 	
 	// Update uniform values
 	glUniform1i([shader indexForUniform:@"inputImage"], 0);
-	/*
-	glUniform1f([shader indexForUniform:@"anchorWidth"], 13.0);
-	glUniform1f([shader indexForUniform:@"elementWidth"], 13.0);
-	glUniform1f([shader indexForUniform:@"anchorHeight"], 7.0);
-	glUniform1f([shader indexForUniform:@"elementHeight"], 7.0);
-	glUniform2f([shader indexForUniform:@"pixelSize"], 1.0/FBO_HEIGHT,1.0/FBO_WIDTH);
-	glUniform1i([shader indexForUniform:@"erosion"], 0);
-	 */
-	
+
 	// Update attribute values.
 	glVertexAttribPointer([shader indexForAttribute:@"position"], 2, GL_FLOAT, 0, 0, squareVertices);
 	glEnableVertexAttribArray([shader indexForAttribute:@"position"]);
@@ -133,23 +321,9 @@ enum {
 	
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 	
+    
 	shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"dilation.frag.glsl"];
-//multiple passes	
-//	[glView setPositionThresholdFramebuffer];
-//	[shader setAsActive];
-//	
-//	glUniform1i([shader indexForUniform:@"videoFrame"], 0);
-//	glUniform1f([shader indexForUniform:@"phase"], transY);
-//	
-//	glActiveTexture(GL_TEXTURE0);
-//	glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
-//	glVertexAttribPointer(ATTRIB_VERTEX, 2, GL_FLOAT, 0, 0, squareVertices);
-//	glEnableVertexAttribArray(ATTRIB_VERTEX);
-//	glVertexAttribPointer(ATTRIB_TEXTUREPOSITON, 2, GL_FLOAT, 0, 0, passthroughTextureVertices);
-//	glEnableVertexAttribArray(ATTRIB_TEXTUREPOSITON);
-//	
-//	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-//	
+
 	[glView setDisplayFramebuffer];
 	[shader setAsActive];
 	
@@ -158,10 +332,34 @@ enum {
 	
 	// Update uniform values
 	glUniform1i([shader indexForUniform:@"inputImage"], 0);
+	glUniform1f([shader indexForUniform:@"anchorWidth"], 6.0);
+	glUniform1f([shader indexForUniform:@"elementWidth"], 11.0);
+	glUniform1f([shader indexForUniform:@"anchorHeight"], 6.0);
+	glUniform1f([shader indexForUniform:@"elementHeight"], 11.0);
+	glUniform2f([shader indexForUniform:@"pixelSize"], 1.0/FBO_HEIGHT,1.0/FBO_WIDTH);
+	
+	// Update attribute values.
+	glVertexAttribPointer([shader indexForAttribute:@"position"], 2, GL_FLOAT, 0, 0, squareVertices);
+	glEnableVertexAttribArray([shader indexForAttribute:@"position"]);
+	glVertexAttribPointer([shader indexForAttribute:@"inputTextureCoordinate"], 2, GL_FLOAT, 0, 0, passthroughTextureVertices);
+	glEnableVertexAttribArray([shader indexForAttribute:@"inputTextureCoordinate"]);
+	
+	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+    
+    shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"erosion.frag.glsl"];
+
+	//[glView setDisplayFramebuffer];
+	[shader setAsActive];
+	
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
+	
+	// Update uniform values
+	glUniform1i([shader indexForUniform:@"inputImage"], 0);
 	glUniform1f([shader indexForUniform:@"anchorWidth"], 7.0);
-	glUniform1f([shader indexForUniform:@"elementWidth"], 7.0);
-	glUniform1f([shader indexForUniform:@"anchorHeight"], 3.0);
-	glUniform1f([shader indexForUniform:@"elementHeight"], 3.0);
+	glUniform1f([shader indexForUniform:@"elementWidth"], 13.0);
+	glUniform1f([shader indexForUniform:@"anchorHeight"], 7.0);
+	glUniform1f([shader indexForUniform:@"elementHeight"], 13.0);
 	glUniform2f([shader indexForUniform:@"pixelSize"], 1.0/FBO_HEIGHT,1.0/FBO_WIDTH);
 	
 	// Update attribute values.
@@ -172,7 +370,78 @@ enum {
 	
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 	
+    
+    glReadPixels(0, 0, FBO_WIDTH, FBO_HEIGHT, GL_RGBA, GL_UNSIGNED_BYTE, rawPositionPixels);
+    
+    Blob* boundaries[BASE_SIZE];
+	
+	memset(boundaries,0,sizeof(boundaries));
+		
+    GLubyte *labels = (GLubyte *) calloc(FBO_WIDTH * FBO_HEIGHT * 4, sizeof(GLubyte));	
+
+	int nBlob = [self LabelRegions:rawPositionPixels withDestination:labels Boundaries:boundaries];
+    
+    Blob** trackBlobs = malloc(sizeof(Blob)*nBlob);
+    int blobIndex = 0;
+    
+    // draw rectangles
+	for (int i=1; i<= nBlob; i++){
+		// find the points
+		BlobPoint ll, ur;
+		ll.x = 99999;
+		ll.y = 99999;
+		ur.x = 0;
+		ur.y = 0;
+		Blob* blob = boundaries[i];
+		BlobPoint* next = blob->points;
+		//printf("%d\n", blob->numPoints);
+		while(next != NULL)
+		{
+			if(next->x < ll.x) ll.x = next->x;
+			if(next->y < ll.y) ll.y = next->y;
+			if(next->x > ur.x) ur.x = next->x;
+			if(next->y > ur.y) ur.y = next->y;
+			next = next->nextPoint;
+			
+		}
+		
+		ll.x -= 2;
+		ll.y -= 2;
+		ur.x += 2;
+		ur.y += 2;
+		bool fillBlack = false;
+		if (!circleTest(blob)) {
+			fillBlack = true;
+		}
+		drawRectangle(rawPositionPixels, ll, ur, fillBlack);
+        if (!fillBlack) {
+            trackBlobs[blobIndex] = blob;
+            blobIndex++;
+        }
+	}
+    
+    glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
+    
+    glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, FBO_WIDTH, FBO_HEIGHT, GL_RGBA, GL_UNSIGNED_BYTE, rawPositionPixels);    
+    
+    shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"DirectDisplayShader.fsh"];
+    
+	//[glView setDisplayFramebuffer];
+	[shader setAsActive];
+	
+	// Update attribute values.
+	glVertexAttribPointer([shader indexForAttribute:@"position"], 2, GL_FLOAT, 0, 0, squareVertices);
+	glEnableVertexAttribArray([shader indexForAttribute:@"position"]);
+	glVertexAttribPointer([shader indexForAttribute:@"inputTextureCoordinate"], 2, GL_FLOAT, 0, 0, passthroughTextureVertices);
+	glEnableVertexAttribArray([shader indexForAttribute:@"inputTextureCoordinate"]);
+	
+	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+    
     [glView presentFramebuffer];
+    
+    free(trackBlobs);
+    FreeAllRegions(boundaries, nBlob, labels);
 }
 
 #pragma mark -
@@ -218,3 +487,31 @@ enum {
 @end
 
 #endif
+
+
+//2
+//multiple passes	
+//	[glView setPositionThresholdFramebuffer];
+//	[shader setAsActive];
+//	
+//	glUniform1i([shader indexForUniform:@"videoFrame"], 0);
+//	glUniform1f([shader indexForUniform:@"phase"], transY);
+//	
+//	glActiveTexture(GL_TEXTURE0);
+//	glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
+//	glVertexAttribPointer(ATTRIB_VERTEX, 2, GL_FLOAT, 0, 0, squareVertices);
+//	glEnableVertexAttribArray(ATTRIB_VERTEX);
+//	glVertexAttribPointer(ATTRIB_TEXTUREPOSITON, 2, GL_FLOAT, 0, 0, passthroughTextureVertices);
+//	glEnableVertexAttribArray(ATTRIB_TEXTUREPOSITON);
+//	
+//	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+//	
+//1
+/*
+ glUniform1f([shader indexForUniform:@"anchorWidth"], 13.0);
+ glUniform1f([shader indexForUniform:@"elementWidth"], 13.0);
+ glUniform1f([shader indexForUniform:@"anchorHeight"], 7.0);
+ glUniform1f([shader indexForUniform:@"elementHeight"], 7.0);
+ glUniform2f([shader indexForUniform:@"pixelSize"], 1.0/FBO_HEIGHT,1.0/FBO_WIDTH);
+ glUniform1i([shader indexForUniform:@"erosion"], 0);
+ */
