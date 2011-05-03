@@ -8,9 +8,9 @@
 
 #define RED_THRESHOLD 200
 #define BASE_SIZE 320*480
-#define RED_LIGHT @"red light"
-#define GREEN_LIGHT @"green light"
-#define YELLOW_LIGHT @"yellow light"
+#define RED_LIGHT @"red_count"
+#define GREEN_LIGHT @"green_count"
+#define YELLOW_LIGHT @"yellow_count"
 #define RED 1
 #define GREEN 2
 #define YELLOW 3
@@ -434,8 +434,10 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 	}
     
     //send stats
+    NSMutableDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:redBlobs],RED_LIGHT, [NSNumber numberWithInt:greenBlobs], GREEN_LIGHT, nil];
     NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:redBlobs],RED_LIGHT, [NSNumber numberWithInt:greenBlobs], GREEN_LIGHT, nil];
     [ServerConnection sendStats:dictionary toURL:IMAGE_PROCESSING_URL];
+    [dictionary release];
     
     //draw image to iphone
     glActiveTexture(GL_TEXTURE0);
