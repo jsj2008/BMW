@@ -17,7 +17,7 @@
 //#define STATS_OVERLAY 1
 #define HMI_CONNECTION 1
 //#define SENSOR_READER 1
-//#define LOCAL_DB 1
+//#define LOCAL_DB 1 //should be done with this in current incarnation
 
 //extra image processing switches
 #ifdef IMAGE_PROCESSING_VIEW
