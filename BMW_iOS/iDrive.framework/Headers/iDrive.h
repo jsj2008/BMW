@@ -10,7 +10,7 @@
 
 /*!
  @header iDrive Framework
- @version 1.0.0 (0:52279M)
+ @version 1.0.0 (0:56862M)
  */
 
 #import <Foundation/Foundation.h>
@@ -41,9 +41,10 @@ extern "C" {
 //#import "IDOTFLogService.h"
 #import "NSString+IDSBJSON.h"
 #import "IDCarInfo.h"
+#import "IDSwitchManager.h"
 
 #import "CDSPropertyDefines.h"
-#import "ExternalAccessoryMonitor.h"
+#import "IDExternalAccessoryMonitor.h"
 
 #import "IDAVService.h"
 #import "IDOffBoardAVService.h"

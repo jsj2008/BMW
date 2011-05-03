@@ -11,7 +11,6 @@
 
 @implementation RemoteAppController
 @synthesize app;
-@synthesize usbAccessoryMonitor;
 
 
 -(id)init {
@@ -26,46 +25,44 @@
 												 selector:@selector(accessoryDidStop:)
 													 name:ExternalAccessoryProxyWillStopNotification
 												   object:nil];
-		
-		[[NSNotificationCenter defaultCenter] addObserver:self
-												 selector:@selector(willEnterForeground:)
-													 name:UIApplicationDidFinishLaunchingNotification
-												   object:nil];
-		
-		[[NSNotificationCenter defaultCenter] addObserver:self
-												 selector:@selector(willEnterForeground:)
-													 name:UIApplicationWillEnterForegroundNotification
-												   object:nil];
-		
-		[[NSNotificationCenter defaultCenter] addObserver:self
-												 selector:@selector(didEnterBackground:)
-													 name:UIApplicationDidEnterBackgroundNotification
-												   object:nil];
+
 		
 		
 		//Startup the USB connection monitor
-		usbAccessoryMonitor = [[ExternalAccessoryMonitor alloc] initWithProxyPort:[IDConnection defaultPort]];
-		
-		// Call Start
-		[usbAccessoryMonitor start];
+		[[IDExternalAccessoryMonitor sharedMonitor] start];
 	}
 	return self;
 }
 
+
+
+- (void)speedActual:(NSDictionary*)dictionary
+{
+	NSLog(@"Got Speed with dict: %@", dictionary);
+    NSNumber *speed = [dictionary objectForKey:@"speedActual"];
+    [app.mainVC setSpeed:[speed doubleValue]];
+    }
+
+- (void)engineRPM:(NSDictionary*)dictionary
+{
+	NSLog(@"Got RPM with dict: %@", dictionary);
+    
+    //NSNumber* number = [dictionary objectForKey:[CDSEngineRPMSpeed suffix]];
+	//[value1 setText: [number stringValue] clearWhileSending:NO]; 
+}
+
+- (void)steeringWheel:(NSDictionary*)dictionary
+{
+	//NSDictionary* number = [dictionary objectForKey:[CDSDrivingSteeringwheel suffix]];
+	//NSNumber* angle = [number objectForKey: @"angle"];
+	//[value2 setText: [angle stringValue] clearWhileSending:NO]; 
+}
+
 -(void)dealloc {
 	self.app = nil;
-	self.usbAccessoryMonitor = nil;
 	[super dealloc];
 }
 
-
--(void)willEnterForeground:(NSNotification*) notification {
-	[usbAccessoryMonitor start];
-}
-
--(void)didEnterBackground:(NSNotification*) notification {
-	[usbAccessoryMonitor stop];
-}
 
 /**
  * Callbacks from the NSNotificationCenter because we signed up for hearing from our
@@ -96,7 +93,7 @@
 											 textDatabaseMINI:nil 
 											  devCertificates:YES
 													 delegate:self] autorelease];
-	[app connectWithHostname: @"127.0.0.0"];
+	[app connectWithHostname: @"127.0.0.1" port:[IDApplication defaultPort]];
 	// Waiting for	-idApplicationDidConnect: ...
 	// or			-idApplication: connectionFailedWithError: ...
 }	 
@@ -114,6 +111,13 @@
 {
 	[[NSNotificationCenter defaultCenter] postNotificationName:BMWConnectedChanged object:nil userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:@"connected"]];
 	NSLog(@"Connected");
+    
+    // Bind to Properties
+    IDCarDataService* ds = [[IDCarDataService alloc] initWithApplication:app];
+    [ds bindProperty:CDSEngineRPMSpeed			target:self selector:@selector(engineRPM:)];
+    [ds bindProperty:CDSDrivingSteeringwheel	target:self selector:@selector(steeringWheel:)];
+    [ds bindProperty:CDSDrivingSpeedActual target:self selector:@selector(speedActual:)];
+
 }
 
 -(void)idApplicationDidDisconnect:(IDApplication*)appication

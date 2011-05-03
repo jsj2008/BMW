@@ -44,17 +44,21 @@
 
 
 /**
- * Set the callback taarget and selector
+ * Set the callback target and selector
  * for a button click. This must be
  * called rhmiDidStart.
+ *
+ * The selector must have the following 
+ * signature -(void)yourMethod:(IDButton*)button
  */
 -(void)setTarget:(id)target selector:(SEL)selector;
 
 
 /**
- * Set the target view. When an element from 
- * the tabel is selected, this view is 
- * presented automtically.
+ * Set the target view. When the button 
+ * is clicked this view is presented
+ * automtically. This must be
+ * called rhmiDidStart.
  */
 -(void)setTargetView:(IDViewController*)viewController;
 
@@ -62,8 +66,6 @@
 /**
  * Set the Title of a button.
  * This must be called rhmiDidStart.
- * The selector must have the following 
- * signature -(void)yourMethod:(IDButton*)button
  */
 -(void)setTitle:(NSString*)title;
 

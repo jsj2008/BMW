@@ -9,6 +9,7 @@
 #import "MainVC.h"
 #import "RemoteAppIDs.h"
 #import "BMW_iOSAppDelegate.h"
+#include <stdlib.h>
 
 
 @implementation MainVC
@@ -17,19 +18,19 @@
 @synthesize currentButton;
 @synthesize destButton;
 @synthesize lookupButton;
-@synthesize viewImage;
+@synthesize viewImage, viewImage2;
 @synthesize stateLabel;
 @synthesize menuVC;
 
 
 -(id)initWithIdApplication:(IDApplication*)_idApplication 
 				  hmiState:(NSInteger)_hmiState 
-				 gotoEvent:(NSInteger)_gotoEvent
+				 focusEvent:(NSInteger)_gotoEvent
 				titleModel:(NSInteger)_titleModel
 {
 	if (self = [super initWithIdApplication:_idApplication 
 								   hmiState:_hmiState 
-								  gotoEvent:_gotoEvent
+								  focusEvent:_gotoEvent
 								 titleModel:_titleModel])
 	{
 		
@@ -43,6 +44,8 @@
 		
 		self.viewImage = [[[IDImage alloc] initWithViewController:self widgetID:IMG_View modelID:MDL_Image_View] autorelease];
 		self.stateLabel = [[[IDLoadingLabel alloc] initWithViewController:self widgetID:LBL_State modelID:MDL_Text_State] autorelease];
+		self.viewImage2 = [[[IDImage alloc] initWithViewController:self widgetID:IMG_View2 modelID:MDL_Image_View2] autorelease];
+		
 		
 //		[[[IDLabel alloc] initWithViewController:self widgetID:LBL_State modelID:MDL_Text_State] autorelease];
 
@@ -52,10 +55,11 @@
 		[self addWidget: destButton];
 		[self addWidget: lookupButton];
 		[self addWidget: viewImage];
+		[self addWidget: viewImage2];
 		[self addWidget: stateLabel];
 		
 		// Sub Views
-		self.menuVC = [[[MenuVC alloc] initWithIdApplication:self.application hmiState:HST_Menu gotoEvent:-1 titleModel:-1] autorelease];
+		self.menuVC = [[[MenuVC alloc] initWithIdApplication:self.application hmiState:HST_Menu focusEvent:-1 titleModel:-1] autorelease];
 		[self addSubViewController:menuVC];
 		
 	}
@@ -71,6 +75,7 @@
 	self.viewImage = nil;
 	self.stateLabel = nil;
 	self.menuVC = nil;
+	self.viewImage2 = nil;
 	[super dealloc];
 }
 
@@ -90,22 +95,15 @@
 	[lookupButton	setTarget:self	selector:@selector(lookupButtonClicked:)];
 	
 	[viewImage setPosition: CGPointMake(-50, 20)];
+	[viewImage2 setPosition:CGPointMake(0,20)];
 	[stateLabel setPosition: CGPointMake(50, 50)];
+	
 	[stateLabel setHidesWhenStopped:NO];
 	
+	NSTimer *tima = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(updateDashboardImage:) userInfo:nil repeats:YES];
+	
+	
 	[super rhmiDidStart];
-}
-
-
-/**
- * Override in Subclass
- * Must call [super show:] after
- * custom setup and before 
- * custom post work.
- */
--(void)show 
-{
-	[super show];
 }
 
 
@@ -171,34 +169,44 @@
 {
 	[viewImage setImage: nil];
 	[stateLabel setText: @"Leaderboards"];
-	
-	[menuVC show]; // This doesn't actually present the view as it was originally desinged to do. That is hard-coded into the xml file.
+}
+
+-(void)setSpeed:(double)speed {
+    [avgSpeedVC setSpeed:speed];
 }
 
 -(void)updateDashboardImage:(id)sender {
-	if (!dashboardView) {
-		[[NSBundle mainBundle] loadNibNamed:@"Dashboard" owner:self options:nil];
+	if (!avgSpeedVC) {
+		avgSpeedVC = [[DialWidgetViewController alloc] init];
+		//dashboardVC = [[DashboardViewController alloc] init];
+		[avgSpeedVC setSpeed:0];
+		//dashboardView = [[UI
+		//[[NSBundle mainBundle] loadNibNamed:@"Dashboard" owner:self options:nil];
 		//dashboardView = [[UIView alloc] init];
+		
 		NSLog(@"WTF view not initialized");
 	}
 	
+	/*NSLog(@"updating dash image");
+	UIView *myView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 400)];
+	myView.backgroundColor = [UIColor clearColor];
+	UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 100, 30)];
+	myLabel.text = @"Hello World";
+	myLabel.textColor = [UIColor whiteColor];
+	[myView addSubview:myLabel];				  
+	*/
+	int r = random() % 140;
+	//[avgSpeedVC setSpeed:(double)r];
+	[dashboardVC setTopText:@"Minh, Design Me!!!!"];
+	[dashboardVC setBottomText:[NSString stringWithFormat:@"%@", [NSDate date]]];
 	
-	
-	
-	NSLog(@"updating dash image");
-	//UIView *myView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 400)];
-	//myView.backgroundColor = [UIColor clearColor];
-	//UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 100, 30)];
-	//myLabel.text = @"Hello World";
-	//myLabel.textColor = [UIColor whiteColor];
-	//[myView addSubview:myLabel];				  
-	
-	UIGraphicsBeginImageContext(dashboardView.bounds.size);
-	[dashboardView.layer renderInContext:UIGraphicsGetCurrentContext()];
+	/*UIGraphicsBeginImageContext(dashboardVC.view.bounds.size);
+	[dashboardVC.view renderInContext:UIGraphicsGetCurrentContext()];
 	UIImage *dashImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
-	
-	[viewImage setImage:dashImage];
+	*/
+	[viewImage2 setImage:[avgSpeedVC imageRep] clearWhileSending:NO];
+	//[viewImage2	setImage:[dashboardVC imageRep] clearWhileSending:NO];
 }
 
 

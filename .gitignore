@@ -14,3 +14,7 @@ bunkermw
 
 *.xcworkspace
 xcuserdata
+
+#for john
+BMW_iOS/BMW_iOS-Info.plist
+.gitignore

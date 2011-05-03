@@ -105,7 +105,7 @@
 	//GL_NEAREST_MIPMAP_NEAREST
 
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, FBO_WIDTH, FBO_HEIGHT, 0, GL_RGBA, GL_UNSIGNED_BYTE, 0);
-//    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, FBO_WIDTH, FBO_HEIGHT, 0, GL_RGBA, GL_FLOAT, 0);
+//  glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, FBO_WIDTH, FBO_HEIGHT, 0, GL_RGBA, GL_FLOAT, 0);
 
 	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, positionRenderTexture, 0);
 //	NSLog(@"GL error15: %d", glGetError());
@@ -152,7 +152,7 @@
 		}
         
         glBindFramebuffer(GL_FRAMEBUFFER, viewFramebuffer);
-        
+        //glReadBuffer(viewFramebuffer);
         glViewport(0, 0, backingWidth, backingHeight);
     }
 }
@@ -169,7 +169,7 @@
 		}
         
         glBindFramebuffer(GL_FRAMEBUFFER, positionFramebuffer);
-        
+        //glReadBuffer(positionFramebuffer);
         glViewport(0, 0, FBO_WIDTH, FBO_HEIGHT);
     }
 }

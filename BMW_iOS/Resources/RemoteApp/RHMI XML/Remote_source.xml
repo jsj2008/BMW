@@ -133,6 +133,10 @@
         <id>MDL_List_Target</id>
         <numericId>28</numericId>
       </raIntModel>
+      <raImageModel>
+        <id>MDL_Image_View2</id>
+        <numericId>32</numericId>
+      </raImageModel>
     </models>
     <events>
       <actionEvent>
@@ -158,6 +162,11 @@
             <numericId>9</numericId>
             <model>MDL_Text_State</model>
           </label>
+          <image>
+            <id>IMG_View2</id>
+            <numericId>34</numericId>
+            <model>MDL_Image_View2</model>
+          </image>
         </components>
         <toolbarComponents>
           <button>
