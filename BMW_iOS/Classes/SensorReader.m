@@ -76,6 +76,11 @@ static int itemID = 0;
 //			[[StatsTracker sharedTracker] addStats:stats];
 //			[[StatsTracker sharedTracker] processStats];
 //			[stats release];
+        
+#ifdef SEND_MOTION
+        [ServerConnection sendStats:[ServerConnection motionToDict:motionData] toURL:MOTION_URL];
+#endif
+        
 	}];
 }
 
@@ -103,6 +108,9 @@ static int itemID = 0;
     
     [ad saveContext];
 #endif
+#ifdef SEND_HEADING
+    [ServerConnection sendStats:[ServerConnection headingToDict:newHeading] toURL:HEADING_URL];
+#endif
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
@@ -126,6 +134,9 @@ static int itemID = 0;
     dataReading.itemID = [NSNumber numberWithInt:itemID++];
     
     [ad saveContext];
+#endif
+#ifdef SEND_LOCATION
+    [ServerConnection sendStats:[ServerConnection locationToDict:newLocation] toURL:LOCATION_URL];
 #endif
 }
 
