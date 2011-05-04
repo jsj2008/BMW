@@ -18,7 +18,7 @@
 @synthesize currentButton;
 @synthesize destButton;
 @synthesize lookupButton;
-@synthesize viewImage, viewImage2;
+@synthesize viewImage, viewImage2, viewImage3;
 @synthesize stateLabel;
 @synthesize menuVC;
 
@@ -43,8 +43,10 @@
 		self.lookupButton = [[[IDButton alloc] initWithViewController:self	widgetID:BTN_Lookup			modelID:-1	imageModelID:-1	actionID:ACT_Lookup_Clicked targetModelID:-1] autorelease];
 		
 		self.viewImage = [[[IDImage alloc] initWithViewController:self widgetID:IMG_View modelID:MDL_Image_View] autorelease];
-		self.stateLabel = [[[IDLoadingLabel alloc] initWithViewController:self widgetID:LBL_State modelID:MDL_Text_State] autorelease];
 		self.viewImage2 = [[[IDImage alloc] initWithViewController:self widgetID:IMG_View2 modelID:MDL_Image_View2] autorelease];
+		self.viewImage3 = [[[IDImage alloc] initWithViewController:self widgetID:IMG_View3 modelID:MDL_Image_View3] autorelease];
+		
+		self.stateLabel = [[[IDLoadingLabel alloc] initWithViewController:self widgetID:LBL_State modelID:MDL_Text_State] autorelease];
 		
 		
 //		[[[IDLabel alloc] initWithViewController:self widgetID:LBL_State modelID:MDL_Text_State] autorelease];
@@ -56,6 +58,7 @@
 		[self addWidget: lookupButton];
 		[self addWidget: viewImage];
 		[self addWidget: viewImage2];
+		[self addWidget: viewImage3];
 		[self addWidget: stateLabel];
 		
 		// Sub Views
@@ -96,6 +99,7 @@
 	
 	[viewImage setPosition: CGPointMake(-50, 20)];
 	[viewImage2 setPosition:CGPointMake(150,20)];
+	[viewImage3 setPosition:CGPointMake(350, 20)];
 	[stateLabel setPosition: CGPointMake(50, 50)];
 	
 	[stateLabel setHidesWhenStopped:NO];
@@ -179,22 +183,16 @@
 	if (!avgSpeedVC) {
 		avgSpeedVC = [[DialWidgetViewController alloc] init];
         [avgSpeedVC setSpeed:0.0];
-		dashboardVC = [[DialWidgetViewController alloc] init];
-		[dashboardVC setSpeed:27.0];
-		//dashboardView = [[UI
-		//[[NSBundle mainBundle] loadNibNamed:@"Dashboard" owner:self options:nil];
-		//dashboardView = [[UIView alloc] init];
-		
 		NSLog(@"WTF view not initialized");
 	}
 	
 	if (!lightWidgetVC) {
 		lightWidgetVC = [[LightWidgetViewController alloc] init];
-		//[stopLightVC setRed:0];
-		//[stopLightVC setYellow:0];
-		//[stopLightVC setGreen:0];
 	}
-	[dashboardVC setSpeed:27.0];
+	if (!carsPassedWidgetVC) {
+		carsPassedWidgetVC = [[SplitBarWidgetViewController alloc] init];
+	}
+	
 	/*NSLog(@"updating dash image");
 	UIView *myView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 400)];
 	myView.backgroundColor = [UIColor clearColor];
@@ -208,18 +206,13 @@
 	if (r%8 == 0) [lightWidgetVC incrementYellow];
 	if (r%2 == 0) [lightWidgetVC incrementGreen];
 
-	 //[avgSpeedVC setSpeed:(double)r];
-	//[dashboardVC setTopText:@"Minh, Design Me!!!!"];
-	//[dashboardVC setBottomText:[NSString stringWithFormat:@"%@", [NSDate date]]];
+	if (r%2 == 0) {[carsPassedWidgetVC incrementTop];}
+	if (r%3 == 0) {[carsPassedWidgetVC incrementBottom];}
 	
-	/*UIGraphicsBeginImageContext(dashboardVC.view.bounds.size);
-	[dashboardVC.view renderInContext:UIGraphicsGetCurrentContext()];
-	UIImage *dashImage = UIGraphicsGetImageFromCurrentImageContext();
-	UIGraphicsEndImageContext();
-	*/
+	
 	[viewImage2 setImage:[lightWidgetVC imageRep] clearWhileSending:NO];
-	//viewImage2.transform = CGAffineTransformMakeScale(.5, .5);
     [viewImage	setImage:[avgSpeedVC imageRep] clearWhileSending:NO];
+	[viewImage3 setImage:[carsPassedWidgetVC imageRep] clearWhileSending:NO];
 }
 
 
