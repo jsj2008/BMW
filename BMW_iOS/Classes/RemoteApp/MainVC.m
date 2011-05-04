@@ -176,13 +176,13 @@
 }
 
 -(void)setSpeed:(double)speed {
-    [avgSpeedVC setSpeed:speed];
+    [avgSpeedVC setSpeed1:speed and2:27.0];
 }
 
 -(void)updateDashboardImage:(id)sender {
 	if (!avgSpeedVC) {
 		avgSpeedVC = [[DialWidgetViewController alloc] init];
-        [avgSpeedVC setSpeed:0.0];
+        [avgSpeedVC setSpeed1:0.0 and2:0.0];
 		NSLog(@"WTF view not initialized");
 	}
 	

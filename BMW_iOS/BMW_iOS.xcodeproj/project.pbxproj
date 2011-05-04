@@ -53,6 +53,7 @@
 		D437EC2D1371F27800AEA826 /* bar-red.png in Resources */ = {isa = PBXBuildFile; fileRef = D437EC291371F27800AEA826 /* bar-red.png */; };
 		D437EC2E1371F27800AEA826 /* car icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D437EC2A1371F27800AEA826 /* car icon.png */; };
 		D437EC301371F2FB00AEA826 /* widget-basic bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D437EC2F1371F2FB00AEA826 /* widget-basic bg.png */; };
+		D437ECD71372079E00AEA826 /* dial-hand2.png in Resources */ = {isa = PBXBuildFile; fileRef = D437ECD61372079E00AEA826 /* dial-hand2.png */; };
 		D43DB5B513261BFA00DCAD92 /* VelocityEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D43DB5B413261BFA00DCAD92 /* VelocityEvent.m */; };
 		D43DB61713261DE900DCAD92 /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = D43DB5CC13261DE900DCAD92 /* Connection.m */; };
 		D43DB61813261DE900DCAD92 /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D43DB5CE13261DE900DCAD92 /* ConnectionDelegate.m */; };
@@ -192,6 +193,7 @@
 		D437EC291371F27800AEA826 /* bar-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-red.png"; sourceTree = "<group>"; };
 		D437EC2A1371F27800AEA826 /* car icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "car icon.png"; sourceTree = "<group>"; };
 		D437EC2F1371F2FB00AEA826 /* widget-basic bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "widget-basic bg.png"; sourceTree = "<group>"; };
+		D437ECD61372079E00AEA826 /* dial-hand2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dial-hand2.png"; sourceTree = "<group>"; };
 		D43DB5B313261BFA00DCAD92 /* VelocityEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VelocityEvent.h; sourceTree = "<group>"; };
 		D43DB5B413261BFA00DCAD92 /* VelocityEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VelocityEvent.m; sourceTree = "<group>"; };
 		D43DB5CB13261DE900DCAD92 /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connection.h; sourceTree = "<group>"; };
@@ -764,6 +766,7 @@
 		D49C25B9134B9ACD003F493F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D437ECD61372079E00AEA826 /* dial-hand2.png */,
 				D437EC2F1371F2FB00AEA826 /* widget-basic bg.png */,
 				D437EC271371F27800AEA826 /* bar- green.png */,
 				D437EC281371F27800AEA826 /* bar-black.png */,
@@ -889,6 +892,7 @@
 				D437EC2D1371F27800AEA826 /* bar-red.png in Resources */,
 				D437EC2E1371F27800AEA826 /* car icon.png in Resources */,
 				D437EC301371F2FB00AEA826 /* widget-basic bg.png in Resources */,
+				D437ECD71372079E00AEA826 /* dial-hand2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
