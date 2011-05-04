@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WidgetViewController.h"
 
-
-@interface DialWidgetViewController : UIViewController {
+@interface DialWidgetViewController : WidgetViewController {
 	IBOutlet UILabel *label;
 	IBOutlet UIImageView *dial;
 }

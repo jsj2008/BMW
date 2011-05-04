@@ -26,35 +26,22 @@
 
 
 -(void)setSpeed:(double)mph {
-	//set degrees to lerp(30, 330, speed/140)
 	NSLog(@"setting dial to %f mph", mph);
-	dial.layer.anchorPoint = CGPointMake(0.5, 0.95);
-	//double degreesFromBottom = ((mph/140.0)*300)
+	dial.layer.anchorPoint = CGPointMake(0.5, 0.8);
 	dial.transform = CGAffineTransformMakeRotation((((mph*(90.0/50.0))+53)*(M_PI/180)) - (M_PI));
 	[label setText:[NSString stringWithFormat:@"%.1f", mph]];
 }
 
--(UIImage *)imageRep {
-    UIGraphicsBeginImageContext(self.view.frame.size);
-    
-	[self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
-	for (UIView *sub in self.view.subviews) {
-		//[sub.layer renderInContext:UIGraphicsGetCurrentContext()];
-	}
-	//[self.view.subviews
-    UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-	//UIImageView *imgView = [[UIImageView alloc] initWithFrame:rectt];
-	return viewImage;
-}
 
 
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	[self setSpeed:0.0];
+	
 }
-*/
+
 
 /*
 // Override to allow orientations other than the default portrait orientation.

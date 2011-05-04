@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WidgetViewController.h"
 
-
-@interface DashboardViewController : UIViewController {
+@interface DashboardViewController : WidgetViewController {
 	IBOutlet UILabel *topLabel;
 	IBOutlet UILabel *bottomLabel;
 }

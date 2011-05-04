@@ -95,12 +95,12 @@
 	[lookupButton	setTarget:self	selector:@selector(lookupButtonClicked:)];
 	
 	[viewImage setPosition: CGPointMake(-50, 20)];
-	[viewImage2 setPosition:CGPointMake(0,20)];
+	[viewImage2 setPosition:CGPointMake(150,20)];
 	[stateLabel setPosition: CGPointMake(50, 50)];
 	
 	[stateLabel setHidesWhenStopped:NO];
 	
-	NSTimer *tima = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(updateDashboardImage:) userInfo:nil repeats:YES];
+	NSTimer *tima = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateDashboardImage:) userInfo:nil repeats:YES];
 	
 	
 	[super rhmiDidStart];
@@ -178,8 +178,9 @@
 -(void)updateDashboardImage:(id)sender {
 	if (!avgSpeedVC) {
 		avgSpeedVC = [[DialWidgetViewController alloc] init];
-		//dashboardVC = [[DashboardViewController alloc] init];
-		[avgSpeedVC setSpeed:0];
+        [avgSpeedVC setSpeed:0.0];
+		dashboardVC = [[DialWidgetViewController alloc] init];
+		[dashboardVC setSpeed:27.0];
 		//dashboardView = [[UI
 		//[[NSBundle mainBundle] loadNibNamed:@"Dashboard" owner:self options:nil];
 		//dashboardView = [[UIView alloc] init];
@@ -187,6 +188,13 @@
 		NSLog(@"WTF view not initialized");
 	}
 	
+	if (!lightWidgetVC) {
+		lightWidgetVC = [[LightWidgetViewController alloc] init];
+		//[stopLightVC setRed:0];
+		//[stopLightVC setYellow:0];
+		//[stopLightVC setGreen:0];
+	}
+	[dashboardVC setSpeed:27.0];
 	/*NSLog(@"updating dash image");
 	UIView *myView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 400)];
 	myView.backgroundColor = [UIColor clearColor];
@@ -195,18 +203,23 @@
 	myLabel.textColor = [UIColor whiteColor];
 	[myView addSubview:myLabel];				  
 	*/
-	int r = random() % 140;
-	//[avgSpeedVC setSpeed:(double)r];
-	[dashboardVC setTopText:@"Minh, Design Me!!!!"];
-	[dashboardVC setBottomText:[NSString stringWithFormat:@"%@", [NSDate date]]];
+	int r = random() % 1111;
+	if (r%5 == 0) [lightWidgetVC incrementRed];
+	if (r%8 == 0) [lightWidgetVC incrementYellow];
+	if (r%2 == 0) [lightWidgetVC incrementGreen];
+
+	 //[avgSpeedVC setSpeed:(double)r];
+	//[dashboardVC setTopText:@"Minh, Design Me!!!!"];
+	//[dashboardVC setBottomText:[NSString stringWithFormat:@"%@", [NSDate date]]];
 	
 	/*UIGraphicsBeginImageContext(dashboardVC.view.bounds.size);
 	[dashboardVC.view renderInContext:UIGraphicsGetCurrentContext()];
 	UIImage *dashImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
 	*/
-	[viewImage2 setImage:[avgSpeedVC imageRep] clearWhileSending:NO];
-	//[viewImage2	setImage:[dashboardVC imageRep] clearWhileSending:NO];
+	[viewImage2 setImage:[lightWidgetVC imageRep] clearWhileSending:NO];
+	//viewImage2.transform = CGAffineTransformMakeScale(.5, .5);
+    [viewImage	setImage:[avgSpeedVC imageRep] clearWhileSending:NO];
 }
 
 
