@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WidgetViewController.h"
 
-
-@interface DialWidgetViewController : UIViewController {
+@interface DialWidgetViewController : WidgetViewController {
 	IBOutlet UILabel *label;
-	IBOutlet UIImageView *dial;
+	IBOutlet UIImageView *dial1, *dial2;
 }
 
--(void)setSpeed:(double)mph;
+-(void)setSpeed1:(double)mph1 and2:(double)mph2;
 
 
 

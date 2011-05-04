@@ -18,7 +18,7 @@
 @synthesize currentButton;
 @synthesize destButton;
 @synthesize lookupButton;
-@synthesize viewImage, viewImage2;
+@synthesize viewImage, viewImage2, viewImage3;
 @synthesize stateLabel;
 @synthesize menuVC;
 
@@ -43,8 +43,10 @@
 		self.lookupButton = [[[IDButton alloc] initWithViewController:self	widgetID:BTN_Lookup			modelID:-1	imageModelID:-1	actionID:ACT_Lookup_Clicked targetModelID:-1] autorelease];
 		
 		self.viewImage = [[[IDImage alloc] initWithViewController:self widgetID:IMG_View modelID:MDL_Image_View] autorelease];
-		self.stateLabel = [[[IDLoadingLabel alloc] initWithViewController:self widgetID:LBL_State modelID:MDL_Text_State] autorelease];
 		self.viewImage2 = [[[IDImage alloc] initWithViewController:self widgetID:IMG_View2 modelID:MDL_Image_View2] autorelease];
+		self.viewImage3 = [[[IDImage alloc] initWithViewController:self widgetID:IMG_View3 modelID:MDL_Image_View3] autorelease];
+		
+		self.stateLabel = [[[IDLoadingLabel alloc] initWithViewController:self widgetID:LBL_State modelID:MDL_Text_State] autorelease];
 		
 		
 //		[[[IDLabel alloc] initWithViewController:self widgetID:LBL_State modelID:MDL_Text_State] autorelease];
@@ -56,6 +58,7 @@
 		[self addWidget: lookupButton];
 		[self addWidget: viewImage];
 		[self addWidget: viewImage2];
+		[self addWidget: viewImage3];
 		[self addWidget: stateLabel];
 		
 		// Sub Views
@@ -95,12 +98,13 @@
 	[lookupButton	setTarget:self	selector:@selector(lookupButtonClicked:)];
 	
 	[viewImage setPosition: CGPointMake(-50, 20)];
-	[viewImage2 setPosition:CGPointMake(0,20)];
+	[viewImage2 setPosition:CGPointMake(150,20)];
+	[viewImage3 setPosition:CGPointMake(350, 20)];
 	[stateLabel setPosition: CGPointMake(50, 50)];
 	
 	[stateLabel setHidesWhenStopped:NO];
 	
-	NSTimer *tima = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(updateDashboardImage:) userInfo:nil repeats:YES];
+	NSTimer *tima = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateDashboardImage:) userInfo:nil repeats:YES];
 	
 	
 	[super rhmiDidStart];
@@ -172,19 +176,21 @@
 }
 
 -(void)setSpeed:(double)speed {
-    [avgSpeedVC setSpeed:speed];
+    [avgSpeedVC setSpeed1:speed and2:27.0];
 }
 
 -(void)updateDashboardImage:(id)sender {
 	if (!avgSpeedVC) {
 		avgSpeedVC = [[DialWidgetViewController alloc] init];
-		//dashboardVC = [[DashboardViewController alloc] init];
-		[avgSpeedVC setSpeed:0];
-		//dashboardView = [[UI
-		//[[NSBundle mainBundle] loadNibNamed:@"Dashboard" owner:self options:nil];
-		//dashboardView = [[UIView alloc] init];
-		
+        [avgSpeedVC setSpeed1:0.0 and2:0.0];
 		NSLog(@"WTF view not initialized");
+	}
+	
+	if (!lightWidgetVC) {
+		lightWidgetVC = [[LightWidgetViewController alloc] init];
+	}
+	if (!carsPassedWidgetVC) {
+		carsPassedWidgetVC = [[SplitBarWidgetViewController alloc] init];
 	}
 	
 	/*NSLog(@"updating dash image");
@@ -195,18 +201,18 @@
 	myLabel.textColor = [UIColor whiteColor];
 	[myView addSubview:myLabel];				  
 	*/
-	int r = random() % 140;
-	//[avgSpeedVC setSpeed:(double)r];
-	[dashboardVC setTopText:@"Minh, Design Me!!!!"];
-	[dashboardVC setBottomText:[NSString stringWithFormat:@"%@", [NSDate date]]];
+	int r = random() % 1111;
+	if (r%5 == 0) [lightWidgetVC incrementRed];
+	if (r%8 == 0) [lightWidgetVC incrementYellow];
+	if (r%2 == 0) [lightWidgetVC incrementGreen];
+
+	if (r%2 == 0) {[carsPassedWidgetVC incrementTop];}
+	if (r%3 == 0) {[carsPassedWidgetVC incrementBottom];}
 	
-	/*UIGraphicsBeginImageContext(dashboardVC.view.bounds.size);
-	[dashboardVC.view renderInContext:UIGraphicsGetCurrentContext()];
-	UIImage *dashImage = UIGraphicsGetImageFromCurrentImageContext();
-	UIGraphicsEndImageContext();
-	*/
-	[viewImage2 setImage:[avgSpeedVC imageRep] clearWhileSending:NO];
-	//[viewImage2	setImage:[dashboardVC imageRep] clearWhileSending:NO];
+	
+	[viewImage2 setImage:[lightWidgetVC imageRep] clearWhileSending:NO];
+    [viewImage	setImage:[avgSpeedVC imageRep] clearWhileSending:NO];
+	[viewImage3 setImage:[carsPassedWidgetVC imageRep] clearWhileSending:NO];
 }
 
 

@@ -137,6 +137,10 @@
         <id>MDL_Image_View2</id>
         <numericId>32</numericId>
       </raImageModel>
+      <raImageModel>
+        <id>MDL_Image_View3</id>
+        <numericId>35</numericId>
+      </raImageModel>
     </models>
     <events>
       <actionEvent>
@@ -166,6 +170,11 @@
             <id>IMG_View2</id>
             <numericId>34</numericId>
             <model>MDL_Image_View2</model>
+          </image>
+          <image>
+            <id>IMG_View3</id>
+            <numericId>36</numericId>
+            <model>MDL_Image_View3</model>
           </image>
         </components>
         <toolbarComponents>
