@@ -80,20 +80,12 @@
     {
 		controller = [[PageViewController alloc] init];
 		controller.dataURLString = [self getDataURLString:page];
+		controller.titleString = [self getLeaderboardTitle:page];
 		[controller loadDataFromURL];
 		
-		if ([stringParts count] > 0) {
-			[controller.label setText:[stringParts objectAtIndex:0]];
-			[stringParts removeObjectAtIndex:0];		
-		}
-        [viewControllers replaceObjectAtIndex:page withObject:controller];
+		[viewControllers replaceObjectAtIndex:page withObject:controller];
         [controller release];
-    } else {
-		if ([stringParts count] > 0) {
-		[controller.label setText:[stringParts objectAtIndex:0]];
-		[stringParts removeObjectAtIndex:0];		
-		}
-	}
+    }
     
     // add the controller's view to the scroll view
     if (controller.view.superview == nil)
@@ -115,11 +107,30 @@
 		case 0:
 			return @"http://bunkermw.heroku.com/mobile_gps/get_max_speed_table";
 			break;
+		case 2:
+			return @"http://bunkermw.heroku.com/mobile_gps/get_total_distance_table";
+			break;
 		default:
 			return @"http://bunkermw.heroku.com/mobile_gps/get_avg_speed_table";
 			break;
 	}
 }
+
+-(NSString *)getLeaderboardTitle:(int)page {
+	switch (page) {
+		case 0:
+			return @"Top Speed";
+			break;
+		case 2:
+			return @"Total Distance";
+			break;
+		default:
+			return @"Average Speed";
+			break;
+	}
+}
+
+
 
 - (IBAction)changePage:(id)sender
 {

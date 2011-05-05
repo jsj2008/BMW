@@ -11,7 +11,7 @@
 
 @implementation PageViewController
 
-@synthesize label, tv, dataURLString, data;	
+@synthesize titleLabel, tv, dataURLString, data,titleString;	
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -25,7 +25,14 @@
 {
     NSString *d = [NSString stringWithContentsOfURL:[NSURL URLWithString:dataURLString]];
     self.data = [d JSONValue];
+	[self.tv reloadData];
 	[self performSelector:@selector(loadDataFromURL) withObject:nil afterDelay:10];
+}
+
+-(void)viewDidLoad
+{
+	[super viewDidLoad];
+	titleLabel.text = titleString;
 }
 
 #pragma mark tableView Delegate Methods
@@ -55,7 +62,9 @@
 	if (cell == nil) {
 		cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
 	}
-	cell.textLabel.text = [self getName:[[data objectAtIndex:indexPath.row] objectForKey:@"udid"]];
+	NSNumber *payload = [[data objectAtIndex:indexPath.row] objectForKey:@"payload"];
+	//payload = [NSNumber numberWithFloat:[payload floatValue]*2.2369 ];
+	cell.textLabel.text = [NSString stringWithFormat:@"%d) %@: %f",indexPath.row+1,[self getName:[[data objectAtIndex:indexPath.row] objectForKey:@"udid"]], [payload floatValue]];
 	cell.textLabel.textColor = [UIColor whiteColor];
 		
 	// Set up the cell...

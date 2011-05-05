@@ -10,14 +10,16 @@
 
 
 @interface PageViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
-	IBOutlet UILabel *label;
+	IBOutlet UILabel *titleLabel;
 	IBOutlet UITableView *tv;
 	NSString *dataURLString;
+	NSString *titleString;
 }
 
 @property (nonatomic, retain) NSString *dataURLString;
 @property (nonatomic, retain) IBOutlet UITableView *tv;
-@property (nonatomic, retain) IBOutlet UILabel *label;
+@property (nonatomic, retain) IBOutlet UILabel *titleLabel;
+@property (nonatomic, retain) NSString *titleString;
 @property (nonatomic, retain) NSArray *data;
 
 @end
