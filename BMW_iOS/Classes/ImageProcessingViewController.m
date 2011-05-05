@@ -62,7 +62,7 @@ enum {
 	UIView *primaryView = [[UIView alloc] initWithFrame:mainScreenFrame];
 	self.view = primaryView;
 	[primaryView release];
-
+    
 	glView = [[ImageProcessingGLView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, mainScreenFrame.size.width, mainScreenFrame.size.height)];	
 	[self.view addSubview:glView];
 	[glView release];
@@ -290,7 +290,7 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
         -1.0f,  1.0f,
         1.0f,  1.0f,
     };
-
+    
 	static const GLfloat textureVertices[] = {
         1.0f, 1.0f,
         1.0f, 0.0f,
@@ -314,13 +314,13 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 	[glView setPositionThresholdFramebuffer];	
 	shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"hsi_threshold.frag.glsl"];
 	[shader setAsActive];
-	 
+    
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, videoFrameTexture);
 	
 	// Update uniform values
 	glUniform1i([shader indexForUniform:@"inputImage"], 0);
-
+    
 	// Update attribute values.
 	glVertexAttribPointer([shader indexForAttribute:@"position"], 2, GL_FLOAT, 0, 0, squareVertices);
 	glEnableVertexAttribArray([shader indexForAttribute:@"position"]);
@@ -331,7 +331,7 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 	
     
 	shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"dilation.frag.glsl"];
-
+    
 	[glView setDisplayFramebuffer];
 	[shader setAsActive];
 	
@@ -355,7 +355,7 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     
     shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"erosion.frag.glsl"];
-
+    
 	//[glView setDisplayFramebuffer];
 	[shader setAsActive];
 	
@@ -384,9 +384,9 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
     Blob* boundaries[BASE_SIZE];
 	
 	memset(boundaries,0,sizeof(boundaries));
-		
+    
     GLubyte *labels = (GLubyte *) calloc(FBO_WIDTH * FBO_HEIGHT * 4, sizeof(GLubyte));	
-
+    
 	int nBlob = [self LabelRegions:rawPositionPixels withDestination:labels Boundaries:boundaries];
     
     //Blob** trackBlobs = malloc(sizeof(Blob)*nBlob);
@@ -436,9 +436,10 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
     printf("red blobs: %d\n", redBlobs);
     
     //send stats
-    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:redBlobs],RED_LIGHT, [NSNumber numberWithInt:greenBlobs], GREEN_LIGHT, nil];
-    [ServerConnection sendStats:dictionary toURL:IMAGE_PROCESSING_URL];
-    [dictionary release];
+//    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:redBlobs],RED_LIGHT, [NSNumber numberWithInt:greenBlobs], GREEN_LIGHT, nil];
+//    NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:redBlobs],RED_LIGHT, [NSNumber numberWithInt:greenBlobs], GREEN_LIGHT, nil];
+//    [ServerConnection sendStats:dictionary toURL:IMAGE_PROCESSING_URL];
+//    [dictionary release];
     
     //draw image to iphone
     glActiveTexture(GL_TEXTURE0);
@@ -470,9 +471,9 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 
 - (void)cameraHasConnected;
 {
-//	NSLog(@"Connected to camera");
-/*	camera.videoPreviewLayer.frame = self.view.bounds;
-	[self.view.layer addSublayer:camera.videoPreviewLayer];*/
+    //	NSLog(@"Connected to camera");
+    /*	camera.videoPreviewLayer.frame = self.view.bounds;
+     [self.view.layer addSublayer:camera.videoPreviewLayer];*/
 }
 
 - (void)processNewCameraFrame:(CVImageBufferRef)cameraFrame;
@@ -492,11 +493,11 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 	
 	// Using BGRA extension to pull in video frame data directly
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, bufferWidth, bufferHeight, 0, GL_BGRA, GL_UNSIGNED_BYTE, CVPixelBufferGetBaseAddress(cameraFrame));
-
+    
 	[self drawFrame];
 	
 	glDeleteTextures(1, &videoFrameTexture);
-
+    
 	CVPixelBufferUnlockBaseAddress(cameraFrame, 0);
 }
 

@@ -30,6 +30,7 @@
             <raListModel id="21" />
             <raIntModel id="28" value="0" />
             <raImageModel id="32" />
+            <raImageModel id="35" />
         </models>
         <hmiStates>
             <toolbarHmiState id="1" text="MINI 360">
@@ -37,6 +38,7 @@
                     <image id="3" model="2" />
                     <label id="9" model="8" />
                     <image id="34" model="32" />
+                    <image id="36" model="35" />
                 </components>
                 <optionComponents>
                 </optionComponents>

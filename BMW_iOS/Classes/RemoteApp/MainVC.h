@@ -9,8 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <iDrive/iDrive.h>
 #import "MenuVC.h"
-#import "DashboardViewController.h"
+
 #import "DialWidgetViewController.h"
+#import "LightWidgetViewController.h"
+#import "SplitBarWidgetViewController.h"
 
 @interface MainVC : IDViewController {
 	
@@ -20,13 +22,14 @@
 	IDButton* destButton;
 	IDButton* lookupButton;
 	
-	IDImage* viewImage, *viewImage2;
+	IDImage* viewImage, *viewImage2, *viewImage3;
 	IDLoadingLabel* stateLabel;
 	
 	MenuVC* menuVC;
 	NSTimer *imageTimer;
 	DialWidgetViewController *avgSpeedVC;
-	DashboardViewController *dashboardVC;
+	LightWidgetViewController *lightWidgetVC;
+	SplitBarWidgetViewController *carsPassedWidgetVC;
 }
 @property(retain) IDButton* homeButton;
 @property(retain) IDButton* routeButton;
@@ -34,7 +37,7 @@
 @property(retain) IDButton* destButton;
 @property(retain) IDButton* lookupButton;
 
-@property(retain) IDImage* viewImage, *viewImage2;
+@property(retain) IDImage* viewImage, *viewImage2, *viewImage3;
 @property(retain) IDLabel* stateLabel;
 
 @property(retain) MenuVC* menuVC;

@@ -17,44 +17,36 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization.
-		dial.transform = CGAffineTransformMakeRotation(M_PI/2);
-		
-		
+		dial1.transform = CGAffineTransformMakeRotation(M_PI/2);
+		dial2.transform = CGAffineTransformMakeRotation(M_PI/2);
+
+
     }
     return self;
 }
 
 
--(void)setSpeed:(double)mph {
-	//set degrees to lerp(30, 330, speed/140)
-	NSLog(@"setting dial to %f mph", mph);
-	dial.layer.anchorPoint = CGPointMake(0.5, 0.95);
-	//double degreesFromBottom = ((mph/140.0)*300)
-	dial.transform = CGAffineTransformMakeRotation((((mph*(90.0/50.0))+53)*(M_PI/180)) - (M_PI));
-	[label setText:[NSString stringWithFormat:@"%.1f", mph]];
-}
+-(void)setSpeed1:(double)mph1 and2:(double)mph2 {
+	//NSLog(@"setting dial to %f mph", mph);
+	dial1.layer.anchorPoint = CGPointMake(0.5, 0.8);
+	dial2.layer.anchorPoint = CGPointMake(0.5, 0.8);
 
--(UIImage *)imageRep {
-    UIGraphicsBeginImageContext(self.view.frame.size);
-    
-	[self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
-	for (UIView *sub in self.view.subviews) {
-		//[sub.layer renderInContext:UIGraphicsGetCurrentContext()];
-	}
-	//[self.view.subviews
-    UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-	//UIImageView *imgView = [[UIImageView alloc] initWithFrame:rectt];
-	return viewImage;
+	dial1.transform = CGAffineTransformMakeRotation((((mph1*(90.0/50.0))+53)*(M_PI/180)) - (M_PI));
+	dial2.transform = CGAffineTransformMakeRotation((((mph2*(90.0/50.0))+53)*(M_PI/180)) - (M_PI));
+
+	//[label setText:[NSString stringWithFormat:@"%.1f", mph]];
 }
 
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	[self setSpeed1:0.0 and2:27.0];
+	
 }
-*/
+
 
 /*
 // Override to allow orientations other than the default portrait orientation.
