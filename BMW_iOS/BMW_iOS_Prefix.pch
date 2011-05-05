@@ -28,6 +28,7 @@
 //extra image processing switches
 #ifdef IMAGE_PROCESSING_VIEW
     #define USE_FRONT_CAMERA 0
+#define CIRCLE_DETECTION 1
 #endif
 
 #ifdef HMI_CONNECTION
