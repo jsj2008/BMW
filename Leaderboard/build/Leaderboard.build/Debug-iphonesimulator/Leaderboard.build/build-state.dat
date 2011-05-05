@@ -1,0 +1,495 @@
+TLeaderboard
+v7
+r0
+t326267312.890863
+cCheck dependencies
+cProcessInfoPlistFile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/Info.plist Leaderboard/Leaderboard-Info.plist
+cProcessPCH /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bbwueslgnpmhohbtrwxuznpxgopt/Leaderboard-Prefix.pch.gch Leaderboard/Leaderboard-Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/main.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/LeaderboardAppDelegate.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/LeaderboardViewController.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/NSObject+SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSObject+SBJSON.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/NSString+SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSString+SBJSON.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/SBJSON.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/PageViewController.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/Leaderboard normal i386
+cGenerateDSYMFile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app.dSYM /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/Leaderboard
+cCopyStringsFile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/en.lproj/InfoPlist.strings Leaderboard/en.lproj/InfoPlist.strings
+cCompileXIB /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/MainWindow.xib
+cCompileXIB /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/LeaderboardViewController.xib
+cCompileXIB /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.xib
+cCpResource "build/Debug-iphonesimulator/Leaderboard.app/streetlight bg.png" "streetlight bg.png"
+cTouch /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app
+
+N/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk
+c000000004C1A5F2B0000000000000132
+t1276796715
+s306
+
+N/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004BFDFE39000000000027C7D0
+t1274936889
+s2607056
+
+N/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004BFDFE7C000000000029D5D0
+t1274936956
+s2741712
+
+N/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004BFDFE6E0000000000001466
+t1274936942
+s5222
+
+N/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C0470BB00000000000009CD
+t1275359419
+s2509
+
+N/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C0471620000000001D47210
+t1275359586
+s30700048
+
+N/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/usr/include/Availability.h
+c000000004BF4CBF90000000000001A3B
+t1274334201
+s6715
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch
+c000000004DBE515A0000000000000148
+t1304318298
+s328
+i<Availability.h>
+i<UIKit/UIKit.h>
+i<Foundation/Foundation.h>
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardAppDelegate.h
+c000000004DBE515A00000000000001B4
+t1304318298
+s436
+i<UIKit/UIKit.h>
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardAppDelegate.m
+c000000004DBE515A0000000000000971
+t1304318298
+s2417
+i"LeaderboardAppDelegate.h"
+i"LeaderboardViewController.h"
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.h
+c000000004DC23AD500000000000002D7
+t1304574677
+s727
+i<UIKit/UIKit.h>
+i"PageViewController.h"
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m
+c000000004DC23AD5000000000000158E
+t1304574677
+s5518
+i"LeaderboardViewController.h"
+i"JSONFramework.h"
+i"NSString+SBJSON.h"
+i"NSObject+SBJSON.h"
+i"SBJSON.h"
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.h
+c000000004DC23608000000000000013C
+t1304573448
+s316
+i<UIKit/UIKit.h>
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m
+c000000004DC2388700000000000005B5
+t1304574087
+s1461
+i"PageViewController.h"
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.xib
+c000000004DC238180000000000004F3E
+t1304573976
+s20286
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/InfoPlist.strings
+c000000004DBE515A000000000000002D
+t1304318298
+s45
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/LeaderboardViewController.xib
+c000000004DC23AD50000000000005282
+t1304574677
+s21122
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/MainWindow.xib
+c000000004DBE515A0000000000004E49
+t1304318298
+s20041
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/JSONFramework.h
+c000000004DBE515A00000000000000D9
+t1304318298
+s217
+i"SBJSON.h"
+i"NSObject+SBJSON.h"
+i"NSString+SBJSON.h"
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSObject+SBJSON.h
+c000000004DBE515A0000000000000888
+t1304318298
+s2184
+i<Foundation/Foundation.h>
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSObject+SBJSON.m
+c000000004DBE515A0000000000000821
+t1304318298
+s2081
+i"NSObject+SBJSON.h"
+i"SBJSON.h"
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSString+SBJSON.h
+c000000004DBE515A0000000000000705
+t1304318298
+s1797
+i<Foundation/Foundation.h>
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSString+SBJSON.m
+c000000004DBE515A00000000000007DA
+t1304318298
+s2010
+i"NSString+SBJSON.h"
+i"SBJSON.h"
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/SBJSON.h
+c000000004DBE515A00000000000013CF
+t1304318298
+s5071
+i<Foundation/Foundation.h>
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/SBJSON.m
+c000000004DBE515A0000000000005A98
+t1304318298
+s23192
+i"SBJSON.h"
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/main.m
+c000000004DBE515A0000000000000168
+t1304318298
+s360
+i<UIKit/UIKit.h>
+
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app
+t1304574512
+s272
+
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app.dSYM
+t1304574512
+s102
+
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/Info.plist
+t1304570997
+s784
+
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/Leaderboard
+t1304574512
+s54640
+
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/PageViewController.nib
+t1304573994
+s1585
+
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/PkgInfo
+t1304570997
+s8
+
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/en.lproj/InfoPlist.strings
+t1304563740
+s42
+
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/en.lproj/LeaderboardViewController.nib
+t1304573230
+s1278
+
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/en.lproj/MainWindow.nib
+t1304571004
+s1131
+
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/streetlight bg.png
+t1304573359
+s25117
+
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/Leaderboard.LinkFileList
+c000000004DC22F6B00000000000003BF
+t1304571755
+s959
+
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/LeaderboardAppDelegate.o
+t1304573896
+s48076
+
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/LeaderboardViewController.o
+t1304574512
+s52744
+
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/NSObject+SBJSON.o
+t1304570999
+s8256
+
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/NSString+SBJSON.o
+t1304570999
+s8184
+
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/PageViewController.o
+t1304574121
+s36740
+
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/SBJSON.o
+t1304570999
+s54712
+
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/main.o
+t1304570999
+s6392
+
+N/Users/Rob/Desktop/BMW/Leaderboard/streetlight bg.png
+c000000004DB6C936000000000000621D
+t1303824694
+s25117
+
+N/var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bbwueslgnpmhohbtrwxuznpxgopt/Leaderboard-Prefix.pch.gch
+t1304570999
+s15277072
+
+N/var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-eylsqhrhycdwmrbatwoskrksrtjn/Leaderboard-Prefix.pch.gch
+t2
+s0
+
+NLeaderboard/Leaderboard-Info.plist
+c000000004DBE515A000000000000049A
+t1304318298
+s1178
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies326267312#326267312#0(0"0(0#1#0"8630544384#0"0#
+
+CCompileC build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/LeaderboardAppDelegate.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s326266696.668717
+e326266696.759622
+r1
+xCompileC
+xbuild/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/LeaderboardAppDelegate.o
+x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@79"Compile /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardAppDelegate.m326266696#326266696#0(0"0(0#0#71"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardAppDelegate.m8633371200#2190"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk" -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/DerivedSources/i386 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/DerivedSources -include /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bbwueslgnpmhohbtrwxuznpxgopt/Leaderboard-Prefix.pch -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardAppDelegate.m -o /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/LeaderboardAppDelegate.o0#
+
+CCompileC build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/LeaderboardAppDelegate.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardAppDelegate.m normal i386 objective-c com.apple.compilers.llvmgcc42
+r0
+
+CCompileC build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/LeaderboardViewController.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s326267312.657734
+e326267312.831065
+r1
+xCompileC
+xbuild/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/LeaderboardViewController.o
+x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@82"Compile /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m326267312#326267312#0(0"0(0#0#74"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m8629760832#2196"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk" -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/DerivedSources/i386 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/DerivedSources -include /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bbwueslgnpmhohbtrwxuznpxgopt/Leaderboard-Prefix.pch -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m -o /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/LeaderboardViewController.o0#
+
+CCompileC build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/LeaderboardViewController.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m normal i386 objective-c com.apple.compilers.llvmgcc42
+r0
+
+CCompileC build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/NSObject+SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSObject+SBJSON.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s326263799.525264
+e326263799.710455
+r1
+xCompileC
+xbuild/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/NSObject+SBJSON.o
+x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSObject+SBJSON.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@87"Compile /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSObject+SBJSON.m326263799#326263799#0(0"0(0#0#79"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSObject+SBJSON.m8621341952#2191"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk" -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/DerivedSources/i386 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/DerivedSources -include /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bbwueslgnpmhohbtrwxuznpxgopt/Leaderboard-Prefix.pch -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSObject+SBJSON.m -o /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/NSObject+SBJSON.o0#
+
+CCompileC build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/NSObject+SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSObject+SBJSON.m normal i386 objective-c com.apple.compilers.llvmgcc42
+r0
+
+CCompileC build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/NSString+SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSString+SBJSON.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s326263799.708154
+e326263799.777318
+r1
+xCompileC
+xbuild/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/NSString+SBJSON.o
+x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSString+SBJSON.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@87"Compile /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSString+SBJSON.m326263799#326263799#0(0"0(0#0#79"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSString+SBJSON.m8616205856#2191"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk" -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/DerivedSources/i386 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/DerivedSources -include /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bbwueslgnpmhohbtrwxuznpxgopt/Leaderboard-Prefix.pch -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSString+SBJSON.m -o /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/NSString+SBJSON.o0#
+
+CCompileC build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/NSString+SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSString+SBJSON.m normal i386 objective-c com.apple.compilers.llvmgcc42
+r0
+
+CCompileC build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/PageViewController.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s326266921.232376
+e326266921.371908
+r1
+xCompileC
+xbuild/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/PageViewController.o
+x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@75"Compile /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m326266921#326266921#0(0"0(0#0#67"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m8600787264#2182"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk" -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/DerivedSources/i386 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/DerivedSources -include /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bbwueslgnpmhohbtrwxuznpxgopt/Leaderboard-Prefix.pch -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m -o /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/PageViewController.o0#
+
+CCompileC build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/SBJSON.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s326263799.710584
+e326263799.878533
+r1
+xCompileC
+xbuild/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/SBJSON.o
+x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/SBJSON.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@78"Compile /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/SBJSON.m326263799#326263799#0(0"0(0#0#70"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/SBJSON.m8613680256#2173"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk" -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/DerivedSources/i386 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/DerivedSources -include /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bbwueslgnpmhohbtrwxuznpxgopt/Leaderboard-Prefix.pch -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/SBJSON.m -o /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/SBJSON.o0#
+
+CCompileC build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/SBJSON.m normal i386 objective-c com.apple.compilers.llvmgcc42
+r0
+
+CCompileC build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/main.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s326263799.520379
+e326263799.707504
+r1
+xCompileC
+xbuild/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/main.o
+x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@61"Compile /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/main.m326263799#326263799#0(0"0(0#0#53"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/main.m8619003200#2154"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk" -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/DerivedSources/i386 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/DerivedSources -include /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bbwueslgnpmhohbtrwxuznpxgopt/Leaderboard-Prefix.pch -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/main.m -o /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/main.o0#
+
+CCompileC build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/main.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/main.m normal i386 objective-c com.apple.compilers.llvmgcc42
+r0
+
+CCompileXIB /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.xib
+s326266794.034544
+e326266794.882732
+r1
+xCompileXIB
+x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.xib
+lSLF07#2@45"CompileXIB Leaderboard/PageViewController.xib326266794#326266794#0(0"0(0#0#69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.xib8629905824#805"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/usr/bin/ibtool" --errors --warnings --notices --output-format human-readable-text --compile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/PageViewController.nib /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.xib --sdk "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk"0#
+
+CCompileXIB /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/LeaderboardViewController.xib
+s326266030.503972
+e326266030.895197
+r1
+xCompileXIB
+x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/LeaderboardViewController.xib
+lSLF07#2@61"CompileXIB Leaderboard/en.lproj/LeaderboardViewController.xib326266030#326266030#0(0"0(0#0#85"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/LeaderboardViewController.xib8628781600#837"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/usr/bin/ibtool" --errors --warnings --notices --output-format human-readable-text --compile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/en.lproj/LeaderboardViewController.nib /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/LeaderboardViewController.xib --sdk "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk"0#
+
+CCompileXIB /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/MainWindow.xib
+s326263800.552349
+e326263804.734849
+r1
+xCompileXIB
+x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/MainWindow.xib
+lSLF07#2@46"CompileXIB Leaderboard/en.lproj/MainWindow.xib326263800#326263804#0(0"0(0#0#70"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/MainWindow.xib8606321152#807"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/usr/bin/ibtool" --errors --warnings --notices --output-format human-readable-text --compile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/en.lproj/MainWindow.nib /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/MainWindow.xib --sdk "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk"0#
+
+CCopyStringsFile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/en.lproj/InfoPlist.strings Leaderboard/en.lproj/InfoPlist.strings
+s326256540.179539
+e326256540.403968
+r1
+xCopyStringsFile
+x/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/en.lproj/InfoPlist.strings
+xLeaderboard/en.lproj/InfoPlist.strings
+lSLF07#2@43"Copy Leaderboard/en.lproj/InfoPlist.strings326256540#326256540#0(0"0(0#0#73"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/InfoPlist.strings8617791008#686"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv ICONV /usr/bin/iconv    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings" --validate --inputencoding utf-8 --outputencoding binary Leaderboard/en.lproj/InfoPlist.strings --outdir /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/en.lproj0#
+
+CCpResource "build/Debug-iphonesimulator/Leaderboard.app/streetlight bg.png" "streetlight bg.png"
+s326266159.515114
+e326266159.551838
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/Leaderboard.app/streetlight bg.png
+xstreetlight bg.png
+lSLF07#2@23"Copy streetlight bg.png326266159#326266159#0(0"0(0#0#53"/Users/Rob/Desktop/BMW/Leaderboard/streetlight bg.png8628652576#651"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp" -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/Rob/Desktop/BMW/Leaderboard/streetlight bg.png" /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app0#
+
+CGenerateDSYMFile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app.dSYM /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/Leaderboard
+s326267312.864169
+e326267312.885857
+r1
+xGenerateDSYMFile
+x/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app.dSYM
+x/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/Leaderboard
+lSLF07#2@121"GenerateDSYMFile build/Debug-iphonesimulator/Leaderboard.app.dSYM build/Debug-iphonesimulator/Leaderboard.app/Leaderboard326267312#326267312#0(0"0(0#0#90"/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/Leaderboard8631314304#578"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/usr/bin/dsymutil" /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/Leaderboard -o /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app.dSYM0#
+
+CLd /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/Leaderboard normal i386
+s326267312.831208
+e326267312.864064
+r1
+xLd
+x/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/Leaderboard
+xnormal
+xi386
+lSLF07#2@95"Link /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/Leaderboard326267312#326267312#0(0"0(0#0#0"8631734112#1124"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2" -arch i386 -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk" -L/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator -filelist /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/Leaderboard.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework CoreGraphics -framework Foundation -framework UIKit -prebind -o /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/Leaderboard0#
+
+CProcessInfoPlistFile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/Info.plist Leaderboard/Leaderboard-Info.plist
+s326263797.540486
+e326263797.589596
+r1
+xProcessInfoPlistFile
+x/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/Info.plist
+xLeaderboard/Leaderboard-Info.plist
+lSLF07#2@42"Process Leaderboard/Leaderboard-Info.plist326263797#326263797#0(0"0(0#0#69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Info.plist8606399200#666"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    builtin-infoPlistUtility Leaderboard/Leaderboard-Info.plist -genpkginfo /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/Info.plist0#
+
+CProcessPCH /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bbwueslgnpmhohbtrwxuznpxgopt/Leaderboard-Prefix.pch.gch Leaderboard/Leaderboard-Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s326263797.589728
+e326263799.520192
+r1
+xProcessPCH
+x/var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bbwueslgnpmhohbtrwxuznpxgopt/Leaderboard-Prefix.pch.gch
+xLeaderboard/Leaderboard-Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@45"Precompile Leaderboard/Leaderboard-Prefix.pch326263797#326263799#0(0"0(0#0#69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch8601413888#2046"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2" -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk" -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/DerivedSources/i386 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/DerivedSources -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch -o /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bbwueslgnpmhohbtrwxuznpxgopt/Leaderboard-Prefix.pch.gch0#
+
+CProcessPCH /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-eylsqhrhycdwmrbatwoskrksrtjn/Leaderboard-Prefix.pch.gch Leaderboard/Leaderboard-Prefix.pch normal i386 objective-c com.apple.compilers.llvmgcc42
+s326256539.963927
+e326256540.179428
+r0
+xProcessPCH
+x/var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-eylsqhrhycdwmrbatwoskrksrtjn/Leaderboard-Prefix.pch.gch
+xLeaderboard/Leaderboard-Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+oi686-apple-darwin10-llvm-gcc-4.2: SDK: No such file or directory
+oi686-apple-darwin10-llvm-gcc-4.2: 4: No such file or directory
+oi686-apple-darwin10-llvm-gcc-4.2: beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk: No such file or directory
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:5:25: error: Availability.h: No such file or directory
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:8:2: warning: #warning "This project uses features only available in iPhone SDK 3.0 and later."
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:12:28: error: UIKit/UIKit.h: No such file or directory
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:13:38: error: Foundation/Foundation.h: No such file or directory
+lSLF07#2@45"Precompile Leaderboard/Leaderboard-Prefix.pch326256539#326256540#0(818"i686-apple-darwin10-llvm-gcc-4.2: SDK: No such file or directoryi686-apple-darwin10-llvm-gcc-4.2: 4: No such file or directoryi686-apple-darwin10-llvm-gcc-4.2: beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk: No such file or directory/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:5:25: error: Availability.h: No such file or directory/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:8:2: warning: #warning "This project uses features only available in iPhone SDK 3.0 and later."/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:12:28: error: UIKit/UIKit.h: No such file or directory/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:13:38: error: Foundation/Foundation.h: No such file or directory4(4@41"Availability.h: No such file or directory326256540#267#125#0(6@69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch326011098#5#0#5#0#28"*: No such file or directory0(22@81"#warning "This project uses features only available in iPhone SDK 3.0 and later."326256540#392#166#0(6@69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch326011098#8#0#8#0#12"#warning "*"0(4@40"UIKit/UIKit.h: No such file or directory326256540#558#125#0(6@69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch326011098#12#0#12#0#28"*: No such file or directory0(4@50"Foundation/Foundation.h: No such file or directory326256540#683#135#0(6@69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch326011098#13#0#13#0#28"*: No such file or directory0(0#0#69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch8617338048#2163"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2" -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk" -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/DerivedSources/i386 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/DerivedSources -isysroot /Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch -o /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-eylsqhrhycdwmrbatwoskrksrtjn/Leaderboard-Prefix.pch.gch1#
+
+CTouch /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app
+s326267312.886478
+e326267312.890798
+r1
+xTouch
+x/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app
+lSLF07#2@84"Touch /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app326267312#326267312#0(0"0(0#0#0"8631160000#449"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /usr/bin/touch -c /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app0#
+

@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B90C31F1366846400DC25D7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B90C31E1366846400DC25D7 /* UIKit.framework */; };
-		7B90C3211366846400DC25D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B90C3201366846400DC25D7 /* Foundation.framework */; };
-		7B90C3231366846400DC25D7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B90C3221366846400DC25D7 /* CoreGraphics.framework */; };
 		7B90C3291366846400DC25D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B90C3271366846400DC25D7 /* InfoPlist.strings */; };
 		7B90C32C1366846400DC25D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C32B1366846400DC25D7 /* main.m */; };
 		7B90C32F1366846400DC25D7 /* LeaderboardAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C32E1366846400DC25D7 /* LeaderboardAppDelegate.m */; };
@@ -19,13 +16,16 @@
 		7B90C36C136788EB00DC25D7 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C367136788EA00DC25D7 /* NSObject+SBJSON.m */; };
 		7B90C36D136788EB00DC25D7 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C369136788EA00DC25D7 /* NSString+SBJSON.m */; };
 		7B90C36E136788EB00DC25D7 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C36B136788EA00DC25D7 /* SBJSON.m */; };
+		D40A9870137247CE00335D1E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40A986F137247CE00335D1E /* CoreGraphics.framework */; };
+		D40A9872137247CF00335D1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40A9871137247CF00335D1E /* Foundation.framework */; };
+		D40A9874137247CF00335D1E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40A9873137247CF00335D1E /* UIKit.framework */; };
+		D40A99741372669C00335D1E /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40A99721372669C00335D1E /* PageViewController.m */; };
+		D40A99751372669C00335D1E /* PageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40A99731372669C00335D1E /* PageViewController.xib */; };
+		D40A9A0913726CFE00335D1E /* streetlight bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D40A9A0813726CFE00335D1E /* streetlight bg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7B90C31A1366846400DC25D7 /* Leaderboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leaderboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B90C31E1366846400DC25D7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		7B90C3201366846400DC25D7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		7B90C3221366846400DC25D7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		7B90C3261366846400DC25D7 /* Leaderboard-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Leaderboard-Info.plist"; sourceTree = "<group>"; };
 		7B90C3281366846400DC25D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7B90C32A1366846400DC25D7 /* Leaderboard-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Leaderboard-Prefix.pch"; sourceTree = "<group>"; };
@@ -43,6 +43,13 @@
 		7B90C369136788EA00DC25D7 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
 		7B90C36A136788EA00DC25D7 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
 		7B90C36B136788EA00DC25D7 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		D40A986F137247CE00335D1E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D40A9871137247CF00335D1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D40A9873137247CF00335D1E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D40A99711372669C00335D1E /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
+		D40A99721372669C00335D1E /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
+		D40A99731372669C00335D1E /* PageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageViewController.xib; sourceTree = "<group>"; };
+		D40A9A0813726CFE00335D1E /* streetlight bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "streetlight bg.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,9 +57,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B90C31F1366846400DC25D7 /* UIKit.framework in Frameworks */,
-				7B90C3211366846400DC25D7 /* Foundation.framework in Frameworks */,
-				7B90C3231366846400DC25D7 /* CoreGraphics.framework in Frameworks */,
+				D40A9870137247CE00335D1E /* CoreGraphics.framework in Frameworks */,
+				D40A9872137247CF00335D1E /* Foundation.framework in Frameworks */,
+				D40A9874137247CF00335D1E /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +69,7 @@
 		7B90C30F1366846400DC25D7 = {
 			isa = PBXGroup;
 			children = (
+				D40A9A0813726CFE00335D1E /* streetlight bg.png */,
 				7B90C3241366846400DC25D7 /* Leaderboard */,
 				7B90C31D1366846400DC25D7 /* Frameworks */,
 				7B90C31B1366846400DC25D7 /* Products */,
@@ -79,9 +87,9 @@
 		7B90C31D1366846400DC25D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7B90C31E1366846400DC25D7 /* UIKit.framework */,
-				7B90C3201366846400DC25D7 /* Foundation.framework */,
-				7B90C3221366846400DC25D7 /* CoreGraphics.framework */,
+				D40A986F137247CE00335D1E /* CoreGraphics.framework */,
+				D40A9871137247CF00335D1E /* Foundation.framework */,
+				D40A9873137247CF00335D1E /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -96,6 +104,9 @@
 				7B90C3341366846500DC25D7 /* LeaderboardViewController.m */,
 				7B90C3361366846500DC25D7 /* LeaderboardViewController.xib */,
 				7B90C3251366846400DC25D7 /* Supporting Files */,
+				D40A99711372669C00335D1E /* PageViewController.h */,
+				D40A99721372669C00335D1E /* PageViewController.m */,
+				D40A99731372669C00335D1E /* PageViewController.xib */,
 			);
 			path = Leaderboard;
 			sourceTree = "<group>";
@@ -153,7 +164,6 @@
 			isa = PBXProject;
 			buildConfigurationList = 7B90C3141366846400DC25D7 /* Build configuration list for PBXProject "Leaderboard" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -176,6 +186,8 @@
 				7B90C3291366846400DC25D7 /* InfoPlist.strings in Resources */,
 				7B90C3321366846500DC25D7 /* MainWindow.xib in Resources */,
 				7B90C3381366846500DC25D7 /* LeaderboardViewController.xib in Resources */,
+				D40A99751372669C00335D1E /* PageViewController.xib in Resources */,
+				D40A9A0913726CFE00335D1E /* streetlight bg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +204,7 @@
 				7B90C36C136788EB00DC25D7 /* NSObject+SBJSON.m in Sources */,
 				7B90C36D136788EB00DC25D7 /* NSString+SBJSON.m in Sources */,
 				7B90C36E136788EB00DC25D7 /* SBJSON.m in Sources */,
+				D40A99741372669C00335D1E /* PageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,11 +247,11 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				SDKROOT = iphoneos;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
 		};

@@ -19,8 +19,6 @@
         // Custom initialization.
 		dial1.transform = CGAffineTransformMakeRotation(M_PI/2);
 		dial2.transform = CGAffineTransformMakeRotation(M_PI/2);
-
-
     }
     return self;
 }
