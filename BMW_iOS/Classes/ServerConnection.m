@@ -8,8 +8,43 @@
 
 #import "ServerConnection.h"
 #include "JSONSerializableSupport.h"
+#include "SBJSON.h"
 
 @implementation ServerConnection
+
++(NSArray *)maxSpeedTable
+{
+    return [ServerConnection getJSONFromURL:[NSURL URLWithString:@"http://bunkermw.heroku.com/mobile_gps/get_max_speed_table"]];
+}
+
++(NSArray *)maxSpeedRank
+{
+    NSString * udid = [[UIDevice currentDevice] uniqueIdentifier];
+    NSString *url =[NSString stringWithFormat:@"http://bunkermw.heroku.com/mobile_gps/get_user_rank_in_max_speed?udid=%@",udid];
+    return [ServerConnection getJSONFromURL:[NSURL URLWithString:url]];
+}
+
++(NSArray *)avgSpeedTable
+{
+    return [ServerConnection getJSONFromURL:[NSURL URLWithString:@"http://bunkermw.heroku.com/mobile_gps/get_avg_speed_table"]];
+}
+
++(NSArray *)avgSpeedRank
+{
+    NSString * udid = [[UIDevice currentDevice] uniqueIdentifier];
+    NSString *url =[NSString stringWithFormat:@"http://bunkermw.heroku.com/mobile_gps/get_user_rank_in_avg_speed?udid=%@",udid];
+    return [ServerConnection getJSONFromURL:[NSURL URLWithString:url]];
+}
+
++(NSArray *)totalDistanceTable
+{
+    return [ServerConnection getJSONFromURL:[NSURL URLWithString:@"http://bunkermw.heroku.com/mobile_gps/get_total_distance_table"]];
+}
+
++(NSArray *)getJSONFromURL:(NSURL *)url
+{
+    return [[NSString stringWithContentsOfURL:url] JSONValue];
+}
 
 +(NSMutableDictionary *)headingToDict:(CLHeading *)heading
 {
@@ -35,7 +70,7 @@
     [stats setObject:[NSNumber numberWithDouble:location.course] forKey:@"course"];
     [stats setObject:[NSNumber numberWithDouble:location.horizontalAccuracy] forKey:@"horz_acc"];
     [stats setObject:[NSNumber numberWithDouble:location.verticalAccuracy] forKey:@"vert_acc"];
-    [stats setObject:[NSNumber numberWithDouble:location.speed] forKey:@"speed"];
+    [stats setObject:[NSNumber numberWithDouble:/*location.speed*/37.8767] forKey:@"speed"];
     
     return stats;
 }
