@@ -24,6 +24,8 @@
 		D40A9A0913726CFE00335D1E /* streetlight bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D40A9A0813726CFE00335D1E /* streetlight bg.png */; };
 		D4AB317113734E75002B7AF2 /* leaderboard-card_01.png in Resources */ = {isa = PBXBuildFile; fileRef = D4AB316F13734E75002B7AF2 /* leaderboard-card_01.png */; };
 		D4AB317213734E75002B7AF2 /* leaderboard-card_01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4AB317013734E75002B7AF2 /* leaderboard-card_01@2x.png */; };
+		D4AB32B5137362C7002B7AF2 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = D4AB32B3137362C7002B7AF2 /* background.png */; };
+		D4AB32B6137362C7002B7AF2 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4AB32B4137362C7002B7AF2 /* background@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		D40A9A0813726CFE00335D1E /* streetlight bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "streetlight bg.png"; sourceTree = "<group>"; };
 		D4AB316F13734E75002B7AF2 /* leaderboard-card_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaderboard-card_01.png"; sourceTree = "<group>"; };
 		D4AB317013734E75002B7AF2 /* leaderboard-card_01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaderboard-card_01@2x.png"; sourceTree = "<group>"; };
+		D4AB32B3137362C7002B7AF2 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		D4AB32B4137362C7002B7AF2 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 		7B90C30F1366846400DC25D7 = {
 			isa = PBXGroup;
 			children = (
+				D4AB32B3137362C7002B7AF2 /* background.png */,
+				D4AB32B4137362C7002B7AF2 /* background@2x.png */,
 				D4AB316F13734E75002B7AF2 /* leaderboard-card_01.png */,
 				D4AB317013734E75002B7AF2 /* leaderboard-card_01@2x.png */,
 				D40A9A0813726CFE00335D1E /* streetlight bg.png */,
@@ -196,6 +202,8 @@
 				D40A9A0913726CFE00335D1E /* streetlight bg.png in Resources */,
 				D4AB317113734E75002B7AF2 /* leaderboard-card_01.png in Resources */,
 				D4AB317213734E75002B7AF2 /* leaderboard-card_01@2x.png in Resources */,
+				D4AB32B5137362C7002B7AF2 /* background.png in Resources */,
+				D4AB32B6137362C7002B7AF2 /* background@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

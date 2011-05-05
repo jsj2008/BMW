@@ -77,7 +77,7 @@
 		return @"Rob B";
 	if([udid compare:@"76fe9b1185d4350bcd400d4268ea71b39c31b26c"]==0)
 		return @"Aaron S";
-	return [udid substringToIndex:5];
+	return @"John J";
 }
 
 - (void)tableView: (UITableView*)tableView 
