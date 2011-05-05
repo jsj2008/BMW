@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <iDrive/iDrive.h>
+#import "ServerConnection.h"
 
 @interface MenuVC : IDViewController {
 	IDTable* list;

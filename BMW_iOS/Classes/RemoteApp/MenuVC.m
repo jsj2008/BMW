@@ -76,7 +76,7 @@
 
 -(void)didBecomeVisible:(BOOL)visible
 {
-	
+	[self populateList];
 }
 
 
@@ -92,6 +92,8 @@
 
 -(void)populateList
 {
+	
+	
 	int rows = 10;
 	
 	// Fill HMI Table
