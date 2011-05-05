@@ -419,7 +419,7 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
     
 	int nBlob = [self LabelRegions:rawPositionPixels withDestination:labels Boundaries:boundaries];
     
-    //Blob** trackBlobs = malloc(sizeof(Blob)*nBlob);
+    //Blob** trackBlobs = malloc(sizeof(Blob *)*nBlob);
     int blobIndex = 0;
     int greenBlobs = 0;
     int redBlobs = 0;
@@ -450,9 +450,12 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 		ur.x += 2.0;//*(ur.x - ll.x);
 		ur.y += 2.0;//*(ur.y - ll.y);
 		bool fillBlack = false;
-		if (!circleTest(blob)) {
-			//fillBlack = true;
-		}
+#if CIRCLE_DETECTION
+		if (!circleTest(blob)) fillBlack = true;
+#endif
+#if BLOB_PIXEL_COUNT
+        if (blob->numPoints < 10) fillBlack = true;
+#endif
 		drawRectangle(rawPositionPixels, ll, ur, fillBlack);
         if (!fillBlack) {
             //trackBlobs[blobIndex] = blob;
@@ -463,7 +466,7 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
         }
 	}
     
-//    printf("red blobs: %d\n", redBlobs);
+    printf("red blobs: %d\n", redBlobs);
     
     //send stats
 #ifdef SEND_LIGHTS
@@ -475,7 +478,9 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
     glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
     
-    glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, FBO_WIDTH, FBO_HEIGHT, GL_RGBA, GL_UNSIGNED_BYTE, rawPositionPixels);    
+    //glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, FBO_WIDTH, FBO_HEIGHT, GL_RGBA, GL_UNSIGNED_BYTE, rawPositionPixels);    
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, FBO_WIDTH, FBO_HEIGHT, 0, GL_RGBA, GL_UNSIGNED_BYTE, rawPositionPixels);
+
     
     shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"DirectDisplayShader.fsh"];
     
@@ -539,31 +544,3 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 @end
 
 #endif
-
-
-//2
-//multiple passes	
-//	[glView setPositionThresholdFramebuffer];
-//	[shader setAsActive];
-//	
-//	glUniform1i([shader indexForUniform:@"videoFrame"], 0);
-//	glUniform1f([shader indexForUniform:@"phase"], transY);
-//	
-//	glActiveTexture(GL_TEXTURE0);
-//	glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
-//	glVertexAttribPointer(ATTRIB_VERTEX, 2, GL_FLOAT, 0, 0, squareVertices);
-//	glEnableVertexAttribArray(ATTRIB_VERTEX);
-//	glVertexAttribPointer(ATTRIB_TEXTUREPOSITON, 2, GL_FLOAT, 0, 0, passthroughTextureVertices);
-//	glEnableVertexAttribArray(ATTRIB_TEXTUREPOSITON);
-//	
-//	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-//	
-//1
-/*
- glUniform1f([shader indexForUniform:@"anchorWidth"], 13.0);
- glUniform1f([shader indexForUniform:@"elementWidth"], 13.0);
- glUniform1f([shader indexForUniform:@"anchorHeight"], 7.0);
- glUniform1f([shader indexForUniform:@"elementHeight"], 7.0);
- glUniform2f([shader indexForUniform:@"pixelSize"], 1.0/FBO_HEIGHT,1.0/FBO_WIDTH);
- glUniform1i([shader indexForUniform:@"erosion"], 0);
- */

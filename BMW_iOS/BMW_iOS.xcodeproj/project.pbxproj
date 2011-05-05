@@ -1033,7 +1033,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: John Jessen (2RWKPK3C6E)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: John Jessen (2RWKPK3C6E)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = "CL_DEBUG=1";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1041,6 +1042,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "";
 				PREBINDING = NO;
+				PROVISIONING_PROFILE = "DC9A566D-71A3-4F5D-A6FC-8A75EC1A1308";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DC9A566D-71A3-4F5D-A6FC-8A75EC1A1308";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1049,7 +1052,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: John Jessen (2RWKPK3C6E)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: John Jessen (2RWKPK3C6E)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -1059,6 +1063,8 @@
 					"-DNS_BLOCK_ASSERTIONS=1",
 				);
 				PREBINDING = NO;
+				PROVISIONING_PROFILE = "DC9A566D-71A3-4F5D-A6FC-8A75EC1A1308";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DC9A566D-71A3-4F5D-A6FC-8A75EC1A1308";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
