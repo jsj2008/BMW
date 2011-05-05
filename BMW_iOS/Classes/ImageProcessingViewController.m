@@ -77,11 +77,6 @@ enum {
 
     
 #ifdef SENSOR_READER    
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    [locationManager startUpdatingLocation];
-    [locationManager startUpdatingHeading];
-    
     motionManager = [[CMMotionManager alloc] init];
     motionManager.deviceMotionUpdateInterval = UPDATE_INTERVAL;
     [motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue]
@@ -91,6 +86,15 @@ enum {
          [ServerConnection sendStats:[ServerConnection motionToDict:motionData] toURL:MOTION_URL];
 #endif
      }];
+    
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+#ifdef SEND_HEADING
+    [locationManager startUpdatingHeading];
+#endif
+#ifdef SEND_LOCATION
+    [locationManager startUpdatingLocation];
+#endif
 #endif
 }
 
