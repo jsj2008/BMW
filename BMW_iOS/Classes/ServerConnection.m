@@ -70,7 +70,7 @@
     [stats setObject:[NSNumber numberWithDouble:location.course] forKey:@"course"];
     [stats setObject:[NSNumber numberWithDouble:location.horizontalAccuracy] forKey:@"horz_acc"];
     [stats setObject:[NSNumber numberWithDouble:location.verticalAccuracy] forKey:@"vert_acc"];
-    [stats setObject:[NSNumber numberWithDouble:/*location.speed*/37.8767] forKey:@"speed"];
+    [stats setObject:[NSNumber numberWithDouble:location.speed] forKey:@"speed"];
     
     return stats;
 }
