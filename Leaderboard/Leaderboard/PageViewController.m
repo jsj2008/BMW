@@ -11,7 +11,7 @@
 
 @implementation PageViewController
 
-@synthesize label;	
+@synthesize label, tv, dataURLString, data;	
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -21,6 +21,66 @@
     return self;
 }
 
+-(void)loadDataFromURL
+{
+    NSString *d = [NSString stringWithContentsOfURL:[NSURL URLWithString:dataURLString]];
+    self.data = [d JSONValue];
+	[self performSelector:@selector(loadDataFromURL) withObject:nil afterDelay:10];
+}
+
+#pragma mark tableView Delegate Methods
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return 35.0;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+	return 1;
+}
+
+// Customize the number of rows in the table view.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	return [data count];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+	[cell setSelected:NO];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	static NSString *CellIdentifier = @"Cell";
+	
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	if (cell == nil) {
+		cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+	}
+	cell.textLabel.text = [self getName:[[data objectAtIndex:indexPath.row] objectForKey:@"udid"]];
+	cell.textLabel.textColor = [UIColor whiteColor];
+		
+	// Set up the cell...
+	return cell;
+}
+
+-(NSString *)getName:(NSString *)udid
+{
+	if([udid compare:@"2d5a4b892d6c8237dcbc9e313d98dde8fc816dec"]==0)
+		return @"Rob B";
+	if([udid compare:@"76fe9b1185d4350bcd400d4268ea71b39c31b26c"]==0)
+		return @"Aaron S";
+	return [udid substringToIndex:5];
+}
+
+- (void)tableView: (UITableView*)tableView 
+  willDisplayCell: (UITableViewCell*)cell 
+forRowAtIndexPath: (NSIndexPath*)indexPath
+{
+    cell.backgroundColor = indexPath.row % 2 
+	? [UIColor colorWithRed:(38.0/255.0) green:(53.0/255.0) blue:(69.0/255.0) alpha:1.0]
+	: [UIColor colorWithRed:(18.0/255.0) green:(27.0/255.0) blue:(39.0/255.0) alpha:1.0];
+    cell.textLabel.backgroundColor = [UIColor clearColor];
+    cell.detailTextLabel.backgroundColor = [UIColor clearColor];
+}
 
 /*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.

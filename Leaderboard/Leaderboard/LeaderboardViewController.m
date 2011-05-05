@@ -79,6 +79,9 @@
     if ((NSNull *)controller == [NSNull null])
     {
 		controller = [[PageViewController alloc] init];
+		controller.dataURLString = [self getDataURLString:page];
+		[controller loadDataFromURL];
+		
 		if ([stringParts count] > 0) {
 			[controller.label setText:[stringParts objectAtIndex:0]];
 			[stringParts removeObjectAtIndex:0];		
@@ -105,6 +108,17 @@
         //controller.numberImage.image = [UIImage imageNamed:[numberItem valueForKey:ImageKey]];
         //controller.numberTitle.text = [numberItem valueForKey:NameKey];
     }
+}
+
+-(NSString *)getDataURLString:(int)page {
+	switch (page) {
+		case 0:
+			return @"http://bunkermw.heroku.com/mobile_gps/get_max_speed_table";
+			break;
+		default:
+			return @"http://bunkermw.heroku.com/mobile_gps/get_avg_speed_table";
+			break;
+	}
 }
 
 - (IBAction)changePage:(id)sender
