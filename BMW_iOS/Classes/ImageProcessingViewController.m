@@ -67,7 +67,7 @@ enum {
 	[self.view addSubview:glView];
 	[glView release];
 	
-	[ShaderProgram enableDebugging:YES];
+	[ShaderProgram enableDebugging:NO];
 	
 	camera = [[CaptureSessionManager alloc] init];
 	camera.delegate = self;
@@ -433,13 +433,13 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
         }
 	}
     
-    printf("red blobs: %d\n", redBlobs);
+//    printf("red blobs: %d\n", redBlobs);
     
     //send stats
-//    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:redBlobs],RED_LIGHT, [NSNumber numberWithInt:greenBlobs], GREEN_LIGHT, nil];
-//    NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:redBlobs],RED_LIGHT, [NSNumber numberWithInt:greenBlobs], GREEN_LIGHT, nil];
-//    [ServerConnection sendStats:dictionary toURL:IMAGE_PROCESSING_URL];
-//    [dictionary release];
+#ifdef SEND_LIGHTS
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:redBlobs],RED_LIGHT, [NSNumber numberWithInt:greenBlobs], GREEN_LIGHT, nil];
+    [ServerConnection sendStats:dictionary toURL:IMAGE_PROCESSING_URL];
+#endif
     
     //draw image to iphone
     glActiveTexture(GL_TEXTURE0);

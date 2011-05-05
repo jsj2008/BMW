@@ -55,7 +55,10 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 	[self.window addSubview:mapVC.view];
 #endif
     [self.window makeKeyAndVisible];
-	
+    
+#if IMAGE_PROCESSING_VIEW && HIDE_IMAGE_PROCESSING_VIEW
+	[viewController.view removeFromSuperview];
+#endif
 	self.bmwAppController = [[[RemoteAppController alloc] init] autorelease];
 #if TARGET_IPHONE_SIMULATOR && HMI_CONNECTION
 	[bmwAppController accessoryDidStart:nil]; // fake it

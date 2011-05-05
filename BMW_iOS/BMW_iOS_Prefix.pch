@@ -12,22 +12,24 @@
 
 //types of builds
 //#define MAP_VIEW 1
-#define IMAGE_PROCESSING_VIEW 1
+//#define IMAGE_PROCESSING_VIEW 1
 //#define EXTERNAL_APP_VIEW 1
 //#define STATS_OVERLAY 1
-#define HMI_CONNECTION 1
-//#define SENSOR_READER 1
+//#define HMI_CONNECTION 1
+#define SENSOR_READER 1
 //#define LOCAL_DB 1 //should be done with this in current incarnation
 
 //Server Send
-#define SEND_MOTION 1
+//#define SEND_MOTION 1
 #define SEND_LOCATION 1
-#define SEND_HEADING 1
+//#define SEND_HEADING 1
+//#define SEND_LIGHTS 1
 //#define POST_DATA 1
 
 //extra image processing switches
 #ifdef IMAGE_PROCESSING_VIEW
     #define USE_FRONT_CAMERA 0
+    #define HIDE_IMAGE_PROCESSING_VIEW 1
 #endif
 
 #ifdef HMI_CONNECTION

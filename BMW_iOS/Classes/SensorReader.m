@@ -78,7 +78,6 @@ static int itemID = 0;
 #ifdef SEND_MOTION
         [ServerConnection sendStats:[ServerConnection motionToDict:motionData] toURL:MOTION_URL];
 #endif
-        
 	}];
 }
 
