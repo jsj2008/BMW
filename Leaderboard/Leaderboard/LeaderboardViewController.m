@@ -12,7 +12,7 @@
 #include "NSObject+SBJSON.h"
 #include "SBJSON.h"
 
-#define kNumberOfPages 4
+#define kNumberOfPages 3
 
 
 
