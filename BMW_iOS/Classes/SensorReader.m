@@ -10,12 +10,10 @@
 #import "StatsTracker.h"
 #include "ServerConnection.h"
 #include "DataReading.h"
-
-#define UPDATE_INTERVAL 1.0f/2.0f;
-#define METERS_SEC_MILES_HOUR_CONVERSION 2.2369
-
-//@class BMW_iOSAppDelegate;
 #include "BMW_iOSAppDelegate.h"
+
+#define UPDATE_INTERVAL 5.0f/2.0f;
+#define METERS_SEC_MILES_HOUR_CONVERSION 2.2369
 
 @implementation SensorReader
 
@@ -80,7 +78,6 @@ static int itemID = 0;
 #ifdef SEND_MOTION
         [ServerConnection sendStats:[ServerConnection motionToDict:motionData] toURL:MOTION_URL];
 #endif
-        
 	}];
 }
 
@@ -109,7 +106,7 @@ static int itemID = 0;
     [ad saveContext];
 #endif
 #ifdef SEND_HEADING
-    [ServerConnection sendStats:[ServerConnection headingToDict:newHeading] toURL:HEADING_URL];
+    //[ServerConnection sendStats:[ServerConnection headingToDict:newHeading] toURL:HEADING_URL];
 #endif
 }
 
@@ -137,6 +134,10 @@ static int itemID = 0;
 #endif
 #ifdef SEND_LOCATION
     [ServerConnection sendStats:[ServerConnection locationToDict:newLocation] toURL:LOCATION_URL];
+#endif
+#ifdef SEND_HEADING
+    if(manager.heading!=nil)
+        [ServerConnection sendStats:[ServerConnection headingToDict:manager.heading] toURL:HEADING_URL];
 #endif
 }
 

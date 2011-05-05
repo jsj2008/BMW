@@ -89,7 +89,7 @@
     NSString *data=[[[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding] autorelease];
 #endif
     
-//    NSLog(@"prev stats:%@",[stats JSONRepresentation]);
+    NSLog(@"prev stats:%@",data);//[stats JSONRepresentation]);
 }
 
 @end

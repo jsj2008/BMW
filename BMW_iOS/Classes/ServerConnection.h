@@ -13,7 +13,7 @@
 #define HEADING_URL @"http://bunkermw.heroku.com/mobile_headings/create"
 #define LOCATION_URL @"http://bunkermw.heroku.com/mobile_gps/create"
 #define MOTION_URL @"http://bunkermw.heroku.com/mobile_motions/create"
-#define IMAGE_PROCESSING_URL @""
+#define IMAGE_PROCESSING_URL @"http://bunkermw.heroku.com/mobile_lights/create"
 
 //returns array of dicts
 //http://bunkermw.heroku.com/mobile_gps/get_avg_speed_table
