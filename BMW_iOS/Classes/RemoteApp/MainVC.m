@@ -9,6 +9,7 @@
 #import "MainVC.h"
 #import "RemoteAppIDs.h"
 #import "BMW_iOSAppDelegate.h"
+#include <stdlib.h>
 
 
 @implementation MainVC
@@ -170,10 +171,15 @@
 	[stateLabel setText: @"Leaderboards"];
 }
 
+-(void)setSpeed:(double)speed {
+    [avgSpeedVC setSpeed:speed];
+}
+
 -(void)updateDashboardImage:(id)sender {
-	if (!dashboardVC) {
-		dashboardVC = [[DashboardViewController alloc] init];
-		[dashboardVC setBottomText:@"HELLO WORLD"];
+	if (!avgSpeedVC) {
+		avgSpeedVC = [[DialWidgetViewController alloc] init];
+		//dashboardVC = [[DashboardViewController alloc] init];
+		[avgSpeedVC setSpeed:0];
 		//dashboardView = [[UI
 		//[[NSBundle mainBundle] loadNibNamed:@"Dashboard" owner:self options:nil];
 		//dashboardView = [[UIView alloc] init];
@@ -189,7 +195,8 @@
 	myLabel.textColor = [UIColor whiteColor];
 	[myView addSubview:myLabel];				  
 	*/
-	
+	int r = random() % 140;
+	//[avgSpeedVC setSpeed:(double)r];
 	[dashboardVC setTopText:@"Minh, Design Me!!!!"];
 	[dashboardVC setBottomText:[NSString stringWithFormat:@"%@", [NSDate date]]];
 	
@@ -198,8 +205,8 @@
 	UIImage *dashImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
 	*/
-	[viewImage setImage:[dashboardVC imageRep] clearWhileSending:NO];
-	[viewImage2	setImage:[UIImage imageNamed:@"DrivingProfile.png"] clearWhileSending:NO];
+	[viewImage2 setImage:[avgSpeedVC imageRep] clearWhileSending:NO];
+	//[viewImage2	setImage:[dashboardVC imageRep] clearWhileSending:NO];
 }
 
 

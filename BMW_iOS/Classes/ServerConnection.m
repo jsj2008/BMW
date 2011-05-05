@@ -68,7 +68,7 @@
 +(void)sendStats:(NSMutableDictionary *)stats toURL:(NSString *)url
 {
     //Will start an array with this and then send the queue
-//    [stats setObject:[NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]] forKey:@"iphone_time"];
+    [stats setObject:[NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]] forKey:@"iphone_time"];
     [stats setObject:[[UIDevice currentDevice] uniqueIdentifier] forKey:@"udid"];
     
     NSMutableURLRequest *req = [[[NSMutableURLRequest alloc] init] autorelease];
@@ -82,14 +82,14 @@
     [req setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [req setHTTPBody:postData];
     
+#ifdef POST_DATA
     NSError *error;
     NSURLResponse *response;
     NSData *urlData=[NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&error];
     NSString *data=[[[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding] autorelease];
-#ifdef DEBUG
-//    NSLog(data);
-//    NSLog(@"prev stats:%@",[stats JSONRepresentation]);
 #endif
+    
+//    NSLog(@"prev stats:%@",[stats JSONRepresentation]);
 }
 
 @end

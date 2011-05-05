@@ -11,9 +11,13 @@
 #import <CoreMotion/CMMotionManager.h>
 
 #define HEADING_URL @"http://bunkermw.heroku.com/mobile_headings/create"
-#define LOCATION_URL @"http://bunkermw.heroku.com/mobile_locations/create"
+#define LOCATION_URL @"http://bunkermw.heroku.com/mobile_gps/create"
 #define MOTION_URL @"http://bunkermw.heroku.com/mobile_motions/create"
 #define IMAGE_PROCESSING_URL @""
+
+//returns array of dicts
+//http://bunkermw.heroku.com/mobile_gps/get_avg_speed_table
+//http://bunkermw.heroku.com/mobile_gps/get_max_speed_table
 
 @interface ServerConnection : NSObject {
 //Initially just send data as you get it.

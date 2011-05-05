@@ -60,19 +60,21 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 #if TARGET_IPHONE_SIMULATOR && HMI_CONNECTION
 	[bmwAppController accessoryDidStart:nil]; // fake it
 #endif
+
 #ifdef SENSOR_READER		
 	reader = [[SensorReader alloc] init];
 	[reader startReading];
 #endif 
+#ifdef LOCAL_DB
     NSFetchRequest *request;
     NSArray * a;
-    //FOR HEADING - stopped at 5497th element
+    //FOR HEADING - stopped at 9361th element
 //    request = [[NSFetchRequest alloc] init];
 //    request.entity = [NSEntityDescription entityForName:@"DataReading" inManagedObjectContext:self.managedObjectContext];
 //    [request setPredicate:[NSPredicate predicateWithFormat:@"readingType == %d", 2]];
 //    
 //    a = [self.managedObjectContext executeFetchRequest:request error:nil];
-//    for (int count = 0; count < [a count]; count++) {
+//    for (int count = 9361; count < [a count]; count++) {
 //        id val = [a objectAtIndex:count];
 //        NSDictionary *d = [val getParsedData];
 //        NSMutableDictionary *md = [ServerConnection headingToDict:[d objectForKey:@"Heading"]];
@@ -110,7 +112,8 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 //        [ServerConnection sendStats:md toURL:MOTION_URL];
 //        NSLog(@"%d/%d",count+1,[a count]);
 //    }
-//    
+//  
+#endif
     return YES;
 }
 

@@ -77,6 +77,10 @@
 		D43DB63213261DE900DCAD92 /* NSString+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = D43DB60F13261DE900DCAD92 /* NSString+XMLSerializableSupport.m */; };
 		D43DB63313261DE900DCAD92 /* ObjectiveResourceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D43DB61413261DE900DCAD92 /* ObjectiveResourceConfig.m */; };
 		D43DB63413261DE900DCAD92 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = D43DB61613261DE900DCAD92 /* Response.m */; };
+		D470797B136E8ACC000D8479 /* dial hand.png in Resources */ = {isa = PBXBuildFile; fileRef = D4707979136E8ACC000D8479 /* dial hand.png */; };
+		D470797C136E8ACC000D8479 /* dial bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D470797A136E8ACC000D8479 /* dial bg.png */; };
+		D4707981136E8BCA000D8479 /* DialWidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D470797F136E8BCA000D8479 /* DialWidgetViewController.m */; };
+		D4707982136E8BCA000D8479 /* DialWidgetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4707980136E8BCA000D8479 /* DialWidgetViewController.xib */; };
 		D49C2556134B98C4003F493F /* Remote_source.xml in Resources */ = {isa = PBXBuildFile; fileRef = D49C2544134B98C4003F493F /* Remote_source.xml */; };
 		D49C2557134B98C4003F493F /* current.png in Resources */ = {isa = PBXBuildFile; fileRef = D49C2547134B98C4003F493F /* current.png */; };
 		D49C2558134B98C4003F493F /* destination.png in Resources */ = {isa = PBXBuildFile; fileRef = D49C2548134B98C4003F493F /* destination.png */; };
@@ -242,6 +246,11 @@
 		D43DB61413261DE900DCAD92 /* ObjectiveResourceConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectiveResourceConfig.m; sourceTree = "<group>"; };
 		D43DB61513261DE900DCAD92 /* Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Response.h; sourceTree = "<group>"; };
 		D43DB61613261DE900DCAD92 /* Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Response.m; sourceTree = "<group>"; };
+		D4707979136E8ACC000D8479 /* dial hand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dial hand.png"; sourceTree = "<group>"; };
+		D470797A136E8ACC000D8479 /* dial bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dial bg.png"; sourceTree = "<group>"; };
+		D470797E136E8BCA000D8479 /* DialWidgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialWidgetViewController.h; sourceTree = "<group>"; };
+		D470797F136E8BCA000D8479 /* DialWidgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DialWidgetViewController.m; sourceTree = "<group>"; };
+		D4707980136E8BCA000D8479 /* DialWidgetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DialWidgetViewController.xib; path = Classes/RemoteApp/DialWidgetViewController.xib; sourceTree = "<group>"; };
 		D49C2541134B98C4003F493F /* RemoteAppGfxResources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteAppGfxResources.h; sourceTree = "<group>"; };
 		D49C2542134B98C4003F493F /* RemoteAppIDs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteAppIDs.h; sourceTree = "<group>"; };
 		D49C2543134B98C4003F493F /* RemoteAppTextIDs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteAppTextIDs.h; sourceTree = "<group>"; };
@@ -375,6 +384,7 @@
 				D49C25B9134B9ACD003F493F /* Images */,
 				D49C253E134B98C4003F493F /* RemoteApp */,
 				D4B8F364131E3D61002C1A44 /* DataOverlayViewController.xib */,
+				D4707980136E8BCA000D8479 /* DialWidgetViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				7BD472F8133A606D001A9741 /* MapViewController.xib */,
 				7BD472EF133A6031001A9741 /* RoutingOverlayViewController.xib */,
@@ -718,6 +728,8 @@
 		D49C25B9134B9ACD003F493F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D4707979136E8ACC000D8479 /* dial hand.png */,
+				D470797A136E8ACC000D8479 /* dial bg.png */,
 				D49C25BA134B9ACD003F493F /* Achievements.png */,
 				D49C25BB134B9ACD003F493F /* Dashboard.png */,
 				D49C25BC134B9ACD003F493F /* DrivingProfile.png */,
@@ -740,6 +752,8 @@
 				D4CAF760134A6442002E1B53 /* RemoteAppController.m */,
 				D4BEE7141366859D002386F0 /* DashboardViewController.h */,
 				D4BEE7151366859D002386F0 /* DashboardViewController.m */,
+				D470797E136E8BCA000D8479 /* DialWidgetViewController.h */,
+				D470797F136E8BCA000D8479 /* DialWidgetViewController.m */,
 			);
 			path = RemoteApp;
 			sourceTree = "<group>";
@@ -827,6 +841,9 @@
 				D49C25C2134B9ACD003F493F /* Routes.psd in Resources */,
 				D49C25C3134B9ACD003F493F /* Routing.png in Resources */,
 				D4BEE7181366859D002386F0 /* DashboardViewController.xib in Resources */,
+				D470797B136E8ACC000D8479 /* dial hand.png in Resources */,
+				D470797C136E8ACC000D8479 /* dial bg.png in Resources */,
+				D4707982136E8BCA000D8479 /* DialWidgetViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -890,6 +907,7 @@
 				D4BEE7171366859D002386F0 /* DashboardViewController.m in Sources */,
 				7B865D6A136D437100A447EC /* StatsModel.xcdatamodel in Sources */,
 				7B865D6D136D437B00A447EC /* DataReading.m in Sources */,
+				D4707981136E8BCA000D8479 /* DialWidgetViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -971,7 +989,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "";
 				PREBINDING = NO;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
 		};
@@ -983,12 +1001,13 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = (
 					"-DTARGET_OS_IPHONE=0",
 					"-DNS_BLOCK_ASSERTIONS=1",
 				);
 				PREBINDING = NO;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Release;
 		};
