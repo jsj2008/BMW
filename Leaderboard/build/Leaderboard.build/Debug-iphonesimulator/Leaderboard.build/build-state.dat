@@ -1,7 +1,7 @@
 TLeaderboard
 v7
 r0
-t326329075.283247
+t326329542.046895
 cCheck dependencies
 cProcessInfoPlistFile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/Info.plist Leaderboard/Leaderboard-Info.plist
 cProcessPCH /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bbwueslgnpmhohbtrwxuznpxgopt/Leaderboard-Prefix.pch.gch Leaderboard/Leaderboard-Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
@@ -18,11 +18,11 @@ cCopyStringsFile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/
 cCompileXIB /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/MainWindow.xib
 cCompileXIB /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/LeaderboardViewController.xib
 cCompileXIB /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.xib
-cCpResource "build/Debug-iphonesimulator/Leaderboard.app/streetlight bg.png" "streetlight bg.png"
-cCpResource build/Debug-iphonesimulator/Leaderboard.app/leaderboard-card_01.png leaderboard-card_01.png
-cCpResource build/Debug-iphonesimulator/Leaderboard.app/leaderboard-card_01@2x.png leaderboard-card_01@2x.png
-cCpResource build/Debug-iphonesimulator/Leaderboard.app/background.png background.png
-cCpResource build/Debug-iphonesimulator/Leaderboard.app/background@2x.png background@2x.png
+cCpResource build/Debug-iphonesimulator/Leaderboard.app/background.png Images/background.png
+cCpResource build/Debug-iphonesimulator/Leaderboard.app/background@2x.png Images/background@2x.png
+cCpResource build/Debug-iphonesimulator/Leaderboard.app/leaderboard-card_01.png Images/leaderboard-card_01.png
+cCpResource build/Debug-iphonesimulator/Leaderboard.app/leaderboard-card_01@2x.png Images/leaderboard-card_01@2x.png
+cCpResource "build/Debug-iphonesimulator/Leaderboard.app/streetlight bg.png" "Images/streetlight bg.png"
 cTouch /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app
 
 N/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk
@@ -59,6 +59,31 @@ N/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/
 c000000004BF4CBF90000000000001A3B
 t1274334201
 s6715
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Images/background.png
+c000000004DC32B38000000000000DFA0
+t1304636216
+s57248
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Images/background@2x.png
+c000000004DC32B280000000000035AA5
+t1304636200
+s219813
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Images/leaderboard-card_01.png
+c000000004DC316E10000000000007EA8
+t1304631009
+s32424
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Images/leaderboard-card_01@2x.png
+c000000004DC23ACE00000000000135D6
+t1304574670
+s79318
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Images/streetlight bg.png
+c000000004DB6C936000000000000621D
+t1303824694
+s25117
 
 N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch
 c000000004DBE515A0000000000000148
@@ -183,17 +208,17 @@ s360
 i<UIKit/UIKit.h>
 
 N/Users/Rob/Desktop/BMW/Leaderboard/background.png
-c000000004DC32B38000000000000DFA0
-t1304636216
-s57248
+c00000000000000000000000000000000
+t2
+s0
 
 N/Users/Rob/Desktop/BMW/Leaderboard/background@2x.png
-c000000004DC32B280000000000035AA5
-t1304636200
-s219813
+c00000000000000000000000000000000
+t2
+s0
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app
-t1304636275
+t1304636742
 s408
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app.dSYM
@@ -217,11 +242,11 @@ t1304570997
 s8
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/background.png
-t1304636274
+t1304636742
 s57248
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/background@2x.png
-t1304636274
+t1304636742
 s219813
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/en.lproj/InfoPlist.strings
@@ -237,15 +262,15 @@ t1304571004
 s1131
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/leaderboard-card_01.png
-t1304631100
+t1304636742
 s32424
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/leaderboard-card_01@2x.png
-t1304631100
+t1304636742
 s79318
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/streetlight bg.png
-t1304573359
+t1304636742
 s25117
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/Leaderboard.LinkFileList
@@ -282,19 +307,19 @@ t1304570999
 s6392
 
 N/Users/Rob/Desktop/BMW/Leaderboard/leaderboard-card_01.png
-c000000004DC316E10000000000007EA8
-t1304631009
-s32424
+c00000000000000000000000000000000
+t2
+s0
 
 N/Users/Rob/Desktop/BMW/Leaderboard/leaderboard-card_01@2x.png
-c000000004DC23ACE00000000000135D6
-t1304574670
-s79318
+c00000000000000000000000000000000
+t2
+s0
 
 N/Users/Rob/Desktop/BMW/Leaderboard/streetlight bg.png
-c000000004DB6C936000000000000621D
-t1303824694
-s25117
+c00000000000000000000000000000000
+t2
+s0
 
 N/var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bbwueslgnpmhohbtrwxuznpxgopt/Leaderboard-Prefix.pch.gch
 t1304570999
@@ -311,7 +336,7 @@ s1178
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies326329074#326329074#0(0"0(0#1#0"8620432544#0"0#
+lSLF07#2@18"Check dependencies326329541#326329541#0(0"0(0#1#0"32651522506817640#0"0#
 
 CCompileC build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Objects-normal/i386/LeaderboardAppDelegate.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s326327828.764029
@@ -470,6 +495,15 @@ x/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/
 xLeaderboard/en.lproj/InfoPlist.strings
 lSLF07#2@43"Copy Leaderboard/en.lproj/InfoPlist.strings326256540#326256540#0(0"0(0#0#73"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/InfoPlist.strings8617791008#686"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv ICONV /usr/bin/iconv    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings" --validate --inputencoding utf-8 --outputencoding binary Leaderboard/en.lproj/InfoPlist.strings --outdir /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app/en.lproj0#
 
+CCpResource "build/Debug-iphonesimulator/Leaderboard.app/streetlight bg.png" "Images/streetlight bg.png"
+s326329542.001854
+e326329542.043142
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/Leaderboard.app/streetlight bg.png
+xImages/streetlight bg.png
+lSLF07#2@30"Copy Images/streetlight bg.png326329542#326329542#0(0"0(0#0#60"/Users/Rob/Desktop/BMW/Leaderboard/Images/streetlight bg.png8610473248#658"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp" -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/Rob/Desktop/BMW/Leaderboard/Images/streetlight bg.png" /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app0#
+
 CCpResource "build/Debug-iphonesimulator/Leaderboard.app/streetlight bg.png" "streetlight bg.png"
 s326266159.515114
 e326266159.551838
@@ -478,6 +512,15 @@ xCpResource
 xbuild/Debug-iphonesimulator/Leaderboard.app/streetlight bg.png
 xstreetlight bg.png
 lSLF07#2@23"Copy streetlight bg.png326266159#326266159#0(0"0(0#0#53"/Users/Rob/Desktop/BMW/Leaderboard/streetlight bg.png8628652576#651"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp" -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/Rob/Desktop/BMW/Leaderboard/streetlight bg.png" /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app0#
+
+CCpResource build/Debug-iphonesimulator/Leaderboard.app/background.png Images/background.png
+s326329541.979544
+e326329542.005424
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/Leaderboard.app/background.png
+xImages/background.png
+lSLF07#2@26"Copy Images/background.png326329541#326329542#0(0"0(0#0#56"/Users/Rob/Desktop/BMW/Leaderboard/Images/background.png32088624093986912#652"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp" -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/Rob/Desktop/BMW/Leaderboard/Images/background.png /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app0#
 
 CCpResource build/Debug-iphonesimulator/Leaderboard.app/background.png background.png
 s326329074.579646
@@ -488,6 +531,15 @@ xbuild/Debug-iphonesimulator/Leaderboard.app/background.png
 xbackground.png
 lSLF07#2@19"Copy background.png326329074#326329074#0(0"0(0#0#49"/Users/Rob/Desktop/BMW/Leaderboard/background.png8619016608#645"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp" -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/Rob/Desktop/BMW/Leaderboard/background.png /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app0#
 
+CCpResource build/Debug-iphonesimulator/Leaderboard.app/background@2x.png Images/background@2x.png
+s326329541.998823
+e326329542.006736
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/Leaderboard.app/background@2x.png
+xImages/background@2x.png
+lSLF07#2@29"Copy Images/background@2x.png326329541#326329542#0(0"0(0#0#59"/Users/Rob/Desktop/BMW/Leaderboard/Images/background@2x.png8613786976#655"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp" -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/Rob/Desktop/BMW/Leaderboard/Images/background@2x.png /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app0#
+
 CCpResource build/Debug-iphonesimulator/Leaderboard.app/background@2x.png background@2x.png
 s326329074.580810
 e326329074.669801
@@ -497,6 +549,15 @@ xbuild/Debug-iphonesimulator/Leaderboard.app/background@2x.png
 xbackground@2x.png
 lSLF07#2@22"Copy background@2x.png326329074#326329074#0(0"0(0#0#52"/Users/Rob/Desktop/BMW/Leaderboard/background@2x.png8618770944#648"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp" -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/Rob/Desktop/BMW/Leaderboard/background@2x.png /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app0#
 
+CCpResource build/Debug-iphonesimulator/Leaderboard.app/leaderboard-card_01.png Images/leaderboard-card_01.png
+s326329541.999706
+e326329542.009180
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/Leaderboard.app/leaderboard-card_01.png
+xImages/leaderboard-card_01.png
+lSLF07#2@35"Copy Images/leaderboard-card_01.png326329542#326329542#0(0"0(0#0#65"/Users/Rob/Desktop/BMW/Leaderboard/Images/leaderboard-card_01.png8609669184#661"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp" -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/Rob/Desktop/BMW/Leaderboard/Images/leaderboard-card_01.png /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app0#
+
 CCpResource build/Debug-iphonesimulator/Leaderboard.app/leaderboard-card_01.png leaderboard-card_01.png
 s326323900.318994
 e326323900.520776
@@ -505,6 +566,15 @@ xCpResource
 xbuild/Debug-iphonesimulator/Leaderboard.app/leaderboard-card_01.png
 xleaderboard-card_01.png
 lSLF07#2@28"Copy leaderboard-card_01.png326323900#326323900#0(0"0(0#0#58"/Users/Rob/Desktop/BMW/Leaderboard/leaderboard-card_01.png8609202144#654"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp" -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/Rob/Desktop/BMW/Leaderboard/leaderboard-card_01.png /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app0#
+
+CCpResource build/Debug-iphonesimulator/Leaderboard.app/leaderboard-card_01@2x.png Images/leaderboard-card_01@2x.png
+s326329542.000755
+e326329542.009434
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/Leaderboard.app/leaderboard-card_01@2x.png
+xImages/leaderboard-card_01@2x.png
+lSLF07#2@38"Copy Images/leaderboard-card_01@2x.png326329542#326329542#0(0"0(0#0#68"/Users/Rob/Desktop/BMW/Leaderboard/Images/leaderboard-card_01@2x.png8614125568#664"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp" -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/Rob/Desktop/BMW/Leaderboard/Images/leaderboard-card_01@2x.png /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app0#
 
 CCpResource build/Debug-iphonesimulator/Leaderboard.app/leaderboard-card_01@2x.png leaderboard-card_01@2x.png
 s326323900.320166
@@ -577,10 +647,10 @@ o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:13:38: er
 lSLF07#2@45"Precompile Leaderboard/Leaderboard-Prefix.pch326256539#326256540#0(818"i686-apple-darwin10-llvm-gcc-4.2: SDK: No such file or directoryi686-apple-darwin10-llvm-gcc-4.2: 4: No such file or directoryi686-apple-darwin10-llvm-gcc-4.2: beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk: No such file or directory/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:5:25: error: Availability.h: No such file or directory/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:8:2: warning: #warning "This project uses features only available in iPhone SDK 3.0 and later."/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:12:28: error: UIKit/UIKit.h: No such file or directory/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:13:38: error: Foundation/Foundation.h: No such file or directory4(4@41"Availability.h: No such file or directory326256540#267#125#0(6@69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch326011098#5#0#5#0#28"*: No such file or directory0(22@81"#warning "This project uses features only available in iPhone SDK 3.0 and later."326256540#392#166#0(6@69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch326011098#8#0#8#0#12"#warning "*"0(4@40"UIKit/UIKit.h: No such file or directory326256540#558#125#0(6@69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch326011098#12#0#12#0#28"*: No such file or directory0(4@50"Foundation/Foundation.h: No such file or directory326256540#683#135#0(6@69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch326011098#13#0#13#0#28"*: No such file or directory0(0#0#69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch8617338048#2163"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2" -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk" -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/DerivedSources/i386 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphonesimulator/Leaderboard.build/DerivedSources -isysroot /Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch -o /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-eylsqhrhycdwmrbatwoskrksrtjn/Leaderboard-Prefix.pch.gch1#
 
 CTouch /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app
-s326329075.278543
-e326329075.283172
+s326329542.043274
+e326329542.046836
 r1
 xTouch
 x/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app
-lSLF07#2@84"Touch /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app326329075#326329075#0(0"0(0#0#0"8619925536#449"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /usr/bin/touch -c /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app0#
+lSLF07#2@84"Touch /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app326329542#326329542#0(0"0(0#0#0"8613214016#449"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    /usr/bin/touch -c /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphonesimulator/Leaderboard.app0#
 
