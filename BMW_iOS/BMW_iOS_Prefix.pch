@@ -12,7 +12,7 @@
 
 //types of builds
 //#define MAP_VIEW 1
-//#define IMAGE_PROCESSING_VIEW 1
+#define IMAGE_PROCESSING_VIEW 1
 //#define EXTERNAL_APP_VIEW 1
 //#define STATS_OVERLAY 1
 //#define HMI_CONNECTION 1
@@ -21,10 +21,10 @@
 
 //Server Send
 //#define SEND_MOTION 1
-#define SEND_LOCATION 1
+//#define SEND_LOCATION 1
 //#define SEND_HEADING 1
-//#define SEND_LIGHTS 1
-//#define POST_DATA 1
+#define SEND_LIGHTS 1
+#define POST_DATA 1
 
 //extra image processing switches
 #ifdef IMAGE_PROCESSING_VIEW

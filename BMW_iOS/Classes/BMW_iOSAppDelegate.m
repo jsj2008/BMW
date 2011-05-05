@@ -65,8 +65,8 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 #endif
 
 #ifdef SENSOR_READER		
-	reader = [[SensorReader alloc] init];
-	[reader startReading];
+	//reader = [[SensorReader alloc] init];
+	//[reader startReading];
 #endif 
 #ifdef LOCAL_DB
     NSFetchRequest *request;

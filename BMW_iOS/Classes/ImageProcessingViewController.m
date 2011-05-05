@@ -6,6 +6,7 @@
 #import "ImageProcessingViewController.h"
 #import "ServerConnection.h"
 
+#define UPDATE_INTERVAL 5.0f/2.0f;
 #define RED_THRESHOLD 200
 #define BASE_SIZE 320*480
 #define RED_LIGHT @"red_count"
@@ -73,7 +74,36 @@ enum {
 	camera.delegate = self;
     
     rawPositionPixels = (GLubyte *) calloc(FBO_WIDTH * FBO_HEIGHT * 4, sizeof(GLubyte));
+
+    
+#ifdef SENSOR_READER    
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    [locationManager startUpdatingLocation];
+    [locationManager startUpdatingHeading];
+    
+    motionManager = [[CMMotionManager alloc] init];
+    motionManager.deviceMotionUpdateInterval = UPDATE_INTERVAL;
+    [motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue]
+									   withHandler: ^(CMDeviceMotion *motionData,	NSError *error)
+     {
+#ifdef SEND_MOTION
+         [ServerConnection sendStats:[ServerConnection motionToDict:motionData] toURL:MOTION_URL];
+#endif
+     }];
+#endif
 }
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+#ifdef SEND_LOCATION
+    [ServerConnection sendStats:[ServerConnection locationToDict:newLocation] toURL:LOCATION_URL];
+#endif
+#ifdef SEND_HEADING
+    if(manager.heading!=nil)
+        [ServerConnection sendStats:[ServerConnection headingToDict:manager.heading] toURL:HEADING_URL];
+#endif
+}
+
 
 -(void)viewWillDisappear:(BOOL)animated
 {
