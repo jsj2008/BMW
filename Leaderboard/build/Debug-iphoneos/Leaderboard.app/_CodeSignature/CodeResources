@@ -4,9 +4,21 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>PageViewController.nib</key>
+		<data>
+		sT+BkjJjgp1MhBi6PP48uDGlBms=
+		</data>
 		<key>PkgInfo</key>
 		<data>
 		n57qDP4tZfLD1rCS43W0B4LQjzE=
+		</data>
+		<key>background.png</key>
+		<data>
+		z1wdCygWug7qHfLn1pGXZ1etm4E=
+		</data>
+		<key>background@2x.png</key>
+		<data>
+		GLA24POZD2Toty6WUZTvhzIg4e8=
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
@@ -18,11 +30,23 @@
 		</data>
 		<key>en.lproj/LeaderboardViewController.nib</key>
 		<data>
-		hXrZiUw6cNwyvYBLQr38PFM+TjI=
+		o0cyT6b0zN2y4Yxx372XlVHAPJM=
 		</data>
 		<key>en.lproj/MainWindow.nib</key>
 		<data>
-		bM1eLdoekuUasINM2lBVsZo+87U=
+		1a/Xsj2fmU5DyoBlVucHohCkAJE=
+		</data>
+		<key>leaderboard-card_01.png</key>
+		<data>
+		U3nA5SJUcLqosXOSzDyMuxF5AhM=
+		</data>
+		<key>leaderboard-card_01@2x.png</key>
+		<data>
+		wI+5zSr9afFet4mJye8Zj7L4mws=
+		</data>
+		<key>streetlight bg.png</key>
+		<data>
+		/b5tUDxgPtfD9va2a9zF9ovEsj8=
 		</data>
 	</dict>
 	<key>rules</key>

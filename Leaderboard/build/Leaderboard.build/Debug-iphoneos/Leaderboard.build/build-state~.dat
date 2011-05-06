@@ -1,17 +1,43 @@
 TLeaderboard
 v7
 r0
-t326256640.153036
+t326331722.474800
 cCheck dependencies
 cCpResource build/Debug-iphoneos/Leaderboard.app/ResourceRules.plist "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist"
 cProcessInfoPlistFile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/Info.plist Leaderboard/Leaderboard-Info.plist
-cProcessPCH /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-esyfsbukcxhtzhcxownhgsyknawq/Leaderboard-Prefix.pch.gch Leaderboard/Leaderboard-Prefix.pch normal armv6 objective-c com.apple.compilers.llvmgcc42
-cProcessPCH /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-ejrtqveqfzxvdsdxcrkhhvzshdwo/Leaderboard-Prefix.pch.gch Leaderboard/Leaderboard-Prefix.pch normal armv7 objective-c com.apple.compilers.llvmgcc42
+cProcessPCH /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bgoseaibsuymfierkbojswlbyaau/Leaderboard-Prefix.pch.gch Leaderboard/Leaderboard-Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+cProcessPCH /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-ewbprxprnfmvfnduqngezxrbqrtc/Leaderboard-Prefix.pch.gch Leaderboard/Leaderboard-Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/main.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/LeaderboardAppDelegate.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardAppDelegate.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/LeaderboardViewController.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/NSObject+SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSObject+SBJSON.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/NSString+SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSString+SBJSON.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/SBJSON.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/PageViewController.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/main.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/main.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/LeaderboardAppDelegate.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardAppDelegate.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/LeaderboardViewController.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/NSObject+SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSObject+SBJSON.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/NSString+SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSString+SBJSON.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/SBJSON.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/PageViewController.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/Leaderboard normal armv6
+cLd /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/Leaderboard normal armv7
+cCreateUniversalBinary /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/Leaderboard normal "armv6 armv7"
+cGenerateDSYMFile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app.dSYM /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/Leaderboard
 cCopyStringsFile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/en.lproj/InfoPlist.strings Leaderboard/en.lproj/InfoPlist.strings
 cCompileXIB /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/MainWindow.xib
 cCompileXIB /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/LeaderboardViewController.xib
+cCompileXIB /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.xib
+cCopyPNGFile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/background.png Images/background.png
+cCopyPNGFile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/background@2x.png Images/background@2x.png
+cCopyPNGFile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/leaderboard-card_01.png Images/leaderboard-card_01.png
+cCopyPNGFile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/leaderboard-card_01@2x.png Images/leaderboard-card_01@2x.png
+cCopyPNGFile "/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/streetlight bg.png" "Images/streetlight bg.png"
 cProcessProductPackaging "/Users/Rob/Library/MobileDevice/Provisioning Profiles/70F00D3F-D4EC-4CD4-8617-12FBC3E90974.mobileprovision" /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/embedded.mobileprovision
+cTouch /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app
 cProcessProductPackaging "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist" /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard.xcent
+cCodeSign /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app
 
 N/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk
 c000000004C05C1B10000000000000110
@@ -58,6 +84,31 @@ c000000004BF4D50E0000000000001A3B
 t1274336526
 s6715
 
+N/Users/Rob/Desktop/BMW/Leaderboard/Images/background.png
+c000000004DC32B38000000000000DFA0
+t1304636216
+s57248
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Images/background@2x.png
+c000000004DC32B280000000000035AA5
+t1304636200
+s219813
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Images/leaderboard-card_01.png
+c000000004DC316E10000000000007EA8
+t1304631009
+s32424
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Images/leaderboard-card_01@2x.png
+c000000004DC23ACE00000000000135D6
+t1304574670
+s79318
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Images/streetlight bg.png
+c000000004DB6C936000000000000621D
+t1303824694
+s25117
+
 N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch
 c000000004DBE515A0000000000000148
 t1304318298
@@ -80,20 +131,39 @@ i"LeaderboardAppDelegate.h"
 i"LeaderboardViewController.h"
 
 N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.h
-c000000004DBE515A0000000000000163
-t1304318298
-s355
+c000000004DC23AD500000000000002D7
+t1304574677
+s727
 i<UIKit/UIKit.h>
+i"PageViewController.h"
 
 N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m
-c000000004DBE515A0000000000000751
-t1304318298
-s1873
+c000000004DC329E10000000000001731
+t1304635873
+s5937
 i"LeaderboardViewController.h"
 i"JSONFramework.h"
 i"NSString+SBJSON.h"
 i"NSObject+SBJSON.h"
 i"SBJSON.h"
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.h
+c000000004DC326940000000000000291
+t1304635028
+s657
+i<UIKit/UIKit.h>
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m
+c000000004DC32FBF0000000000000DEC
+t1304637375
+s3564
+i"PageViewController.h"
+i"SBJSON.h"
+
+N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.xib
+c000000004DC329BF00000000000059EC
+t1304635839
+s23020
 
 N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/InfoPlist.strings
 c000000004DBE515A000000000000002D
@@ -101,9 +171,9 @@ t1304318298
 s45
 
 N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/LeaderboardViewController.xib
-c000000004DBE515A0000000000002FE6
-t1304318298
-s12262
+c000000004DC32B650000000000005840
+t1304636261
+s22592
 
 N/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/MainWindow.xib
 c000000004DBE515A0000000000004E49
@@ -163,125 +233,181 @@ s360
 i<UIKit/UIKit.h>
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app
-t2
-s0
+t1304638922
+s544
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app.dSYM
-t2
-s0
+t1304638915
+s102
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/Info.plist
-t1304563839
-s947
+t1304638913
+s916
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/Leaderboard
-t2
-s0
+t1304638915
+s131716
+
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/PageViewController.nib
+t1304638916
+s1831
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/PkgInfo
-t1304563839
+t1304638913
 s8
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/ResourceRules.plist
-t1304563839
+t1304638913
 s485
 
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/background.png
+t1304638917
+s57278
+
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/background@2x.png
+t1304638922
+s233461
+
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/embedded.mobileprovision
-t1304563840
+t1304638922
 s8433
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/en.lproj/InfoPlist.strings
-t1304563839
+t1304638915
 s42
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/en.lproj/LeaderboardViewController.nib
-t1304563840
-s2980
+t1304638916
+s1522
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/en.lproj/MainWindow.nib
-t1304563840
-s1689
+t1304638916
+s1131
+
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/leaderboard-card_01.png
+t1304638916
+s31802
+
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/leaderboard-card_01@2x.png
+t1304638916
+s84263
+
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/streetlight bg.png
+t1304638916
+s31275
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard.xcent
-t1304563840
+t1304638922
 s404
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/Leaderboard
-t2
-s0
+t1304638915
+s62492
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/Leaderboard.LinkFileList
-c000000004DC2107F000000000000030F
-t1304563839
-s783
+c000000004DC335C10000000000000395
+t1304638913
+s917
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/LeaderboardAppDelegate.o
-t2
-s0
+t1304638914
+s47504
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/LeaderboardViewController.o
-t2
-s0
+t1304638914
+s52884
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/NSObject+SBJSON.o
-t2
-s0
+t1304638914
+s8232
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/NSString+SBJSON.o
-t2
-s0
+t1304638914
+s8184
+
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/PageViewController.o
+t1304638915
+s54264
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/SBJSON.o
-t2
-s0
+t1304638915
+s52088
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/main.o
-t2
-s0
+t1304638914
+s6528
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/Leaderboard
-t2
-s0
+t1304638915
+s62084
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/Leaderboard.LinkFileList
-c000000004DC2107F000000000000030F
-t1304563839
-s783
+c000000004DC335C10000000000000395
+t1304638913
+s917
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/LeaderboardAppDelegate.o
-t2
-s0
+t1304638915
+s47396
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/LeaderboardViewController.o
-t2
-s0
+t1304638915
+s51776
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/NSObject+SBJSON.o
-t2
-s0
+t1304638915
+s8180
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/NSString+SBJSON.o
-t2
-s0
+t1304638915
+s8132
+
+N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/PageViewController.o
+t1304638915
+s53780
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/SBJSON.o
-t2
-s0
+t1304638915
+s49460
 
 N/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/main.o
-t2
-s0
+t1304638915
+s6512
 
 N/Users/Rob/Library/MobileDevice/Provisioning Profiles/70F00D3F-D4EC-4CD4-8617-12FBC3E90974.mobileprovision
 c000000004DA618C500000000000020F1
 t1302730949
 s8433
 
+N/var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bgoseaibsuymfierkbojswlbyaau/Leaderboard-Prefix.pch.gch
+t1304638914
+s9868848
+
+N/var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bijfnpwnmavpohdorfriaaeplvgi/Leaderboard-Prefix.pch.gch
+t2
+s0
+
+N/var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-cawhhznopxsizudkonicearowinp/Leaderboard-Prefix.pch.gch
+t2
+s0
+
 N/var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-ejrtqveqfzxvdsdxcrkhhvzshdwo/Leaderboard-Prefix.pch.gch
 t2
 s0
 
 N/var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-esyfsbukcxhtzhcxownhgsyknawq/Leaderboard-Prefix.pch.gch
+t2
+s0
+
+N/var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-ewbprxprnfmvfnduqngezxrbqrtc/Leaderboard-Prefix.pch.gch
+t1304638914
+s10327600
+
+N/var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-fuklbhzdpxpdbwgxegqpopckkdby/Leaderboard-Prefix.pch.gch
+t2
+s0
+
+N/var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-hiuedzhhfavsddfirzhckblbdaex/Leaderboard-Prefix.pch.gch
 t2
 s0
 
@@ -292,101 +418,451 @@ s1178
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies326256639#326256639#0(0"0(0#1#0"8619350528#0"0#
+lSLF07#2@18"Check dependencies326331713#326331713#0(0"0(0#1#0"8606560256#0"0#
 
 CCodeSign /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app
-r0
+s326331722.272866
+e326331722.474716
+r1
+xCodeSign
+x/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app
+lSLF07#2@45"CodeSign build/Debug-iphoneos/Leaderboard.app326331722#326331722#0(0"0(0#0#71"/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app8606540512#706"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv _CODESIGN_ALLOCATE_ "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate"    /usr/bin/codesign -f -s "iPhone Developer: rob balian (KGD3Y4J3LU)" --resource-rules=/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/ResourceRules.plist --entitlements /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard.xcent /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app0#
+
+CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/LeaderboardAppDelegate.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardAppDelegate.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s326331714.808599
+e326331714.930853
+r1
+xCompileC
+xbuild/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/LeaderboardAppDelegate.o
+x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardAppDelegate.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@79"Compile /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardAppDelegate.m326331714#326331714#0(0"0(0#0#71"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardAppDelegate.m8614859424#1874"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk" -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources/armv6 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources -include /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bgoseaibsuymfierkbojswlbyaau/Leaderboard-Prefix.pch -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardAppDelegate.m -o /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/LeaderboardAppDelegate.o0#
 
 CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/LeaderboardAppDelegate.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardAppDelegate.m normal armv6 objective-c com.apple.compilers.llvmgcc42
 r0
 
+CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/LeaderboardViewController.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s326331714.809662
+e326331714.958168
+r1
+xCompileC
+xbuild/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/LeaderboardViewController.o
+x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m: In function '-[LeaderboardViewController loadScrollViewWithPage:]':
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m:82: warning: 'LeaderboardViewController' may not respond to '-getDataURLString:'
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m:82: warning: (Messages without a matching method signature
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m:82: warning: will be assumed to return 'id' and accept
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m:82: warning: '...' as arguments.)
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m:83: warning: 'LeaderboardViewController' may not respond to '-getLeaderboardTitle:'
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m:84: warning: 'PageViewController' may not respond to '-loadDataFromURL'
+lSLF07#2@82"Compile /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m326331714#326331714#0(979"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m: In function '-[LeaderboardViewController loadScrollViewWithPage:]':/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m:82: warning: 'LeaderboardViewController' may not respond to '-getDataURLString:'/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m:82: warning: (Messages without a matching method signature/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m:82: warning: will be assumed to return 'id' and accept/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m:82: warning: '...' as arguments.)/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m:83: warning: 'LeaderboardViewController' may not respond to '-getLeaderboardTitle:'/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m:84: warning: 'PageViewController' may not respond to '-loadDataFromURL'4(22@67"'LeaderboardViewController' may not respond to '-getDataURLString:'326331714#144#156#0(6@74"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m326328673#82#0#82#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)326331714#300#134#0(6@74"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m326328673#82#0#82#0#0"0(22@70"'LeaderboardViewController' may not respond to '-getLeaderboardTitle:'326331714#673#159#0(6@74"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m326328673#83#0#83#0#26"'*' may not respond to '*'0(22@58"'PageViewController' may not respond to '-loadDataFromURL'326331714#832#147#0(6@74"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m326328673#84#0#84#0#26"'*' may not respond to '*'0(0#0#74"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m8614199872#1880"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk" -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources/armv6 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources -include /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bgoseaibsuymfierkbojswlbyaau/Leaderboard-Prefix.pch -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m -o /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/LeaderboardViewController.o0#
+
 CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/LeaderboardViewController.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m normal armv6 objective-c com.apple.compilers.llvmgcc42
 r0
+
+CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/NSObject+SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSObject+SBJSON.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s326331714.811047
+e326331714.886998
+r1
+xCompileC
+xbuild/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/NSObject+SBJSON.o
+x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSObject+SBJSON.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@87"Compile /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSObject+SBJSON.m326331714#326331714#0(0"0(0#0#79"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSObject+SBJSON.m8613445696#1875"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk" -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources/armv6 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources -include /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bgoseaibsuymfierkbojswlbyaau/Leaderboard-Prefix.pch -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSObject+SBJSON.m -o /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/NSObject+SBJSON.o0#
 
 CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/NSObject+SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSObject+SBJSON.m normal armv6 objective-c com.apple.compilers.llvmgcc42
 r0
 
+CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/NSString+SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSString+SBJSON.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s326331714.876639
+e326331714.961070
+r1
+xCompileC
+xbuild/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/NSString+SBJSON.o
+x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSString+SBJSON.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@87"Compile /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSString+SBJSON.m326331714#326331714#0(0"0(0#0#79"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSString+SBJSON.m8612806240#1875"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk" -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources/armv6 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources -include /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bgoseaibsuymfierkbojswlbyaau/Leaderboard-Prefix.pch -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSString+SBJSON.m -o /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/NSString+SBJSON.o0#
+
 CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/NSString+SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSString+SBJSON.m normal armv6 objective-c com.apple.compilers.llvmgcc42
 r0
+
+CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/PageViewController.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s326331714.931015
+e326331715.120322
+r1
+xCompileC
+xbuild/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/PageViewController.o
+x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m: In function '-[PageViewController loadDataFromURL]':
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m:18: warning: 'stringWithContentsOfURL:' is deprecated (declared at /Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h:384)
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m:19: warning: 'NSString' may not respond to '-JSONValue'
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m:19: warning: (Messages without a matching method signature
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m:19: warning: will be assumed to return 'id' and accept
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m:19: warning: '...' as arguments.)
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m: In function '-[PageViewController tableView:cellForRowAtIndexPath:]':
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m:59: warning: 'PageViewController' may not respond to '-getName:'
+lSLF07#2@75"Compile /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m326331714#326331715#0(1164"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m: In function '-[PageViewController loadDataFromURL]':/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m:18: warning: 'stringWithContentsOfURL:' is deprecated (declared at /Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h:384)/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m:19: warning: 'NSString' may not respond to '-JSONValue'/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m:19: warning: (Messages without a matching method signature/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m:19: warning: will be assumed to return 'id' and accept/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m:19: warning: '...' as arguments.)/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m: In function '-[PageViewController tableView:cellForRowAtIndexPath:]':/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m:59: warning: 'PageViewController' may not respond to '-getName:'4(22@212"'stringWithContentsOfURL:' is deprecated (declared at /Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h:384)326331714#122#294#0(6@67"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m326330175#18#0#18#0#33"'*' is deprecated (declared at *)0(22@42"'NSString' may not respond to '-JSONValue'326331714#416#124#0(6@67"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m326330175#19#0#19#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)326331714#540#127#0(6@67"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m326330175#19#0#19#0#0"0(22@51"'PageViewController' may not respond to '-getName:'326331714#1031#133#0(6@67"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m326330175#59#0#59#0#26"'*' may not respond to '*'0(0#0#67"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m8609278144#1866"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk" -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources/armv6 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources -include /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bgoseaibsuymfierkbojswlbyaau/Leaderboard-Prefix.pch -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m -o /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/PageViewController.o0#
+
+CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/SBJSON.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s326331714.887156
+e326331715.235719
+r1
+xCompileC
+xbuild/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/SBJSON.o
+x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/SBJSON.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@78"Compile /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/SBJSON.m326331714#326331715#0(0"0(0#0#70"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/SBJSON.m8612586848#1857"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk" -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources/armv6 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources -include /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bgoseaibsuymfierkbojswlbyaau/Leaderboard-Prefix.pch -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/SBJSON.m -o /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/SBJSON.o0#
 
 CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/SBJSON.m normal armv6 objective-c com.apple.compilers.llvmgcc42
 r0
 
+CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/main.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s326331714.807311
+e326331714.876487
+r1
+xCompileC
+xbuild/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/main.o
+x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/main.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@61"Compile /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/main.m326331714#326331714#0(0"0(0#0#53"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/main.m8612572096#1838"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk" -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources/armv6 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources -include /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bgoseaibsuymfierkbojswlbyaau/Leaderboard-Prefix.pch -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/main.m -o /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/main.o0#
+
 CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/main.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/main.m normal armv6 objective-c com.apple.compilers.llvmgcc42
 r0
+
+CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/LeaderboardAppDelegate.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardAppDelegate.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s326331714.961224
+e326331715.091555
+r1
+xCompileC
+xbuild/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/LeaderboardAppDelegate.o
+x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardAppDelegate.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@79"Compile /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardAppDelegate.m326331714#326331715#0(0"0(0#0#71"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardAppDelegate.m8605856832#1874"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk" -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources/armv7 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources -include /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-ewbprxprnfmvfnduqngezxrbqrtc/Leaderboard-Prefix.pch -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardAppDelegate.m -o /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/LeaderboardAppDelegate.o0#
 
 CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/LeaderboardAppDelegate.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardAppDelegate.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 r0
 
+CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/LeaderboardViewController.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s326331715.040397
+e326331715.187270
+r1
+xCompileC
+xbuild/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/LeaderboardViewController.o
+x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m: In function '-[LeaderboardViewController loadScrollViewWithPage:]':
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m:82: warning: 'LeaderboardViewController' may not respond to '-getDataURLString:'
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m:82: warning: (Messages without a matching method signature
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m:82: warning: will be assumed to return 'id' and accept
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m:82: warning: '...' as arguments.)
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m:83: warning: 'LeaderboardViewController' may not respond to '-getLeaderboardTitle:'
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m:84: warning: 'PageViewController' may not respond to '-loadDataFromURL'
+lSLF07#2@82"Compile /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m326331715#326331715#0(979"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m: In function '-[LeaderboardViewController loadScrollViewWithPage:]':/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m:82: warning: 'LeaderboardViewController' may not respond to '-getDataURLString:'/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m:82: warning: (Messages without a matching method signature/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m:82: warning: will be assumed to return 'id' and accept/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m:82: warning: '...' as arguments.)/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m:83: warning: 'LeaderboardViewController' may not respond to '-getLeaderboardTitle:'/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m:84: warning: 'PageViewController' may not respond to '-loadDataFromURL'4(22@67"'LeaderboardViewController' may not respond to '-getDataURLString:'326331715#144#156#0(6@74"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m326328673#82#0#82#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)326331715#300#134#0(6@74"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m326328673#82#0#82#0#0"0(22@70"'LeaderboardViewController' may not respond to '-getLeaderboardTitle:'326331715#673#159#0(6@74"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m326328673#83#0#83#0#26"'*' may not respond to '*'0(22@58"'PageViewController' may not respond to '-loadDataFromURL'326331715#832#147#0(6@74"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m326328673#84#0#84#0#26"'*' may not respond to '*'0(0#0#74"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m8604906560#1880"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk" -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources/armv7 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources -include /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-ewbprxprnfmvfnduqngezxrbqrtc/Leaderboard-Prefix.pch -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m -o /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/LeaderboardViewController.o0#
+
 CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/LeaderboardViewController.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/LeaderboardViewController.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 r0
+
+CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/NSObject+SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSObject+SBJSON.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s326331715.091708
+e326331715.189568
+r1
+xCompileC
+xbuild/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/NSObject+SBJSON.o
+x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSObject+SBJSON.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@87"Compile /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSObject+SBJSON.m326331715#326331715#0(0"0(0#0#79"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSObject+SBJSON.m8612234848#1875"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk" -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources/armv7 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources -include /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-ewbprxprnfmvfnduqngezxrbqrtc/Leaderboard-Prefix.pch -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSObject+SBJSON.m -o /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/NSObject+SBJSON.o0#
 
 CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/NSObject+SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSObject+SBJSON.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 r0
 
+CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/NSString+SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSString+SBJSON.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s326331715.120562
+e326331715.207047
+r1
+xCompileC
+xbuild/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/NSString+SBJSON.o
+x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSString+SBJSON.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@87"Compile /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSString+SBJSON.m326331715#326331715#0(0"0(0#0#79"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSString+SBJSON.m8614222432#1875"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk" -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources/armv7 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources -include /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-ewbprxprnfmvfnduqngezxrbqrtc/Leaderboard-Prefix.pch -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSString+SBJSON.m -o /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/NSString+SBJSON.o0#
+
 CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/NSString+SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/NSString+SBJSON.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 r0
+
+CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/PageViewController.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s326331715.189726
+e326331715.315799
+r1
+xCompileC
+xbuild/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/PageViewController.o
+x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m: In function '-[PageViewController loadDataFromURL]':
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m:18: warning: 'stringWithContentsOfURL:' is deprecated (declared at /Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h:384)
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m:19: warning: 'NSString' may not respond to '-JSONValue'
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m:19: warning: (Messages without a matching method signature
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m:19: warning: will be assumed to return 'id' and accept
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m:19: warning: '...' as arguments.)
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m: In function '-[PageViewController tableView:cellForRowAtIndexPath:]':
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m:59: warning: 'PageViewController' may not respond to '-getName:'
+lSLF07#2@75"Compile /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m326331715#326331715#0(1164"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m: In function '-[PageViewController loadDataFromURL]':/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m:18: warning: 'stringWithContentsOfURL:' is deprecated (declared at /Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h:384)/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m:19: warning: 'NSString' may not respond to '-JSONValue'/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m:19: warning: (Messages without a matching method signature/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m:19: warning: will be assumed to return 'id' and accept/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m:19: warning: '...' as arguments.)/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m: In function '-[PageViewController tableView:cellForRowAtIndexPath:]':/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m:59: warning: 'PageViewController' may not respond to '-getName:'4(22@212"'stringWithContentsOfURL:' is deprecated (declared at /Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h:384)326331715#122#294#0(6@67"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m326330175#18#0#18#0#33"'*' is deprecated (declared at *)0(22@42"'NSString' may not respond to '-JSONValue'326331715#416#124#0(6@67"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m326330175#19#0#19#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)326331715#540#127#0(6@67"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m326330175#19#0#19#0#0"0(22@51"'PageViewController' may not respond to '-getName:'326331715#1031#133#0(6@67"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m326330175#59#0#59#0#26"'*' may not respond to '*'0(0#0#67"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m8612832000#1866"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk" -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources/armv7 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources -include /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-ewbprxprnfmvfnduqngezxrbqrtc/Leaderboard-Prefix.pch -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.m -o /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/PageViewController.o0#
+
+CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/SBJSON.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s326331715.187429
+e326331715.385267
+r1
+xCompileC
+xbuild/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/SBJSON.o
+x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/SBJSON.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@78"Compile /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/SBJSON.m326331715#326331715#0(0"0(0#0#70"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/SBJSON.m8613197184#1857"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk" -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources/armv7 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources -include /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-ewbprxprnfmvfnduqngezxrbqrtc/Leaderboard-Prefix.pch -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/SBJSON.m -o /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/SBJSON.o0#
 
 CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/SBJSON.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/json-framework/SBJSON.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 r0
 
+CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/main.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/main.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s326331714.958369
+e326331715.040122
+r1
+xCompileC
+xbuild/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/main.o
+x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/main.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@61"Compile /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/main.m326331714#326331715#0(0"0(0#0#53"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/main.m8606504032#1838"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk" -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources/armv7 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources -include /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-ewbprxprnfmvfnduqngezxrbqrtc/Leaderboard-Prefix.pch -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/main.m -o /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/main.o0#
+
 CCompileC build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/main.o /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/main.m normal armv7 objective-c com.apple.compilers.llvmgcc42
 r0
 
+CCompileXIB /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.xib
+s326331715.463462
+e326331716.192095
+r1
+xCompileXIB
+x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.xib
+lSLF07#2@45"CompileXIB Leaderboard/PageViewController.xib326331715#326331716#0(0"0(0#0#69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.xib8608514560#638"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/usr/bin/ibtool" --errors --warnings --notices --output-format human-readable-text --compile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/PageViewController.nib /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/PageViewController.xib --sdk "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk"0#
+
 CCompileXIB /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/LeaderboardViewController.xib
-s326256639.572904
-e326256640.132690
+s326331715.461217
+e326331716.194883
 r1
 xCompileXIB
 x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/LeaderboardViewController.xib
-lSLF07#2@61"CompileXIB Leaderboard/en.lproj/LeaderboardViewController.xib326256639#326256640#0(0"0(0#0#85"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/LeaderboardViewController.xib8619350848#809"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.3    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/usr/bin/ibtool" --errors --warnings --notices --output-format human-readable-text --compile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/en.lproj/LeaderboardViewController.nib /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/LeaderboardViewController.xib --sdk "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk"0#
+lSLF07#2@61"CompileXIB Leaderboard/en.lproj/LeaderboardViewController.xib326331715#326331716#0(0"0(0#0#85"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/LeaderboardViewController.xib8596496064#670"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/usr/bin/ibtool" --errors --warnings --notices --output-format human-readable-text --compile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/en.lproj/LeaderboardViewController.nib /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/LeaderboardViewController.xib --sdk "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk"0#
 
 CCompileXIB /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/MainWindow.xib
-s326256639.571864
-e326256640.094802
+s326331715.459943
+e326331716.118073
 r1
 xCompileXIB
 x/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/MainWindow.xib
-lSLF07#2@46"CompileXIB Leaderboard/en.lproj/MainWindow.xib326256639#326256640#0(0"0(0#0#70"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/MainWindow.xib8619596416#779"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.3    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/usr/bin/ibtool" --errors --warnings --notices --output-format human-readable-text --compile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/en.lproj/MainWindow.nib /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/MainWindow.xib --sdk "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk"0#
+lSLF07#2@46"CompileXIB Leaderboard/en.lproj/MainWindow.xib326331715#326331716#0(0"0(0#0#70"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/MainWindow.xib8609092128#640"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/usr/bin/ibtool" --errors --warnings --notices --output-format human-readable-text --compile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/en.lproj/MainWindow.nib /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/MainWindow.xib --sdk "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk"0#
+
+CCopyPNGFile "/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/streetlight bg.png" "Images/streetlight bg.png"
+s326331716.424090
+e326331716.578026
+r1
+xCopyPNGFile
+x/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/streetlight bg.png
+xImages/streetlight bg.png
+lSLF07#2@97"CopyPNGFile "build/Debug-iphoneos/Leaderboard.app/streetlight bg.png" "Images/streetlight bg.png"326331716#326331716#0(0"0(0#0#60"/Users/Rob/Desktop/BMW/Leaderboard/Images/streetlight bg.png8614370848#653"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv COPY_COMMAND "/Developer/iPhone SDK 4 beta/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp"    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" "/Users/Rob/Desktop/BMW/Leaderboard/Images/streetlight bg.png" "/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/streetlight bg.png"0#
+
+CCopyPNGFile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/background.png Images/background.png
+s326331715.878459
+e326331717.514913
+r1
+xCopyPNGFile
+x/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/background.png
+xImages/background.png
+lSLF07#2@85"CopyPNGFile build/Debug-iphoneos/Leaderboard.app/background.png Images/background.png326331715#326331717#0(0"0(0#0#56"/Users/Rob/Desktop/BMW/Leaderboard/Images/background.png8614351168#641"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv COPY_COMMAND "/Developer/iPhone SDK 4 beta/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp"    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/Rob/Desktop/BMW/Leaderboard/Images/background.png /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/background.png0#
+
+CCopyPNGFile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/background@2x.png Images/background@2x.png
+s326331716.118238
+e326331722.230535
+r1
+xCopyPNGFile
+x/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/background@2x.png
+xImages/background@2x.png
+lSLF07#2@91"CopyPNGFile build/Debug-iphoneos/Leaderboard.app/background@2x.png Images/background@2x.png326331716#326331722#0(0"0(0#0#59"/Users/Rob/Desktop/BMW/Leaderboard/Images/background@2x.png8613590528#647"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv COPY_COMMAND "/Developer/iPhone SDK 4 beta/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp"    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/Rob/Desktop/BMW/Leaderboard/Images/background@2x.png /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/background@2x.png0#
+
+CCopyPNGFile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/leaderboard-card_01.png Images/leaderboard-card_01.png
+s326331716.192236
+e326331716.423935
+r1
+xCopyPNGFile
+x/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/leaderboard-card_01.png
+xImages/leaderboard-card_01.png
+lSLF07#2@103"CopyPNGFile build/Debug-iphoneos/Leaderboard.app/leaderboard-card_01.png Images/leaderboard-card_01.png326331716#326331716#0(0"0(0#0#65"/Users/Rob/Desktop/BMW/Leaderboard/Images/leaderboard-card_01.png8607816064#659"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv COPY_COMMAND "/Developer/iPhone SDK 4 beta/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp"    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/Rob/Desktop/BMW/Leaderboard/Images/leaderboard-card_01.png /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/leaderboard-card_01.png0#
+
+CCopyPNGFile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/leaderboard-card_01@2x.png Images/leaderboard-card_01@2x.png
+s326331716.195017
+e326331716.916582
+r1
+xCopyPNGFile
+x/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/leaderboard-card_01@2x.png
+xImages/leaderboard-card_01@2x.png
+lSLF07#2@109"CopyPNGFile build/Debug-iphoneos/Leaderboard.app/leaderboard-card_01@2x.png Images/leaderboard-card_01@2x.png326331716#326331716#0(0"0(0#0#68"/Users/Rob/Desktop/BMW/Leaderboard/Images/leaderboard-card_01@2x.png8606598976#665"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv COPY_COMMAND "/Developer/iPhone SDK 4 beta/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp"    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Plug-ins/iPhoneOS Build System Support.xcplugin/Contents/Resources/copypng" -compress "" /Users/Rob/Desktop/BMW/Leaderboard/Images/leaderboard-card_01@2x.png /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/leaderboard-card_01@2x.png0#
 
 CCopyStringsFile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/en.lproj/InfoPlist.strings Leaderboard/en.lproj/InfoPlist.strings
-s326256639.570792
-e326256639.615660
+s326331715.458974
+e326331715.878303
 r1
 xCopyStringsFile
 x/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/en.lproj/InfoPlist.strings
 xLeaderboard/en.lproj/InfoPlist.strings
-lSLF07#2@43"Copy Leaderboard/en.lproj/InfoPlist.strings326256639#326256639#0(0"0(0#0#73"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/InfoPlist.strings8619732224#672"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv ICONV /usr/bin/iconv    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings" --validate --inputencoding utf-8 --outputencoding binary Leaderboard/en.lproj/InfoPlist.strings --outdir /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/en.lproj0#
+lSLF07#2@43"Copy Leaderboard/en.lproj/InfoPlist.strings326331715#326331715#0(0"0(0#0#73"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/en.lproj/InfoPlist.strings8609352960#533"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv ICONV /usr/bin/iconv    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings" --validate --inputencoding utf-8 --outputencoding binary Leaderboard/en.lproj/InfoPlist.strings --outdir /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/en.lproj0#
 
 CCpResource build/Debug-iphoneos/Leaderboard.app/ResourceRules.plist "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist"
-s326256639.478822
-e326256639.487289
+s326331713.505830
+e326331713.571523
 r1
 xCpResource
 xbuild/Debug-iphoneos/Leaderboard.app/ResourceRules.plist
 x/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist
-lSLF07#2@112"Copy /Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist326256639#326256639#0(0"0(0#0#107"/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist8618921696#691"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp" -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist" /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app0#
+lSLF07#2@112"Copy /Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist326331713#326331713#0(0"0(0#0#107"/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist8613552000#552"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp" -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/ResourceRules.plist" /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app0#
 
 CCreateUniversalBinary /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/Leaderboard normal "armv6 armv7"
-r0
+s326331715.422491
+e326331715.426503
+r1
+xCreateUniversalBinary
+x/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/Leaderboard
+xnormal
+xarmv6 armv7
+lSLF07#2@91"CreateUniversalBinary build/Debug-iphoneos/Leaderboard.app/Leaderboard normal "armv6 armv7"326331715#326331715#0(0"0(0#0#46"/Users/Rob/Desktop/BMW/Leaderboard/armv6 armv78612458144#570"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/lipo -create /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/Leaderboard /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/Leaderboard -output /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/Leaderboard0#
 
 CGenerateDSYMFile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app.dSYM /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/Leaderboard
-r0
+s326331715.426639
+e326331715.458870
+r1
+xGenerateDSYMFile
+x/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app.dSYM
+x/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/Leaderboard
+lSLF07#2@107"GenerateDSYMFile build/Debug-iphoneos/Leaderboard.app.dSYM build/Debug-iphoneos/Leaderboard.app/Leaderboard326331715#326331715#0(0"0(0#0#83"/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/Leaderboard8612172160#418"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/usr/bin/dsymutil" /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/Leaderboard -o /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app.dSYM0#
 
 CLd /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/Leaderboard normal armv6
-r0
+s326331715.235867
+e326331715.294111
+r1
+xLd
+x/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/Leaderboard
+xnormal
+xarmv6
+lSLF07#2@129"Link /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/Leaderboard326331715#326331715#0(0"0(0#0#0"8612455168#948"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv IPHONEOS_DEPLOYMENT_TARGET 4.0    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -arch armv6 -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk" -L/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos -filelist /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/Leaderboard.LinkFileList -dead_strip -miphoneos-version-min=4.0 -framework CoreGraphics -framework Foundation -framework UIKit -prebind -o /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv6/Leaderboard0#
 
 CLd /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/Leaderboard normal armv7
-r0
+s326331715.385366
+e326331715.422384
+r1
+xLd
+x/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/Leaderboard
+xnormal
+xarmv7
+lSLF07#2@129"Link /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/Leaderboard326331715#326331715#0(0"0(0#0#0"8613419360#948"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv IPHONEOS_DEPLOYMENT_TARGET 4.0    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -arch armv7 -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk" -L/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos -filelist /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/Leaderboard.LinkFileList -dead_strip -miphoneos-version-min=4.0 -framework CoreGraphics -framework Foundation -framework UIKit -prebind -o /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Objects-normal/armv7/Leaderboard0#
 
 CProcessInfoPlistFile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/Info.plist Leaderboard/Leaderboard-Info.plist
-s326256639.480013
-e326256639.484451
+s326331713.507121
+e326331713.559064
 r1
 xProcessInfoPlistFile
 x/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/Info.plist
 xLeaderboard/Leaderboard-Info.plist
-lSLF07#2@42"Process Leaderboard/Leaderboard-Info.plist326256639#326256639#0(0"0(0#0#69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Info.plist8618839744#749"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    builtin-infoPlistUtility Leaderboard/Leaderboard-Info.plist -genpkginfo /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/ResourceRules.plist -o /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/Info.plist0#
+lSLF07#2@42"Process Leaderboard/Leaderboard-Info.plist326331713#326331713#0(0"0(0#0#69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Info.plist8612349120#610"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility Leaderboard/Leaderboard-Info.plist -genpkginfo /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/ResourceRules.plist -o /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/Info.plist0#
+
+CProcessPCH /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bgoseaibsuymfierkbojswlbyaau/Leaderboard-Prefix.pch.gch Leaderboard/Leaderboard-Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+s326331713.571703
+e326331714.613839
+r1
+xProcessPCH
+x/var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bgoseaibsuymfierkbojswlbyaau/Leaderboard-Prefix.pch.gch
+xLeaderboard/Leaderboard-Prefix.pch
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@45"Precompile Leaderboard/Leaderboard-Prefix.pch326331713#326331714#0(0"0(0#0#69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch8613502368#1736"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -x objective-c-header -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk" -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources/armv6 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch -o /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bgoseaibsuymfierkbojswlbyaau/Leaderboard-Prefix.pch.gch0#
+
+CProcessPCH /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bijfnpwnmavpohdorfriaaeplvgi/Leaderboard-Prefix.pch.gch Leaderboard/Leaderboard-Prefix.pch normal armv7 objective-c com.apple.compilers.llvmgcc42
+s326257039.731747
+e326257039.807741
+r0
+xProcessPCH
+x/var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bijfnpwnmavpohdorfriaaeplvgi/Leaderboard-Prefix.pch.gch
+xLeaderboard/Leaderboard-Prefix.pch
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+oarm-apple-darwin10-llvm-gcc-4.2: SDK: No such file or directory
+oarm-apple-darwin10-llvm-gcc-4.2: 4: No such file or directory
+oarm-apple-darwin10-llvm-gcc-4.2: beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk: No such file or directory
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:5:25: error: Availability.h: No such file or directory
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:8:2: warning: #warning "This project uses features only available in iPhone SDK 3.0 and later."
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:12:28: error: UIKit/UIKit.h: No such file or directory
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:13:38: error: Foundation/Foundation.h: No such file or directory
+lSLF07#2@45"Precompile Leaderboard/Leaderboard-Prefix.pch326257039#326257039#0(801"arm-apple-darwin10-llvm-gcc-4.2: SDK: No such file or directoryarm-apple-darwin10-llvm-gcc-4.2: 4: No such file or directoryarm-apple-darwin10-llvm-gcc-4.2: beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk: No such file or directory/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:5:25: error: Availability.h: No such file or directory/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:8:2: warning: #warning "This project uses features only available in iPhone SDK 3.0 and later."/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:12:28: error: UIKit/UIKit.h: No such file or directory/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:13:38: error: Foundation/Foundation.h: No such file or directory4(4@41"Availability.h: No such file or directory326257039#250#125#0(6@69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch326011098#5#0#5#0#28"*: No such file or directory0(22@81"#warning "This project uses features only available in iPhone SDK 3.0 and later."326257039#375#166#0(6@69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch326011098#8#0#8#0#12"#warning "*"0(4@40"UIKit/UIKit.h: No such file or directory326257039#541#125#0(6@69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch326011098#12#0#12#0#28"*: No such file or directory0(4@50"Foundation/Foundation.h: No such file or directory326257039#666#135#0(6@69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch326011098#13#0#13#0#28"*: No such file or directory0(0#0#69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch8617842752#1978"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2" -x objective-c-header -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk" -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources/armv7 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources -isysroot /Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch -o /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-bijfnpwnmavpohdorfriaaeplvgi/Leaderboard-Prefix.pch.gch1#
+
+CProcessPCH /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-cawhhznopxsizudkonicearowinp/Leaderboard-Prefix.pch.gch Leaderboard/Leaderboard-Prefix.pch normal armv6 objective-c com.apple.compilers.llvmgcc42
+s326257039.728534
+e326257039.787509
+r0
+xProcessPCH
+x/var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-cawhhznopxsizudkonicearowinp/Leaderboard-Prefix.pch.gch
+xLeaderboard/Leaderboard-Prefix.pch
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+oarm-apple-darwin10-llvm-gcc-4.2: SDK: No such file or directory
+oarm-apple-darwin10-llvm-gcc-4.2: 4: No such file or directory
+oarm-apple-darwin10-llvm-gcc-4.2: beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk: No such file or directory
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:5:25: error: Availability.h: No such file or directory
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:8:2: warning: #warning "This project uses features only available in iPhone SDK 3.0 and later."
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:12:28: error: UIKit/UIKit.h: No such file or directory
+o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:13:38: error: Foundation/Foundation.h: No such file or directory
+lSLF07#2@45"Precompile Leaderboard/Leaderboard-Prefix.pch326257039#326257039#0(801"arm-apple-darwin10-llvm-gcc-4.2: SDK: No such file or directoryarm-apple-darwin10-llvm-gcc-4.2: 4: No such file or directoryarm-apple-darwin10-llvm-gcc-4.2: beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk: No such file or directory/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:5:25: error: Availability.h: No such file or directory/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:8:2: warning: #warning "This project uses features only available in iPhone SDK 3.0 and later."/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:12:28: error: UIKit/UIKit.h: No such file or directory/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:13:38: error: Foundation/Foundation.h: No such file or directory4(4@41"Availability.h: No such file or directory326257039#250#125#0(6@69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch326011098#5#0#5#0#28"*: No such file or directory0(22@81"#warning "This project uses features only available in iPhone SDK 3.0 and later."326257039#375#166#0(6@69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch326011098#8#0#8#0#12"#warning "*"0(4@40"UIKit/UIKit.h: No such file or directory326257039#541#125#0(6@69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch326011098#12#0#12#0#28"*: No such file or directory0(4@50"Foundation/Foundation.h: No such file or directory326257039#666#135#0(6@69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch326011098#13#0#13#0#28"*: No such file or directory0(0#0#69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch8618116768#1978"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2" -x objective-c-header -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk" -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources/armv6 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources -isysroot /Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch -o /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-cawhhznopxsizudkonicearowinp/Leaderboard-Prefix.pch.gch1#
 
 CProcessPCH /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-ejrtqveqfzxvdsdxcrkhhvzshdwo/Leaderboard-Prefix.pch.gch Leaderboard/Leaderboard-Prefix.pch normal armv7 objective-c com.apple.compilers.llvmgcc42
 s326256639.488721
@@ -428,24 +904,48 @@ o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:12:28: er
 o/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:13:38: error: Foundation/Foundation.h: No such file or directory
 lSLF07#2@45"Precompile Leaderboard/Leaderboard-Prefix.pch326256639#326256639#0(801"arm-apple-darwin10-llvm-gcc-4.2: SDK: No such file or directoryarm-apple-darwin10-llvm-gcc-4.2: 4: No such file or directoryarm-apple-darwin10-llvm-gcc-4.2: beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk: No such file or directory/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:5:25: error: Availability.h: No such file or directory/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:8:2: warning: #warning "This project uses features only available in iPhone SDK 3.0 and later."/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:12:28: error: UIKit/UIKit.h: No such file or directory/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch:13:38: error: Foundation/Foundation.h: No such file or directory4(4@41"Availability.h: No such file or directory326256639#250#125#0(6@69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch326011098#5#0#5#0#28"*: No such file or directory0(22@81"#warning "This project uses features only available in iPhone SDK 3.0 and later."326256639#375#166#0(6@69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch326011098#8#0#8#0#12"#warning "*"0(4@40"UIKit/UIKit.h: No such file or directory326256639#541#125#0(6@69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch326011098#12#0#12#0#28"*: No such file or directory0(4@50"Foundation/Foundation.h: No such file or directory326256639#666#135#0(6@69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch326011098#13#0#13#0#28"*: No such file or directory0(0#0#69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch8618650784#1978"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2" -x objective-c-header -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk" -gdwarf-2 -mthumb -miphoneos-version-min=4.3 -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources/armv6 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources -isysroot /Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch -o /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-esyfsbukcxhtzhcxownhgsyknawq/Leaderboard-Prefix.pch.gch1#
 
+CProcessPCH /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-ewbprxprnfmvfnduqngezxrbqrtc/Leaderboard-Prefix.pch.gch Leaderboard/Leaderboard-Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+s326331713.572823
+e326331714.807167
+r1
+xProcessPCH
+x/var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-ewbprxprnfmvfnduqngezxrbqrtc/Leaderboard-Prefix.pch.gch
+xLeaderboard/Leaderboard-Prefix.pch
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@45"Precompile Leaderboard/Leaderboard-Prefix.pch326331713#326331714#0(0"0(0#0#69"/Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch8613072384#1736"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -x objective-c-header -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk" -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-generated-files.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-own-target-headers.hmap -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-all-target-headers.hmap -iquote /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard-project-headers.hmap -F/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos -I/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/include -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources/armv7 -I/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/DerivedSources -c /Users/Rob/Desktop/BMW/Leaderboard/Leaderboard/Leaderboard-Prefix.pch -o /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-ewbprxprnfmvfnduqngezxrbqrtc/Leaderboard-Prefix.pch.gch0#
+
+CProcessPCH /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-fuklbhzdpxpdbwgxegqpopckkdby/Leaderboard-Prefix.pch.gch Leaderboard/Leaderboard-Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CProcessPCH /var/folders/r7/r7k30fJMHPKJDiW6FonPoE+++TQ/-Caches-/com.apple.Xcode.503/SharedPrecompiledHeaders/Leaderboard-Prefix-hiuedzhhfavsddfirzhckblbdaex/Leaderboard-Prefix.pch.gch Leaderboard/Leaderboard-Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+r0
+
 CProcessProductPackaging "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist" /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard.xcent
-s326256640.134284
-e326256640.152914
+s326331722.262012
+e326331722.272753
 r1
 xProcessProductPackaging
 x/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist
 x/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard.xcent
-lSLF07#2@207"ProcessProductPackaging "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist" build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard.xcent326256640#326256640#0(0"0(0#0#109"/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard.xcent8616445440#631"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    <com.apple.tools.product-pkg-utility> "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist" -entitlements -format xml -o /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard.xcent0#
+lSLF07#2@207"ProcessProductPackaging "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist" build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard.xcent326331722#326331722#0(0"0(0#0#109"/Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard.xcent8608111776#492"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/Entitlements.plist" -entitlements -format xml -o /Users/Rob/Desktop/BMW/Leaderboard/build/Leaderboard.build/Debug-iphoneos/Leaderboard.build/Leaderboard.xcent0#
 
 CProcessProductPackaging "/Users/Rob/Library/MobileDevice/Provisioning Profiles/70F00D3F-D4EC-4CD4-8617-12FBC3E90974.mobileprovision" /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/embedded.mobileprovision
-s326256640.132835
-e326256640.134188
+s326331722.230764
+e326331722.258165
 r1
 xProcessProductPackaging
 x/Users/Rob/Library/MobileDevice/Provisioning Profiles/70F00D3F-D4EC-4CD4-8617-12FBC3E90974.mobileprovision
 x/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/embedded.mobileprovision
-lSLF07#2@194"ProcessProductPackaging "/Users/Rob/Library/MobileDevice/Provisioning Profiles/70F00D3F-D4EC-4CD4-8617-12FBC3E90974.mobileprovision" build/Debug-iphoneos/Leaderboard.app/embedded.mobileprovision326256640#326256640#0(0"0(0#0#96"/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/embedded.mobileprovision8617977728#592"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"    <com.apple.tools.product-pkg-utility> "/Users/Rob/Library/MobileDevice/Provisioning Profiles/70F00D3F-D4EC-4CD4-8617-12FBC3E90974.mobileprovision" -o /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/embedded.mobileprovision0#
+lSLF07#2@194"ProcessProductPackaging "/Users/Rob/Library/MobileDevice/Provisioning Profiles/70F00D3F-D4EC-4CD4-8617-12FBC3E90974.mobileprovision" build/Debug-iphoneos/Leaderboard.app/embedded.mobileprovision326331722#326331722#0(0"0(0#0#96"/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/embedded.mobileprovision8608875360#453"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> "/Users/Rob/Library/MobileDevice/Provisioning Profiles/70F00D3F-D4EC-4CD4-8617-12FBC3E90974.mobileprovision" -o /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app/embedded.mobileprovision0#
 
 CTouch /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app
-r0
+s326331722.258237
+e326331722.261888
+r1
+xTouch
+x/Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app
+lSLF07#2@77"Touch /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app326331722#326331722#0(0"0(0#0#0"8608574784#296"    cd /Users/Rob/Desktop/BMW/Leaderboard    setenv PATH "/Developer/iPhone SDK 4 beta/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/iPhone SDK 4 beta/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/Rob/Desktop/BMW/Leaderboard/build/Debug-iphoneos/Leaderboard.app0#
 
