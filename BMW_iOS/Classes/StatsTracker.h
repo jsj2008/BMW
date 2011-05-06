@@ -31,5 +31,6 @@
 @property(readonly) NSDictionary *currentStats;
 //for temporary debug display in StatsTakingTableViewController
 @property(readonly) NSArray *stats;
+@property(nonatomic) int numBlobs;
 
 @end

@@ -5,6 +5,7 @@
 
 #import "ImageProcessingViewController.h"
 #import "ServerConnection.h"
+#import "StatsTracker.h"
 
 #define UPDATE_INTERVAL 5.0f/2.0f;
 #define RED_THRESHOLD 200
@@ -398,10 +399,10 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 	
 	// Update uniform values
 	glUniform1i([shader indexForUniform:@"inputImage"], 0);
-	glUniform1f([shader indexForUniform:@"anchorWidth"], 8.0);
-	glUniform1f([shader indexForUniform:@"elementWidth"], 15.0);
-	glUniform1f([shader indexForUniform:@"anchorHeight"], 8.0);
-	glUniform1f([shader indexForUniform:@"elementHeight"], 15.0);
+	glUniform1f([shader indexForUniform:@"anchorWidth"], 7.0);
+	glUniform1f([shader indexForUniform:@"elementWidth"], 13.0);
+	glUniform1f([shader indexForUniform:@"anchorHeight"], 7.0);
+	glUniform1f([shader indexForUniform:@"elementHeight"], 13.0);
 	glUniform2f([shader indexForUniform:@"pixelSize"], 1.0/FBO_HEIGHT,1.0/FBO_WIDTH);
 	
 	// Update attribute values.
@@ -471,6 +472,7 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 	}
     
     printf("red blobs: %d\n", redBlobs);
+    [StatsTracker sharedTracker].numBlobs=redBlobs;
     
     //send stats
 #ifdef SEND_LIGHTS
