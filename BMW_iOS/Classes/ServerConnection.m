@@ -81,6 +81,22 @@ static ServerConnection * _sharedConnection;
     //NSLog(@"prev stats:%@",[statsDict JSONRepresentation]);
 }
 
++(void)sendPostRequestTo:(NSString *)url delegate:(id<ServerConnectionDelegate>)delegate
+{
+    NSMutableURLRequest *req = [[[NSMutableURLRequest alloc] init] autorelease];
+    [req setURL:[NSURL URLWithString:url]];
+    [req setHTTPMethod:@"POST"];
+    [ServerConnection sendRequest:req delegate:delegate];
+}
+
++(void)sendGetRequestTo:(NSString *)url delegate:(id<ServerConnectionDelegate>)delegate
+{
+    NSMutableURLRequest *req = [[[NSMutableURLRequest alloc] init] autorelease];
+    [req setURL:[NSURL URLWithString:url]];
+    [req setHTTPMethod:@"GET"];
+    [ServerConnection sendRequest:req delegate:delegate];
+}
+
 +(void)sendPostRequestTo:(NSString *)url postData:(NSString *)post delegate:(id<ServerConnectionDelegate>)delegate
 {
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:NO];
