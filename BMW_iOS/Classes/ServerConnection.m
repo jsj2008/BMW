@@ -72,25 +72,30 @@ static ServerConnection * _sharedConnection;
     [statsDict setObject:[NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]] forKey:@"iphone_time"];
     [statsDict setObject:[[UIDevice currentDevice] uniqueIdentifier] forKey:@"udid"];
     
-    NSMutableURLRequest *req = [[[NSMutableURLRequest alloc] init] autorelease];
     NSString *post = [NSString stringWithFormat:@"data=%@",[statsDict JSONRepresentation]];
-    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:NO];
-    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
-    
-    [req setURL:[NSURL URLWithString:url]];
-    [req setHTTPMethod:@"POST"];
-    [req setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [req setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [req setHTTPBody:postData];
     
 #ifdef POST_DATA
-    [ServerConnection sendRequest:req delegate:[ServerConnection sharedConnection]];
+    [ServerConnection sendPostRequestTo:url postData:post delegate:[ServerConnection sharedConnection]];
 #endif
     
     //NSLog(@"prev stats:%@",[statsDict JSONRepresentation]);
 }
 
-+(void)sendRequest:(NSURLRequest *)request delegate:(id)delegate
++(void)sendPostRequestTo:(NSString *)url postData:(NSString *)post delegate:(id<ServerConnectionDelegate>)delegate
+{
+    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:NO];
+    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+    
+    NSMutableURLRequest *req = [[[NSMutableURLRequest alloc] init] autorelease];
+    [req setURL:[NSURL URLWithString:url]];
+    [req setHTTPMethod:@"POST"];
+    [req setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [req setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [req setHTTPBody:postData];
+    [ServerConnection sendRequest:req delegate:delegate];
+}
+
++(void)sendRequest:(NSURLRequest *)request delegate:(id<ServerConnectionDelegate>)delegate
 {
     [[ServerConnection sharedConnection] addConnection:
     [[[NSURLConnection alloc] initWithRequest:request delegate:[ServerConnection sharedConnection] startImmediately:YES] autorelease]

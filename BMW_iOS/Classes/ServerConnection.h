@@ -32,6 +32,10 @@
 }
 +(void)sendStats:(id)stats toURL:(NSString *)url;
 +(ServerConnection *) sharedConnection;
++(void)sendPostRequestTo:(NSString *)url postData:(NSString *)post delegate:(id<ServerConnectionDelegate>)delegate;
++(void)sendRequest:(NSURLRequest *)request delegate:(id<ServerConnectionDelegate>)delegate;
+-(void) addConnection:(NSURLConnection *)key forDelegate:(id<ServerConnectionDelegate>)value;
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data;
 -(void)receiveStats:(NSArray *)stats;
 
 @end
