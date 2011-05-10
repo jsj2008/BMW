@@ -7,12 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PageViewController.h"
 
-@interface LeaderboardViewController : UIViewController {
-    IBOutlet UIPageControl *pc;
-    IBOutlet UITextView *scoreBoard;
+@interface LeaderboardViewController : UIViewController <UIScrollViewDelegate> {
+	UIScrollView *scrollView;
+	UIPageControl *pageControl;
+	NSMutableArray *viewControllers;
     
+	
+	BOOL pageControlUsed;
+	
+	NSMutableArray *stringParts;
 }
-- (IBAction)pageValueDidChange;
+-(IBAction)changePage:(id)sender;
+-(void)loadScrollViewWithPage:(int)page;
+
+@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, retain) IBOutlet UIPageControl *pageControl;
+@property (nonatomic, retain) NSMutableArray *viewControllers;
+
 
 @end

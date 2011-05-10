@@ -86,12 +86,14 @@
 	glGenFramebuffers(1, &positionFramebuffer);
     glBindFramebuffer(GL_FRAMEBUFFER, positionFramebuffer);
 
-	glGenRenderbuffers(1, &positionRenderbuffer);
-    glBindRenderbuffer(GL_RENDERBUFFER, positionRenderbuffer);
-	
-    glRenderbufferStorage(GL_RENDERBUFFER, GL_RGBA8_OES, FBO_WIDTH, FBO_HEIGHT);
-    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, positionRenderbuffer);	
-    
+	//glGenRenderbuffers(1, &positionRenderbuffer);
+    //glBindRenderbuffer(GL_RENDERBUFFER, positionRenderbuffer);
+                                         
+    //glRenderbufferStorage(GL_RENDERBUFFER, GL_RGBA8_OES, FBO_WIDTH, FBO_HEIGHT);
+    //[context renderbufferStorage:GL_RENDERBUFFER fromDrawable:(CAEAGLLayer*)self.layer];
+
+    //glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, positionRenderbuffer);	
+
 
 	// Offscreen position framebuffer texture target
 	glGenTextures(1, &positionRenderTexture);
@@ -100,9 +102,7 @@
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-	glHint(GL_GENERATE_MIPMAP_HINT, GL_NICEST);
-//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-	//GL_NEAREST_MIPMAP_NEAREST
+ 	glHint(GL_GENERATE_MIPMAP_HINT, GL_NICEST);
 
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, FBO_WIDTH, FBO_HEIGHT, 0, GL_RGBA, GL_UNSIGNED_BYTE, 0);
 //  glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, FBO_WIDTH, FBO_HEIGHT, 0, GL_RGBA, GL_FLOAT, 0);

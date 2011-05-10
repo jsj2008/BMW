@@ -5,7 +5,9 @@
 
 #import "ImageProcessingViewController.h"
 #import "ServerConnection.h"
+#import "StatsTracker.h"
 
+#define UPDATE_INTERVAL 5.0f/2.0f;
 #define RED_THRESHOLD 200
 #define BASE_SIZE 320*480
 #define RED_LIGHT @"red_count"
@@ -14,18 +16,6 @@
 #define RED 1
 #define GREEN 2
 #define YELLOW 3
-
-typedef struct BlobPoint {
-	int x;
-	int y;
-	struct BlobPoint* nextPoint;
-} BlobPoint;
-
-typedef struct Blob{
-	BlobPoint *points;
-    int color;
-	int numPoints;
-} Blob;
 
 // Uniform index.
 enum {
@@ -67,13 +57,47 @@ enum {
 	[self.view addSubview:glView];
 	[glView release];
 	
-	[ShaderProgram enableDebugging:YES];
+	[ShaderProgram enableDebugging:NO];
 	
 	camera = [[CaptureSessionManager alloc] init];
 	camera.delegate = self;
     
     rawPositionPixels = (GLubyte *) calloc(FBO_WIDTH * FBO_HEIGHT * 4, sizeof(GLubyte));
+
+    trackBlobs = NULL;
+    
+#ifdef SENSOR_READER    
+    motionManager = [[CMMotionManager alloc] init];
+    motionManager.deviceMotionUpdateInterval = UPDATE_INTERVAL;
+    [motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue]
+									   withHandler: ^(CMDeviceMotion *motionData,	NSError *error)
+     {
+#ifdef SEND_MOTION
+         [ServerConnection sendStats:[ServerConnection motionToDict:motionData] toURL:MOTION_URL];
+#endif
+     }];
+    
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+#ifdef SEND_HEADING
+    [locationManager startUpdatingHeading];
+#endif
+#ifdef SEND_LOCATION
+    [locationManager startUpdatingLocation];
+#endif
+#endif
 }
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+#ifdef SEND_LOCATION
+    [ServerConnection sendStats:[ServerConnection locationToDict:newLocation] toURL:LOCATION_URL];
+#endif
+#ifdef SEND_HEADING
+    if(manager.heading!=nil)
+        [ServerConnection sendStats:[ServerConnection headingToDict:manager.heading] toURL:HEADING_URL];
+#endif
+}
+
 
 -(void)viewWillDisappear:(BOOL)animated
 {
@@ -282,7 +306,7 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 }
 
 - (void)drawFrame
-{    
+{ 
     // Replace the implementation of this method to do your own custom drawing.
     static const GLfloat squareVertices[] = {
         -1.0f, -1.0f,
@@ -305,14 +329,18 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
         1.0f,  1.0f,
     };
 	
-	//static float transY = 0.0f;
 	ShaderProgram *shader;
     glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
     
+    
 	// Use shader program.
-	[glView setPositionThresholdFramebuffer];	
+	[glView setPositionThresholdFramebuffer];
+	//[glView setDisplayFramebuffer];
+    
 	shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"hsi_threshold.frag.glsl"];
+    //shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"DirectDisplayShader.fsh"];
+
 	[shader setAsActive];
     
 	glActiveTexture(GL_TEXTURE0);
@@ -328,24 +356,24 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 	glEnableVertexAttribArray([shader indexForAttribute:@"inputTextureCoordinate"]);
 	
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-	
     
-	shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"dilation.frag.glsl"];
-    
+	shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"erosion.frag.glsl"];
+    //shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"DirectDisplayShader.fsh"];
+
 	[glView setDisplayFramebuffer];
 	[shader setAsActive];
 	
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
-	
+        
 	// Update uniform values
 	glUniform1i([shader indexForUniform:@"inputImage"], 0);
-	glUniform1f([shader indexForUniform:@"anchorWidth"], 7.0);
-	glUniform1f([shader indexForUniform:@"elementWidth"], 13.0);
-	glUniform1f([shader indexForUniform:@"anchorHeight"], 7.0);
-	glUniform1f([shader indexForUniform:@"elementHeight"], 13.0);
+	glUniform1f([shader indexForUniform:@"anchorWidth"], 2.0);
+	glUniform1f([shader indexForUniform:@"elementWidth"], 5.0);
+	glUniform1f([shader indexForUniform:@"anchorHeight"], 2.0);
+	glUniform1f([shader indexForUniform:@"elementHeight"], 5.0);
 	glUniform2f([shader indexForUniform:@"pixelSize"], 1.0/FBO_HEIGHT,1.0/FBO_WIDTH);
-	
+    
 	// Update attribute values.
 	glVertexAttribPointer([shader indexForAttribute:@"position"], 2, GL_FLOAT, 0, 0, squareVertices);
 	glEnableVertexAttribArray([shader indexForAttribute:@"position"]);
@@ -354,20 +382,20 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 	
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     
-    shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"erosion.frag.glsl"];
+    shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"dilation.frag.glsl"];
     
-	//[glView setDisplayFramebuffer];
+	[glView setDisplayFramebuffer];
 	[shader setAsActive];
 	
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
+	//glActiveTexture(GL_TEXTURE0);
+	//glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
 	
 	// Update uniform values
 	glUniform1i([shader indexForUniform:@"inputImage"], 0);
-	glUniform1f([shader indexForUniform:@"anchorWidth"], 8.0);
-	glUniform1f([shader indexForUniform:@"elementWidth"], 15.0);
-	glUniform1f([shader indexForUniform:@"anchorHeight"], 8.0);
-	glUniform1f([shader indexForUniform:@"elementHeight"], 15.0);
+	glUniform1f([shader indexForUniform:@"anchorWidth"], 3.0);
+	glUniform1f([shader indexForUniform:@"elementWidth"], 7.0);
+	glUniform1f([shader indexForUniform:@"anchorHeight"], 3.0);
+	glUniform1f([shader indexForUniform:@"elementHeight"], 7.0);
 	glUniform2f([shader indexForUniform:@"pixelSize"], 1.0/FBO_HEIGHT,1.0/FBO_WIDTH);
 	
 	// Update attribute values.
@@ -377,7 +405,6 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 	glEnableVertexAttribArray([shader indexForAttribute:@"inputTextureCoordinate"]);
 	
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-	
     
     glReadPixels(0, 0, FBO_WIDTH, FBO_HEIGHT, GL_RGBA, GL_UNSIGNED_BYTE, rawPositionPixels);
     
@@ -389,7 +416,8 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
     
 	int nBlob = [self LabelRegions:rawPositionPixels withDestination:labels Boundaries:boundaries];
     
-    //Blob** trackBlobs = malloc(sizeof(Blob)*nBlob);
+    trackBlobs = malloc(sizeof(Blob *)*nBlob);
+    
     int blobIndex = 0;
     int greenBlobs = 0;
     int redBlobs = 0;
@@ -420,12 +448,15 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 		ur.x += 2.0;//*(ur.x - ll.x);
 		ur.y += 2.0;//*(ur.y - ll.y);
 		bool fillBlack = false;
-		if (!circleTest(blob)) {
-			//fillBlack = true;
-		}
+#if CIRCLE_DETECTION
+		if (!circleTest(blob)) fillBlack = true;
+#endif
+#if BLOB_PIXEL_COUNT
+        if (blob->numPoints < 10) fillBlack = true;
+#endif
 		drawRectangle(rawPositionPixels, ll, ur, fillBlack);
         if (!fillBlack) {
-            //trackBlobs[blobIndex] = blob;
+            trackBlobs[blobIndex] = blob;
             blobIndex++;
             if (blob->color == RED) {
                 redBlobs++;
@@ -434,35 +465,42 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 	}
     
     printf("red blobs: %d\n", redBlobs);
+    [StatsTracker sharedTracker].numBlobs=redBlobs;
     
     //send stats
-//    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:redBlobs],RED_LIGHT, [NSNumber numberWithInt:greenBlobs], GREEN_LIGHT, nil];
-//    NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:redBlobs],RED_LIGHT, [NSNumber numberWithInt:greenBlobs], GREEN_LIGHT, nil];
-//    [ServerConnection sendStats:dictionary toURL:IMAGE_PROCESSING_URL];
-//    [dictionary release];
+#ifdef SEND_LIGHTS
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:redBlobs],RED_LIGHT, [NSNumber numberWithInt:greenBlobs], GREEN_LIGHT, nil];
+    [ServerConnection sendStats:dictionary toURL:IMAGE_PROCESSING_URL];
+#endif
+    
+   // glReadPixels(0, 0, FBO_WIDTH, FBO_HEIGHT, GL_RGBA, GL_UNSIGNED_BYTE, rawPositionPixels);
     
     //draw image to iphone
     glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
-    
+    glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
+    //glBindTexture(GL_TEXTURE_2D, videoFrameTexture);
     glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, FBO_WIDTH, FBO_HEIGHT, GL_RGBA, GL_UNSIGNED_BYTE, rawPositionPixels);    
+    //glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, FBO_WIDTH, FBO_HEIGHT, 0, GL_RGBA, GL_UNSIGNED_BYTE, rawPositionPixels);
+
     
     shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"DirectDisplayShader.fsh"];
-    
-	//[glView setDisplayFramebuffer];
+
+    [glView setDisplayFramebuffer];
+    //[glView setPositionThresholdFramebuffer];
 	[shader setAsActive];
-	
+    
 	// Update attribute values.
 	glVertexAttribPointer([shader indexForAttribute:@"position"], 2, GL_FLOAT, 0, 0, squareVertices);
 	glEnableVertexAttribArray([shader indexForAttribute:@"position"]);
 	glVertexAttribPointer([shader indexForAttribute:@"inputTextureCoordinate"], 2, GL_FLOAT, 0, 0, passthroughTextureVertices);
+    //glVertexAttribPointer([shader indexForAttribute:@"inputTextureCoordinate"], 2, GL_FLOAT, 0, 0, textureVertices);
 	glEnableVertexAttribArray([shader indexForAttribute:@"inputTextureCoordinate"]);
 	
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     
     [glView presentFramebuffer];
     
-    //free(trackBlobs);
+    free(trackBlobs);
     FreeAllRegions(boundaries, nBlob, labels);
 }
 
@@ -481,8 +519,8 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 	CVPixelBufferLockBaseAddress(cameraFrame, 0);
 	int bufferHeight = CVPixelBufferGetHeight(cameraFrame);
 	int bufferWidth = CVPixelBufferGetWidth(cameraFrame);
-	
-	// Create a new texture from the camera frame data, display that using the shaders
+    
+	// Create a new texture from the camera frame data, display using the shaders
 	glGenTextures(1, &videoFrameTexture);
 	glBindTexture(GL_TEXTURE_2D, videoFrameTexture);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
@@ -509,31 +547,3 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 @end
 
 #endif
-
-
-//2
-//multiple passes	
-//	[glView setPositionThresholdFramebuffer];
-//	[shader setAsActive];
-//	
-//	glUniform1i([shader indexForUniform:@"videoFrame"], 0);
-//	glUniform1f([shader indexForUniform:@"phase"], transY);
-//	
-//	glActiveTexture(GL_TEXTURE0);
-//	glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
-//	glVertexAttribPointer(ATTRIB_VERTEX, 2, GL_FLOAT, 0, 0, squareVertices);
-//	glEnableVertexAttribArray(ATTRIB_VERTEX);
-//	glVertexAttribPointer(ATTRIB_TEXTUREPOSITON, 2, GL_FLOAT, 0, 0, passthroughTextureVertices);
-//	glEnableVertexAttribArray(ATTRIB_TEXTUREPOSITON);
-//	
-//	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-//	
-//1
-/*
- glUniform1f([shader indexForUniform:@"anchorWidth"], 13.0);
- glUniform1f([shader indexForUniform:@"elementWidth"], 13.0);
- glUniform1f([shader indexForUniform:@"anchorHeight"], 7.0);
- glUniform1f([shader indexForUniform:@"elementHeight"], 7.0);
- glUniform2f([shader indexForUniform:@"pixelSize"], 1.0/FBO_HEIGHT,1.0/FBO_WIDTH);
- glUniform1i([shader indexForUniform:@"erosion"], 0);
- */

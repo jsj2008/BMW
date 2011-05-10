@@ -1,11 +1,17 @@
 BMW_iOS/build
+Leaderboard/build
 *.mode1v3
 *.pbxuser
 .DS_Store
 
 
 #BMW HMI
-Stanford\ CS210/BMW.app
-Stanford\ CS210/MINI.app
-Stanford\ CS210/RHMI\ Editor
-Stanford\ CS210/SimpleWeather/build
+HMI/BMW.app
+HMI/MINI.app
+HMI/RHMI\ Editor
+HMI/SimpleWeather/build
+
+bunkermw
+
+*.xcworkspace
+xcuserdata

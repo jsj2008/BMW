@@ -78,15 +78,15 @@
         <id>CAC_List_Elem_Selected</id>
         <numericId>25</numericId>
         <actions>
+          <raAction>
+            <id>ACT_List_Elem_Selected</id>
+            <numericId>27</numericId>
+          </raAction>
           <hmiAction>
             <id>HAC_List_Elem_Selected_Target</id>
             <numericId>26</numericId>
             <targetModel>MDL_List_Target</targetModel>
           </hmiAction>
-          <raAction>
-            <id>ACT_List_Elem_Selected</id>
-            <numericId>27</numericId>
-          </raAction>
         </actions>
       </combinedAction>
     </actions>
@@ -219,6 +219,7 @@
         <id>HST_Menu</id>
         <text>Current MINI Rankings</text>
         <numericId>23</numericId>
+        <optionComponents/>
         <components>
           <list>
             <id>LST_List</id>

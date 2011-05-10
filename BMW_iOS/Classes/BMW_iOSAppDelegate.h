@@ -13,6 +13,7 @@
 #import "MapViewController.h"
 #import "RemoteAppController.h"
 #import "SensorReader.h"
+#import "LeaderboardViewController.h"
 
 @class ImageProcessingViewController;
 
@@ -22,6 +23,8 @@ extern NSString* BMWConnectedChanged;
     UIWindow *window;
     ImageProcessingViewController *viewController;
 	SensorReader *reader;
+	
+	LeaderboardViewController *leaderboardVC;
 	
 	RemoteAppController* bmwAppController;
 }

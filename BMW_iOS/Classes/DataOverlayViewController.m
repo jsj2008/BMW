@@ -32,8 +32,8 @@
 
 -(void)populateLabelsFromsStatsTracker
 {
-	textView.text = [NSString stringWithFormat:@"%@",[StatsTracker sharedTracker].currentStats];
-	[self performSelector:@selector(populateLabelsFromsStatsTracker) withObject:nil afterDelay:0.5];
+	textView.text = [NSString stringWithFormat:@"Red Blobs:%d",[StatsTracker sharedTracker].numBlobs];
+	[self performSelector:@selector(populateLabelsFromsStatsTracker) withObject:nil afterDelay:0.1];
 }
 
 /*

@@ -12,7 +12,7 @@
 #include "JSONSerializableSupport.h"
 
 @implementation StatsTracker
-@synthesize currentStats, stats;
+@synthesize currentStats, stats, numBlobs;
 
 //for simplicity's sake - eventually we probably just want to pass this, not do it as a singleton
 static StatsTracker *sharedTracker;

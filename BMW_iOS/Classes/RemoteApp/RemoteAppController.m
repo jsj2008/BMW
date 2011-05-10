@@ -14,7 +14,7 @@
 
 
 -(id)init {
-	if (self = [super init]) {
+	if ((self = [super init])) {
 		//make sure we are notified of the USB connection status changes
 		[[NSNotificationCenter defaultCenter] addObserver:self
 												 selector:@selector(accessoryDidStart:)
@@ -25,11 +25,15 @@
 												 selector:@selector(accessoryDidStop:)
 													 name:ExternalAccessoryProxyWillStopNotification
 												   object:nil];
-
+		
 		
 		
 		//Startup the USB connection monitor
 		[[IDExternalAccessoryMonitor sharedMonitor] start];
+		
+#if TARGET_IPHONE_SIMULATOR
+		[self accessoryDidStart:nil];
+#endif
 	}
 	return self;
 }
@@ -41,7 +45,7 @@
 	NSLog(@"Got Speed with dict: %@", dictionary);
     NSNumber *speed = [dictionary objectForKey:@"speedActual"];
     [app.mainVC setSpeed:[speed doubleValue]];
-    }
+}
 
 - (void)engineRPM:(NSDictionary*)dictionary
 {
@@ -70,12 +74,17 @@
  */
 -(void) accessoryDidStart:(NSNotification*) notification
 {
+ 	if (_busy) return;	
+
 	// Connect
 	[self connectToUSB];
 }
 
 -(void) accessoryDidStop:(NSNotification*) notification
 {
+	if (!app) return;
+	if (_busy) return;
+
 	// Disconnect
 	[self disconnectFromUSB];
 }
@@ -85,14 +94,14 @@
 {	
 	// Start Rhmi App
 	self.app = [[[RemoteApp alloc] initWithHmiDescription:@"RemoteApp.xml" 
-											 imageDatabaseAll:@"RemoteApp_ALL_Images.zip"
-											 imageDatabaseBMW:nil
-											imageDatabaseMINI:nil
-											  textDatabaseAll:nil 
-											  textDatabaseBMW:nil 
-											 textDatabaseMINI:nil 
-											  devCertificates:YES
-													 delegate:self] autorelease];
+										 imageDatabaseAll:@"RemoteApp_ALL_Images.zip"
+										 imageDatabaseBMW:nil
+										imageDatabaseMINI:nil
+										  textDatabaseAll:nil 
+										  textDatabaseBMW:nil 
+										 textDatabaseMINI:nil 
+										  devCertificates:YES
+												 delegate:self] autorelease];
 	[app connectWithHostname: @"127.0.0.1" port:[IDApplication defaultPort]];
 	// Waiting for	-idApplicationDidConnect: ...
 	// or			-idApplication: connectionFailedWithError: ...
@@ -108,7 +117,7 @@
 
 
 -(void)idApplicationDidConnect:(IDApplication*)appication
-{
+{	
 	[[NSNotificationCenter defaultCenter] postNotificationName:BMWConnectedChanged object:nil userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:@"connected"]];
 	NSLog(@"Connected");
     
@@ -117,18 +126,23 @@
     [ds bindProperty:CDSEngineRPMSpeed			target:self selector:@selector(engineRPM:)];
     [ds bindProperty:CDSDrivingSteeringwheel	target:self selector:@selector(steeringWheel:)];
     [ds bindProperty:CDSDrivingSpeedActual target:self selector:@selector(speedActual:)];
-
+	_busy = NO;
+	
 }
 
 -(void)idApplicationDidDisconnect:(IDApplication*)appication
-{
+{	
 	self.app = nil;
+	_busy = NO;
 	[[NSNotificationCenter defaultCenter] postNotificationName:BMWConnectedChanged object:[NSNumber numberWithBool:NO]];
+	
 }
 
 -(void)idApplication:(IDApplication*)appication connectionFailedWithError:(NSError*)error
-{
+{	
+    NSLog(@"idApplication connectionFailedWithError: %@",[error description]);
 	self.app = nil;
+	_busy = NO;
 	[[NSNotificationCenter defaultCenter] postNotificationName:BMWConnectedChanged object:[NSNumber numberWithBool:NO]];
 }
 

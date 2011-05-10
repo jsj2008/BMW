@@ -167,8 +167,9 @@
 				<reference key="NSSuperview"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
-					<bytes key="NSRGB">MC40NjM2MTcxMDM2IDAuNTIwNjkxMzg4OSAxIDAuMzUAA</bytes>
+					<bytes key="NSRGB">MC40NjM2MTcxMDM2IDAuNTIwNjkxMzg4OSAxIDAAA</bytes>
 				</object>
+				<bool key="IBUIOpaque">NO</bool>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
 		</object>
@@ -293,7 +294,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>DialWidgetViewController</string>
 					<string>UIResponder</string>
-					<string>{{550, 384}, {200, 300}}</string>
+					<string>{{285, 374}, {200, 300}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">

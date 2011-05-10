@@ -58,7 +58,7 @@ void main()
 {
     vec4 pixel = texture2D(inputImage, pos);
     pixel *= 255.0;
-    float ins = Intensity(pixel.r, pixel.g, pixel.b);
+   // float ins = Intensity(pixel.r, pixel.g, pixel.b);
     float sat = Saturation(pixel.r, pixel.g, pixel.b);
     float hue = Hue(pixel.r, pixel.g, pixel.b);
 
@@ -72,7 +72,7 @@ void main()
 
     //Check for green traffic lights
     //} else if (hue >= GH_MIN && hue <= GH_MAX && sat >= GS_THRESHOLD && ins >= I_THRESHOLD){
-    } else if (hue >= GH_MIN && hue <= GH_MAX && ins >= I_THRESHOLD){
+    } else if (hue >= GH_MIN && hue <= GH_MAX && sat >= GS_THRESHOLD){
  
         if (pixel.g > G_THRESHOLD && pixel.r < RB_THRESHOLD) {
             gl_FragColor = vec4(0, 1, 0, 1);
