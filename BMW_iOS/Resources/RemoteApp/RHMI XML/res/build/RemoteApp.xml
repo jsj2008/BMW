@@ -14,8 +14,8 @@
             </combinedAction>
             <combinedAction id="25">
                 <actions>
-                    <hmiAction id="26" target="0" targetModel="28" />
                     <raAction id="27" />
+                    <hmiAction id="26" target="0" targetModel="28" />
                 </actions>
             </combinedAction>
         </actions>
@@ -54,6 +54,8 @@
                 <components>
                     <list id="24" model="21" action="25" />
                 </components>
+                <optionComponents>
+                </optionComponents>
             </hmiState>
         </hmiStates>
         <events>

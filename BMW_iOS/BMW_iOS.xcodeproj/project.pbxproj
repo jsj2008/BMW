@@ -29,6 +29,9 @@
 		7B865D6F136D44EF00A447EC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B865D6E136D44EF00A447EC /* CoreData.framework */; };
 		7B90C2E01366743500DC25D7 /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C2DF1366743500DC25D7 /* ServerConnection.m */; };
 		7B9BB91E133BC41100A58F52 /* default.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 7BA6FF23133B461F00940874 /* default.vsh */; };
+		7BA4E5F31378F46D005EA057 /* CLHeading+NSMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA4E5F21378F46D005EA057 /* CLHeading+NSMutableDictionary.m */; };
+		7BA4E5F61378F530005EA057 /* CLLocation+NSMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA4E5F51378F530005EA057 /* CLLocation+NSMutableDictionary.m */; };
+		7BA4E5F91378F581005EA057 /* CMDeviceMotion+NSMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA4E5F81378F580005EA057 /* CMDeviceMotion+NSMutableDictionary.m */; };
 		7BA6FF4C133B506900940874 /* ShaderProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6FF49133B506900940874 /* ShaderProgram.m */; };
 		7BD1350C132D9E9600150AA0 /* ImageProcessingGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD13505132D9E9600150AA0 /* ImageProcessingGLView.m */; };
 		7BD1350D132D9E9600150AA0 /* ImageProcessingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD13507132D9E9600150AA0 /* ImageProcessingViewController.m */; };
@@ -54,6 +57,14 @@
 		D437EC2E1371F27800AEA826 /* car icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D437EC2A1371F27800AEA826 /* car icon.png */; };
 		D437EC301371F2FB00AEA826 /* widget-basic bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D437EC2F1371F2FB00AEA826 /* widget-basic bg.png */; };
 		D437ECD71372079E00AEA826 /* dial-hand2.png in Resources */ = {isa = PBXBuildFile; fileRef = D437ECD61372079E00AEA826 /* dial-hand2.png */; };
+		D43BDEAF1378F58800722E69 /* LeaderboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D43BDEAC1378F58800722E69 /* LeaderboardViewController.m */; };
+		D43BDEB01378F58800722E69 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D43BDEAE1378F58800722E69 /* PageViewController.m */; };
+		D43BDEB21378F58F00722E69 /* PageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D43BDEB11378F58F00722E69 /* PageViewController.xib */; };
+		D43BDF281378F82500722E69 /* LeaderboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D43BDF271378F82500722E69 /* LeaderboardViewController.xib */; };
+		D43BDF2E1378F87900722E69 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = D43BDF2A1378F87900722E69 /* background.png */; };
+		D43BDF2F1378F87900722E69 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D43BDF2B1378F87900722E69 /* background@2x.png */; };
+		D43BDF301378F87900722E69 /* leaderboard-card_01.png in Resources */ = {isa = PBXBuildFile; fileRef = D43BDF2C1378F87900722E69 /* leaderboard-card_01.png */; };
+		D43BDF311378F87900722E69 /* leaderboard-card_01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D43BDF2D1378F87900722E69 /* leaderboard-card_01@2x.png */; };
 		D43DB5B513261BFA00DCAD92 /* VelocityEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D43DB5B413261BFA00DCAD92 /* VelocityEvent.m */; };
 		D43DB61713261DE900DCAD92 /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = D43DB5CC13261DE900DCAD92 /* Connection.m */; };
 		D43DB61813261DE900DCAD92 /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D43DB5CE13261DE900DCAD92 /* ConnectionDelegate.m */; };
@@ -159,6 +170,12 @@
 		7B865D6E136D44EF00A447EC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7B90C2DE1366743500DC25D7 /* ServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerConnection.h; sourceTree = "<group>"; };
 		7B90C2DF1366743500DC25D7 /* ServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerConnection.m; sourceTree = "<group>"; };
+		7BA4E5F11378F46D005EA057 /* CLHeading+NSMutableDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLHeading+NSMutableDictionary.h"; sourceTree = "<group>"; };
+		7BA4E5F21378F46D005EA057 /* CLHeading+NSMutableDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLHeading+NSMutableDictionary.m"; sourceTree = "<group>"; };
+		7BA4E5F41378F530005EA057 /* CLLocation+NSMutableDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+NSMutableDictionary.h"; sourceTree = "<group>"; };
+		7BA4E5F51378F530005EA057 /* CLLocation+NSMutableDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+NSMutableDictionary.m"; sourceTree = "<group>"; };
+		7BA4E5F71378F580005EA057 /* CMDeviceMotion+NSMutableDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMDeviceMotion+NSMutableDictionary.h"; sourceTree = "<group>"; };
+		7BA4E5F81378F580005EA057 /* CMDeviceMotion+NSMutableDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMDeviceMotion+NSMutableDictionary.m"; sourceTree = "<group>"; };
 		7BA6FF23133B461F00940874 /* default.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = default.vsh; sourceTree = "<group>"; };
 		7BA6FF48133B506900940874 /* ShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderProgram.h; sourceTree = "<group>"; };
 		7BA6FF49133B506900940874 /* ShaderProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShaderProgram.m; sourceTree = "<group>"; };
@@ -194,6 +211,16 @@
 		D437EC2A1371F27800AEA826 /* car icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "car icon.png"; sourceTree = "<group>"; };
 		D437EC2F1371F2FB00AEA826 /* widget-basic bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "widget-basic bg.png"; sourceTree = "<group>"; };
 		D437ECD61372079E00AEA826 /* dial-hand2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dial-hand2.png"; sourceTree = "<group>"; };
+		D43BDEAB1378F58800722E69 /* LeaderboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderboardViewController.h; sourceTree = "<group>"; };
+		D43BDEAC1378F58800722E69 /* LeaderboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardViewController.m; sourceTree = "<group>"; };
+		D43BDEAD1378F58800722E69 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
+		D43BDEAE1378F58800722E69 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
+		D43BDEB11378F58F00722E69 /* PageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageViewController.xib; sourceTree = "<group>"; };
+		D43BDF271378F82500722E69 /* LeaderboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaderboardViewController.xib; sourceTree = "<group>"; };
+		D43BDF2A1378F87900722E69 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		D43BDF2B1378F87900722E69 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
+		D43BDF2C1378F87900722E69 /* leaderboard-card_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaderboard-card_01.png"; sourceTree = "<group>"; };
+		D43BDF2D1378F87900722E69 /* leaderboard-card_01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaderboard-card_01@2x.png"; sourceTree = "<group>"; };
 		D43DB5B313261BFA00DCAD92 /* VelocityEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VelocityEvent.h; sourceTree = "<group>"; };
 		D43DB5B413261BFA00DCAD92 /* VelocityEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VelocityEvent.m; sourceTree = "<group>"; };
 		D43DB5CB13261DE900DCAD92 /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connection.h; sourceTree = "<group>"; };
@@ -357,6 +384,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D43BDEAA1378F56900722E69 /* Leaderboards */,
 				7B865D67136D42ED00A447EC /* CoreData */,
 				D4CAF758134A6442002E1B53 /* RemoteApp */,
 				7BD13588132DBCF800150AA0 /* AppDelegate */,
@@ -480,6 +508,12 @@
 			children = (
 				7B90C2DE1366743500DC25D7 /* ServerConnection.h */,
 				7B90C2DF1366743500DC25D7 /* ServerConnection.m */,
+				7BA4E5F71378F580005EA057 /* CMDeviceMotion+NSMutableDictionary.h */,
+				7BA4E5F81378F580005EA057 /* CMDeviceMotion+NSMutableDictionary.m */,
+				7BA4E5F41378F530005EA057 /* CLLocation+NSMutableDictionary.h */,
+				7BA4E5F51378F530005EA057 /* CLLocation+NSMutableDictionary.m */,
+				7BA4E5F11378F46D005EA057 /* CLHeading+NSMutableDictionary.h */,
+				7BA4E5F21378F46D005EA057 /* CLHeading+NSMutableDictionary.m */,
 			);
 			name = ServerConnection;
 			sourceTree = "<group>";
@@ -560,6 +594,19 @@
 				D437EC191371F21F00AEA826 /* SplitBarWidgetViewController.m */,
 			);
 			name = "Widget Controllers";
+			sourceTree = "<group>";
+		};
+		D43BDEAA1378F56900722E69 /* Leaderboards */ = {
+			isa = PBXGroup;
+			children = (
+				D43BDEAB1378F58800722E69 /* LeaderboardViewController.h */,
+				D43BDEAC1378F58800722E69 /* LeaderboardViewController.m */,
+				D43BDEAD1378F58800722E69 /* PageViewController.h */,
+				D43BDEAE1378F58800722E69 /* PageViewController.m */,
+				D43BDEB11378F58F00722E69 /* PageViewController.xib */,
+				D43BDF271378F82500722E69 /* LeaderboardViewController.xib */,
+			);
+			name = Leaderboards;
 			sourceTree = "<group>";
 		};
 		D43DB5CA13261DE900DCAD92 /* objective_resource */ = {
@@ -766,6 +813,10 @@
 		D49C25B9134B9ACD003F493F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D43BDF2A1378F87900722E69 /* background.png */,
+				D43BDF2B1378F87900722E69 /* background@2x.png */,
+				D43BDF2C1378F87900722E69 /* leaderboard-card_01.png */,
+				D43BDF2D1378F87900722E69 /* leaderboard-card_01@2x.png */,
 				D437ECD61372079E00AEA826 /* dial-hand2.png */,
 				D437EC2F1371F2FB00AEA826 /* widget-basic bg.png */,
 				D437EC271371F27800AEA826 /* bar- green.png */,
@@ -827,6 +878,7 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "BMW_iOS" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -893,6 +945,12 @@
 				D437EC2E1371F27800AEA826 /* car icon.png in Resources */,
 				D437EC301371F2FB00AEA826 /* widget-basic bg.png in Resources */,
 				D437ECD71372079E00AEA826 /* dial-hand2.png in Resources */,
+				D43BDEB21378F58F00722E69 /* PageViewController.xib in Resources */,
+				D43BDF281378F82500722E69 /* LeaderboardViewController.xib in Resources */,
+				D43BDF2E1378F87900722E69 /* background.png in Resources */,
+				D43BDF2F1378F87900722E69 /* background@2x.png in Resources */,
+				D43BDF301378F87900722E69 /* leaderboard-card_01.png in Resources */,
+				D43BDF311378F87900722E69 /* leaderboard-card_01@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -959,6 +1017,11 @@
 				D4E14AFE1370D4AE009795FA /* WidgetViewController.m in Sources */,
 				D4C46A34137127090024A4FC /* LightWidgetViewController.m in Sources */,
 				D437EC1B1371F21F00AEA826 /* SplitBarWidgetViewController.m in Sources */,
+				D43BDEAF1378F58800722E69 /* LeaderboardViewController.m in Sources */,
+				D43BDEB01378F58800722E69 /* PageViewController.m in Sources */,
+				7BA4E5F31378F46D005EA057 /* CLHeading+NSMutableDictionary.m in Sources */,
+				7BA4E5F61378F530005EA057 /* CLLocation+NSMutableDictionary.m in Sources */,
+				7BA4E5F91378F581005EA057 /* CMDeviceMotion+NSMutableDictionary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1041,7 +1104,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "";
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};

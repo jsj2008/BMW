@@ -12,6 +12,7 @@
 
 @interface RemoteAppController : NSObject <IDApplicationDelegate> {
 	RemoteApp*				app;
+	BOOL _busy;
 }
 @property (retain) RemoteApp* app;
 
