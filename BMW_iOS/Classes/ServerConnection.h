@@ -30,6 +30,7 @@
     CFMutableDictionaryRef connectionDelegateDict; //key:NSURLConnection, value:ServerConnectionDelegate
                                                    //using CF since it retains, not making a copy
 }
+
 +(void)sendStats:(id)stats toURL:(NSString *)url;
 +(ServerConnection *) sharedConnection;
 +(void)sendPostRequestTo:(NSString *)url delegate:(id<ServerConnectionDelegate>)delegate;

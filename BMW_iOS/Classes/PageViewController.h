@@ -7,14 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ServerConnection.h"
 
 
-@interface PageViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface PageViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, ServerConnectionDelegate> {
 	IBOutlet UILabel *titleLabel;
 	IBOutlet UITableView *tv;
 	NSString *dataURLString;
 	NSString *titleString;
 }
+
+-(void)receiveStats:(NSArray *)stats;
 
 @property (nonatomic, retain) NSString *dataURLString;
 @property (nonatomic, retain) IBOutlet UITableView *tv;
