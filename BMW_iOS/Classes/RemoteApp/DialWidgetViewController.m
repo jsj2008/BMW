@@ -39,8 +39,10 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor clearColor];
+	[super viewDidLoad];
 	
+	self.view.backgroundColor = [UIColor clearColor];
 	[self setSpeed1:0.0 and2:27.0];
 	
 }

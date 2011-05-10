@@ -54,7 +54,6 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 	MapViewController *mapVC = [[MapViewController alloc] init];
 	[self.window addSubview:mapVC.view];
 #endif
-    [self.window makeKeyAndVisible];
     
 #if IMAGE_PROCESSING_VIEW && HIDE_IMAGE_PROCESSING_VIEW
 	[viewController.view removeFromSuperview];
@@ -63,11 +62,20 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 #if TARGET_IPHONE_SIMULATOR && HMI_CONNECTION
 	[bmwAppController accessoryDidStart:nil]; // fake it
 #endif
+	
+#if LEADERBOARD_DISPLAY
+	leaderboardVC = [[LeaderboardViewController alloc] init];
+	[self.window addSubview:leaderboardVC.view];
+#endif
 
 #ifdef SENSOR_READER		
 	//reader = [[SensorReader alloc] init];
 	//[reader startReading];
 #endif 
+	
+	[self.window makeKeyAndVisible];
+
+	
 #ifdef LOCAL_DB
     NSFetchRequest *request;
     NSArray * a;
