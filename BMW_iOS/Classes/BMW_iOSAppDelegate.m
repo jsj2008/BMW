@@ -69,8 +69,8 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 #endif
 
 #ifdef SENSOR_READER		
-	//reader = [[SensorReader alloc] init];
-	//[reader startReading];
+	reader = [[SensorReader alloc] init];
+	[reader startReading];
 #endif 
 	
 	[self.window makeKeyAndVisible];
