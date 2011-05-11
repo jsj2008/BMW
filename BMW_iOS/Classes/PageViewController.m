@@ -15,10 +15,16 @@
 
 -(void)loadDataFromURL
 {
-    NSString *d = [NSString stringWithContentsOfURL:[NSURL URLWithString:dataURLString]];
-    self.data = [d JSONValue];
-	[self.tv reloadData];
-	[self performSelector:@selector(loadDataFromURL) withObject:nil afterDelay:10];
+    //NSString *d = [NSString stringWithContentsOfURL:[NSURL URLWithString:dataURLString]];
+    [ServerConnection sendGetRequestTo:dataURLString delegate:self];
+}
+
+-(void)receiveStats:(NSArray *)stats
+{
+    self.data = stats;
+    [self.tv reloadData];
+    [self performSelector:@selector(loadDataFromURL) withObject:nil afterDelay:5];
+
 }
 
 -(void)viewDidLoad

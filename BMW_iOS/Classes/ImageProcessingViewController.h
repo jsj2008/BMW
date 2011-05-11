@@ -10,6 +10,18 @@
 #import <CoreLocation/CoreLocation.h>
 #import <CoreMotion/CMMotionManager.h>
 
+typedef struct BlobPoint {
+	int x;
+	int y;
+	struct BlobPoint* nextPoint;
+} BlobPoint;
+
+typedef struct Blob{
+	BlobPoint *points;
+    int color;
+	int numPoints;
+} Blob;
+
 #if TARGET_IPHONE_SIMULATOR
 @interface ImageProcessingViewController : UIViewController
 {
@@ -31,6 +43,8 @@
 	
 	GLuint videoFrameTexture;
 	GLubyte *rawPositionPixels;
+    
+    Blob** trackBlobs;
 }
 
 @property(readonly) ImageProcessingGLView *glView;

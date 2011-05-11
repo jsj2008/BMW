@@ -19,13 +19,26 @@
 //http://bunkermw.heroku.com/mobile_gps/get_avg_speed_table
 //http://bunkermw.heroku.com/mobile_gps/get_max_speed_table
 
-@interface ServerConnection : NSObject {
-//Initially just send data as you get it.
+
+@protocol ServerConnectionDelegate <NSObject>
+-(void)receiveStats:(NSArray *)stats;
+@end
+
+@interface ServerConnection : NSObject <ServerConnectionDelegate>{
 //The next step is to do so asynchonously
 //The last step is to queue and send in blocks
+    CFMutableDictionaryRef connectionDelegateDict; //key:NSURLConnection, value:ServerConnectionDelegate
+                                                   //using CF since it retains, not making a copy
 }
-+(void)sendStats:(NSMutableDictionary *)stats toURL:(NSString *)url;
-+(NSMutableDictionary *)motionToDict:(CMDeviceMotion *)motion;
-+(NSMutableDictionary *)locationToDict:(CLLocation *)location;
-+(NSMutableDictionary *)headingToDict:(CLHeading *)heading;
+
++(void)sendStats:(id)stats toURL:(NSString *)url;
++(ServerConnection *) sharedConnection;
++(void)sendPostRequestTo:(NSString *)url delegate:(id<ServerConnectionDelegate>)delegate;
++(void)sendGetRequestTo:(NSString *)url delegate:(id<ServerConnectionDelegate>)delegate;
++(void)sendPostRequestTo:(NSString *)url postData:(NSString *)post delegate:(id<ServerConnectionDelegate>)delegate;
++(void)sendRequest:(NSURLRequest *)request delegate:(id<ServerConnectionDelegate>)delegate;
+-(void) addConnection:(NSURLConnection *)key forDelegate:(id<ServerConnectionDelegate>)value;
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data;
+-(void)receiveStats:(NSArray *)stats;
+
 @end

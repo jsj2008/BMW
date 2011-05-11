@@ -76,7 +76,7 @@ static int itemID = 0;
 //			[stats release];
         
 #ifdef SEND_MOTION
-        [ServerConnection sendStats:[ServerConnection motionToDict:motionData] toURL:MOTION_URL];
+        [ServerConnection sendStats:motionData toURL:MOTION_URL];
 #endif
 	}];
 }
@@ -133,11 +133,11 @@ static int itemID = 0;
     [ad saveContext];
 #endif
 #ifdef SEND_LOCATION
-    [ServerConnection sendStats:[ServerConnection locationToDict:newLocation] toURL:LOCATION_URL];
+    [ServerConnection sendStats:newLocation toURL:LOCATION_URL];
 #endif
 #ifdef SEND_HEADING
     if(manager.heading!=nil)
-        [ServerConnection sendStats:[ServerConnection headingToDict:manager.heading] toURL:HEADING_URL];
+        [ServerConnection sendStats:manager.heading toURL:HEADING_URL];
 #endif
 }
 

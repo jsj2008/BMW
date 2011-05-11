@@ -11,6 +11,7 @@
 #include "NSString+SBJSON.h"
 #include "NSObject+SBJSON.h"
 #include "SBJSON.h"
+#import "ServerConnection.h"
 
 #define kNumberOfPages 3
 
