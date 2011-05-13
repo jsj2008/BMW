@@ -15,11 +15,18 @@
 @implementation CaptureSessionManager
 @synthesize captureSession;
 @synthesize delegate;
+@synthesize captureDevice;
 
 #pragma mark SampleBufferDelegate
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
-
+    if ([captureDevice lockForConfiguration:nil]) {
+        captureDevice.focusMode = AVCaptureFocusModeAutoFocus;
+        //captureDevice.exposureMode = AVCaptureExposureModeAutoExpose;
+        //captureDevice.whiteBalanceMode = AVCaptureWhiteBalanceModeAutoWhiteBalance;
+       //NSLog(@"obtained camera lock\n");
+        [captureDevice unlockForConfiguration];
+    }
 	CVImageBufferRef pixelBuffer = CMSampleBufferGetImageBuffer( sampleBuffer );
 	
 	[delegate processNewCameraFrame:pixelBuffer];
@@ -50,12 +57,15 @@
 #endif
 		
 	}
-	
+    
+    captureDevice = camera;
+    NSError *error = nil;
+    
 	// Create the capture session
 	self.captureSession = [[AVCaptureSession alloc] init];
 	
 	// Add the video input	
-	NSError *error = nil;
+	error = nil;
 	AVCaptureDeviceInput *videoInput = [[AVCaptureDeviceInput alloc] initWithDevice:camera error:&error];
 	if ([captureSession canAddInput:videoInput]) 
 		[captureSession addInput:videoInput];
@@ -89,7 +99,7 @@
 
 - (void)dealloc {
 	[self.captureSession release];
-	
+	[captureDevice release];
 	[super dealloc];
 }
 @end
