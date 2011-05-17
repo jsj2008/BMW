@@ -82,8 +82,11 @@ enum {
     trackBlobs = NULL;
     
     runImageProcessing = NO;
-    
+    /*
     [self startImageProcessing];
+    [self stopImageProcessing];
+    [self startImageProcessing];
+     */
     
 #ifdef SENSOR_READER    
     motionManager = [[CMMotionManager alloc] init];
