@@ -49,8 +49,10 @@ typedef struct Blob{
 
 @property(readonly) ImageProcessingGLView *glView;
 
-- (void) assetWriterStart;
-- (NSURL *) fileURL;
+//- (void) assetWriterStart;
+//- (NSURL *) fileURL;
+- (void) startImageProcessing;
+- (void) stopImageProcessing;
 
 @end
 

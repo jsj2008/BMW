@@ -58,10 +58,7 @@ float colorMin(float r, float g, float b)
 }
 
 float Hue(float r, float g, float b)
-{
-    //return 60.0 * atan(pow(3.0,.5)*(g - b)/(2.0*r-g-b));
-
-    
+{    
     float theta = (180.0/3.0)*acos(((r+r-b-g)*.5)/(pow(pow(r - g, 2.0) + (r - b)*(g - b), .5)));
     if (b <= g) return theta;
     return 360.0 - theta;

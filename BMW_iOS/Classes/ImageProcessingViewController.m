@@ -41,7 +41,22 @@ enum {
 
 #else
 
+@interface ImageProcessingViewController()
+@property BOOL runImageProcessing;
+@end
+
 @implementation ImageProcessingViewController
+
+@synthesize runImageProcessing;
+
+- (void) startImageProcessing
+{
+    runImageProcessing = YES;
+}
+- (void) stopImageProcessing
+{
+    runImageProcessing = NO;
+}
 
 #pragma mark -
 #pragma mark Initialization and teardown
@@ -65,6 +80,10 @@ enum {
     rawPositionPixels = (GLubyte *) calloc(FBO_WIDTH * FBO_HEIGHT * 4, sizeof(GLubyte));
 
     trackBlobs = NULL;
+    
+    runImageProcessing = NO;
+    
+    [self startImageProcessing];
     
 #ifdef SENSOR_READER    
     motionManager = [[CMMotionManager alloc] init];
@@ -543,27 +562,29 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 
 - (void)processNewCameraFrame:(CVImageBufferRef)cameraFrame;
 {
-	CVPixelBufferLockBaseAddress(cameraFrame, 0);
-	int bufferHeight = CVPixelBufferGetHeight(cameraFrame);
-	int bufferWidth = CVPixelBufferGetWidth(cameraFrame);
+    if (runImageProcessing) {
+        CVPixelBufferLockBaseAddress(cameraFrame, 0);
+        int bufferHeight = CVPixelBufferGetHeight(cameraFrame);
+        int bufferWidth = CVPixelBufferGetWidth(cameraFrame);
     
-	// Create a new texture from the camera frame data, display using the shaders
-	glGenTextures(1, &videoFrameTexture);
-	glBindTexture(GL_TEXTURE_2D, videoFrameTexture);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	// This is necessary for non-power-of-two textures
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+        // Create a new texture from the camera frame data, display using the shaders
+        glGenTextures(1, &videoFrameTexture);
+        glBindTexture(GL_TEXTURE_2D, videoFrameTexture);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+        // This is necessary for non-power-of-two textures
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 	
-	// Using BGRA extension to pull in video frame data directly
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, bufferWidth, bufferHeight, 0, GL_BGRA, GL_UNSIGNED_BYTE, CVPixelBufferGetBaseAddress(cameraFrame));
+        // Using BGRA extension to pull in video frame data directly
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, bufferWidth, bufferHeight, 0, GL_BGRA, GL_UNSIGNED_BYTE, CVPixelBufferGetBaseAddress(cameraFrame));
     
-	[self drawFrame];
+        [self drawFrame];
 	
-	glDeleteTextures(1, &videoFrameTexture);
+        glDeleteTextures(1, &videoFrameTexture);
     
-	CVPixelBufferUnlockBaseAddress(cameraFrame, 0);
+        CVPixelBufferUnlockBaseAddress(cameraFrame, 0);
+    }
 }
 
 #pragma mark -
