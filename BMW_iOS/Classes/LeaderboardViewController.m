@@ -12,6 +12,7 @@
 #include "NSObject+SBJSON.h"
 #include "SBJSON.h"
 #import "ServerConnection.h"
+#import "BMW_iOSAppDelegate.h"
 
 #define kNumberOfPages 3
 
@@ -40,7 +41,8 @@
 {
     [super viewDidLoad];
 	//[self swapLeaderboard];
-	
+    [[UIApplication sharedApplication] setStatusBarOrientation: UIInterfaceOrientationPortrait animated:NO];  
+
 	NSMutableArray *controllers = [[NSMutableArray alloc] init];
     for (unsigned i = 0; i < kNumberOfPages; i++)
     {
@@ -196,8 +198,13 @@
     [super viewDidUnload];
 }
 
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
+    //return YES;
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }

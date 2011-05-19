@@ -14,6 +14,9 @@
 #import "RemoteAppController.h"
 #import "SensorReader.h"
 #import "LeaderboardViewController.h"
+#import "DashboardViewController.h"
+
+#define MPS_TO_MPH 2.23693629
 
 @class ImageProcessingViewController;
 
@@ -25,11 +28,15 @@ extern NSString* BMWConnectedChanged;
 	SensorReader *reader;
 	
 	LeaderboardViewController *leaderboardVC;
+    DashboardViewController *dashboardVC;
 	
 	RemoteAppController* bmwAppController;
 }
 
 -(CLLocation *)currentLocation;
+-(void)deviceWillRotateToInterfaceOrientation:(UIDeviceOrientation)orientation;
+-(NSString *)getNameForUDID:(NSString *)udid;
+
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet ImageProcessingViewController *viewController;

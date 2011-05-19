@@ -14,6 +14,7 @@
 #define LOCATION_URL @"http://bunkermw.heroku.com/mobile_gps/create"
 #define MOTION_URL @"http://bunkermw.heroku.com/mobile_motions/create"
 #define IMAGE_PROCESSING_URL @"http://bunkermw.heroku.com/mobile_lights/create"
+#define SPEED_AT_LOCATION_URL @"http://bunkermw.heroku.com/mobile_gps/get_avg_speed_of_location"
 
 //returns array of dicts
 //http://bunkermw.heroku.com/mobile_gps/get_avg_speed_table

@@ -8,6 +8,10 @@
 
 #import "DialWidgetViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "ServerConnection.h"
+#import "StatsTracker.h"
+#import "SensorReader.h"
+#import "BMW_iOSAppDelegate.h"
 
 @implementation DialWidgetViewController
 
@@ -24,29 +28,59 @@
 }
 
 
--(void)setSpeed1:(double)mph1 and2:(double)mph2 {
-	//NSLog(@"setting dial to %f mph", mph);
-	dial1.layer.anchorPoint = CGPointMake(0.5, 0.8);
-	dial2.layer.anchorPoint = CGPointMake(0.5, 0.8);
-
-	dial1.transform = CGAffineTransformMakeRotation((((mph1*(90.0/50.0))+53)*(M_PI/180)) - (M_PI));
-	dial2.transform = CGAffineTransformMakeRotation((((mph2*(90.0/50.0))+53)*(M_PI/180)) - (M_PI));
-
-	//[label setText:[NSString stringWithFormat:@"%.1f", mph]];
+-(void)setSpeed1:(double)mph {
+    dial1.layer.anchorPoint = CGPointMake(0.5, 0.8);
+	dial1.transform = CGAffineTransformMakeRotation((((mph*(90.0/50.0))+53)*(M_PI/180)) - (M_PI));
 }
+    
+-(void)setSpeed2:(double)mph {
+    dial2.layer.anchorPoint = CGPointMake(0.5, 0.8);
+	dial2.transform = CGAffineTransformMakeRotation((((mph*(90.0/50.0))+53)*(M_PI/180)) - (M_PI));
+}
+
+-(void)setSpeed3:(double)mph {
+    dial3.layer.anchorPoint = CGPointMake(0.5, 0.8);
+	dial3.transform = CGAffineTransformMakeRotation((((mph*(90.0/50.0))+53)*(M_PI/180)) - (M_PI));
+}
+
+
 
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-    self.view.backgroundColor = [UIColor clearColor];
+    //self.view.backgroundColor = [UIColor clearColor;
 	[super viewDidLoad];
-	
-	self.view.backgroundColor = [UIColor clearColor];
-	[self setSpeed1:0.0 and2:27.0];
-	
+    if (!updateTimer) {
+        updateTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(updateDial:) userInfo:nil repeats:YES];
+    }
+    //start update timer
 }
 
+-(void)updateDial:(id)sender {
+    //StatsTracker *stats = [StatsTracker sharedTracker];
+    SensorReader *sr = [SensorReader sharedReader];
+    float latitude = sr.locationManager.location.coordinate.latitude;
+    float longitude = sr.locationManager.location.coordinate.longitude;
+    
+        [ServerConnection sendGetRequestTo:[NSString stringWithFormat:@"%@?latitude=%d&longitude=%d", SPEED_AT_LOCATION_URL, latitude, longitude] delegate:self];
+
+}
+
+-(void)receiveStats:(NSArray *)stats {
+    if ([stats count] > 0) {
+        NSDictionary *dict = [stats objectAtIndex:0];
+        //NSString *blah = [dict objectForKey:@"blah"];
+        double maxSpeed = [(NSNumber *)[dict objectForKey:@"max_speed"] doubleValue]*MPS_TO_MPH;
+        double avgSpeed = [(NSNumber *)[dict objectForKey:@"avg_speed"] doubleValue]*MPS_TO_MPH;
+        NSString *maxSpeedUDID = [dict objectForKey:@"max_speed_udid"];
+        
+        [self setSpeed1:avgSpeed];
+        [self setSpeed3:maxSpeed];
+        [topLabel setText:[NSString stringWithFormat:@"Top Speed: %.1f mph", maxSpeed]];
+        [bottomLabel setText:[NSString stringWithFormat:@"by %@", [(BMW_iOSAppDelegate *)[[UIApplication sharedApplication] delegate] getNameForUDID:maxSpeedUDID]]];
+    }
+}
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -65,6 +99,10 @@
 
 - (void)viewDidUnload {
     [super viewDidUnload];
+    if (updateTimer) {
+        [updateTimer invalidate];
+        updateTimer = nil;
+    }
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
