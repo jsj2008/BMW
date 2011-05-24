@@ -88,6 +88,9 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 	
 	[self.window makeKeyAndVisible];
 
+#ifdef SEND_START
+    [ServerConnection sendStats:[[[NSMutableDictionary alloc] init] autorelease] toURL:START_TRIP_URL];
+#endif
 	
 #ifdef LOCAL_DB
     NSFetchRequest *request;
