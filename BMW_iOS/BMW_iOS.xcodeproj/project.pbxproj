@@ -142,6 +142,9 @@
 		D4CAF79F134A6666002E1B53 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CAF79E134A6666002E1B53 /* ExternalAccessory.framework */; };
 		D4CAF7A1134A666D002E1B53 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CAF7A0134A666D002E1B53 /* Security.framework */; };
 		D4E14AFE1370D4AE009795FA /* WidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E14AFD1370D4AE009795FA /* WidgetViewController.m */; };
+		D4E251A3138B60DF00776C25 /* dial_bg_02.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E251A0138B60DF00776C25 /* dial_bg_02.png */; };
+		D4E251A4138B60DF00776C25 /* dial_hand_02.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E251A1138B60DF00776C25 /* dial_hand_02.png */; };
+		D4E251A5138B60DF00776C25 /* dial_hand_03.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E251A2138B60DF00776C25 /* dial_hand_03.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -355,6 +358,9 @@
 		D4CAF7A0134A666D002E1B53 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D4E14AFC1370D4AE009795FA /* WidgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WidgetViewController.h; path = ../WidgetViewController.h; sourceTree = "<group>"; };
 		D4E14AFD1370D4AE009795FA /* WidgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WidgetViewController.m; path = ../WidgetViewController.m; sourceTree = "<group>"; };
+		D4E251A0138B60DF00776C25 /* dial_bg_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dial_bg_02.png; sourceTree = "<group>"; };
+		D4E251A1138B60DF00776C25 /* dial_hand_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dial_hand_02.png; sourceTree = "<group>"; };
+		D4E251A2138B60DF00776C25 /* dial_hand_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dial_hand_03.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -823,6 +829,9 @@
 		D49C25B9134B9ACD003F493F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D4E251A0138B60DF00776C25 /* dial_bg_02.png */,
+				D4E251A1138B60DF00776C25 /* dial_hand_02.png */,
+				D4E251A2138B60DF00776C25 /* dial_hand_03.png */,
 				D4AF465E138386AA005DF2D8 /* 130i.aif */,
 				D43BDF2A1378F87900722E69 /* background.png */,
 				D43BDF2B1378F87900722E69 /* background@2x.png */,
@@ -964,6 +973,9 @@
 				D43BDF311378F87900722E69 /* leaderboard-card_01@2x.png in Resources */,
 				D4AF465D138336B0005DF2D8 /* DashboardViewController.xib in Resources */,
 				D4AF465F138386AA005DF2D8 /* 130i.aif in Resources */,
+				D4E251A3138B60DF00776C25 /* dial_bg_02.png in Resources */,
+				D4E251A4138B60DF00776C25 /* dial_hand_02.png in Resources */,
+				D4E251A5138B60DF00776C25 /* dial_hand_03.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
