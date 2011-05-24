@@ -15,6 +15,7 @@
 }
 
 @property (nonatomic, retain) CLLocationManager *locationManager;
++(SensorReader *)sharedReader;
 -(void)startReading;
 -(void)stopReading;
 @end

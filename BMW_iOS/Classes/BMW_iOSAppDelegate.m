@@ -10,6 +10,7 @@
 #import "ImageProcessingViewController.h"
 #import "DataOverlayViewController.h"
 #import "ServerConnection.h"
+#import "SensorReader.h"
 
 NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 
@@ -82,8 +83,7 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 #endif
 
 #ifdef SENSOR_READER		
-	reader = [SensorReader sharedReader];
-	[reader startReading];
+	[[SensorReader sharedReader] startReading];
 #endif 
 	
 	[self.window makeKeyAndVisible];
@@ -162,7 +162,7 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
      Called when the application is about to terminate.
      See also applicationDidEnterBackground:.
      */
-	[reader stopReading];
+	[[SensorReader sharedReader] stopReading];
 #ifdef LOCAL_DB
     NSNumber *n = [[NSUserDefaults standardUserDefaults] objectForKey:@"runID"];
     [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:[n intValue]+1] forKey:@"runID"];
@@ -189,7 +189,6 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 
 - (void)dealloc {
     [viewController release];
-	[reader release];
     [window release];
     [super dealloc];
 }

@@ -12,7 +12,6 @@
 #include "StatsTracker.h"
 #import "MapViewController.h"
 #import "RemoteAppController.h"
-#import "SensorReader.h"
 #import "LeaderboardViewController.h"
 #import "DashboardViewController.h"
 
@@ -25,7 +24,6 @@ extern NSString* BMWConnectedChanged;
 @interface BMW_iOSAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
     ImageProcessingViewController *viewController;
-	SensorReader *reader;
 	
 	LeaderboardViewController *leaderboardVC;
     DashboardViewController *dashboardVC;

@@ -7,8 +7,6 @@
 #import "CaptureSessionManager.h"
 #import "ImageProcessingGLView.h"
 #import "ShaderProgram.h"
-#import <CoreLocation/CoreLocation.h>
-#import <CoreMotion/CMMotionManager.h>
 
 typedef struct BlobPoint {
 	int x;
@@ -31,11 +29,8 @@ typedef struct Blob{
 @end
 #else
 
-@interface ImageProcessingViewController : UIViewController <ImageProcessingCameraDelegate, CLLocationManagerDelegate>
+@interface ImageProcessingViewController : UIViewController <ImageProcessingCameraDelegate>
 {
-    CLLocationManager *locationManager;
-	CMMotionManager *motionManager;
-    
 	CaptureSessionManager *camera;
 	ImageProcessingGLView *glView;
 	
@@ -51,8 +46,8 @@ typedef struct Blob{
 
 //- (void) assetWriterStart;
 //- (NSURL *) fileURL;
-- (void) startImageProcessing;
-- (void) stopImageProcessing;
++ (void) startImageProcessing;
++ (void) stopImageProcessing;
 
 @end
 

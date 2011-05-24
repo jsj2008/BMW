@@ -40,20 +40,15 @@ enum {
 @end
 
 #else
-
-@interface ImageProcessingViewController()
-@property BOOL runImageProcessing;
-@end
-
 @implementation ImageProcessingViewController
 
-@synthesize runImageProcessing;
+static bool runImageProcessing = NO;
 
-- (void) startImageProcessing
++ (void) startImageProcessing
 {
     runImageProcessing = YES;
 }
-- (void) stopImageProcessing
++ (void) stopImageProcessing
 {
     runImageProcessing = NO;
 }
@@ -87,37 +82,6 @@ enum {
     [self stopImageProcessing];
     [self startImageProcessing];
      */
-    
-#ifdef SENSOR_READER    
-    motionManager = [[CMMotionManager alloc] init];
-    motionManager.deviceMotionUpdateInterval = UPDATE_INTERVAL;
-    [motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue]
-									   withHandler: ^(CMDeviceMotion *motionData,	NSError *error)
-     {
-#ifdef SEND_MOTION
-         [ServerConnection sendStats:[ServerConnection motionToDict:motionData] toURL:MOTION_URL];
-#endif
-     }];
-    
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-#ifdef SEND_HEADING
-    [locationManager startUpdatingHeading];
-#endif
-#ifdef SEND_LOCATION
-    [locationManager startUpdatingLocation];
-#endif
-#endif
-}
-
--(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
-#ifdef SEND_LOCATION
-    [ServerConnection sendStats:[ServerConnection locationToDict:newLocation] toURL:LOCATION_URL];
-#endif
-#ifdef SEND_HEADING
-    if(manager.heading!=nil)
-        [ServerConnection sendStats:[ServerConnection headingToDict:manager.heading] toURL:HEADING_URL];
-#endif
 }
 
 

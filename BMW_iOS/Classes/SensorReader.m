@@ -11,6 +11,7 @@
 #include "ServerConnection.h"
 #include "DataReading.h"
 #include "BMW_iOSAppDelegate.h"
+#include "ImageProcessingViewController.h"
 
 #define UPDATE_INTERVAL 5.0f/2.0f;
 #define METERS_SEC_MILES_HOUR_CONVERSION 2.2369
@@ -125,6 +126,11 @@ static int itemID = 0;
     [s setObject:[NSNumber numberWithDouble:locationManager.location.coordinate.latitude] forKey:@"Latitude"];
     [s setObject:[NSNumber numberWithDouble:locationManager.location.coordinate.longitude] forKey:@"Longitude"];
     [s setObject:[NSNumber numberWithDouble:locationManager.location.speed] forKey:@"Velocity"];
+    
+    if(newLocation.speed==0)
+        [ImageProcessingViewController startImageProcessing];
+    else
+        [ImageProcessingViewController stopImageProcessing];
     
 //    [ServerConnection sendStats:s];
 #ifdef LOCAL_DB    
