@@ -35,6 +35,7 @@
 
 @property (retain) AVCaptureSession *captureSession;
 @property(nonatomic, assign) id<ImageProcessingCameraDelegate> delegate;
+@property (retain) AVCaptureDevice *captureDevice;
 @end
 
 @protocol ImageProcessingCameraDelegate

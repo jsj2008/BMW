@@ -11,9 +11,6 @@
 
 @implementation WidgetViewController
 
-
-
-
 // handles img masking operation
 CGImageRef CopyImageAndAddAlphaChannel(CGImageRef sourceImage) {
     CGImageRef retVal = NULL;

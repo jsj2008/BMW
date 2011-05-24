@@ -24,6 +24,8 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 @synthesize managedObjectModel=__managedObjectModel;
 @synthesize persistentStoreCoordinator=__persistentStoreCoordinator;
 
+
+
 #pragma mark -
 #pragma mark Application lifecycle
 
@@ -65,11 +67,22 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 	
 #if LEADERBOARD_DISPLAY
 	leaderboardVC = [[LeaderboardViewController alloc] init];
-	[self.window addSubview:leaderboardVC.view];
+	//[self.window addSubview:leaderboardVC.view];
+    dashboardVC = [[DashboardViewController alloc] init];
+    //[self.window addSubview:dashboardVC.view];
+    //DialWidgetViewController *dwVC = //[[DialWidgetViewController alloc] init];
+    //[self.window addSubview:dashboardVC.view];
+    
+    
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didRotate:)
+                                                 name:@"UIDeviceOrientationDidChangeNotification" object:nil];
+
 #endif
 
 #ifdef SENSOR_READER		
-	reader = [[SensorReader alloc] init];
+	reader = [SensorReader sharedReader];
 	[reader startReading];
 #endif 
 	
@@ -124,8 +137,24 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 //        NSLog(@"%d/%d",count+1,[a count]);
 //    }
 //  
-#endif
+#endif    
     return YES;
+}
+
+- (void)didRotate:(NSNotification *)notification
+{	
+    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+    
+    if (orientation == UIDeviceOrientationLandscapeLeft || orientation == UIDeviceOrientationLandscapeRight)
+    {
+        [leaderboardVC.view removeFromSuperview];
+        [self.window addSubview:dashboardVC.view];
+        NSLog(@"Landscape!");
+        
+    } else if (orientation == UIDeviceOrientationPortrait) {
+        [dashboardVC.view removeFromSuperview];
+        [self.window addSubview:leaderboardVC.view];
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -266,6 +295,15 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
     }    
     
     return __persistentStoreCoordinator;
+}
+
+-(NSString *)getNameForUDID:(NSString *)udid
+{
+	if([udid compare:@"2d5a4b892d6c8237dcbc9e313d98dde8fc816dec"]==0)
+		return @"Rob B";
+	if([udid compare:@"76fe9b1185d4350bcd400d4268ea71b39c31b26c"]==0)
+		return @"Aaron S";
+	return @"John J";
 }
 
 #pragma mark - Application's Documents directory

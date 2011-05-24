@@ -104,7 +104,7 @@
 	
 	[stateLabel setHidesWhenStopped:NO];
 	
-	NSTimer *tima = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateDashboardImage:) userInfo:nil repeats:YES];
+	//NSTimer *tima = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateDashboardImage:) userInfo:nil repeats:YES];
 	
 	
 	[super rhmiDidStart];
@@ -176,13 +176,13 @@
 }
 
 -(void)setSpeed:(double)speed {
-    [avgSpeedVC setSpeed1:speed and2:27.0];
+    //[avgSpeedVC setSpeed1:speed and2:27.0];
 }
 
--(void)updateDashboardImage:(id)sender {
+/*-(void)updateDashboardImage:(id)sender {
 	if (!avgSpeedVC) {
 		avgSpeedVC = [[DialWidgetViewController alloc] init];
-        [avgSpeedVC setSpeed1:0.0 and2:0.0];
+        //[avgSpeedVC setSpeed1:0.0 and2:0.0];
 		NSLog(@"WTF view not initialized");
 	}
 	
@@ -200,7 +200,7 @@
 	myLabel.text = @"Hello World";
 	myLabel.textColor = [UIColor whiteColor];
 	[myView addSubview:myLabel];				  
-	*/
+	*//*
 	int r = random() % 1111;
 	if (r%5 == 0) [lightWidgetVC incrementRed];
 	if (r%8 == 0) [lightWidgetVC incrementYellow];
@@ -213,7 +213,7 @@
 	[viewImage2 setImage:[lightWidgetVC imageRep] clearWhileSending:NO];
     [viewImage	setImage:[avgSpeedVC imageRep] clearWhileSending:NO];
 	[viewImage3 setImage:[carsPassedWidgetVC imageRep] clearWhileSending:NO];
-}
+}*/
 
 
 @end

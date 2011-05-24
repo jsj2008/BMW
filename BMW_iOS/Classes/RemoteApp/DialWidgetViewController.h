@@ -10,11 +10,18 @@
 #import "WidgetViewController.h"
 
 @interface DialWidgetViewController : WidgetViewController {
-	IBOutlet UILabel *label;
-	IBOutlet UIImageView *dial1, *dial2;
+	IBOutlet UILabel *topLabel, *bottomLabel;
+	IBOutlet UIImageView *dial1, *dial2, *dial3;
+    NSTimer *updateTimer;
 }
 
--(void)setSpeed1:(double)mph1 and2:(double)mph2;
+-(void)setSpeed1:(double)mph;
+-(void)setSpeed2:(double)mph;
+-(void)setSpeed3:(double)mph;
+
+-(void)updateDial:(id)sender;
+
+//-(void)setSpeed1:(double)mph1 and2:(double)mph2 and3:(double)mph2;
 
 
 

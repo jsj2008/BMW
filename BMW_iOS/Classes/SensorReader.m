@@ -17,6 +17,16 @@
 
 @implementation SensorReader
 
+@synthesize locationManager;
+
+static SensorReader *sharedReader;
++(SensorReader *)sharedReader
+{
+	if(!sharedReader)
+		sharedReader = [[SensorReader alloc] init];
+	return sharedReader;
+}
+
 -(id)init
 {
 	if (self) {

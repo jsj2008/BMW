@@ -13,6 +13,8 @@
 	CLLocationManager *locationManager;
 	CMMotionManager *motionManager;
 }
+
+@property (nonatomic, retain) CLLocationManager *locationManager;
 -(void)startReading;
 -(void)stopReading;
 @end

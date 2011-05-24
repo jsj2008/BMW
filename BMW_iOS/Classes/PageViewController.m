@@ -8,6 +8,7 @@
 
 #import "PageViewController.h"
 #import "SBJSON.h"
+#import "BMW_iOSAppDelegate.h"
 
 @implementation PageViewController
 
@@ -62,20 +63,12 @@
 	}
 	NSNumber *payload = [[data objectAtIndex:indexPath.row] objectForKey:@"payload"];
 	//payload = [NSNumber numberWithFloat:[payload floatValue]*2.2369 ];
-	cell.textLabel.text = [NSString stringWithFormat:@"%d) %@: %f",indexPath.row+1,[self getName:[[data objectAtIndex:indexPath.row] objectForKey:@"udid"]], [payload floatValue]];
+    BMW_iOSAppDelegate *del = [[UIApplication sharedApplication] delegate];
+	cell.textLabel.text = [NSString stringWithFormat:@"%d) %@: %f",indexPath.row+1,[del getNameForUDID:[[data objectAtIndex:indexPath.row] objectForKey:@"udid"]], [payload floatValue]];
 	cell.textLabel.textColor = [UIColor whiteColor];
 		
 	// Set up the cell...
 	return cell;
-}
-
--(NSString *)getName:(NSString *)udid
-{
-	if([udid compare:@"2d5a4b892d6c8237dcbc9e313d98dde8fc816dec"]==0)
-		return @"Rob B";
-	if([udid compare:@"76fe9b1185d4350bcd400d4268ea71b39c31b26c"]==0)
-		return @"Aaron S";
-	return @"John J";
 }
 
 - (void)tableView: (UITableView*)tableView 
