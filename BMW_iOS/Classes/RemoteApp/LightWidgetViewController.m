@@ -7,7 +7,7 @@
 //
 
 #import "LightWidgetViewController.h"
-
+#import "ServerConnection.h"
 
 @implementation LightWidgetViewController
 
@@ -30,6 +30,9 @@
 	y = 0;
 	g = 0;
 	[self updateLabels];
+    if (!updateTimer) {
+        updateTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(updateDial:) userInfo:nil repeats:YES];
+    }
 }
 
 -(void)updateLabels {
@@ -52,6 +55,20 @@
 	g++;
 	[self updateLabels];
 }
+
+-(void)updateDial:(id)sender {
+    [ServerConnection sendGetRequestTo:[NSString stringWithFormat:@"%@?udid=%@", RED_LIGHT_COUNT_URL, [[UIDevice currentDevice] uniqueIdentifier]] delegate:self];
+    
+}
+
+-(void)receiveStats:(NSArray *)stats {
+    if ([stats count] > 0) {
+        NSDictionary *dict = [stats objectAtIndex:0];
+        r = [[dict objectForKey:@"payload"] intValue];
+        [self updateLabels];
+    }
+}
+
 /*
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

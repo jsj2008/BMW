@@ -9,6 +9,7 @@
 #import "DashboardViewController.h"
 #import "BMW_iOSAppDelegate.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import "LightWidgetViewController.h"
 
 @implementation DashboardViewController
 
@@ -63,7 +64,9 @@
     [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationLandscapeRight animated:NO];
 
         [leftView addSubview:dialWidgetVC.view];
-
+    
+    LightWidgetViewController *lwvc = [[LightWidgetViewController alloc] init];
+    [rightView addSubview:lwvc.view];
     // Do any additional setup after loading the view from its nib.
 }
 

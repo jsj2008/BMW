@@ -14,7 +14,10 @@
 #define LOCATION_URL @"http://bunkermw.heroku.com/mobile_gps/create"
 #define MOTION_URL @"http://bunkermw.heroku.com/mobile_motions/create"
 #define IMAGE_PROCESSING_URL @"http://bunkermw.heroku.com/mobile_lights/create"
+
+//Queries
 #define SPEED_AT_LOCATION_URL @"http://bunkermw.heroku.com/mobile_gps/get_avg_speed_of_location"
+#define RED_LIGHT_COUNT_URL @"http://bunkermw.heroku.com/leaderboard/redlight_count/user_rank"
 
 //returns array of dicts
 //http://bunkermw.heroku.com/mobile_gps/get_avg_speed_table

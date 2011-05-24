@@ -12,6 +12,7 @@
 @interface LightWidgetViewController : WidgetViewController {
 	IBOutlet UILabel *red, *yellow, *green;
 	int r, y, g;
+    NSTimer *updateTimer;
 }
 
 -(void)incrementRed;
