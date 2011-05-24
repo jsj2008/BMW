@@ -29,4 +29,6 @@
       - Implement query for finding average speed of location (boxing all points in vicinity) and finding n closest points (Minh Ly)
       - Modify the way distance is calculated using GPS coordinates; current Euclidean implementation is inaccurate (David Kamm)
       - Modify current 'rankings' queries to take in new parameters. Work with Query Controller API (Minh & David)
+      - Clean out deprecated database models (e.g.: incorrectly named models, columns, etc.) (David)
+      - Modify the way time spent at redlights counts; so we group redlights together even if there is a small time gap.
       
