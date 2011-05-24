@@ -21,11 +21,11 @@
 #define LEADERBOARD_DISPLAY 1
 
 //Server Send
-//#define SEND_MOTION 1
+#define SEND_MOTION 1
 #define SEND_LOCATION 1
-//#define SEND_HEADING 1
-//#define SEND_LIGHTS 1
-//#define POST_DATA 1
+#define SEND_HEADING 1
+#define SEND_LIGHTS 1
+#define POST_DATA 1
 
 //extra image processing switches
 #ifdef IMAGE_PROCESSING_VIEW
