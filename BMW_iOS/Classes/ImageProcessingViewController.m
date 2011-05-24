@@ -36,7 +36,16 @@ enum {
 #if TARGET_IPHONE_SIMULATOR
 
 @implementation ImageProcessingViewController
+static bool runImageProcessing = NO;
 
++ (void) startImageProcessing
+{
+    runImageProcessing = YES;
+}
++ (void) stopImageProcessing
+{
+    runImageProcessing = NO;
+}
 @end
 
 #else
