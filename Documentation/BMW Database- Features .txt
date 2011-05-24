@@ -3,18 +3,24 @@
 ==================================
 
   + Features Finished
+      - JSON insert into model: mobile_gps            (use URL '/mobile_gps/create')
+      - JSON insert into model: mobile_lights         (use URL '/mobile_lights/create')
+      - JSON insert into model: car_trip_ranges       (use URL '/car_trip_ranges/create')
+      
       - Query for rankings: total distance            (use URL '/leaderboard/total_distance')
       - Query for rankings: max speed                 (use URL '/leaderboard/max_speed') (units: meters per sec)
       - Query for rankings: average speed             (use URL '/leaderboard/avg_speed') (units: meters per sec)
       - Query for rankings: time spent at redlights   (use URL '/leaderboard/time_at_redlights')
       - Query for rankings: total redlights           (use URL '/leaderboard/redlight_count')
       - Query for rankings: total greenlights         (use URL '/leaderboard/greenlight_count')
+      
       - Query for user rank: total distance           (use URL '/leaderboard/total_distance/user_rank?udid=...')
       - Query for user rank: max speed                (use URL '/leaderboard/max_speed/user_rank?udid=...') (units: meters per sec)
       - Query for user rank: average speed            (use URL '/leaderboard/avg_speed/user_rank?udid=...') (units: meters per sec)
       - Query for user rank: time spent at redlights  (use URL '/leaderboard/time_at_redlights/user_rank?udid=...')
       - Query for user rank: total redlights          (use URL '/leaderboard/redlight_count/user_rank?udid=...')
       - Query for user rank: total greenlights        (use URL '/leaderboard/greenlight_count/user_rank?udid=...')
+      
       - Query for average speed of location           (use URL '/mobile_gps/get_avg_speed_of_location?latitude=...&longitude=...')
       
       
