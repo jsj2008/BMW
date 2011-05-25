@@ -18,6 +18,10 @@ typedef struct Blob{
 	BlobPoint *points;
     int color;
 	int numPoints;
+    unsigned int totalRed;
+    unsigned int totalGreen;
+    BlobPoint lowerLeft;
+    BlobPoint upperRight;
 } Blob;
 
 #if TARGET_IPHONE_SIMULATOR
