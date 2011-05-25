@@ -86,11 +86,6 @@ static bool runImageProcessing = NO;
     trackBlobs = NULL;
     
     runImageProcessing = NO;
-    /*
-    [self startImageProcessing];
-    [self stopImageProcessing];
-    [self startImageProcessing];
-     */
 }
 
 
@@ -328,19 +323,20 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
     glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
     
-    
 	// Use shader program.
 	[glView setPositionThresholdFramebuffer];
-	//[glView setDisplayFramebuffer];
+    //[glView setDisplayFramebuffer];
     
-	shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"hsi_threshold.frag.glsl"];
+	//shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"hsi_threshold.frag.glsl"];
+    shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"vertical_blur.frag.glsl"];
     //shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"DirectDisplayShader.fsh"];
 
+    //[glView setDisplayFramebuffer];
 	[shader setAsActive];
     
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, videoFrameTexture);
-	
+    
 	// Update uniform values
 	glUniform1i([shader indexForUniform:@"inputImage"], 0);
     
@@ -352,23 +348,55 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 	
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);    
     
-	shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"erosion.frag.glsl"];
-    //shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"DirectDisplayShader.fsh"];
+	//shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"erosion.frag.glsl"];
+    shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"horizontal_blur.frag.glsl"];
 
 	[glView setDisplayFramebuffer];
 	[shader setAsActive];
 	
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
-        
+    
+	// Update attribute values.
+	glVertexAttribPointer([shader indexForAttribute:@"position"], 2, GL_FLOAT, 0, 0, squareVertices);
+	glEnableVertexAttribArray([shader indexForAttribute:@"position"]);
+	glVertexAttribPointer([shader indexForAttribute:@"inputTextureCoordinate"], 2, GL_FLOAT, 0, 0, passthroughTextureVertices);
+	glEnableVertexAttribArray([shader indexForAttribute:@"inputTextureCoordinate"]);
+	
+	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+    
+    shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"hsi_threshold.frag.glsl"];
+    
+	//[glView setDisplayFramebuffer];
+	[shader setAsActive];
+	
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
+	
+	// Update attribute values.
+	glVertexAttribPointer([shader indexForAttribute:@"position"], 2, GL_FLOAT, 0, 0, squareVertices);
+	glEnableVertexAttribArray([shader indexForAttribute:@"position"]);
+	glVertexAttribPointer([shader indexForAttribute:@"inputTextureCoordinate"], 2, GL_FLOAT, 0, 0, passthroughTextureVertices);
+	glEnableVertexAttribArray([shader indexForAttribute:@"inputTextureCoordinate"]);
+	
+	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+    
+    shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"erosion.frag.glsl"];
+    
+	//[glView setDisplayFramebuffer];
+	[shader setAsActive];
+	
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
+	
 	// Update uniform values
 	glUniform1i([shader indexForUniform:@"inputImage"], 0);
-	glUniform1f([shader indexForUniform:@"anchorWidth"], 1.0);
-	glUniform1f([shader indexForUniform:@"elementWidth"], 3.0);
-	glUniform1f([shader indexForUniform:@"anchorHeight"], 1.0);
-	glUniform1f([shader indexForUniform:@"elementHeight"], 3.0);
+	glUniform1f([shader indexForUniform:@"anchorWidth"], 2.0);
+	glUniform1f([shader indexForUniform:@"elementWidth"], 5.0);
+	glUniform1f([shader indexForUniform:@"anchorHeight"], 2.0);
+	glUniform1f([shader indexForUniform:@"elementHeight"], 5.0);
 	glUniform2f([shader indexForUniform:@"pixelSize"], 1.0/FBO_HEIGHT,1.0/FBO_WIDTH);
-    
+	
 	// Update attribute values.
 	glVertexAttribPointer([shader indexForAttribute:@"position"], 2, GL_FLOAT, 0, 0, squareVertices);
 	glEnableVertexAttribArray([shader indexForAttribute:@"position"]);
@@ -382,15 +410,15 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 	//[glView setDisplayFramebuffer];
 	[shader setAsActive];
 	
-	//glActiveTexture(GL_TEXTURE0);
-	//glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
 	
 	// Update uniform values
 	glUniform1i([shader indexForUniform:@"inputImage"], 0);
-	glUniform1f([shader indexForUniform:@"anchorWidth"], 3.0);
-	glUniform1f([shader indexForUniform:@"elementWidth"], 7.0);
-	glUniform1f([shader indexForUniform:@"anchorHeight"], 3.0);
-	glUniform1f([shader indexForUniform:@"elementHeight"], 7.0);
+	glUniform1f([shader indexForUniform:@"anchorWidth"], 2.0);
+	glUniform1f([shader indexForUniform:@"elementWidth"], 5.0);
+	glUniform1f([shader indexForUniform:@"anchorHeight"], 2.0);
+	glUniform1f([shader indexForUniform:@"elementHeight"], 5.0);
 	glUniform2f([shader indexForUniform:@"pixelSize"], 1.0/FBO_HEIGHT,1.0/FBO_WIDTH);
 	
 	// Update attribute values.
@@ -401,8 +429,8 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 	
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     
-    //[glView presentFramebuffer];
-    //return;
+    [glView presentFramebuffer];
+    return;
     
     glReadPixels(0, 0, FBO_WIDTH, FBO_HEIGHT, GL_RGBA, GL_UNSIGNED_BYTE, rawPositionPixels);
     
@@ -470,6 +498,8 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 	}
     
     printf("red blobs: %d out of total: %d\n", redBlobs, nBlob);
+    printf("green blobs: %d out of total: %d\n", greenBlobs, nBlob);
+    
     [StatsTracker sharedTracker].numBlobs=redBlobs;
     
     //send stats
@@ -480,7 +510,7 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
     free(trackBlobs);
     FreeAllRegions(boundaries, nBlob, labels);
     
-    return;
+    //return;
     //[glView setDisplayFramebuffer];
     
     /*
@@ -519,7 +549,7 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     
     [glView presentFramebuffer];
-    
+    return;
     //glDeleteTextures(1, &tempText);
     
     free(trackBlobs);
@@ -538,7 +568,7 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 
 - (void)processNewCameraFrame:(CVImageBufferRef)cameraFrame;
 {
-    if (runImageProcessing) {
+    //if (runImageProcessing) {
         CVPixelBufferLockBaseAddress(cameraFrame, 0);
         int bufferHeight = CVPixelBufferGetHeight(cameraFrame);
         int bufferWidth = CVPixelBufferGetWidth(cameraFrame);
@@ -560,7 +590,7 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
         glDeleteTextures(1, &videoFrameTexture);
     
         CVPixelBufferUnlockBaseAddress(cameraFrame, 0);
-    }
+   // }
 }
 
 #pragma mark -

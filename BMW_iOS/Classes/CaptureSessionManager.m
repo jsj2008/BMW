@@ -20,6 +20,7 @@
 #pragma mark SampleBufferDelegate
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
+    
     if ([captureDevice lockForConfiguration:nil]) {
         captureDevice.focusMode = AVCaptureFocusModeAutoFocus;
         //captureDevice.exposureMode = AVCaptureExposureModeAutoExpose;
@@ -27,6 +28,7 @@
        //NSLog(@"obtained camera lock\n");
         [captureDevice unlockForConfiguration];
     }
+     
 	CVImageBufferRef pixelBuffer = CMSampleBufferGetImageBuffer( sampleBuffer );
 	
 	[delegate processNewCameraFrame:pixelBuffer];

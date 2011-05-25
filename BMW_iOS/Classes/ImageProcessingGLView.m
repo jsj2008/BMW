@@ -86,13 +86,13 @@
 	glGenFramebuffers(1, &positionFramebuffer);
     glBindFramebuffer(GL_FRAMEBUFFER, positionFramebuffer);
 
-	//glGenRenderbuffers(1, &positionRenderbuffer);
-    //glBindRenderbuffer(GL_RENDERBUFFER, positionRenderbuffer);
+	glGenRenderbuffers(1, &positionRenderbuffer);
+    glBindRenderbuffer(GL_RENDERBUFFER, positionRenderbuffer);
                                          
-    //glRenderbufferStorage(GL_RENDERBUFFER, GL_RGBA8_OES, FBO_WIDTH, FBO_HEIGHT);
+    glRenderbufferStorage(GL_RENDERBUFFER, GL_RGBA8_OES, FBO_WIDTH, FBO_HEIGHT);
     //[context renderbufferStorage:GL_RENDERBUFFER fromDrawable:(CAEAGLLayer*)self.layer];
 
-    //glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, positionRenderbuffer);	
+    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, positionRenderbuffer);	
 
 
 	// Offscreen position framebuffer texture target

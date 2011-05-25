@@ -10,6 +10,8 @@
 
 #define FBO_HEIGHT 640
 #define FBO_WIDTH 480
+//#define FBO_HEIGHT 1280
+//#define FBO_WIDTH 720
 
 @interface ImageProcessingGLView : UIView 
 {
