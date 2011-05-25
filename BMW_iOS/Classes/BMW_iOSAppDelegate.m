@@ -302,9 +302,17 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 -(NSString *)getNameForUDID:(NSString *)udid
 {
 	if([udid compare:@"2d5a4b892d6c8237dcbc9e313d98dde8fc816dec"]==0)
-		return @"Rob B";
+		return @"Rob B.";
+    if([udid compare:@"6600aad1f865a5febbfddb21301d5ad68f1903cb"]==0)
+		return @"Rob B.";
 	if([udid compare:@"76fe9b1185d4350bcd400d4268ea71b39c31b26c"]==0)
-		return @"Aaron S";
+		return @"Aaron S.";
+    if([udid compare:@"b680e1f3e17c7b5e75f5a43c5e4ba12e33a4fa27"]==0)
+		return @"Paul D.";
+    if([udid compare:@"09148136bbc4221eecc252bbc08e10631c52f925"]==0)
+		return @"Thomas F.";
+    if([udid compare:@"aab275dd918cffa7308c41c7244e03c0cc58a1b0"]==0)
+		return @"John J.";
 	return @"John J";
 }
 
