@@ -104,6 +104,7 @@ static bool trackBlobsIndex = -1;
 - (void)dealloc 
 {
 	free(rawPositionPixels);
+    free(trackBlobs);
 	[camera release];
 	[shaders release];
     [super dealloc];
@@ -584,7 +585,7 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
 		}
 		
         blob->lowerLeft = ll;
-        blob->upperRight = rr;
+        blob->upperRight = ur;
         
         /*
 		ll.x -= 2.0;//*(ur.x - ll.x);
