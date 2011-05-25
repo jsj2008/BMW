@@ -80,7 +80,7 @@
 					<object class="IBUIImageView" id="644534166">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">256</int>
-						<string key="NSFrame">{{139, 121}, {9, 77}}</string>
+						<string key="NSFrame">{{139, 124}, {9, 77}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="66633043"/>
@@ -92,9 +92,9 @@
 							<integer value="516" key="IBUIAccessibilityTraits"/>
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage" id="495185265">
+						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">dial_hand_02.png</string>
+							<string key="NSResourceName">dial_hand_04.png</string>
 						</object>
 					</object>
 					<object class="IBUIImageView" id="66633043">
@@ -112,7 +112,10 @@
 							<integer value="516" key="IBUIAccessibilityTraits"/>
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<reference key="IBUIImage" ref="495185265"/>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">dial_hand_02.png</string>
+						</object>
 					</object>
 					<object class="IBUILabel" id="220111405">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -150,7 +153,7 @@
 					<object class="IBUILabel" id="616098047">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 252}, {329, 43}}</string>
+						<string key="NSFrame">{{30, 252}, {329, 43}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="809034198"/>
@@ -173,10 +176,9 @@
 					<object class="IBUILabel" id="809034198">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 272}, {227, 43}}</string>
+						<string key="NSFrame">{{30, 272}, {227, 43}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -472,10 +474,12 @@
 				<string>dial_bg_02.png</string>
 				<string>dial_hand_02.png</string>
 				<string>dial_hand_03.png</string>
+				<string>dial_hand_04.png</string>
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>{360, 360}</string>
+				<string>{14, 111}</string>
 				<string>{14, 111}</string>
 				<string>{14, 111}</string>
 			</object>
