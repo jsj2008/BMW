@@ -30,17 +30,17 @@
 
 -(void)setSpeed1:(double)mph {
     dial1.layer.anchorPoint = CGPointMake(0.5, 0.8);
-	dial1.transform = CGAffineTransformMakeRotation((((mph*(90.0/50.0))+53)*(M_PI/180)) - (M_PI));
+	dial1.transform = CGAffineTransformMakeRotation((((mph*(210.0/140.0))+72)*(M_PI/180)) - (M_PI));
 }
     
 -(void)setSpeed2:(double)mph {
     dial2.layer.anchorPoint = CGPointMake(0.5, 0.8);
-	dial2.transform = CGAffineTransformMakeRotation((((mph*(90.0/50.0))+53)*(M_PI/180)) - (M_PI));
+	dial2.transform = CGAffineTransformMakeRotation((((mph*(210.0/140.0))+72)*(M_PI/180)) - (M_PI));
 }
 
 -(void)setSpeed3:(double)mph {
     dial3.layer.anchorPoint = CGPointMake(0.5, 0.8);
-	dial3.transform = CGAffineTransformMakeRotation((((mph*(90.0/50.0))+53)*(M_PI/180)) - (M_PI));
+	dial3.transform = CGAffineTransformMakeRotation((((mph*(210.0/140.0))+72)*(M_PI/180)) - (M_PI));
 }
 
 
@@ -76,6 +76,9 @@
         NSString *maxSpeedUDID = [dict objectForKey:@"max_speed_udid"];
         
         [self setSpeed1:avgSpeed];
+        double currSpeed = [[[[SensorReader sharedReader] locationManager] location] speed];
+        if (currSpeed == -1) currSpeed = 0;
+        [self setSpeed2:currSpeed];
         [self setSpeed3:maxSpeed];
         [topLabel setText:[NSString stringWithFormat:@"Top Speed: %.1f mph", maxSpeed]];
         [bottomLabel setText:[NSString stringWithFormat:@"by %@", [(BMW_iOSAppDelegate *)[[UIApplication sharedApplication] delegate] getNameForUDID:maxSpeedUDID]]];
