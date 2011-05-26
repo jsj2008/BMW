@@ -61,7 +61,7 @@ float Hue(float r, float g, float b)
         hue = 240.0 + 60.0*(r - g);
     }
 
-    return hue;
+    //return hue;
 
     float theta = 60.0*acos(((r+r-b-g)*.5)/(pow(pow(r - g, 2.0) + (r - b)*(g - b), .5)));
     if (b <= g) return theta;
