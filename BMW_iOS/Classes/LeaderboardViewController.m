@@ -7,10 +7,9 @@
 //
 
 #import "LeaderboardViewController.h"
-#include "JSONFramework.h"
-#include "NSString+SBJSON.h"
-#include "NSObject+SBJSON.h"
-#include "SBJSON.h"
+#import "SBJSON.h"
+#import "NSObject+SBJSON.h"
+#import "NSString+SBJSON.h"
 #import "ServerConnection.h"
 #import "BMW_iOSAppDelegate.h"
 
