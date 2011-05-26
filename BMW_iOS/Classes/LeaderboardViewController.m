@@ -12,8 +12,10 @@
 #import "NSString+SBJSON.h"
 #import "ServerConnection.h"
 #import "BMW_iOSAppDelegate.h"
+#import "NewsFeedPageController.h"
+#import "ProfilePageViewController.h"
 
-#define kNumberOfPages 3
+#define kNumberOfPages 6
 
 @implementation LeaderboardViewController
 
@@ -81,9 +83,16 @@
      PageViewController *controller = [viewControllers objectAtIndex:page];
     if ((NSNull *)controller == [NSNull null])
     {
-		controller = [[PageViewController alloc] init];
-		controller.dataURLString = [self getDataURLString:page];
+		if (page == 0) {
+            controller = [[NewsFeedPageController alloc] init];
+        } else if (page == 5) {
+            controller = [[ProfilePageViewController alloc] init];
+        } else {
+            controller = [[PageViewController alloc] init];
+		}
+        controller.dataURLString = [self getDataURLString:page];
 		controller.titleString = [self getLeaderboardTitle:page];
+        controller.pageNumber = page;
 		[controller loadDataFromURL];
 		
 		[viewControllers replaceObjectAtIndex:page withObject:controller];
@@ -108,11 +117,17 @@
 -(NSString *)getDataURLString:(int)page {
 	switch (page) {
 		case 0:
+            return @"http://bunkermw.heroku.com/feed_most_recent_n";
+        case 1:
 			return @"http://bunkermw.heroku.com/mobile_gps/get_max_speed_table";
 			break;
 		case 2:
 			return @"http://bunkermw.heroku.com/mobile_gps/get_total_distance_table";
 			break;
+        case 3:
+            return @"http://bunkermw.heroku.com/leaderboard/time_at_redlights";
+        case PROFILE:
+            return nil;
 		default:
 			return @"http://bunkermw.heroku.com/mobile_gps/get_avg_speed_table";
 			break;
@@ -122,12 +137,18 @@
 -(NSString *)getLeaderboardTitle:(int)page {
 	switch (page) {
 		case 0:
+			return @"News Feed";
+			break;
+		case 1:
 			return @"Top Speed";
 			break;
-		case 2:
-			return @"Total Distance";
-			break;
-		default:
+        case 2:
+            return @"Total Distance";
+        case 3:
+            return @"Time at Red Lights";
+        case PROFILE:
+            return @"Driver Profile";
+        default:
 			return @"Average Speed";
 			break;
 	}

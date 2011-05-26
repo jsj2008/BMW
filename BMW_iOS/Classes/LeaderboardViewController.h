@@ -9,6 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "PageViewController.h"
 
+enum PAGE_NUM {
+    NEWS_FEED = 0,
+    TOP_SPEED,
+    TOTAL_DISTANCE,
+    LIGHT_TIME,
+    AVG_SPEED,
+    PROFILE
+};
+
 @interface LeaderboardViewController : UIViewController <UIScrollViewDelegate> {
 	UIScrollView *scrollView;
 	UIPageControl *pageControl;

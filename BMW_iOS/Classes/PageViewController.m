@@ -12,7 +12,7 @@
 
 @implementation PageViewController
 
-@synthesize titleLabel, tv, dataURLString, data,titleString;	
+@synthesize titleLabel, tv, dataURLString, data,titleString, pageNumber;	
 
 -(void)loadDataFromURL
 {
@@ -64,11 +64,32 @@
 	NSNumber *payload = [[data objectAtIndex:indexPath.row] objectForKey:@"payload"];
 	//payload = [NSNumber numberWithFloat:[payload floatValue]*2.2369 ];
     BMW_iOSAppDelegate *del = [[UIApplication sharedApplication] delegate];
-	cell.textLabel.text = [NSString stringWithFormat:@"%d) %@: %f",indexPath.row+1,[del getNameForUDID:[[data objectAtIndex:indexPath.row] objectForKey:@"udid"]], [payload floatValue]];
+	NSString *name = [del getNameForUDID:[[data objectAtIndex:indexPath.row] objectForKey:@"udid"]];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%d) %@: %@",indexPath.row+1,name, [self stringValueForPayload:[payload floatValue] AndPage:pageNumber]];
 	cell.textLabel.textColor = [UIColor whiteColor];
 		
 	// Set up the cell...
 	return cell;
+}
+
+-(NSString *)stringValueForPayload:(float)num AndPage:(int)page {
+    switch (page) {
+        case TOP_SPEED:
+            return [NSString stringWithFormat:@"%.2f mph", num*MPS_TO_MPH];
+            break;
+        case TOTAL_DISTANCE:
+            return [NSString stringWithFormat:@"%.1f miles", num*MPS_TO_MPH];
+            break;
+        case LIGHT_TIME:
+            return [NSString stringWithFormat:@"%.0f min.", num/60.0];
+            break;
+        case AVG_SPEED:
+            return [NSString stringWithFormat:@"%.1f mph", num*MPS_TO_MPH];
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)tableView: (UITableView*)tableView 
