@@ -117,19 +117,19 @@
 -(NSString *)getDataURLString:(int)page {
 	switch (page) {
 		case 0:
-            return @"http://bunkermw.heroku.com/feed_most_recent_n";
+            return MINI_FEED_URL;
         case 1:
-			return @"http://bunkermw.heroku.com/mobile_gps/get_max_speed_table";
+			return MAX_SPEED_LEADERBOARD_URL;
 			break;
 		case 2:
-			return @"http://bunkermw.heroku.com/mobile_gps/get_total_distance_table";
+			return TOTAL_DISTANCE_LEADERBOARD_URL;
 			break;
         case 3:
-            return @"http://bunkermw.heroku.com/leaderboard/time_at_redlights";
+            return RED_LIGHT_TIME_LEADERBOARD_URL;
         case PROFILE:
             return nil;
 		default:
-			return @"http://bunkermw.heroku.com/mobile_gps/get_avg_speed_table";
+			return AVERAGE_SPEED_LEADERBOARD_URL;
 			break;
 	}
 }

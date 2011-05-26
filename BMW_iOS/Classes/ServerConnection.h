@@ -22,6 +22,13 @@
 #define SPEED_AT_LOCATION_URL @"http://bunkermw.heroku.com/mobile_gps/get_avg_speed_of_location"
 #define RED_LIGHT_COUNT_URL @"http://bunkermw.heroku.com/leaderboard/redlight_count/user_rank"
 
+//Leaderboards
+#define MINI_FEED_URL @"http://bunkermw.heroku.com/feed_most_recent_n"
+#define MAX_SPEED_LEADERBOARD_URL @"http://bunkermw.heroku.com/leaderboard/max_speed"
+#define TOTAL_DISTANCE_LEADERBOARD_URL @"http://bunkermw.heroku.com/leaderboard/total_distance"
+#define RED_LIGHT_TIME_LEADERBOARD_URL @"http://bunkermw.heroku.com/leaderboard/time_at_redlights"
+#define AVERAGE_SPEED_LEADERBOARD_URL @"http://bunkermw.heroku.com/leaderboard/avg_speed"
+
 //returns array of dicts
 //http://bunkermw.heroku.com/mobile_gps/get_avg_speed_table
 //http://bunkermw.heroku.com/mobile_gps/get_max_speed_table

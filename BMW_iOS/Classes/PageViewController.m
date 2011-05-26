@@ -67,12 +67,17 @@
     BMW_iOSAppDelegate *del = [[UIApplication sharedApplication] delegate];
     
 	NSString *name = [[data objectAtIndex:indexPath.row] objectForKey:@"user_name"];
-    if(name == nil)
+    if([name isKindOfClass:[NSString class]])
+    {
+        NSUInteger index = [name rangeOfString:@" "].location;
+        if(index != NSNotFound&&index+2<=[name length])
+            name = [NSString stringWithFormat:@"%@.",[name substringToIndex:[name rangeOfString:@" "].location+2]];
+    }
+    if(name == nil||[name isKindOfClass:[NSNull class]])
         name = [del getNameForUDID:[[data objectAtIndex:indexPath.row] objectForKey:@"udid"]];
     if([[[data objectAtIndex:indexPath.row] objectForKey:@"udid"] rangeOfString:@"-"].location != NSNotFound)
         name = @"A Sim";
     if(name == nil)
-        
         name = @"UNKNOWN";
     
     cell.textLabel.text = [NSString stringWithFormat:@"%d) %@: %@",indexPath.row+1,name, [self stringValueForPayload:[payload floatValue] AndPage:pageNumber]];
