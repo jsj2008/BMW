@@ -389,7 +389,17 @@ static NSString* kAppId = @"211780665513835";
    // NSLog(@"%@", request.url);
     //[[[UIAlertView alloc] initWithTitle:[result objectForKey:@"name"] message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     
-    NSLog(@"%@",result);
+    //NSLog(@"%@",result);
+    
+    else if([result isKindOfClass:[NSDictionary class]])
+    {
+        NSMutableDictionary *dict = [[[NSMutableDictionary alloc] init] autorelease];
+        [dict setObject:[result objectForKey:@"name"] forKey:@"user_name"];
+        [dict setObject:[result objectForKey:@"first_name"] forKey:@"first_name"];
+        [dict setObject:[result objectForKey:@"last_name"] forKey:@"last_name"];
+        [ServerConnection sendStats:dict toURL:PROFILE_URL];
+    }
+
 };
 
 /**

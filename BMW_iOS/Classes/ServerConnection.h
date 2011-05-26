@@ -15,6 +15,8 @@
 #define MOTION_URL @"http://bunkermw.heroku.com/mobile_motions/create"
 #define IMAGE_PROCESSING_URL @"http://bunkermw.heroku.com/mobile_lights/create"
 #define START_TRIP_URL @"http://bunkermw.heroku.com/car_trip_ranges/create"
+#define BREAKATHON_URL @"http://bunkermw.heroku.com/breakathon_routes/create"
+#define PROFILE_URL @"http://bunkermw.heroku.com/profile_names/create"
 
 //Queries
 #define SPEED_AT_LOCATION_URL @"http://bunkermw.heroku.com/mobile_gps/get_avg_speed_of_location"
