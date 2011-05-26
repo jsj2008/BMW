@@ -36,6 +36,7 @@
     #define CIRCLE_DETECTION 0
     #define BLOB_PIXEL_COUNT 0
     #define HIDE_IMAGE_PROCESSING_VIEW 1
+    #define ALWAYS_IMAGE_PROCESS 0
 #endif
 
 #ifdef HMI_CONNECTION
