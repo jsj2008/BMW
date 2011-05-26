@@ -7,16 +7,13 @@
 //
 
 #import "LeaderboardViewController.h"
-#include "JSONFramework.h"
-#include "NSString+SBJSON.h"
-#include "NSObject+SBJSON.h"
-#include "SBJSON.h"
+#import "SBJSON.h"
+#import "NSObject+SBJSON.h"
+#import "NSString+SBJSON.h"
 #import "ServerConnection.h"
 #import "BMW_iOSAppDelegate.h"
 
 #define kNumberOfPages 3
-
-
 
 @implementation LeaderboardViewController
 
@@ -40,6 +37,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[[UIApplication sharedApplication].delegate facebook] requestWithGraphPath:@"me" andDelegate:[UIApplication sharedApplication].delegate];
+    
 	//[self swapLeaderboard];
     [[UIApplication sharedApplication] setStatusBarOrientation: UIInterfaceOrientationPortrait animated:NO];  
 
