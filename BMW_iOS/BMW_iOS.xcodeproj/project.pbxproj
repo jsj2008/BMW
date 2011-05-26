@@ -68,6 +68,9 @@
 		D437EC2E1371F27800AEA826 /* car icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D437EC2A1371F27800AEA826 /* car icon.png */; };
 		D437EC301371F2FB00AEA826 /* widget-basic bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D437EC2F1371F2FB00AEA826 /* widget-basic bg.png */; };
 		D437ECD71372079E00AEA826 /* dial-hand2.png in Resources */ = {isa = PBXBuildFile; fileRef = D437ECD61372079E00AEA826 /* dial-hand2.png */; };
+		D43AC526138E60FD007C86F3 /* NewsFeedPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = D43AC524138E60FD007C86F3 /* NewsFeedPageController.m */; };
+		D43AC52B138E7798007C86F3 /* ProfilePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D43AC529138E7798007C86F3 /* ProfilePageViewController.m */; };
+		D43AC52C138E7798007C86F3 /* ProfilePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D43AC52A138E7798007C86F3 /* ProfilePageViewController.xib */; };
 		D43BDEAF1378F58800722E69 /* LeaderboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D43BDEAC1378F58800722E69 /* LeaderboardViewController.m */; };
 		D43BDEB01378F58800722E69 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D43BDEAE1378F58800722E69 /* PageViewController.m */; };
 		D43BDEB21378F58F00722E69 /* PageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D43BDEB11378F58F00722E69 /* PageViewController.xib */; };
@@ -150,6 +153,7 @@
 		D4CAF79F134A6666002E1B53 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CAF79E134A6666002E1B53 /* ExternalAccessory.framework */; };
 		D4CAF7A1134A666D002E1B53 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CAF7A0134A666D002E1B53 /* Security.framework */; };
 		D4E14AFE1370D4AE009795FA /* WidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E14AFD1370D4AE009795FA /* WidgetViewController.m */; };
+/* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		7BDBBA7B138DFBC700DF619A /* PBXContainerItemProxy */ = {
@@ -256,6 +260,11 @@
 		D437EC2A1371F27800AEA826 /* car icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "car icon.png"; sourceTree = "<group>"; };
 		D437EC2F1371F2FB00AEA826 /* widget-basic bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "widget-basic bg.png"; sourceTree = "<group>"; };
 		D437ECD61372079E00AEA826 /* dial-hand2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dial-hand2.png"; sourceTree = "<group>"; };
+		D43AC523138E60FD007C86F3 /* NewsFeedPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsFeedPageController.h; sourceTree = "<group>"; };
+		D43AC524138E60FD007C86F3 /* NewsFeedPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsFeedPageController.m; sourceTree = "<group>"; };
+		D43AC528138E7798007C86F3 /* ProfilePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilePageViewController.h; sourceTree = "<group>"; };
+		D43AC529138E7798007C86F3 /* ProfilePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilePageViewController.m; sourceTree = "<group>"; };
+		D43AC52A138E7798007C86F3 /* ProfilePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfilePageViewController.xib; sourceTree = "<group>"; };
 		D43BDEAB1378F58800722E69 /* LeaderboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderboardViewController.h; sourceTree = "<group>"; };
 		D43BDEAC1378F58800722E69 /* LeaderboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardViewController.m; sourceTree = "<group>"; };
 		D43BDEAD1378F58800722E69 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
@@ -700,6 +709,11 @@
 				D4AF4659138336B0005DF2D8 /* DashboardViewController.h */,
 				D4AF465A138336B0005DF2D8 /* DashboardViewController.m */,
 				D4AF465B138336B0005DF2D8 /* DashboardViewController.xib */,
+				D43AC523138E60FD007C86F3 /* NewsFeedPageController.h */,
+				D43AC524138E60FD007C86F3 /* NewsFeedPageController.m */,
+				D43AC528138E7798007C86F3 /* ProfilePageViewController.h */,
+				D43AC529138E7798007C86F3 /* ProfilePageViewController.m */,
+				D43AC52A138E7798007C86F3 /* ProfilePageViewController.xib */,
 			);
 			name = Leaderboards;
 			sourceTree = "<group>";
@@ -1046,11 +1060,12 @@
 				D43BDF301378F87900722E69 /* leaderboard-card_01.png in Resources */,
 				D43BDF311378F87900722E69 /* leaderboard-card_01@2x.png in Resources */,
 				D4AF465D138336B0005DF2D8 /* DashboardViewController.xib in Resources */,
-                D4AF465F138386AA005DF2D8 /* 130i.aif in Resources */,
+				D4AF465F138386AA005DF2D8 /* 130i.aif in Resources */,
 				7BB5385B138CAEED00AB6A69 /* horizontal_blur.frag.glsl in Resources */,
 				7BB5385C138CAEED00AB6A69 /* vertical_blur.frag.glsl in Resources */,
 				7BDBBA70138DFBC700DF619A /* FBDialog.bundle in Resources */,
 				7BDBBA7F138DFC0300DF619A /* FBConnect.bundle in Resources */,
+				D43AC52C138E7798007C86F3 /* ProfilePageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1130,6 +1145,8 @@
 				7BDBBA77138DFBC700DF619A /* SBJsonBase.m in Sources */,
 				7BDBBA78138DFBC700DF619A /* SBJsonParser.m in Sources */,
 				7BDBBA79138DFBC700DF619A /* SBJsonWriter.m in Sources */,
+				D43AC526138E60FD007C86F3 /* NewsFeedPageController.m in Sources */,
+				D43AC52B138E7798007C86F3 /* ProfilePageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
