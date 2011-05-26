@@ -6,7 +6,9 @@
 //  Copyright 2009 Burkaprojects. All rights reserved.
 //
 
-#import "JSONFramework.h"
+#import "SBJSON.h"
+#import "NSObject+SBJSON.h"
+#import "NSString+SBJSON.h"
 #import "NSDictionary+KeyTranslation.h"
 #import "NSDictionary+JSONSerializableSupport.h"
 #import "ObjectiveSupport.h"

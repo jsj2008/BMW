@@ -45,6 +45,8 @@ static int itemID = 0;
 
 -(void)startReading
 {
+    [ImageProcessingViewController startImageProcessing];
+    
 	[locationManager startUpdatingHeading];
 	[locationManager startUpdatingLocation];
 	
@@ -94,6 +96,7 @@ static int itemID = 0;
 
 -(void)stopReading
 {
+    [ImageProcessingViewController stopImageProcessing];
 	[motionManager stopDeviceMotionUpdates];
 	[locationManager stopUpdatingLocation];
 	[locationManager stopUpdatingHeading];

@@ -22,14 +22,11 @@ void main()
     for (float i = leftW; i < rightW; i++)  {
         for(float j = leftH; j < rightH; j++) {
             vec4 pixel = texture2D(inputImage, pos + vec2(pixelSize.x*i, pixelSize.y*j));
-            /*
-            if (pixel.r > .2 && pixel.g > .2) {
+            if (pixel.g > .9 && pixel.r > .9) {
                 gl_FragColor = vec4(1,1,0,1);
                 found = 1;
                 break;
-            } else 
-            */
-            if (pixel.g > .9) {
+            } else if (pixel.g > .9) {
                 gl_FragColor = vec4(0,1,0,1);
                 found = 1;
                 break;

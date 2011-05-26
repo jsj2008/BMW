@@ -52,10 +52,14 @@ static bool runImageProcessing = NO;
 @implementation ImageProcessingViewController
 
 static bool runImageProcessing = NO;
+static bool lastIMP = NO;
+static int trackBlobsIndex = -1;
+static NSDate *startTime;
 
 + (void) startImageProcessing
 {
     runImageProcessing = YES;
+    trackBlobsIndex = -1;
 }
 + (void) stopImageProcessing
 {
@@ -86,11 +90,10 @@ static bool runImageProcessing = NO;
     trackBlobs = NULL;
     
     runImageProcessing = NO;
-    /*
-    [self startImageProcessing];
-    [self stopImageProcessing];
-    [self startImageProcessing];
-     */
+    
+    numLights = -1;
+    
+    startTime = [[NSDate alloc] init];
 }
 
 
@@ -104,9 +107,17 @@ static bool runImageProcessing = NO;
     [super didReceiveMemoryWarning];
 }
 
+- (void) deallocTrackBlobs
+{
+    for (int i = 0; i < trackBlobsIndex; i++) {
+        free(trackBlobs[i]);
+    }
+}
+
 - (void)dealloc 
 {
 	free(rawPositionPixels);
+    free(trackBlobs);
 	[camera release];
 	[shaders release];
     [super dealloc];
@@ -183,6 +194,9 @@ static bool runImageProcessing = NO;
 			boundaries[label[i]] = (Blob *)malloc(sizeof(Blob));
 			boundaries[label[i]]->numPoints = 0;
 			boundaries[label[i]]->points = NULL;
+            boundaries[label[i]]->totalRed = 1;
+            boundaries[label[i]]->totalGreen = 1;
+            boundaries[label[i]]->subRatio = -1;
 		}
 	}
     
@@ -202,6 +216,8 @@ static bool runImageProcessing = NO;
 				boundaries[l]->numPoints++;
 				if (r > 0) boundaries[l]->color = RED;
                 if (g > 0) boundaries[l]->color = GREEN;
+                boundaries[l]->totalRed += r;
+                boundaries[l]->totalGreen += g;
                 
 				if (!left||!right||!up||!down){
 					BlobPoint* newpt = (BlobPoint*) malloc(sizeof(BlobPoint));
@@ -236,9 +252,7 @@ bool circleTest(Blob *blob)
 	}
 	averageX /= numPoints;
 	averageY /= numPoints;
-	
-	//printf("avgX: %f, avgY: %f, numP: %f\n", averageX, averageY, numPoints);
-	
+		
 	next = blob->points;
 	float rMax = .5;
 	float rMin = 640.0/2.0;
@@ -248,15 +262,16 @@ bool circleTest(Blob *blob)
 		if (r < rMin) rMin = r;
 		next = next->nextPoint;
 	}
-	//printf("%f %f, %f\n",rMin, rMax, rMax - rMin);
+
 	return (rMax - rMin)/(rMax + rMin) < .8;
 }
 
 bool checkFBOBounds(int x, int y)
 {
-    return x > 0 && x < FBO_WIDTH && y > 0 && y < FBO_HEIGHT;
+    return x >= 0 && x < FBO_WIDTH && y >= 0 && y < FBO_HEIGHT;
 }
 
+/*
 void drawRectangle(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight, bool fillBlack)
 {
 	if (fillBlack) {
@@ -277,6 +292,7 @@ void drawRectangle(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight, bo
 		}
 	}
 }
+*/
 
 void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 {
@@ -300,8 +316,188 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
     free(labels);
 }
 
-- (void)drawFrame
-{ 
+float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight)
+{
+    float totalRed = 1;
+    float totalGreen = 1;
+    
+    for (int i = lowerLeft.x; i <= upperRight.x; i++) {
+        for (int j = lowerLeft.y; j <= upperRight.y; j++) {
+            if (checkFBOBounds(i, j)) {
+                totalRed += frame[j*4*FBO_WIDTH + i*4];
+                totalGreen += frame[j*4*FBO_WIDTH + i*4 + 1];
+            } else {
+                NSLog(@"Blob %d %d out of bounds!", i, j);
+            }
+        }
+    }
+    return totalRed/totalGreen;
+}
+
+- (void)subsequentDrawFrame
+{
+    // Replace the implementation of this method to do your own custom drawing.
+    static const GLfloat squareVertices[] = {
+        -1.0f, -1.0f,
+        1.0f, -1.0f,
+        -1.0f,  1.0f,
+        1.0f,  1.0f,
+    };
+    
+	static const GLfloat textureVertices[] = {
+        1.0f, 1.0f,
+        1.0f, 0.0f,
+        0.0f,  1.0f,
+        0.0f,  0.0f,
+    };
+	
+	static const GLfloat passthroughTextureVertices[] = {
+        0.0f, 0.0f,
+        1.0f, 0.0f,
+        0.0f,  1.0f,
+        1.0f,  1.0f,
+    };
+    
+    ShaderProgram *shader;
+    glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+    
+	// Use shader program.
+	[glView setPositionThresholdFramebuffer];
+    
+    shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"vertical_blur.frag.glsl"];
+
+	[shader setAsActive];
+    
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, videoFrameTexture);
+    
+	// Update uniform values
+	glUniform1i([shader indexForUniform:@"inputImage"], 0);
+    
+	// Update attribute values.
+	glVertexAttribPointer([shader indexForAttribute:@"position"], 2, GL_FLOAT, 0, 0, squareVertices);
+	glEnableVertexAttribArray([shader indexForAttribute:@"position"]);
+	glVertexAttribPointer([shader indexForAttribute:@"inputTextureCoordinate"], 2, GL_FLOAT, 0, 0, textureVertices);
+	glEnableVertexAttribArray([shader indexForAttribute:@"inputTextureCoordinate"]);
+	
+    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);    
+    
+    shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"horizontal_blur.frag.glsl"];
+    
+	[glView setDisplayFramebuffer];
+	[shader setAsActive];
+	
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
+    
+    glUniform1i([shader indexForUniform:@"inputImage"], 0);
+    
+	// Update attribute values.
+	glVertexAttribPointer([shader indexForAttribute:@"position"], 2, GL_FLOAT, 0, 0, squareVertices);
+	glEnableVertexAttribArray([shader indexForAttribute:@"position"]);
+	glVertexAttribPointer([shader indexForAttribute:@"inputTextureCoordinate"], 2, GL_FLOAT, 0, 0, passthroughTextureVertices);
+	glEnableVertexAttribArray([shader indexForAttribute:@"inputTextureCoordinate"]);
+	
+	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+    
+    shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"hsi_threshold.frag.glsl"];
+    
+	[shader setAsActive];
+	
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
+
+    glUniform1i([shader indexForUniform:@"inputImage"], 0);
+
+	// Update attribute values.
+	glVertexAttribPointer([shader indexForAttribute:@"position"], 2, GL_FLOAT, 0, 0, squareVertices);
+	glEnableVertexAttribArray([shader indexForAttribute:@"position"]);
+	glVertexAttribPointer([shader indexForAttribute:@"inputTextureCoordinate"], 2, GL_FLOAT, 0, 0, passthroughTextureVertices);
+	glEnableVertexAttribArray([shader indexForAttribute:@"inputTextureCoordinate"]);
+	
+	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+    
+    shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"erosion.frag.glsl"];
+    
+	[shader setAsActive];
+	
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
+	
+	// Update uniform values
+	glUniform1i([shader indexForUniform:@"inputImage"], 0);
+	glUniform1f([shader indexForUniform:@"anchorWidth"], 3.0);
+	glUniform1f([shader indexForUniform:@"elementWidth"], 7.0);
+	glUniform1f([shader indexForUniform:@"anchorHeight"], 3.0);
+	glUniform1f([shader indexForUniform:@"elementHeight"], 7.0);
+	glUniform2f([shader indexForUniform:@"pixelSize"], 1.0/FBO_HEIGHT,1.0/FBO_WIDTH);
+	
+	// Update attribute values.
+	glVertexAttribPointer([shader indexForAttribute:@"position"], 2, GL_FLOAT, 0, 0, squareVertices);
+	glEnableVertexAttribArray([shader indexForAttribute:@"position"]);
+	glVertexAttribPointer([shader indexForAttribute:@"inputTextureCoordinate"], 2, GL_FLOAT, 0, 0, passthroughTextureVertices);
+	glEnableVertexAttribArray([shader indexForAttribute:@"inputTextureCoordinate"]);
+	
+	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+    
+    shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"dilation.frag.glsl"];
+    [shader setAsActive];
+	
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
+	
+	// Update uniform values
+	glUniform1i([shader indexForUniform:@"inputImage"], 0);
+	glUniform1f([shader indexForUniform:@"anchorWidth"], 3.0);
+	glUniform1f([shader indexForUniform:@"elementWidth"], 7.0);
+	glUniform1f([shader indexForUniform:@"anchorHeight"], 3.0);
+	glUniform1f([shader indexForUniform:@"elementHeight"], 7.0);
+	glUniform2f([shader indexForUniform:@"pixelSize"], 1.0/FBO_HEIGHT,1.0/FBO_WIDTH);
+	
+	// Update attribute values.
+	glVertexAttribPointer([shader indexForAttribute:@"position"], 2, GL_FLOAT, 0, 0, squareVertices);
+	glEnableVertexAttribArray([shader indexForAttribute:@"position"]);
+	glVertexAttribPointer([shader indexForAttribute:@"inputTextureCoordinate"], 2, GL_FLOAT, 0, 0, passthroughTextureVertices);
+	glEnableVertexAttribArray([shader indexForAttribute:@"inputTextureCoordinate"]);
+	
+	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+    
+    [glView presentFramebuffer];
+    
+    glReadPixels(0, 0, FBO_WIDTH, FBO_HEIGHT, GL_RGBA, GL_UNSIGNED_BYTE, rawPositionPixels);
+    
+    int numberOfLights = 0;
+    
+    for (int i = 0; i < trackBlobsIndex; i++) {
+        float newRedGreenRatio = getRedGreenRatio(rawPositionPixels, trackBlobs[i]->lowerLeft, trackBlobs[i]->upperRight);
+        
+        //store the first subsequent ratio
+        if (trackBlobs[i]->subRatio == -1) {
+            trackBlobs[i]->subRatio = newRedGreenRatio;
+        }
+        
+        NSLog(@"old: %f new: %f", trackBlobs[i]->subRatio, newRedGreenRatio);
+
+        if (5.0 * newRedGreenRatio < trackBlobs[i]->subRatio || newRedGreenRatio == 1.0) {
+            if (numLights < 0) {
+                numberOfLights++;
+                if (numberOfLights == 1) {
+                    NSLog(@"%@", startTime);
+                    
+                    redTimeIntervalInSeconds = [startTime timeIntervalSinceReferenceDate];
+                    startTime = [NSDate date];
+                    NSLog(@"Time at red: %f", redTimeIntervalInSeconds);
+                }
+            }
+        }
+    }
+    
+    if (numLights < 0 && numLights > 0) numLights = numberOfLights;
+}
+
+- (void)initialDrawFrame
+{
     // Replace the implementation of this method to do your own custom drawing.
     static const GLfloat squareVertices[] = {
         -1.0f, -1.0f,
@@ -328,19 +524,15 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
     glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
     
-    
 	// Use shader program.
 	[glView setPositionThresholdFramebuffer];
-	//[glView setDisplayFramebuffer];
     
-	shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"hsi_threshold.frag.glsl"];
-    //shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"DirectDisplayShader.fsh"];
-
+    shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"vertical_blur.frag.glsl"];
 	[shader setAsActive];
     
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, videoFrameTexture);
-	
+    
 	// Update uniform values
 	glUniform1i([shader indexForUniform:@"inputImage"], 0);
     
@@ -352,22 +544,15 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 	
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);    
     
-	shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"erosion.frag.glsl"];
-    //shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"DirectDisplayShader.fsh"];
+    shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"horizontal_blur.frag.glsl"];
 
 	[glView setDisplayFramebuffer];
 	[shader setAsActive];
 	
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
-        
-	// Update uniform values
-	glUniform1i([shader indexForUniform:@"inputImage"], 0);
-	glUniform1f([shader indexForUniform:@"anchorWidth"], 1.0);
-	glUniform1f([shader indexForUniform:@"elementWidth"], 3.0);
-	glUniform1f([shader indexForUniform:@"anchorHeight"], 1.0);
-	glUniform1f([shader indexForUniform:@"elementHeight"], 3.0);
-	glUniform2f([shader indexForUniform:@"pixelSize"], 1.0/FBO_HEIGHT,1.0/FBO_WIDTH);
+    
+    glUniform1i([shader indexForUniform:@"inputImage"], 0);
     
 	// Update attribute values.
 	glVertexAttribPointer([shader indexForAttribute:@"position"], 2, GL_FLOAT, 0, 0, squareVertices);
@@ -377,13 +562,28 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 	
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     
-    shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"dilation.frag.glsl"];
+    shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"hsi_threshold.frag.glsl"];
+    [shader setAsActive];
+	
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
+	
+    glUniform1i([shader indexForUniform:@"inputImage"], 0);
+
+	// Update attribute values.
+	glVertexAttribPointer([shader indexForAttribute:@"position"], 2, GL_FLOAT, 0, 0, squareVertices);
+	glEnableVertexAttribArray([shader indexForAttribute:@"position"]);
+	glVertexAttribPointer([shader indexForAttribute:@"inputTextureCoordinate"], 2, GL_FLOAT, 0, 0, passthroughTextureVertices);
+	glEnableVertexAttribArray([shader indexForAttribute:@"inputTextureCoordinate"]);
+	
+	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     
-	//[glView setDisplayFramebuffer];
+    shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"erosion.frag.glsl"];
+    
 	[shader setAsActive];
 	
-	//glActiveTexture(GL_TEXTURE0);
-	//glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
 	
 	// Update uniform values
 	glUniform1i([shader indexForUniform:@"inputImage"], 0);
@@ -401,8 +601,31 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 	
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     
-    //[glView presentFramebuffer];
-    //return;
+    shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"dilation.frag.glsl"];
+    
+	//[glView setDisplayFramebuffer];
+	[shader setAsActive];
+	
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
+	
+	// Update uniform values
+	glUniform1i([shader indexForUniform:@"inputImage"], 0);
+	glUniform1f([shader indexForUniform:@"anchorWidth"], 3.0);
+	glUniform1f([shader indexForUniform:@"elementWidth"], 7.0);
+	glUniform1f([shader indexForUniform:@"anchorHeight"], 3.0);
+	glUniform1f([shader indexForUniform:@"elementHeight"], 7.0);
+	glUniform2f([shader indexForUniform:@"pixelSize"], 1.0/FBO_HEIGHT,1.0/FBO_WIDTH);
+	
+	// Update attribute values.
+	glVertexAttribPointer([shader indexForAttribute:@"position"], 2, GL_FLOAT, 0, 0, squareVertices);
+	glEnableVertexAttribArray([shader indexForAttribute:@"position"]);
+	glVertexAttribPointer([shader indexForAttribute:@"inputTextureCoordinate"], 2, GL_FLOAT, 0, 0, passthroughTextureVertices);
+	glEnableVertexAttribArray([shader indexForAttribute:@"inputTextureCoordinate"]);
+	
+	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+    
+    [glView presentFramebuffer];
     
     glReadPixels(0, 0, FBO_WIDTH, FBO_HEIGHT, GL_RGBA, GL_UNSIGNED_BYTE, rawPositionPixels);
     
@@ -416,7 +639,7 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
     
     trackBlobs = malloc(sizeof(Blob *)*nBlob);
     
-    int blobIndex = 0;
+    trackBlobsIndex = 0;
     int greenBlobs = 0;
     int redBlobs = 0;
     
@@ -430,7 +653,6 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 		ur.y = 0;
 		Blob* blob = boundaries[i];
 		BlobPoint* next = blob->points;
-		//printf("%d\n", blob->numPoints);
 		while(next != NULL)
 		{
 			if(next->x < ll.x) ll.x = next->x;
@@ -441,88 +663,85 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 			
 		}
 		
-		ll.x -= 2.0;//*(ur.x - ll.x);
-		ll.y -= 2.0;//*(ur.y - ll.y);
-		ur.x += 2.0;//*(ur.x - ll.x);
-		ur.y += 2.0;//*(ur.y - ll.y);
+        BlobPoint delta;
+        delta.x = ur.x - ll.x;
+        delta.y = ur.y - ll.y;
+        ur.x += 2*delta.x;
+        ur.y += 2*delta.y;
+        ll.x -= 2*delta.x;
+        ll.y -= 2*delta.y;
+        
+        if (!checkFBOBounds(ll.x, ll.y)) {
+            if (ll.x < 0) ll.x = 0;
+            if (ll.y < 0) ll.y = 0;
+        }
+        
+        if (!checkFBOBounds(ur.x, ur.y)) {
+            if (ur.x > FBO_WIDTH) ur.x = FBO_WIDTH - 1;
+            if (ur.y > FBO_HEIGHT) ur.y = FBO_HEIGHT - 1;
+        }
+        
+        blob->lowerLeft = ll;
+        blob->upperRight = ur;
+
 		bool fillBlack = false;
-#if CIRCLE_DETECTION
-		if (!circleTest(blob)) {
+        
+        if (blob->numPoints < 30 /*|| blob->numPoints > 500*/) {
+            fillBlack = true; 
+        }
+        
+        if (!fillBlack && blob->lowerLeft.y > FBO_HEIGHT*.7) {
             fillBlack = true;
-            NSLog(@"failed circle test");
         }
-#endif
-#if BLOB_PIXEL_COUNT
-        if (blob->numPoints < 30) {
-           fillBlack = true; 
-            NSLog(@"failed pixel num test");
-            //printf("deleted blob of size %d\n", blob->numPoints);
+        
+		if (!fillBlack && !circleTest(blob)) {
+            fillBlack = true;
         }
-#endif
+        
+        if (!fillBlack)  {
+            if(blob->totalRed < blob->totalGreen) {
+                greenBlobs++;
+                fillBlack = true;
+            } else redBlobs++;
+        }
+        
 		//drawRectangle(rawPositionPixels, ll, ur, fillBlack);
         if (!fillBlack) {
-            trackBlobs[blobIndex] = blob;
-            blobIndex++;
-            if (blob->color == RED) {
-                redBlobs++;
-            } else if (blob->color == GREEN) greenBlobs++;
+            trackBlobs[trackBlobsIndex] = malloc(sizeof(Blob));
+            memcpy(trackBlobs[trackBlobsIndex], blob, sizeof(Blob));
+            trackBlobsIndex++;
         }
 	}
-    
-    printf("red blobs: %d out of total: %d\n", redBlobs, nBlob);
-    [StatsTracker sharedTracker].numBlobs=redBlobs;
-    
+    if (trackBlobsIndex == 1) startTime = [NSDate date];
+
+    //printf("red blobs: %d out of total: %d\n", redBlobs, nBlob);
+    //printf("green blobs: %d out of total: %d\n", greenBlobs, nBlob);
+        
     //send stats
 #ifdef SEND_LIGHTS
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:redBlobs],RED_LIGHT, [NSNumber numberWithInt:greenBlobs], GREEN_LIGHT, nil];
     [ServerConnection sendStats:dictionary toURL:IMAGE_PROCESSING_URL];
 #endif
-    free(trackBlobs);
-    FreeAllRegions(boundaries, nBlob, labels);
-    
-    return;
-    //[glView setDisplayFramebuffer];
-    
-    /*
-    GLuint tempText;
-    glGenTextures(1, &tempText);
-	glBindTexture(GL_TEXTURE_2D, tempText);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-	
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, FBO_HEIGHT, FBO_WIDTH, 0, GL_RGBA, GL_UNSIGNED_BYTE, rawPositionPixels);
-    
-    glBindTexture(GL_TEXTURE_2D, tempText);
-     */
     
     //draw image to iphone
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, glView.positionRenderTexture);
 
     glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, FBO_WIDTH, FBO_HEIGHT, GL_RGBA, GL_UNSIGNED_BYTE, rawPositionPixels);    
-    //glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, FBO_WIDTH, FBO_HEIGHT, 0, GL_RGBA, GL_UNSIGNED_BYTE, rawPositionPixels);
     
     shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"DirectDisplayShader.fsh"];
-
-    //[glView setPositionThresholdFramebuffer];
 	[shader setAsActive];
+    
+    glUniform1i([shader indexForUniform:@"inputImage"], 0);
     
 	// Update attribute values.
 	glVertexAttribPointer([shader indexForAttribute:@"position"], 2, GL_FLOAT, 0, 0, squareVertices);
 	glEnableVertexAttribArray([shader indexForAttribute:@"position"]);
 	glVertexAttribPointer([shader indexForAttribute:@"inputTextureCoordinate"], 2, GL_FLOAT, 0, 0, passthroughTextureVertices);
-    //glVertexAttribPointer([shader indexForAttribute:@"inputTextureCoordinate"], 2, GL_FLOAT, 0, 0, textureVertices);
 	glEnableVertexAttribArray([shader indexForAttribute:@"inputTextureCoordinate"]);
 	
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-    
-    [glView presentFramebuffer];
-    
-    //glDeleteTextures(1, &tempText);
-    
-    free(trackBlobs);
+        
     FreeAllRegions(boundaries, nBlob, labels);
 }
 
@@ -538,7 +757,7 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 
 - (void)processNewCameraFrame:(CVImageBufferRef)cameraFrame;
 {
-    if (runImageProcessing) {
+    //if (runImageProcessing) {
         CVPixelBufferLockBaseAddress(cameraFrame, 0);
         int bufferHeight = CVPixelBufferGetHeight(cameraFrame);
         int bufferWidth = CVPixelBufferGetWidth(cameraFrame);
@@ -554,13 +773,24 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 	
         // Using BGRA extension to pull in video frame data directly
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, bufferWidth, bufferHeight, 0, GL_BGRA, GL_UNSIGNED_BYTE, CVPixelBufferGetBaseAddress(cameraFrame));
-    
-        [self drawFrame];
-	
+        
+       // if (trackBlobsIndex <= 0) {
+        //    numLights = -1;
+        //    redTimeIntervalInSeconds = -1;
+            [self initialDrawFrame];
+       // } else {
+        //    [self subsequentDrawFrame];
+       // }
         glDeleteTextures(1, &videoFrameTexture);
     
         CVPixelBufferUnlockBaseAddress(cameraFrame, 0);
+    /*
+    } else if (lastIMP){
+        double greenTimeIntervalInSeconds = [[NSDate date] timeIntervalSinceDate:startTime];
+        //send green lights and 
     }
+    lastIMP = runImageProcessing;
+     */
 }
 
 #pragma mark -

@@ -64,10 +64,13 @@ static ServerConnection * _sharedConnection;
 
 +(void)sendStats:(id)stats toURL:(NSString *)url
 {
-    if(![stats respondsToSelector:@selector(toDict)])
-        return;
+    NSMutableDictionary *statsDict;
+    if([stats respondsToSelector:@selector(toDict)])
+        statsDict = [stats toDict];
+    else
+        statsDict = stats;
     
-    NSMutableDictionary *statsDict = [stats toDict];
+    
     //Will start an array with this and then send the queue
     [statsDict setObject:[NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]] forKey:@"iphone_time"];
     [statsDict setObject:[[UIDevice currentDevice] uniqueIdentifier] forKey:@"udid"];
@@ -78,7 +81,7 @@ static ServerConnection * _sharedConnection;
     [ServerConnection sendPostRequestTo:url postData:post delegate:[ServerConnection sharedConnection]];
 #endif
     
-    //NSLog(@"prev stats:%@",[statsDict JSONRepresentation]);
+    NSLog(@"prev stats:%@",[statsDict JSONRepresentation]);
 }
 
 +(void)sendPostRequestTo:(NSString *)url delegate:(id<ServerConnectionDelegate>)delegate
@@ -140,6 +143,11 @@ static ServerConnection * _sharedConnection;
         [delegate receiveStats:jsonArray];
         CFDictionaryRemoveValue(connectionDelegateDict, connection);
     }
+}
+
+-(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    
+    
 }
 
 -(void)receiveStats:(NSArray *)stats

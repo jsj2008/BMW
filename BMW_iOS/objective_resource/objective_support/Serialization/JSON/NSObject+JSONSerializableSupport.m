@@ -9,7 +9,9 @@
 #import "NSObject+JSONSerializableSupport.h"
 #import "NSDictionary+JSONSerializableSupport.h"
 #import "Serialize.h"
-#import "JSONFramework.h"
+#import "SBJSON.h"
+#import "NSObject+SBJSON.h"
+#import "NSString+SBJSON.h"
 #import "ObjectiveSupport.h"
 
 @interface NSObject (JSONSerializableSupport_Private)

@@ -14,6 +14,7 @@
 #import "RemoteAppController.h"
 #import "LeaderboardViewController.h"
 #import "DashboardViewController.h"
+#import "FBConnect.h"
 
 #define MPS_TO_MPH 2.23693629
 
@@ -29,8 +30,12 @@ extern NSString* BMWConnectedChanged;
     DashboardViewController *dashboardVC;
 	
 	RemoteAppController* bmwAppController;
+    
+    Facebook* _facebook;
+    UIImage *userPhoto;
 }
 
+-(UIImage *)getUserPhoto;
 -(CLLocation *)currentLocation;
 -(void)deviceWillRotateToInterfaceOrientation:(UIDeviceOrientation)orientation;
 -(NSString *)getNameForUDID:(NSString *)udid;
@@ -43,7 +48,7 @@ extern NSString* BMWConnectedChanged;
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-
+@property(readonly) Facebook *facebook;
 
 
 @end

@@ -18,6 +18,11 @@ typedef struct Blob{
 	BlobPoint *points;
     int color;
 	int numPoints;
+    unsigned int totalRed;
+    unsigned int totalGreen;
+    BlobPoint lowerLeft;
+    BlobPoint upperRight;
+    float subRatio;
 } Blob;
 
 #if TARGET_IPHONE_SIMULATOR
@@ -39,11 +44,13 @@ typedef struct Blob{
 	GLuint videoFrameTexture;
 	GLubyte *rawPositionPixels;
     
-    Blob** trackBlobs;
+    Blob** trackBlobs;   
+        
+    int numLights;
+    double redTimeIntervalInSeconds;
 }
 
 @property(readonly) ImageProcessingGLView *glView;
-
 //- (void) assetWriterStart;
 //- (NSURL *) fileURL;
 + (void) startImageProcessing;
