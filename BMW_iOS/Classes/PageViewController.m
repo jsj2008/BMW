@@ -23,7 +23,7 @@
 -(void)receiveStats:(NSArray *)stats
 {
     self.data = stats;
-    NSLog(@"%@",self.data);
+    //NSLog(@"%@",self.data);
     [self.tv reloadData];
     [self performSelector:@selector(loadDataFromURL) withObject:nil afterDelay:5];
 
