@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PageViewController.h"
 
-
-@interface NewsFeedPageController : NewsFeedPageController {
+@interface NewsFeedPageController : PageViewController {
     
 }
 
