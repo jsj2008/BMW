@@ -3,9 +3,10 @@
 ==================================
 
   + Features Finished
-      - JSON insert into model: mobile_gps            (use URL '/mobile_gps/create')
-      - JSON insert into model: mobile_lights         (use URL '/mobile_lights/create')
-      - JSON insert into model: car_trip_ranges       (use URL '/car_trip_ranges/create')
+      - JSON insert into model: mobile_gps            (use URL '/mobile_gps/create')        params: string udid, datetime iphone_time, float latitude, float longitude, float speed
+      - JSON insert into model: mobile_lights         (use URL '/mobile_lights/create')     params: string udid, datetime iphone_time, int red_count, int green_count
+      - JSON insert into model: car_trip_ranges       (use URL '/car_trip_ranges/create')   params: string udid, datetime iphone_time
+      - JSON insert into model: profile_names         (use URL '/profile_names/create')     params: string udid, string user_name, string first_name, string last_name
       
       - Query for rankings: total distance            (use URL '/leaderboard/total_distance')
       - Query for rankings: max speed                 (use URL '/leaderboard/max_speed') (units: meters per sec)
@@ -22,6 +23,8 @@
       - Query for user rank: total greenlights        (use URL '/leaderboard/greenlight_count/user_rank?udid=...')
       
       - Query for average speed of location           (use URL '/mobile_gps/get_avg_speed_of_location?latitude=...&longitude=...')
+      - Query for user achievements                   (use URL '/unlocked_achievements/user?udid=...')
+                                                          returns array of entryes {udid, user_name, achievement_id, achievement_name, time_unlocked}
       
       
       
@@ -31,10 +34,10 @@
       - Provide documentation for the Query Controller for Rob & Aaron(David Kamm & Minh Ly)
       - Implement new models in support for Achievements (Minh Ly)
       - Implement models for taking in car/HMI data (Minh Ly)
-      - Implement model for taking into account car trips (Minh Ly)
       - Implement query for finding average speed of location (boxing all points in vicinity) and finding n closest points (Minh Ly)
       - Modify the way distance is calculated using GPS coordinates; current Euclidean implementation is inaccurate (David Kamm)
       - Modify current 'rankings' queries to take in new parameters. Work with Query Controller API (Minh & David)
       - Clean out deprecated database models (e.g.: incorrectly named models, columns, etc.) (David)
       - Modify the way time spent at redlights counts; so we group redlights together even if there is a small time gap.
+      - Look at generating unique IDs: http://rubyforge.org/projects/uuidtools/ (Minh Ly)
       
