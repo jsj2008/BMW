@@ -57,6 +57,8 @@
 }
 
 -(void)updateDial:(id)sender {
+    NSLog([NSString stringWithFormat:@"%@?udid=%@", RED_LIGHT_COUNT_URL, [[UIDevice currentDevice] uniqueIdentifier]]);
+    
     [ServerConnection sendGetRequestTo:[NSString stringWithFormat:@"%@?udid=%@", RED_LIGHT_COUNT_URL, [[UIDevice currentDevice] uniqueIdentifier]] delegate:self];
     
 }

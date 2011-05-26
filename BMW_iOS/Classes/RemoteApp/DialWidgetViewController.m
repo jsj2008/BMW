@@ -65,6 +65,8 @@
     
    // NSLog(@"Sending Lat: %f, Long: %f", latitude, longitude);
     
+    //NSLog([NSString stringWithFormat:@"%@?latitude=%f&longitude=%f", SPEED_AT_LOCATION_URL, latitude, longitude]);
+    
         [ServerConnection sendGetRequestTo:[NSString stringWithFormat:@"%@?latitude=%f&longitude=%f", SPEED_AT_LOCATION_URL, latitude, longitude] delegate:self];
 
 }

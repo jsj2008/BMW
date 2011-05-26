@@ -15,7 +15,7 @@
 #import "NewsFeedPageController.h"
 #import "ProfilePageViewController.h"
 
-#define kNumberOfPages 6
+#define kNumberOfPages 7
 
 @implementation LeaderboardViewController
 
@@ -128,6 +128,8 @@
             return @"http://bunkermw.heroku.com/leaderboard/time_at_redlights";
         case PROFILE:
             return nil;
+        case BREAKATHON_ROUTE:
+            return @"http://bunkermw.heroku.com/breakathon_routes/get_rankings_by_time";
 		default:
 			return @"http://bunkermw.heroku.com/mobile_gps/get_avg_speed_table";
 			break;
@@ -148,6 +150,8 @@
             return @"Time at Red Lights";
         case PROFILE:
             return @"Driver Profile";
+        case BREAKATHON_ROUTE:
+            return @"Coho Coffee Challenge Route";
         default:
 			return @"Average Speed";
 			break;
