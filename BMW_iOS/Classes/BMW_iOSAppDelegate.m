@@ -369,6 +369,14 @@ static NSString* kAppId = @"211780665513835";
 -(UIImage *)getUserPhoto {
     return userPhoto;    
 }
+
+-(NSString *)getUserName {
+    return userName;    
+}
+
+-(NSString *)getUserFirstName {
+    return userFirstName;    
+}
 /**
  * Called when a request returns and its response has been parsed into
  * an object. The resulting object may be a dictionary, an array, a string,
@@ -393,6 +401,10 @@ static NSString* kAppId = @"211780665513835";
     
     else if([result isKindOfClass:[NSDictionary class]])
     {
+        [userName release];
+        [userFirstName release];
+        userName = [[result objectForKey:@"name"] retain];
+        userFirstName = [[result objectForKey:@"first_name"] retain];
         NSMutableDictionary *dict = [[[NSMutableDictionary alloc] init] autorelease];
         [dict setObject:[result objectForKey:@"name"] forKey:@"user_name"];
         [dict setObject:[result objectForKey:@"first_name"] forKey:@"first_name"];

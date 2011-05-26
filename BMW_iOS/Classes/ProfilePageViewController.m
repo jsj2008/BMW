@@ -47,6 +47,10 @@
         [self performSelector:@selector(loadDataFromURL) withObject:nil afterDelay:2];
         BMW_iOSAppDelegate *del = [[UIApplication sharedApplication] delegate];
         profilePicture.image = [del getUserPhoto];
+        NSString *name = [del getUserFirstName];
+        if(name==nil)
+            name = @"Driver";
+        titleLabel.text = [NSString stringWithFormat:@"%@'s Profile",[del getUserFirstName]];
     }
 }
 
