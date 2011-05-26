@@ -15,8 +15,6 @@
 
 #define kNumberOfPages 3
 
-
-
 @implementation LeaderboardViewController
 
 @synthesize pageControl, viewControllers, scrollView;
@@ -39,6 +37,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[[UIApplication sharedApplication].delegate facebook] requestWithGraphPath:@"me" andDelegate:[UIApplication sharedApplication].delegate];
+    
 	//[self swapLeaderboard];
     [[UIApplication sharedApplication] setStatusBarOrientation: UIInterfaceOrientationPortrait animated:NO];  
 

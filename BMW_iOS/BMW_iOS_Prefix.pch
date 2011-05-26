@@ -19,6 +19,7 @@
 #define SENSOR_READER 1
 //#define LOCAL_DB 1 //should be done with this in current incarnation
 #define LEADERBOARD_DISPLAY 1
+#define FB_CONNECT 1
 
 //Server Send
 #define SEND_MOTION 1
