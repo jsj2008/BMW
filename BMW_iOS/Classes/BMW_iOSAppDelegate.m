@@ -161,11 +161,11 @@ static NSString* kAppId = @"211780665513835";
         [leaderboardVC.view removeFromSuperview];
         [self.window addSubview:dashboardVC.view];
         NSLog(@"Landscape!");
-        [[SensorReader sharedReader] startReading];
+        //[[SensorReader sharedReader] startReading];
     } else if (orientation == UIDeviceOrientationPortrait) {
         [dashboardVC.view removeFromSuperview];
         [self.window addSubview:leaderboardVC.view];
-        [[SensorReader sharedReader] stopReading];
+        //[[SensorReader sharedReader] stopReading];
     }
 }
 
