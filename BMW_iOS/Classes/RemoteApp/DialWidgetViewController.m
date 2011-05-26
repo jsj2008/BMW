@@ -63,7 +63,9 @@
     float latitude = sr.locationManager.location.coordinate.latitude;
     float longitude = sr.locationManager.location.coordinate.longitude;
     
-        [ServerConnection sendGetRequestTo:[NSString stringWithFormat:@"%@?latitude=%d&longitude=%d", SPEED_AT_LOCATION_URL, latitude, longitude] delegate:self];
+    NSLog(@"Sending Lat: %f, Long: %f", latitude, longitude);
+    
+        [ServerConnection sendGetRequestTo:[NSString stringWithFormat:@"%@?latitude=%f&longitude=%f", SPEED_AT_LOCATION_URL, latitude, longitude] delegate:self];
 
 }
 
@@ -78,7 +80,7 @@
         [self setSpeed1:avgSpeed];
         double currSpeed = [[[[SensorReader sharedReader] locationManager] location] speed];
         if (currSpeed == -1) currSpeed = 0;
-        [self setSpeed2:currSpeed];
+        [self setSpeed2:currSpeed*MPS_TO_MPH];
         [self setSpeed3:maxSpeed];
         [topLabel setText:[NSString stringWithFormat:@"Top Speed: %.1f mph", maxSpeed]];
         [bottomLabel setText:[NSString stringWithFormat:@"by %@", [(BMW_iOSAppDelegate *)[[UIApplication sharedApplication] delegate] getNameForUDID:maxSpeedUDID]]];

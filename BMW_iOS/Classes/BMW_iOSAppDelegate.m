@@ -13,7 +13,7 @@
 #import "SensorReader.h"
 
 NSString* BMWConnectedChanged = @"BMWConnectedChanged";
-
+static NSString* kAppId = @"211780665513835";
 
 @implementation BMW_iOSAppDelegate
 
@@ -24,7 +24,7 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 @synthesize managedObjectContext=__managedObjectContext;
 @synthesize managedObjectModel=__managedObjectModel;
 @synthesize persistentStoreCoordinator=__persistentStoreCoordinator;
-
+@synthesize facebook = _facebook;
 
 
 #pragma mark -
@@ -42,6 +42,14 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
     // Override point for customization after application launch.
 	[UIApplication sharedApplication].statusBarHidden = YES;
 	[UIApplication sharedApplication].idleTimerDisabled = YES;
+    
+#if FB_CONNECT
+    _facebook = [[Facebook alloc] initWithAppId:kAppId];
+    _facebook.sessionDelegate = self;
+    //check saved value
+    NSString *url = [[NSUserDefaults standardUserDefaults] objectForKey:@"fbconnect"];
+    [_facebook handleOpenURL:[NSURL URLWithString:url]];
+#endif    
     // Add the view controller's view to the window and display.
 	//To save battery on the plane
 #if IMAGE_PROCESSING_VIEW
@@ -316,6 +324,75 @@ NSString* BMWConnectedChanged = @"BMWConnectedChanged";
 		return @"John J.";
 	return @"John J";
 }
+
+#if FB_CONNECT
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%@",url] forKey:@"fbconnect"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    return [_facebook handleOpenURL:url];
+}
+
+- (void)fbDidLogin {
+    NSLog(@"logged in");
+}
+
+-(void)fbDidNotLogin:(BOOL)cancelled {
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"fbconnect"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    NSLog(@"did not login");
+}
+
+/**
+ * Called when the request logout has succeeded.
+ */
+- (void)fbDidLogout {
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"fbconnect"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    NSLog(@"did not login");
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// FBRequestDelegate
+
+/**
+ * Called when the Facebook API request has returned a response. This callback
+ * gives you access to the raw response. It's called before
+ * (void)request:(FBRequest *)request didLoad:(id)result,
+ * which is passed the parsed response object.
+ */
+- (void)request:(FBRequest *)request didReceiveResponse:(NSURLResponse *)response {
+    NSLog(@"received response");
+}
+
+/**
+ * Called when a request returns and its response has been parsed into
+ * an object. The resulting object may be a dictionary, an array, a string,
+ * or a number, depending on the format of the API response. If you need access
+ * to the raw response, use:
+ *
+ * (void)request:(FBRequest *)request
+ *      didReceiveResponse:(NSURLResponse *)response
+ */
+- (void)request:(FBRequest *)request didLoad:(id)result {
+    if ([result isKindOfClass:[NSArray class]]) {
+        result = [result objectAtIndex:0];
+    }
+    [[[UIAlertView alloc] initWithTitle:[result objectForKey:@"name"] message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    
+    NSLog(@"%@",[result objectForKey:@"name"]);
+};
+
+/**
+ * Called when an error prevents the Facebook API request from completing
+ * successfully.
+ */
+- (void)request:(FBRequest *)request didFailWithError:(NSError *)error {
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"fbconnect"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    [_facebook authorize:[NSArray arrayWithObjects:
+                          @"read_stream", @"offline_access",nil] delegate:self];
+};
+#endif
 
 #pragma mark - Application's Documents directory
 
