@@ -23,6 +23,7 @@
 -(void)receiveStats:(NSArray *)stats
 {
     self.data = stats;
+    NSLog(@"%@",self.data);
     [self.tv reloadData];
     [self performSelector:@selector(loadDataFromURL) withObject:nil afterDelay:5];
 
@@ -64,7 +65,15 @@
 	NSNumber *payload = [[data objectAtIndex:indexPath.row] objectForKey:@"payload"];
 	//payload = [NSNumber numberWithFloat:[payload floatValue]*2.2369 ];
     BMW_iOSAppDelegate *del = [[UIApplication sharedApplication] delegate];
-	NSString *name = [del getNameForUDID:[[data objectAtIndex:indexPath.row] objectForKey:@"udid"]];
+    
+	NSString *name = [[data objectAtIndex:indexPath.row] objectForKey:@"user_name"];
+    if(name == nil)
+        name = [del getNameForUDID:[[data objectAtIndex:indexPath.row] objectForKey:@"udid"]];
+    if([[[data objectAtIndex:indexPath.row] objectForKey:@"udid"] rangeOfString:@"-"].location != NSNotFound)
+        name = @"A Sim";
+    if(name == nil)
+        
+        name = @"UNKNOWN";
     
     cell.textLabel.text = [NSString stringWithFormat:@"%d) %@: %@",indexPath.row+1,name, [self stringValueForPayload:[payload floatValue] AndPage:pageNumber]];
 	cell.textLabel.textColor = [UIColor whiteColor];

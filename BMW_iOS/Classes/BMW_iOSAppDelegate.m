@@ -322,7 +322,7 @@ static NSString* kAppId = @"211780665513835";
 		return @"Thomas F.";
     if([udid compare:@"aab275dd918cffa7308c41c7244e03c0cc58a1b0"]==0)
 		return @"John J.";
-	return @"John J";
+	return nil;
 }
 
 #if FB_CONNECT
