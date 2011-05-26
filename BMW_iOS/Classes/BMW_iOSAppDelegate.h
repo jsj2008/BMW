@@ -32,8 +32,10 @@ extern NSString* BMWConnectedChanged;
 	RemoteAppController* bmwAppController;
     
     Facebook* _facebook;
+    UIImage *userPhoto;
 }
 
+-(UIImage *)getUserPhoto;
 -(CLLocation *)currentLocation;
 -(void)deviceWillRotateToInterfaceOrientation:(UIDeviceOrientation)orientation;
 -(NSString *)getNameForUDID:(NSString *)udid;

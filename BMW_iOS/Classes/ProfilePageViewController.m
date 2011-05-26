@@ -7,7 +7,7 @@
 //
 
 #import "ProfilePageViewController.h"
-
+#import "BMW_iOSAppDelegate.h"
 
 @implementation ProfilePageViewController
 
@@ -38,7 +38,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view from its nib.
+}
+
+-(void)loadDataFromURL {
+    if (profilePicture.image == nil) {
+        [self performSelector:@selector(loadDataFromURL) withObject:nil afterDelay:2];
+        BMW_iOSAppDelegate *del = [[UIApplication sharedApplication] delegate];
+        profilePicture.image = [del getUserPhoto];
+    }
 }
 
 - (void)viewDidUnload

@@ -81,7 +81,7 @@ static ServerConnection * _sharedConnection;
     [ServerConnection sendPostRequestTo:url postData:post delegate:[ServerConnection sharedConnection]];
 #endif
     
-    //NSLog(@"prev stats:%@",[statsDict JSONRepresentation]);
+    NSLog(@"prev stats:%@",[statsDict JSONRepresentation]);
 }
 
 +(void)sendPostRequestTo:(NSString *)url delegate:(id<ServerConnectionDelegate>)delegate
@@ -143,6 +143,11 @@ static ServerConnection * _sharedConnection;
         [delegate receiveStats:jsonArray];
         CFDictionaryRemoveValue(connectionDelegateDict, connection);
     }
+}
+
+-(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    
+    
 }
 
 -(void)receiveStats:(NSArray *)stats

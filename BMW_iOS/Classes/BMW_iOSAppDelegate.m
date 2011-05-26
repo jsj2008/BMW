@@ -334,6 +334,7 @@ static NSString* kAppId = @"211780665513835";
 
 - (void)fbDidLogin {
     NSLog(@"logged in");
+    [_facebook requestWithGraphPath:@"me/picture" andDelegate:self];     
 }
 
 -(void)fbDidNotLogin:(BOOL)cancelled {
@@ -364,6 +365,10 @@ static NSString* kAppId = @"211780665513835";
     NSLog(@"received response");
 }
 
+
+-(UIImage *)getUserPhoto {
+    return userPhoto;    
+}
 /**
  * Called when a request returns and its response has been parsed into
  * an object. The resulting object may be a dictionary, an array, a string,
@@ -377,9 +382,14 @@ static NSString* kAppId = @"211780665513835";
     if ([result isKindOfClass:[NSArray class]]) {
         result = [result objectAtIndex:0];
     }
-    [[[UIAlertView alloc] initWithTitle:[result objectForKey:@"name"] message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     
-    NSLog(@"%@",[result objectForKey:@"name"]);
+    if ([request.url rangeOfString:@"me/picture"].location != NSNotFound) {
+        userPhoto = [[UIImage alloc] initWithData:result];
+    }
+   // NSLog(@"%@", request.url);
+    //[[[UIAlertView alloc] initWithTitle:[result objectForKey:@"name"] message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    
+    NSLog(@"%@",result);
 };
 
 /**

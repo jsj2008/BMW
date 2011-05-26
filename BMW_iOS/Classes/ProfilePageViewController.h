@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PageViewController.h"
 
 
-@interface ProfilePageViewController : ProfilePageViewController {
-    
+@interface ProfilePageViewController : PageViewController {
+    IBOutlet UIImageView *profilePicture;
 }
 
 @end
