@@ -130,10 +130,14 @@ static int itemID = 0;
     [s setObject:[NSNumber numberWithDouble:locationManager.location.coordinate.longitude] forKey:@"Longitude"];
     [s setObject:[NSNumber numberWithDouble:locationManager.location.speed] forKey:@"Velocity"];
     
+#if ALWAYS_IMAGE_PROCESS
+    [ImageProcessingViewController startImageProcessing];
+#else
     if(newLocation.speed==0)
         [ImageProcessingViewController startImageProcessing];
     else
         [ImageProcessingViewController stopImageProcessing];
+#endif
     
 //    [ServerConnection sendStats:s];
 #ifdef LOCAL_DB    

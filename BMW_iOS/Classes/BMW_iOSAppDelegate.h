@@ -33,9 +33,13 @@ extern NSString* BMWConnectedChanged;
     
     Facebook* _facebook;
     UIImage *userPhoto;
+    NSString *userName;
+    NSString *userFirstName;
 }
 
 -(UIImage *)getUserPhoto;
+-(NSString *)getUserName;
+-(NSString *)getUserFirstName;
 -(CLLocation *)currentLocation;
 -(void)deviceWillRotateToInterfaceOrientation:(UIDeviceOrientation)orientation;
 -(NSString *)getNameForUDID:(NSString *)udid;

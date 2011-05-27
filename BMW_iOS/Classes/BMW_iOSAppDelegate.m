@@ -161,11 +161,11 @@ static NSString* kAppId = @"211780665513835";
         [leaderboardVC.view removeFromSuperview];
         [self.window addSubview:dashboardVC.view];
         NSLog(@"Landscape!");
-        [[SensorReader sharedReader] startReading];
+        //[[SensorReader sharedReader] startReading];
     } else if (orientation == UIDeviceOrientationPortrait) {
         [dashboardVC.view removeFromSuperview];
         [self.window addSubview:leaderboardVC.view];
-        [[SensorReader sharedReader] stopReading];
+        //[[SensorReader sharedReader] stopReading];
     }
 }
 
@@ -322,7 +322,7 @@ static NSString* kAppId = @"211780665513835";
 		return @"Thomas F.";
     if([udid compare:@"aab275dd918cffa7308c41c7244e03c0cc58a1b0"]==0)
 		return @"John J.";
-	return @"John J";
+	return nil;
 }
 
 #if FB_CONNECT
@@ -334,7 +334,8 @@ static NSString* kAppId = @"211780665513835";
 
 - (void)fbDidLogin {
     NSLog(@"logged in");
-    [_facebook requestWithGraphPath:@"me/picture" andDelegate:self];     
+    [ServerConnection sendStats:[[[NSMutableDictionary alloc] init] autorelease] toURL:BREAKATHON_URL];
+    [_facebook requestWithGraphPath:@"me/picture" andDelegate:self];
 }
 
 -(void)fbDidNotLogin:(BOOL)cancelled {
@@ -369,6 +370,14 @@ static NSString* kAppId = @"211780665513835";
 -(UIImage *)getUserPhoto {
     return userPhoto;    
 }
+
+-(NSString *)getUserName {
+    return userName;    
+}
+
+-(NSString *)getUserFirstName {
+    return userFirstName;    
+}
 /**
  * Called when a request returns and its response has been parsed into
  * an object. The resulting object may be a dictionary, an array, a string,
@@ -389,7 +398,21 @@ static NSString* kAppId = @"211780665513835";
    // NSLog(@"%@", request.url);
     //[[[UIAlertView alloc] initWithTitle:[result objectForKey:@"name"] message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     
-    NSLog(@"%@",result);
+    //NSLog(@"%@",result);
+    
+    else if([result isKindOfClass:[NSDictionary class]])
+    {
+        [userName release];
+        [userFirstName release];
+        userName = [[result objectForKey:@"name"] retain];
+        userFirstName = [[result objectForKey:@"first_name"] retain];
+        NSMutableDictionary *dict = [[[NSMutableDictionary alloc] init] autorelease];
+        [dict setObject:[result objectForKey:@"name"] forKey:@"user_name"];
+        [dict setObject:[result objectForKey:@"first_name"] forKey:@"first_name"];
+        [dict setObject:[result objectForKey:@"last_name"] forKey:@"last_name"];
+        [ServerConnection sendStats:dict toURL:PROFILE_URL];
+    }
+
 };
 
 /**

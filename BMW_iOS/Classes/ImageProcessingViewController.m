@@ -637,7 +637,7 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
     
 	int nBlob = [self LabelRegions:rawPositionPixels withDestination:labels Boundaries:boundaries];
     
-    trackBlobs = malloc(sizeof(Blob *)*nBlob);
+    //trackBlobs = malloc(sizeof(Blob *)*nBlob);
     
     trackBlobsIndex = 0;
     int greenBlobs = 0;
@@ -707,12 +707,12 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
         
 		//drawRectangle(rawPositionPixels, ll, ur, fillBlack);
         if (!fillBlack) {
-            trackBlobs[trackBlobsIndex] = malloc(sizeof(Blob));
-            memcpy(trackBlobs[trackBlobsIndex], blob, sizeof(Blob));
+            //trackBlobs[trackBlobsIndex] = malloc(sizeof(Blob));
+            //memcpy(trackBlobs[trackBlobsIndex], blob, sizeof(Blob));
             trackBlobsIndex++;
         }
 	}
-    if (trackBlobsIndex == 1) startTime = [NSDate date];
+    //if (trackBlobsIndex == 1) startTime = [NSDate date];
 
     //printf("red blobs: %d out of total: %d\n", redBlobs, nBlob);
     //printf("green blobs: %d out of total: %d\n", greenBlobs, nBlob);
@@ -757,7 +757,7 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
 
 - (void)processNewCameraFrame:(CVImageBufferRef)cameraFrame;
 {
-    //if (runImageProcessing) {
+    if (runImageProcessing) {
         CVPixelBufferLockBaseAddress(cameraFrame, 0);
         int bufferHeight = CVPixelBufferGetHeight(cameraFrame);
         int bufferWidth = CVPixelBufferGetWidth(cameraFrame);
@@ -784,8 +784,10 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
         glDeleteTextures(1, &videoFrameTexture);
     
         CVPixelBufferUnlockBaseAddress(cameraFrame, 0);
-    /*
-    } else if (lastIMP){
+    
+    } 
+     /*
+     else if (lastIMP){
         double greenTimeIntervalInSeconds = [[NSDate date] timeIntervalSinceDate:startTime];
         //send green lights and 
     }
