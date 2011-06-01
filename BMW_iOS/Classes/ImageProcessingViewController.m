@@ -54,16 +54,18 @@ static bool runImageProcessing = NO;
 static bool runImageProcessing = NO;
 static bool lastIMP = NO;
 static int trackBlobsIndex = -1;
-static NSDate *startTime;
+static time_t startTime;
 
 + (void) startImageProcessing
 {
     runImageProcessing = YES;
     trackBlobsIndex = -1;
+    NSLog(@"start IMP");
 }
 + (void) stopImageProcessing
 {
     runImageProcessing = NO;
+    NSLog(@"stop IMP");
 }
 
 #pragma mark -
@@ -92,8 +94,6 @@ static NSDate *startTime;
     runImageProcessing = NO;
     
     numLights = -1;
-    
-    startTime = [[NSDate alloc] init];
 }
 
 
@@ -477,23 +477,21 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
             trackBlobs[i]->subRatio = newRedGreenRatio;
         }
         
-        NSLog(@"old: %f new: %f", trackBlobs[i]->subRatio, newRedGreenRatio);
+        //NSLog(@"old: %f new: %f", trackBlobs[i]->subRatio, newRedGreenRatio);
 
-        if (5.0 * newRedGreenRatio < trackBlobs[i]->subRatio || newRedGreenRatio == 1.0) {
+        if (5.0 * newRedGreenRatio < trackBlobs[i]->subRatio/* || newRedGreenRatio == 1.0*/) {
             if (numLights < 0) {
                 numberOfLights++;
-                if (numberOfLights == 1) {
-                    NSLog(@"%@", startTime);
-                    
-                    redTimeIntervalInSeconds = [startTime timeIntervalSinceReferenceDate];
-                    startTime = [NSDate date];
+                if (numberOfLights == 1) {                    
+                    redTimeIntervalInSeconds = difftime(time(NULL), startTime);
+                    startTime = time(NULL);
                     NSLog(@"Time at red: %f", redTimeIntervalInSeconds);
                 }
             }
         }
     }
     
-    if (numLights < 0 && numLights > 0) numLights = numberOfLights;
+    if (numLights < 0 && numberOfLights > 0) numLights = numberOfLights;
 }
 
 - (void)initialDrawFrame
@@ -637,7 +635,7 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
     
 	int nBlob = [self LabelRegions:rawPositionPixels withDestination:labels Boundaries:boundaries];
     
-    //trackBlobs = malloc(sizeof(Blob *)*nBlob);
+    trackBlobs = malloc(sizeof(Blob *)*nBlob);
     
     trackBlobsIndex = 0;
     int greenBlobs = 0;
@@ -686,7 +684,7 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
 
 		bool fillBlack = false;
         
-        if (blob->numPoints < 30 /*|| blob->numPoints > 500*/) {
+        if (blob->numPoints < 30 || blob->numPoints > 500) {
             fillBlack = true; 
         }
         
@@ -707,12 +705,12 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
         
 		//drawRectangle(rawPositionPixels, ll, ur, fillBlack);
         if (!fillBlack) {
-            //trackBlobs[trackBlobsIndex] = malloc(sizeof(Blob));
-            //memcpy(trackBlobs[trackBlobsIndex], blob, sizeof(Blob));
+            trackBlobs[trackBlobsIndex] = malloc(sizeof(Blob));
+            memcpy(trackBlobs[trackBlobsIndex], blob, sizeof(Blob));
             trackBlobsIndex++;
         }
+        if (trackBlobsIndex == 1) startTime = time(NULL);
 	}
-    //if (trackBlobsIndex == 1) startTime = [NSDate date];
 
     //printf("red blobs: %d out of total: %d\n", redBlobs, nBlob);
     //printf("green blobs: %d out of total: %d\n", greenBlobs, nBlob);
@@ -755,6 +753,13 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
      [self.view.layer addSublayer:camera.videoPreviewLayer];*/
 }
 
+- (void)freeTrackBlobsBlobs
+{
+    for (int i = 0; i < trackBlobsIndex; i++) {
+        free(trackBlobs[i]);
+    }
+}
+
 - (void)processNewCameraFrame:(CVImageBufferRef)cameraFrame;
 {
     if (runImageProcessing) {
@@ -774,25 +779,24 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
         // Using BGRA extension to pull in video frame data directly
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, bufferWidth, bufferHeight, 0, GL_BGRA, GL_UNSIGNED_BYTE, CVPixelBufferGetBaseAddress(cameraFrame));
         
-       // if (trackBlobsIndex <= 0) {
-        //    numLights = -1;
-        //    redTimeIntervalInSeconds = -1;
+        if (trackBlobsIndex <= 0) {
+            numLights = -1;
+            redTimeIntervalInSeconds = -1;
             [self initialDrawFrame];
-       // } else {
-        //    [self subsequentDrawFrame];
-       // }
+        } else {
+            [self subsequentDrawFrame];
+        }
         glDeleteTextures(1, &videoFrameTexture);
     
         CVPixelBufferUnlockBaseAddress(cameraFrame, 0);
     
-    } 
-     /*
-     else if (lastIMP){
-        double greenTimeIntervalInSeconds = [[NSDate date] timeIntervalSinceDate:startTime];
-        //send green lights and 
+    } else if (lastIMP){
+        double greenTimeIntervalInSeconds = difftime(startTime, time(NULL));
+        //send green lights and red lights
+        redTimeIntervalInSeconds = -1; //after sending 
+        [self freeTrackBlobsBlobs];
     }
     lastIMP = runImageProcessing;
-     */
 }
 
 #pragma mark -
