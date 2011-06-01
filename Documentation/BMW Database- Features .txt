@@ -32,7 +32,6 @@
       - Rewrite client interface to use our Query controller API (David Kamm). 
            *This requires some transitioning from the current URL routes to a single '/query?params=' URL route
       - Provide documentation for the Query Controller for Rob & Aaron(David Kamm & Minh Ly)
-      - Implement new models in support for Achievements (Minh Ly)
       - Implement models for taking in car/HMI data (Minh Ly)
       - Implement query for finding average speed of location (boxing all points in vicinity) and finding n closest points (Minh Ly)
       - Modify the way distance is calculated using GPS coordinates; current Euclidean implementation is inaccurate (David Kamm)
