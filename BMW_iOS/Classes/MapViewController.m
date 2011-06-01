@@ -18,111 +18,55 @@
     if (self) {
         // Custom initialization.
 		coords = [[NSMutableArray alloc] init];
-		[coords addObject:[[CLLocation alloc] initWithLatitude:-121.222 longitude:39.44]];
-		[coords addObject:[[CLLocation alloc] initWithLatitude:-121.222 longitude:39.41]];
-		[coords addObject:[[CLLocation alloc] initWithLatitude:-121.222 longitude:39.54]];
-		[coords addObject:[[CLLocation alloc] initWithLatitude:-121.222 longitude:38.44]];
-		[coords addObject:[[CLLocation alloc] initWithLatitude:-121.222 longitude:31.44]];
-		[coords addObject:[[CLLocation alloc] initWithLatitude:-121.222 longitude:40.44]];
-		
-		[self addPins];
+		[coords addObject:[[CLLocation alloc] initWithLatitude:37.9234 longitude:-122.4]];
+		[coords addObject:[[CLLocation alloc] initWithLatitude:37.2346 longitude:-122.41]];
+        [coords addObject:[[CLLocation alloc] initWithLatitude:37.832 longitude:-122.44]];
+        [coords addObject:[[CLLocation alloc] initWithLatitude:37.4562 longitude:-122.46]];
+        [coords addObject:[[CLLocation alloc] initWithLatitude:37.1642 longitude:-122.47]];
+        [coords addObject:[[CLLocation alloc] initWithLatitude:37.22 longitude:-122.40]];
     }
     return self;
 }
 
 -(void)addPins {
 	for (CLLocation *loc in coords) {
-		[self addPinToCoordinate:loc];
+		[self addPinToCoordinate:loc.coordinate];
 	}
-	[self connectPoints];
 }
 
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	//mapView.showsUserLocation = YES;
+    [super viewDidLoad];
+
+    mapView.showsUserLocation = YES;
 	mapView.delegate = self;
-	
-	MKPolygon *dummyOverlay = [MKPolygon polygonWithPoints:nil count:0];
-	[mapView addOverlay:dummyOverlay];
-	
-	BMW_iOSAppDelegate *del = [[UIApplication sharedApplication] delegate];
-	[mapView setCenterCoordinate:del.currentLocation.coordinate];
-	//MKCoordinateSpan span = [mapView coordinateSpanWithMapView:self centerCoordinate:centerCoordinate andZoomLevel:zoomLevel];
-    //MKCoordinateRegion region = MKCoordinateRegionMake(centerCoordinate, span);
-    
-    // set the region like normal
-    //[self setRegion:region animated:animated];
-	    
-	[super viewDidLoad];
+    [self addPins];
 }
 
--(IBAction)addPin {
-	
-}
-
-- (void)addPinToCoordinate:(CLLocation *)pinLoc {
-	//BMW_iOSAppDelegate *del = [[UIApplication sharedApplication] delegate];
-	//CLLocation *loc = [del currentLocation];
-    //MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:loc.coordinate addressDictionary:nil];
-	//MKAnnotation *ano = [[MKAnnotation alloc] initWithCoordinate:loc.coordinate];
-	//MKPinAnnotationView *ano = [[MKPinAnnotationView alloc] initWithAnnotation:placemark reuseIdentifier:@"pin"];
-	//ano.draggable = YES;
-	
-	
-	
-	CurrentLocationAnnotation *annotation = [[[CurrentLocationAnnotation alloc] initWithCoordinate:pinLoc.coordinate addressDictionary:nil] autorelease];
-	annotation.title = @"Drag Me!";
-	annotation.subtitle = @"Drag pin to get desired location..";
-	// = [mapView.annotations count];
+- (void)addPinToCoordinate:(CLLocationCoordinate2D)pinCoord {
+	CurrentLocationAnnotation *annotation = [[CurrentLocationAnnotation alloc] initWithCoordinate:pinCoord];
+	annotation.title = @"Old La Honda";
+	annotation.subtitle = @"3.47 Miles";
 	
 	[mapView addAnnotation:annotation];
-	
-
-	
-	//CurrentLocationAnnotation *annotation = [[[CurrentLocationAnnotation alloc] initWithCoordinate:self.currentLocation.coordinate addressDictionary:nil] autorelease];
-	//placemark.title = [[NSString alloc] initWithFormat:@"%d", [mvMapView.annotations count] + 1];
-	//placemark.subtitle = @"Drag pin to set poisition.";
-    
-    //[mapView addAnnotation:ano];
-    //[annotation release];
+	[annotation release];
 }
-
--(void)connectPoints {
-	for (MKOverlayView *o in mapView.overlays) {
-		//if ([o isKindOfClass:[MKPolyline class]]) {
-		[mapView removeOverlay:o];
-		//o=nil;
-		//}
-	}
-	
-	NSInteger arrayCount = [coords count];
-	CLLocationCoordinate2D coords2D[arrayCount];
-    NSInteger i;
-    for (i=0;i<arrayCount;i++) {
-        //MKPlacemark *placeMark = [coords objectAtIndex:i];
-        coords2D[i] = ((CLLocation *)[coords objectAtIndex:i]).coordinate;
-        NSLog(@"%f, %f", coords2D[i].latitude, coords2D[i].longitude);
-    }
-	
-	MKPolyline *polyLine = [MKPolyline polylineWithCoordinates:coords2D count:arrayCount];
-	[mapView addOverlay:polyLine];
-	//[polyLine release];	
-}
-
 
 #pragma mark -
 #pragma mark MapView
 - (MKAnnotationView *)mapView:(MKMapView *)MapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
 	static NSString * const kPinAnnotationIdentifier = @"PinIdentifier";
-	MKAnnotationView *draggablePinView = [MapView dequeueReusableAnnotationViewWithIdentifier:kPinAnnotationIdentifier];
+        MKAnnotationView *draggablePinView = [MapView dequeueReusableAnnotationViewWithIdentifier:kPinAnnotationIdentifier];
 	
 	if (draggablePinView) {
 		draggablePinView.annotation = annotation;
 	} else {		
 		draggablePinView = [[[AnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:kPinAnnotationIdentifier] autorelease];
+        draggablePinView.canShowCallout = YES;
+        draggablePinView.draggable = YES;
 		if ([draggablePinView isKindOfClass:[AnnotationView class]]) {
 			((AnnotationView *)draggablePinView).mapView = MapView;
 		}
@@ -135,7 +79,6 @@
 	if (oldState == MKAnnotationViewDragStateDragging) {
 		CurrentLocationAnnotation *annotation = (CurrentLocationAnnotation *)annotationView.annotation;
 		annotation.subtitle = [NSString stringWithFormat:@"%f %f", annotation.coordinate.latitude, annotation.coordinate.longitude];		
-		[self connectPoints];
 	}
 }
 
@@ -160,14 +103,6 @@
 	else
 	{
 		return nil;
-	}
-}
-
--(void)locationDidUpdate:(CLLocation *)loc {
-	[coords addObject:loc];
-	[self addPinToCoordinate:loc];
-	if ([coords count] % 5 == 0) {
-		[self connectPoints];
 	}
 }
 

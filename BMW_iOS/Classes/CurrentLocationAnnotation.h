@@ -8,7 +8,7 @@
 
 #import <MapKit/MapKit.h>
 
-@interface CurrentLocationAnnotation : MKPlacemark {
+@interface CurrentLocationAnnotation : NSObject <MKAnnotation> {
 	
 }
 

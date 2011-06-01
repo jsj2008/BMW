@@ -19,6 +19,7 @@
 	
 }
 - (IBAction)addPin:(id)sender;
+- (void)addPinToCoordinate:(CLLocationCoordinate2D)pinCoord;
 
 
 @end
