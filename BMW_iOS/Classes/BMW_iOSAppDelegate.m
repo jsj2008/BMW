@@ -70,9 +70,9 @@ static NSString* kAppId = @"211780665513835";
 	[viewController.view removeFromSuperview];
 #endif
 	self.bmwAppController = [[[RemoteAppController alloc] init] autorelease];
-#if TARGET_IPHONE_SIMULATOR && HMI_CONNECTION
+//#if TARGET_IPHONE_SIMULATOR && HMI_CONNECTION
 	[bmwAppController accessoryDidStart:nil]; // fake it
-#endif
+//#endif
 	
 #if LEADERBOARD_DISPLAY
 	leaderboardVC = [[LeaderboardViewController alloc] init];

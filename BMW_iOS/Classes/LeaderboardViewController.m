@@ -53,10 +53,6 @@
 	self.viewControllers = controllers;
     [controllers release];
 	
-	
-	stringParts = [[NSMutableArray alloc] initWithArray:[[NSString stringWithFormat:@"John Jessen isa noob"] componentsSeparatedByString:@" "]];
-	
-	
 	scrollView.pagingEnabled = YES;
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * kNumberOfPages, scrollView.frame.size.height);
     scrollView.showsHorizontalScrollIndicator = NO;

@@ -8,6 +8,7 @@
 
 #import "DialWidgetViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import <AudioToolbox/AudioToolbox.h>
 #import "ServerConnection.h"
 #import "StatsTracker.h"
 #import "SensorReader.h"
@@ -23,6 +24,15 @@
         // Custom initialization.
 		dial1.transform = CGAffineTransformMakeRotation(M_PI/2);
 		dial2.transform = CGAffineTransformMakeRotation(M_PI/2);
+        
+        [topLabel setFont:[UIFont fontWithName:@"Crystal" size:32.0]];
+        [bottomLabel setFont:[UIFont fontWithName:@"Crystal" size:32.0]];
+        
+        
+        NSString *aiffPath = [[NSBundle mainBundle] pathForResource:@"130i" ofType:@"aif"];
+        NSURL *aiffURL = [NSURL fileURLWithPath:aiffPath];
+        OSStatus err = kAudioServicesNoError;
+        err = AudioServicesCreateSystemSoundID((CFURLRef) aiffURL, &soundID);
     }
     return self;
 }
@@ -44,17 +54,44 @@
 }
 
 
+-(void)viewWillAppear {
 
+    AudioServicesPlaySystemSound (soundID);
+    speed = 1;
+    up = YES;
+    [self startup];
+}
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     //self.view.backgroundColor = [UIColor clearColor;
 	[super viewDidLoad];
+    
+    [topLabel setFont:[UIFont fontWithName:@"Crystal" size:36.0]];
+    [bottomLabel setFont:[UIFont fontWithName:@"Crystal" size:26.0]];
+    
     if (!updateTimer) {
         updateTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(updateDial:) userInfo:nil repeats:YES];
     }
-    //start update timer
+}
+
+-(void)startup {
+    if (speed < 1) {
+        //stop
+    } else {
+        if (speed < 140 && up==YES) {
+            speed += 1;
+        }
+        else  {
+            speed -= 1;
+            up = NO;
+        }        
+        [self setSpeed1:speed];
+        [self setSpeed2:speed];
+        [self setSpeed3:speed];
+        [self performSelector:@selector(startup) withObject:nil afterDelay:.004];
+    }
 }
 
 -(void)updateDial:(id)sender {
@@ -84,8 +121,8 @@
         if (currSpeed == -1) currSpeed = 0;
         [self setSpeed2:currSpeed*MPS_TO_MPH];
         [self setSpeed3:maxSpeed];
-        [topLabel setText:[NSString stringWithFormat:@"Top Speed: %.1f mph", maxSpeed]];
-        [bottomLabel setText:[NSString stringWithFormat:@"by %@", [(BMW_iOSAppDelegate *)[[UIApplication sharedApplication] delegate] getNameForUDID:maxSpeedUDID]]];
+        [topLabel setText:[NSString stringWithFormat:@"Max: %.1f mph, by %@", maxSpeed,[(BMW_iOSAppDelegate *)[[UIApplication sharedApplication] delegate] getNameForUDID:maxSpeedUDID]]];
+        [bottomLabel setText:[NSString stringWithFormat:@"Avg: %.1f mph", avgSpeed]];
     }
 }
 
