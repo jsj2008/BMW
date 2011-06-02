@@ -101,7 +101,10 @@
         case AVG_SPEED:
             return [NSString stringWithFormat:@"%.1f mph", num*MPS_TO_MPH];
             break;
+        case BREAKATHON_ROUTE:
+            return [NSString stringWithFormat:@"%.1f", num];
         default:
+            return [NSString stringWithFormat:@"%.1f", num];
             break;
     }
 }

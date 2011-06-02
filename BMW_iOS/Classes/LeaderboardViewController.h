@@ -15,7 +15,8 @@ enum PAGE_NUM {
     TOTAL_DISTANCE,
     LIGHT_TIME,
     AVG_SPEED,
-    PROFILE
+    PROFILE,
+    BREAKATHON_ROUTE
 };
 
 @interface LeaderboardViewController : UIViewController <UIScrollViewDelegate> {

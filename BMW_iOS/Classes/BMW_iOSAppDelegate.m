@@ -322,6 +322,14 @@ static NSString* kAppId = @"211780665513835";
 		return @"Thomas F.";
     if([udid compare:@"aab275dd918cffa7308c41c7244e03c0cc58a1b0"]==0)
 		return @"John J.";
+    if([udid compare:@"dde783d4f9841c85a213e7c1e737608ef99c05de"]==0)
+		return @"Arda K.";
+    if([udid compare:@"5c8c19663e018bc93d92f5f84f25687a0740295a"]==0)
+		return @"Jeremy K.";
+    if([udid compare:@"91a64e389ee78287ba9723091ce079fa14ba838c"]==0)
+		return @"Mike O.";
+    if([udid compare:@"f4ec23a15a8cb08929c97993808eac9fbf5a724e"]==0)
+		return @"Vignan P.";
 	return nil;
 }
 

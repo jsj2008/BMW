@@ -62,23 +62,43 @@
 		7BFBCB73134BCC15003ABB41 /* hsi_threshold.frag.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7BFBCB6D134BCC15003ABB41 /* hsi_threshold.frag.glsl */; };
 		D437EC1B1371F21F00AEA826 /* SplitBarWidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D437EC191371F21F00AEA826 /* SplitBarWidgetViewController.m */; };
 		D437EC1C1371F21F00AEA826 /* SplitBarWidgetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D437EC1A1371F21F00AEA826 /* SplitBarWidgetViewController.xib */; };
-		D437EC2B1371F27800AEA826 /* bar- green.png in Resources */ = {isa = PBXBuildFile; fileRef = D437EC271371F27800AEA826 /* bar- green.png */; };
-		D437EC2C1371F27800AEA826 /* bar-black.png in Resources */ = {isa = PBXBuildFile; fileRef = D437EC281371F27800AEA826 /* bar-black.png */; };
-		D437EC2D1371F27800AEA826 /* bar-red.png in Resources */ = {isa = PBXBuildFile; fileRef = D437EC291371F27800AEA826 /* bar-red.png */; };
-		D437EC2E1371F27800AEA826 /* car icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D437EC2A1371F27800AEA826 /* car icon.png */; };
-		D437EC301371F2FB00AEA826 /* widget-basic bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D437EC2F1371F2FB00AEA826 /* widget-basic bg.png */; };
-		D437ECD71372079E00AEA826 /* dial-hand2.png in Resources */ = {isa = PBXBuildFile; fileRef = D437ECD61372079E00AEA826 /* dial-hand2.png */; };
 		D43AC526138E60FD007C86F3 /* NewsFeedPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = D43AC524138E60FD007C86F3 /* NewsFeedPageController.m */; };
 		D43AC52B138E7798007C86F3 /* ProfilePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D43AC529138E7798007C86F3 /* ProfilePageViewController.m */; };
 		D43AC52C138E7798007C86F3 /* ProfilePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D43AC52A138E7798007C86F3 /* ProfilePageViewController.xib */; };
+		D43AC54B138F2135007C86F3 /* 130i.aif in Resources */ = {isa = PBXBuildFile; fileRef = D43AC52D138F2134007C86F3 /* 130i.aif */; };
+		D43AC54C138F2135007C86F3 /* Achievements.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC52E138F2134007C86F3 /* Achievements.png */; };
+		D43AC54D138F2135007C86F3 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC52F138F2134007C86F3 /* background.png */; };
+		D43AC54E138F2135007C86F3 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC530138F2134007C86F3 /* background@2x.png */; };
+		D43AC54F138F2135007C86F3 /* bar- green.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC531138F2134007C86F3 /* bar- green.png */; };
+		D43AC550138F2135007C86F3 /* bar-black.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC532138F2134007C86F3 /* bar-black.png */; };
+		D43AC551138F2135007C86F3 /* bar-red.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC533138F2134007C86F3 /* bar-red.png */; };
+		D43AC552138F2135007C86F3 /* car icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC534138F2134007C86F3 /* car icon.png */; };
+		D43AC553138F2135007C86F3 /* Dashboard.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC535138F2134007C86F3 /* Dashboard.png */; };
+		D43AC554138F2135007C86F3 /* dial bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC536138F2134007C86F3 /* dial bg.png */; };
+		D43AC555138F2135007C86F3 /* dial hand.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC537138F2134007C86F3 /* dial hand.png */; };
+		D43AC556138F2135007C86F3 /* dial_bg_02.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC538138F2134007C86F3 /* dial_bg_02.png */; };
+		D43AC557138F2135007C86F3 /* dial_bg_03.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC539138F2134007C86F3 /* dial_bg_03.png */; };
+		D43AC558138F2135007C86F3 /* dial_bg_04.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC53A138F2134007C86F3 /* dial_bg_04.png */; };
+		D43AC559138F2135007C86F3 /* dial_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC53B138F2134007C86F3 /* dial_bg.png */; };
+		D43AC55A138F2135007C86F3 /* dial_hand_02.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC53C138F2134007C86F3 /* dial_hand_02.png */; };
+		D43AC55B138F2135007C86F3 /* dial_hand_03.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC53D138F2134007C86F3 /* dial_hand_03.png */; };
+		D43AC55C138F2135007C86F3 /* dial_hand_04.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC53E138F2134007C86F3 /* dial_hand_04.png */; };
+		D43AC55D138F2135007C86F3 /* dial_hand.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC53F138F2134007C86F3 /* dial_hand.png */; };
+		D43AC55E138F2135007C86F3 /* dial-hand2.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC540138F2134007C86F3 /* dial-hand2.png */; };
+		D43AC55F138F2135007C86F3 /* DrivingProfile.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC541138F2134007C86F3 /* DrivingProfile.png */; };
+		D43AC560138F2135007C86F3 /* leaderboard-card_01.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC542138F2134007C86F3 /* leaderboard-card_01.png */; };
+		D43AC561138F2135007C86F3 /* leaderboard-card_01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC543138F2134007C86F3 /* leaderboard-card_01@2x.png */; };
+		D43AC562138F2135007C86F3 /* Routes.psd in Resources */ = {isa = PBXBuildFile; fileRef = D43AC544138F2134007C86F3 /* Routes.psd */; };
+		D43AC563138F2135007C86F3 /* Routing.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC545138F2135007C86F3 /* Routing.png */; };
+		D43AC564138F2135007C86F3 /* sample- speed dial.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC546138F2135007C86F3 /* sample- speed dial.png */; };
+		D43AC565138F2135007C86F3 /* streetlight bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC547138F2135007C86F3 /* streetlight bg.png */; };
+		D43AC566138F2135007C86F3 /* widget-basic bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC548138F2135007C86F3 /* widget-basic bg.png */; };
+		D43AC567138F2135007C86F3 /* widget-speed dial 02.psd in Resources */ = {isa = PBXBuildFile; fileRef = D43AC549138F2135007C86F3 /* widget-speed dial 02.psd */; };
+		D43AC568138F2135007C86F3 /* widget-speed dial.psd in Resources */ = {isa = PBXBuildFile; fileRef = D43AC54A138F2135007C86F3 /* widget-speed dial.psd */; };
 		D43BDEAF1378F58800722E69 /* LeaderboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D43BDEAC1378F58800722E69 /* LeaderboardViewController.m */; };
 		D43BDEB01378F58800722E69 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D43BDEAE1378F58800722E69 /* PageViewController.m */; };
 		D43BDEB21378F58F00722E69 /* PageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D43BDEB11378F58F00722E69 /* PageViewController.xib */; };
 		D43BDF281378F82500722E69 /* LeaderboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D43BDF271378F82500722E69 /* LeaderboardViewController.xib */; };
-		D43BDF2E1378F87900722E69 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = D43BDF2A1378F87900722E69 /* background.png */; };
-		D43BDF2F1378F87900722E69 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D43BDF2B1378F87900722E69 /* background@2x.png */; };
-		D43BDF301378F87900722E69 /* leaderboard-card_01.png in Resources */ = {isa = PBXBuildFile; fileRef = D43BDF2C1378F87900722E69 /* leaderboard-card_01.png */; };
-		D43BDF311378F87900722E69 /* leaderboard-card_01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D43BDF2D1378F87900722E69 /* leaderboard-card_01@2x.png */; };
 		D43DB5B513261BFA00DCAD92 /* VelocityEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D43DB5B413261BFA00DCAD92 /* VelocityEvent.m */; };
 		D43DB61713261DE900DCAD92 /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = D43DB5CC13261DE900DCAD92 /* Connection.m */; };
 		D43DB61813261DE900DCAD92 /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D43DB5CE13261DE900DCAD92 /* ConnectionDelegate.m */; };
@@ -124,14 +144,8 @@
 		D49C2562134B98C4003F493F /* RemoteApp_dev.p12 in Resources */ = {isa = PBXBuildFile; fileRef = D49C2553134B98C4003F493F /* RemoteApp_dev.p12 */; };
 		D49C2563134B98C4003F493F /* RemoteApp_dev.p7b in Resources */ = {isa = PBXBuildFile; fileRef = D49C2554134B98C4003F493F /* RemoteApp_dev.p7b */; };
 		D49C2564134B98C4003F493F /* Sunny-Interval-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D49C2555134B98C4003F493F /* Sunny-Interval-icon.png */; };
-		D49C25BF134B9ACD003F493F /* Achievements.png in Resources */ = {isa = PBXBuildFile; fileRef = D49C25BA134B9ACD003F493F /* Achievements.png */; };
-		D49C25C0134B9ACD003F493F /* Dashboard.png in Resources */ = {isa = PBXBuildFile; fileRef = D49C25BB134B9ACD003F493F /* Dashboard.png */; };
-		D49C25C1134B9ACD003F493F /* DrivingProfile.png in Resources */ = {isa = PBXBuildFile; fileRef = D49C25BC134B9ACD003F493F /* DrivingProfile.png */; };
-		D49C25C2134B9ACD003F493F /* Routes.psd in Resources */ = {isa = PBXBuildFile; fileRef = D49C25BD134B9ACD003F493F /* Routes.psd */; };
-		D49C25C3134B9ACD003F493F /* Routing.png in Resources */ = {isa = PBXBuildFile; fileRef = D49C25BE134B9ACD003F493F /* Routing.png */; };
 		D4AF465C138336B0005DF2D8 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AF465A138336B0005DF2D8 /* DashboardViewController.m */; };
 		D4AF465D138336B0005DF2D8 /* DashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4AF465B138336B0005DF2D8 /* DashboardViewController.xib */; };
-		D4AF465F138386AA005DF2D8 /* 130i.aif in Resources */ = {isa = PBXBuildFile; fileRef = D4AF465E138386AA005DF2D8 /* 130i.aif */; };
 		D4B8F1CC131CE519002C1A44 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B8F1CB131CE519002C1A44 /* QuartzCore.framework */; };
 		D4B8F225131CF44E002C1A44 /* GravityObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B8F224131CF44E002C1A44 /* GravityObject.m */; };
 		D4B8F27A131D6588002C1A44 /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B8F279131D6588002C1A44 /* CaptureSessionManager.m */; };
@@ -139,9 +153,6 @@
 		D4B8F366131E3D61002C1A44 /* DataOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4B8F364131E3D61002C1A44 /* DataOverlayViewController.xib */; };
 		D4C46A34137127090024A4FC /* LightWidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C46A32137127090024A4FC /* LightWidgetViewController.m */; };
 		D4C46A35137127090024A4FC /* LightWidgetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4C46A33137127090024A4FC /* LightWidgetViewController.xib */; };
-		D4C46AE213712E760024A4FC /* streetlight bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D4C46AE113712E760024A4FC /* streetlight bg.png */; };
-		D4C46AE513712E7E0024A4FC /* dial bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D4C46AE313712E7E0024A4FC /* dial bg.png */; };
-		D4C46AE613712E7E0024A4FC /* dial hand.png in Resources */ = {isa = PBXBuildFile; fileRef = D4C46AE413712E7E0024A4FC /* dial hand.png */; };
 		D4CAF69D134A61EB002E1B53 /* iDrive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CAF69C134A61EB002E1B53 /* iDrive.framework */; };
 		D4CAF764134A6442002E1B53 /* RemoteAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CAF760134A6442002E1B53 /* RemoteAppController.m */; };
 		D4CAF779134A646E002E1B53 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CAF774134A646E002E1B53 /* MainVC.m */; };
@@ -216,7 +227,7 @@
 		7BD472EF133A6031001A9741 /* RoutingOverlayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RoutingOverlayViewController.xib; path = Classes/RoutingOverlayViewController.xib; sourceTree = "<group>"; };
 		7BD472F3133A6060001A9741 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		7BD472F4133A6060001A9741 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
-		7BD472F8133A606D001A9741 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MapViewController.xib; path = Classes/MapViewController.xib; sourceTree = "<group>"; };
+		7BD472F8133A606D001A9741 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		7BD472FC133A607C001A9741 /* AnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationView.h; sourceTree = "<group>"; };
 		7BD472FD133A607C001A9741 /* AnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationView.m; sourceTree = "<group>"; };
 		7BD472FE133A607C001A9741 /* CurrentLocationAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentLocationAnnotation.h; sourceTree = "<group>"; };
@@ -254,27 +265,47 @@
 		D437EC181371F21F00AEA826 /* SplitBarWidgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitBarWidgetViewController.h; sourceTree = "<group>"; };
 		D437EC191371F21F00AEA826 /* SplitBarWidgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitBarWidgetViewController.m; sourceTree = "<group>"; };
 		D437EC1A1371F21F00AEA826 /* SplitBarWidgetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SplitBarWidgetViewController.xib; path = ../../Classes/RemoteApp/SplitBarWidgetViewController.xib; sourceTree = "<group>"; };
-		D437EC271371F27800AEA826 /* bar- green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar- green.png"; sourceTree = "<group>"; };
-		D437EC281371F27800AEA826 /* bar-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-black.png"; sourceTree = "<group>"; };
-		D437EC291371F27800AEA826 /* bar-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-red.png"; sourceTree = "<group>"; };
-		D437EC2A1371F27800AEA826 /* car icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "car icon.png"; sourceTree = "<group>"; };
-		D437EC2F1371F2FB00AEA826 /* widget-basic bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "widget-basic bg.png"; sourceTree = "<group>"; };
-		D437ECD61372079E00AEA826 /* dial-hand2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dial-hand2.png"; sourceTree = "<group>"; };
 		D43AC523138E60FD007C86F3 /* NewsFeedPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsFeedPageController.h; sourceTree = "<group>"; };
 		D43AC524138E60FD007C86F3 /* NewsFeedPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsFeedPageController.m; sourceTree = "<group>"; };
 		D43AC528138E7798007C86F3 /* ProfilePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilePageViewController.h; sourceTree = "<group>"; };
 		D43AC529138E7798007C86F3 /* ProfilePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilePageViewController.m; sourceTree = "<group>"; };
 		D43AC52A138E7798007C86F3 /* ProfilePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfilePageViewController.xib; sourceTree = "<group>"; };
+		D43AC52D138F2134007C86F3 /* 130i.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = 130i.aif; sourceTree = "<group>"; };
+		D43AC52E138F2134007C86F3 /* Achievements.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Achievements.png; sourceTree = "<group>"; };
+		D43AC52F138F2134007C86F3 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		D43AC530138F2134007C86F3 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
+		D43AC531138F2134007C86F3 /* bar- green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar- green.png"; sourceTree = "<group>"; };
+		D43AC532138F2134007C86F3 /* bar-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-black.png"; sourceTree = "<group>"; };
+		D43AC533138F2134007C86F3 /* bar-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-red.png"; sourceTree = "<group>"; };
+		D43AC534138F2134007C86F3 /* car icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "car icon.png"; sourceTree = "<group>"; };
+		D43AC535138F2134007C86F3 /* Dashboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dashboard.png; sourceTree = "<group>"; };
+		D43AC536138F2134007C86F3 /* dial bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dial bg.png"; sourceTree = "<group>"; };
+		D43AC537138F2134007C86F3 /* dial hand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dial hand.png"; sourceTree = "<group>"; };
+		D43AC538138F2134007C86F3 /* dial_bg_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dial_bg_02.png; sourceTree = "<group>"; };
+		D43AC539138F2134007C86F3 /* dial_bg_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dial_bg_03.png; sourceTree = "<group>"; };
+		D43AC53A138F2134007C86F3 /* dial_bg_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dial_bg_04.png; sourceTree = "<group>"; };
+		D43AC53B138F2134007C86F3 /* dial_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dial_bg.png; sourceTree = "<group>"; };
+		D43AC53C138F2134007C86F3 /* dial_hand_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dial_hand_02.png; sourceTree = "<group>"; };
+		D43AC53D138F2134007C86F3 /* dial_hand_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dial_hand_03.png; sourceTree = "<group>"; };
+		D43AC53E138F2134007C86F3 /* dial_hand_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dial_hand_04.png; sourceTree = "<group>"; };
+		D43AC53F138F2134007C86F3 /* dial_hand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dial_hand.png; sourceTree = "<group>"; };
+		D43AC540138F2134007C86F3 /* dial-hand2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dial-hand2.png"; sourceTree = "<group>"; };
+		D43AC541138F2134007C86F3 /* DrivingProfile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DrivingProfile.png; sourceTree = "<group>"; };
+		D43AC542138F2134007C86F3 /* leaderboard-card_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaderboard-card_01.png"; sourceTree = "<group>"; };
+		D43AC543138F2134007C86F3 /* leaderboard-card_01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaderboard-card_01@2x.png"; sourceTree = "<group>"; };
+		D43AC544138F2134007C86F3 /* Routes.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Routes.psd; sourceTree = "<group>"; };
+		D43AC545138F2135007C86F3 /* Routing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Routing.png; sourceTree = "<group>"; };
+		D43AC546138F2135007C86F3 /* sample- speed dial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sample- speed dial.png"; sourceTree = "<group>"; };
+		D43AC547138F2135007C86F3 /* streetlight bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "streetlight bg.png"; sourceTree = "<group>"; };
+		D43AC548138F2135007C86F3 /* widget-basic bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "widget-basic bg.png"; sourceTree = "<group>"; };
+		D43AC549138F2135007C86F3 /* widget-speed dial 02.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "widget-speed dial 02.psd"; sourceTree = "<group>"; };
+		D43AC54A138F2135007C86F3 /* widget-speed dial.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "widget-speed dial.psd"; sourceTree = "<group>"; };
 		D43BDEAB1378F58800722E69 /* LeaderboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderboardViewController.h; sourceTree = "<group>"; };
 		D43BDEAC1378F58800722E69 /* LeaderboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardViewController.m; sourceTree = "<group>"; };
 		D43BDEAD1378F58800722E69 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		D43BDEAE1378F58800722E69 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		D43BDEB11378F58F00722E69 /* PageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageViewController.xib; sourceTree = "<group>"; };
 		D43BDF271378F82500722E69 /* LeaderboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaderboardViewController.xib; sourceTree = "<group>"; };
-		D43BDF2A1378F87900722E69 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
-		D43BDF2B1378F87900722E69 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
-		D43BDF2C1378F87900722E69 /* leaderboard-card_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaderboard-card_01.png"; sourceTree = "<group>"; };
-		D43BDF2D1378F87900722E69 /* leaderboard-card_01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaderboard-card_01@2x.png"; sourceTree = "<group>"; };
 		D43DB5B313261BFA00DCAD92 /* VelocityEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VelocityEvent.h; sourceTree = "<group>"; };
 		D43DB5B413261BFA00DCAD92 /* VelocityEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VelocityEvent.m; sourceTree = "<group>"; };
 		D43DB5CB13261DE900DCAD92 /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connection.h; sourceTree = "<group>"; };
@@ -360,15 +391,9 @@
 		D49C2553134B98C4003F493F /* RemoteApp_dev.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = RemoteApp_dev.p12; sourceTree = "<group>"; };
 		D49C2554134B98C4003F493F /* RemoteApp_dev.p7b */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RemoteApp_dev.p7b; sourceTree = "<group>"; };
 		D49C2555134B98C4003F493F /* Sunny-Interval-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sunny-Interval-icon.png"; sourceTree = "<group>"; };
-		D49C25BA134B9ACD003F493F /* Achievements.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Achievements.png; sourceTree = "<group>"; };
-		D49C25BB134B9ACD003F493F /* Dashboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dashboard.png; sourceTree = "<group>"; };
-		D49C25BC134B9ACD003F493F /* DrivingProfile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DrivingProfile.png; sourceTree = "<group>"; };
-		D49C25BD134B9ACD003F493F /* Routes.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Routes.psd; sourceTree = "<group>"; };
-		D49C25BE134B9ACD003F493F /* Routing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Routing.png; sourceTree = "<group>"; };
 		D4AF4659138336B0005DF2D8 /* DashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewController.h; sourceTree = "<group>"; };
 		D4AF465A138336B0005DF2D8 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
 		D4AF465B138336B0005DF2D8 /* DashboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardViewController.xib; sourceTree = "<group>"; };
-		D4AF465E138386AA005DF2D8 /* 130i.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = 130i.aif; sourceTree = "<group>"; };
 		D4B8F1CB131CE519002C1A44 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D4B8F223131CF44E002C1A44 /* GravityObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GravityObject.h; sourceTree = "<group>"; };
 		D4B8F224131CF44E002C1A44 /* GravityObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GravityObject.m; sourceTree = "<group>"; };
@@ -380,9 +405,6 @@
 		D4C46A31137127090024A4FC /* LightWidgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightWidgetViewController.h; sourceTree = "<group>"; };
 		D4C46A32137127090024A4FC /* LightWidgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightWidgetViewController.m; sourceTree = "<group>"; };
 		D4C46A33137127090024A4FC /* LightWidgetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LightWidgetViewController.xib; path = ../../Classes/RemoteApp/LightWidgetViewController.xib; sourceTree = "<group>"; };
-		D4C46AE113712E760024A4FC /* streetlight bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "streetlight bg.png"; sourceTree = "<group>"; };
-		D4C46AE313712E7E0024A4FC /* dial bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dial bg.png"; sourceTree = "<group>"; };
-		D4C46AE413712E7E0024A4FC /* dial hand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dial hand.png"; sourceTree = "<group>"; };
 		D4CAF69C134A61EB002E1B53 /* iDrive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iDrive.framework; sourceTree = "<group>"; };
 		D4CAF75F134A6442002E1B53 /* RemoteAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteAppController.h; sourceTree = "<group>"; };
 		D4CAF760134A6442002E1B53 /* RemoteAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteAppController.m; sourceTree = "<group>"; };
@@ -488,7 +510,6 @@
 				D49C253E134B98C4003F493F /* RemoteApp */,
 				D4B8F364131E3D61002C1A44 /* DataOverlayViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
-				7BD472F8133A606D001A9741 /* MapViewController.xib */,
 				7BD472EF133A6031001A9741 /* RoutingOverlayViewController.xib */,
 				7B2E4741132B478400755B8C /* BMW_iOS-Info.plist */,
 			);
@@ -629,6 +650,7 @@
 				7BD472F4133A6060001A9741 /* MapViewController.m */,
 				7BD472E8133A5FFC001A9741 /* RoutingOverlayViewController.h */,
 				7BD472E9133A5FFC001A9741 /* RoutingOverlayViewController.m */,
+				7BD472F8133A606D001A9741 /* MapViewController.xib */,
 			);
 			name = Routing;
 			sourceTree = "<group>";
@@ -907,25 +929,36 @@
 		D49C25B9134B9ACD003F493F /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				D4AF465E138386AA005DF2D8 /* 130i.aif */,
-				D43BDF2A1378F87900722E69 /* background.png */,
-				D43BDF2B1378F87900722E69 /* background@2x.png */,
-				D43BDF2C1378F87900722E69 /* leaderboard-card_01.png */,
-				D43BDF2D1378F87900722E69 /* leaderboard-card_01@2x.png */,
-				D437ECD61372079E00AEA826 /* dial-hand2.png */,
-				D437EC2F1371F2FB00AEA826 /* widget-basic bg.png */,
-				D437EC271371F27800AEA826 /* bar- green.png */,
-				D437EC281371F27800AEA826 /* bar-black.png */,
-				D437EC291371F27800AEA826 /* bar-red.png */,
-				D437EC2A1371F27800AEA826 /* car icon.png */,
-				D4C46AE313712E7E0024A4FC /* dial bg.png */,
-				D4C46AE413712E7E0024A4FC /* dial hand.png */,
-				D4C46AE113712E760024A4FC /* streetlight bg.png */,
-				D49C25BA134B9ACD003F493F /* Achievements.png */,
-				D49C25BB134B9ACD003F493F /* Dashboard.png */,
-				D49C25BC134B9ACD003F493F /* DrivingProfile.png */,
-				D49C25BD134B9ACD003F493F /* Routes.psd */,
-				D49C25BE134B9ACD003F493F /* Routing.png */,
+				D43AC52D138F2134007C86F3 /* 130i.aif */,
+				D43AC52E138F2134007C86F3 /* Achievements.png */,
+				D43AC52F138F2134007C86F3 /* background.png */,
+				D43AC530138F2134007C86F3 /* background@2x.png */,
+				D43AC531138F2134007C86F3 /* bar- green.png */,
+				D43AC532138F2134007C86F3 /* bar-black.png */,
+				D43AC533138F2134007C86F3 /* bar-red.png */,
+				D43AC534138F2134007C86F3 /* car icon.png */,
+				D43AC535138F2134007C86F3 /* Dashboard.png */,
+				D43AC536138F2134007C86F3 /* dial bg.png */,
+				D43AC537138F2134007C86F3 /* dial hand.png */,
+				D43AC538138F2134007C86F3 /* dial_bg_02.png */,
+				D43AC539138F2134007C86F3 /* dial_bg_03.png */,
+				D43AC53A138F2134007C86F3 /* dial_bg_04.png */,
+				D43AC53B138F2134007C86F3 /* dial_bg.png */,
+				D43AC53C138F2134007C86F3 /* dial_hand_02.png */,
+				D43AC53D138F2134007C86F3 /* dial_hand_03.png */,
+				D43AC53E138F2134007C86F3 /* dial_hand_04.png */,
+				D43AC53F138F2134007C86F3 /* dial_hand.png */,
+				D43AC540138F2134007C86F3 /* dial-hand2.png */,
+				D43AC541138F2134007C86F3 /* DrivingProfile.png */,
+				D43AC542138F2134007C86F3 /* leaderboard-card_01.png */,
+				D43AC543138F2134007C86F3 /* leaderboard-card_01@2x.png */,
+				D43AC544138F2134007C86F3 /* Routes.psd */,
+				D43AC545138F2135007C86F3 /* Routing.png */,
+				D43AC546138F2135007C86F3 /* sample- speed dial.png */,
+				D43AC547138F2135007C86F3 /* streetlight bg.png */,
+				D43AC548138F2135007C86F3 /* widget-basic bg.png */,
+				D43AC549138F2135007C86F3 /* widget-speed dial 02.psd */,
+				D43AC54A138F2135007C86F3 /* widget-speed dial.psd */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -1036,36 +1069,47 @@
 				D49C2562134B98C4003F493F /* RemoteApp_dev.p12 in Resources */,
 				D49C2563134B98C4003F493F /* RemoteApp_dev.p7b in Resources */,
 				D49C2564134B98C4003F493F /* Sunny-Interval-icon.png in Resources */,
-				D49C25BF134B9ACD003F493F /* Achievements.png in Resources */,
-				D49C25C0134B9ACD003F493F /* Dashboard.png in Resources */,
-				D49C25C1134B9ACD003F493F /* DrivingProfile.png in Resources */,
-				D49C25C2134B9ACD003F493F /* Routes.psd in Resources */,
-				D49C25C3134B9ACD003F493F /* Routing.png in Resources */,
 				D4707982136E8BCA000D8479 /* DialWidgetViewController.xib in Resources */,
 				D4C46A35137127090024A4FC /* LightWidgetViewController.xib in Resources */,
-				D4C46AE213712E760024A4FC /* streetlight bg.png in Resources */,
-				D4C46AE513712E7E0024A4FC /* dial bg.png in Resources */,
-				D4C46AE613712E7E0024A4FC /* dial hand.png in Resources */,
 				D437EC1C1371F21F00AEA826 /* SplitBarWidgetViewController.xib in Resources */,
-				D437EC2B1371F27800AEA826 /* bar- green.png in Resources */,
-				D437EC2C1371F27800AEA826 /* bar-black.png in Resources */,
-				D437EC2D1371F27800AEA826 /* bar-red.png in Resources */,
-				D437EC2E1371F27800AEA826 /* car icon.png in Resources */,
-				D437EC301371F2FB00AEA826 /* widget-basic bg.png in Resources */,
-				D437ECD71372079E00AEA826 /* dial-hand2.png in Resources */,
 				D43BDEB21378F58F00722E69 /* PageViewController.xib in Resources */,
 				D43BDF281378F82500722E69 /* LeaderboardViewController.xib in Resources */,
-				D43BDF2E1378F87900722E69 /* background.png in Resources */,
-				D43BDF2F1378F87900722E69 /* background@2x.png in Resources */,
-				D43BDF301378F87900722E69 /* leaderboard-card_01.png in Resources */,
-				D43BDF311378F87900722E69 /* leaderboard-card_01@2x.png in Resources */,
 				D4AF465D138336B0005DF2D8 /* DashboardViewController.xib in Resources */,
-				D4AF465F138386AA005DF2D8 /* 130i.aif in Resources */,
 				7BB5385B138CAEED00AB6A69 /* horizontal_blur.frag.glsl in Resources */,
 				7BB5385C138CAEED00AB6A69 /* vertical_blur.frag.glsl in Resources */,
 				7BDBBA70138DFBC700DF619A /* FBDialog.bundle in Resources */,
 				7BDBBA7F138DFC0300DF619A /* FBConnect.bundle in Resources */,
 				D43AC52C138E7798007C86F3 /* ProfilePageViewController.xib in Resources */,
+				D43AC54B138F2135007C86F3 /* 130i.aif in Resources */,
+				D43AC54C138F2135007C86F3 /* Achievements.png in Resources */,
+				D43AC54D138F2135007C86F3 /* background.png in Resources */,
+				D43AC54E138F2135007C86F3 /* background@2x.png in Resources */,
+				D43AC54F138F2135007C86F3 /* bar- green.png in Resources */,
+				D43AC550138F2135007C86F3 /* bar-black.png in Resources */,
+				D43AC551138F2135007C86F3 /* bar-red.png in Resources */,
+				D43AC552138F2135007C86F3 /* car icon.png in Resources */,
+				D43AC553138F2135007C86F3 /* Dashboard.png in Resources */,
+				D43AC554138F2135007C86F3 /* dial bg.png in Resources */,
+				D43AC555138F2135007C86F3 /* dial hand.png in Resources */,
+				D43AC556138F2135007C86F3 /* dial_bg_02.png in Resources */,
+				D43AC557138F2135007C86F3 /* dial_bg_03.png in Resources */,
+				D43AC558138F2135007C86F3 /* dial_bg_04.png in Resources */,
+				D43AC559138F2135007C86F3 /* dial_bg.png in Resources */,
+				D43AC55A138F2135007C86F3 /* dial_hand_02.png in Resources */,
+				D43AC55B138F2135007C86F3 /* dial_hand_03.png in Resources */,
+				D43AC55C138F2135007C86F3 /* dial_hand_04.png in Resources */,
+				D43AC55D138F2135007C86F3 /* dial_hand.png in Resources */,
+				D43AC55E138F2135007C86F3 /* dial-hand2.png in Resources */,
+				D43AC55F138F2135007C86F3 /* DrivingProfile.png in Resources */,
+				D43AC560138F2135007C86F3 /* leaderboard-card_01.png in Resources */,
+				D43AC561138F2135007C86F3 /* leaderboard-card_01@2x.png in Resources */,
+				D43AC562138F2135007C86F3 /* Routes.psd in Resources */,
+				D43AC563138F2135007C86F3 /* Routing.png in Resources */,
+				D43AC564138F2135007C86F3 /* sample- speed dial.png in Resources */,
+				D43AC565138F2135007C86F3 /* streetlight bg.png in Resources */,
+				D43AC566138F2135007C86F3 /* widget-basic bg.png in Resources */,
+				D43AC567138F2135007C86F3 /* widget-speed dial 02.psd in Resources */,
+				D43AC568138F2135007C86F3 /* widget-speed dial.psd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
