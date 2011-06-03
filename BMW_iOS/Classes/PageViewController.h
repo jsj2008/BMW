@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ServerConnection.h"
 
-
-
 @interface PageViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, ServerConnectionDelegate> {
 	IBOutlet UILabel *titleLabel;
 	IBOutlet UITableView *tv;

@@ -17,12 +17,13 @@
 -(void)loadDataFromURL
 {
     //NSString *d = [NSString stringWithContentsOfURL:[NSURL URLWithString:dataURLString]];
-    [ServerConnection sendGetRequestTo:dataURLString delegate:self];
+    [ServerConnection sendQuery:dataURLString withParams:nil delegate:self];
 }
 
 -(void)receiveStats:(NSArray *)stats
 {
-    self.data = stats;
+    self.data = [[stats objectAtIndex:0] objectForKey:@"response"];
+    self.titleString = [[stats objectAtIndex:0] objectForKey:@"title"];
     //NSLog(@"%@",self.data);
     [self.tv reloadData];
     [self performSelector:@selector(loadDataFromURL) withObject:nil afterDelay:5];
@@ -89,20 +90,18 @@
 
 -(NSString *)stringValueForPayload:(float)num AndPage:(int)page {
     switch (page) {
-        case TOP_SPEED:
+        case 2:
             return [NSString stringWithFormat:@"%.2f mph", num*MPS_TO_MPH];
             break;
-        case TOTAL_DISTANCE:
+        case 4:
             return [NSString stringWithFormat:@"%.1f miles", num*MPS_TO_MPH];
             break;
-        case LIGHT_TIME:
+        case 5:
             return [NSString stringWithFormat:@"%.0f min.", num/60.0];
             break;
-        case AVG_SPEED:
+        case 3:
             return [NSString stringWithFormat:@"%.1f mph", num*MPS_TO_MPH];
             break;
-        case BREAKATHON_ROUTE:
-            return [NSString stringWithFormat:@"%.1f", num];
         default:
             return [NSString stringWithFormat:@"%.1f", num];
             break;
