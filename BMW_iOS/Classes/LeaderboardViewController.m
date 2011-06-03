@@ -39,8 +39,7 @@
     }
 	self.viewControllers = controllers;
     [controllers release];
-	
-	
+    
 	scrollView.pagingEnabled = YES;
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * ([pageURLs count]+1), scrollView.frame.size.height);
     scrollView.showsHorizontalScrollIndicator = NO;

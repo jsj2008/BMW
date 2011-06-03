@@ -17,24 +17,27 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization.
-		coords = [[NSMutableArray alloc] init];
-		[coords addObject:[[CLLocation alloc] initWithLatitude:37.9234 longitude:-122.4]];
-		[coords addObject:[[CLLocation alloc] initWithLatitude:37.2346 longitude:-122.41]];
-        [coords addObject:[[CLLocation alloc] initWithLatitude:37.832 longitude:-122.44]];
-        [coords addObject:[[CLLocation alloc] initWithLatitude:37.4562 longitude:-122.46]];
-        [coords addObject:[[CLLocation alloc] initWithLatitude:37.1642 longitude:-122.47]];
-        [coords addObject:[[CLLocation alloc] initWithLatitude:37.22 longitude:-122.40]];
+		routes = [[NSMutableArray alloc] init];
+		
+        [routes addObject:[[Route alloc] initWithStartPoint:[[CLLocation alloc] initWithLatitude:37.9234 longitude:-122.4] AndEndPoint:[[CLLocation alloc] initWithLatitude:37.2346 longitude:-122.41]]];
+       /* [routes addObject:[[CLLocation alloc] initWithLatitude:37.9234 longitude:-122.4]];
+		[routes addObject:[[CLLocation alloc] initWithLatitude:37.2346 longitude:-122.41]];
+        [routes addObject:[[CLLocation alloc] initWithLatitude:37.832 longitude:-122.44]];
+        [routes addObject:[[CLLocation alloc] initWithLatitude:37.4562 longitude:-122.46]];
+        [routes addObject:[[CLLocation alloc] initWithLatitude:37.1642 longitude:-122.47]];
+        [routes addObject:[[CLLocation alloc] initWithLatitude:37.22 longitude:-122.40]];
+    */
     }
     return self;
 }
 
 -(void)addPins {
-	for (CLLocation *loc in coords) {
-		[self addPinToCoordinate:loc.coordinate];
+	for (Route *route in routes) {
+		[self addPinToCoordinate:route.startPoint.coordinate];
 	}
 }
 
-
+-(void)viewWillAppear {}
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -42,6 +45,12 @@
 
     mapView.showsUserLocation = YES;
 	mapView.delegate = self;
+    
+    MKCoordinateSpan span = MKCoordinateSpanMake(0.1, 0.1);
+    MKCoordinateRegion region = MKCoordinateRegionMake(((Route *)[routes objectAtIndex:0]).startPoint.coordinate, span);
+    [mapView setRegion:region animated:YES];
+    [mapView regionThatFits:region];
+    
     [self addPins];
 }
 
@@ -125,7 +134,7 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-    [coords release];
+    [routes release];
 }
 
 
