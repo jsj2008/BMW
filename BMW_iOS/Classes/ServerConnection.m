@@ -84,6 +84,18 @@ static ServerConnection * _sharedConnection;
     NSLog(@"prev stats:%@",[statsDict JSONRepresentation]);
 }
 
++(void)sendQuery:(NSString *)query withParams:(NSDictionary *)post delegate:(id<ServerConnectionDelegate>)delegate
+{
+    NSMutableDictionary *queryParams = [[[NSMutableDictionary alloc] init] autorelease];
+    [queryParams setObject:[NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]] forKey:@"iphone_time"];
+    [queryParams setObject:[[UIDevice currentDevice] uniqueIdentifier] forKey:@"udid"];
+    
+    NSDictionary *queryDict = [NSDictionary dictionaryWithObjectsAndKeys:query,QUERY_KEY,queryParams,PARAMS_KEY, nil];
+    
+    NSString *postData = [NSString stringWithFormat:@"data=%@",[[NSArray arrayWithObjects:queryDict, nil] JSONRepresentation]];
+    [ServerConnection sendPostRequestTo:QUERY_CONTROLLER_URL postData:postData delegate:delegate];
+}
+
 +(void)sendPostRequestTo:(NSString *)url delegate:(id<ServerConnectionDelegate>)delegate
 {
     NSMutableURLRequest *req = [[[NSMutableURLRequest alloc] init] autorelease];

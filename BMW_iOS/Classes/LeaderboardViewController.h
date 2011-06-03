@@ -9,22 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "PageViewController.h"
 
-enum PAGE_NUM {
-    NEWS_FEED = 0,
-    TOP_SPEED,
-    TOTAL_DISTANCE,
-    LIGHT_TIME,
-    AVG_SPEED,
-    PROFILE,
-    BREAKATHON_ROUTE
-};
-
 @interface LeaderboardViewController : UIViewController <UIScrollViewDelegate> {
 	UIScrollView *scrollView;
 	UIPageControl *pageControl;
 	NSMutableArray *viewControllers;
+	NSMutableArray * pageURLs;
     
-	
 	BOOL pageControlUsed;
 	
 	NSMutableArray *stringParts;
@@ -35,6 +25,5 @@ enum PAGE_NUM {
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, retain) IBOutlet UIPageControl *pageControl;
 @property (nonatomic, retain) NSMutableArray *viewControllers;
-
 
 @end

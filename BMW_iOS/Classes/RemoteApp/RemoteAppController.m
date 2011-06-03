@@ -31,9 +31,9 @@
 		//Startup the USB connection monitor
 		[[IDExternalAccessoryMonitor sharedMonitor] start];
 		
-#if TARGET_IPHONE_SIMULATOR
-		[self accessoryDidStart:nil];
-#endif
+//#if TARGET_IPHONE_SIMULATOR
+	//	[self accessoryDidStart:nil];
+//#endif
 	}
 	return self;
 }
@@ -42,14 +42,17 @@
 
 - (void)speedActual:(NSDictionary*)dictionary
 {
-	NSLog(@"Got Speed with dict: %@", dictionary);
-    NSNumber *speed = [dictionary objectForKey:@"speedActual"];
-    [app.mainVC setSpeed:[speed doubleValue]];
+	//NSLog(@"Got Speed with dict: %@", dictionary);
+    //NSNumber *speed = [dictionary objectForKey:@"speedActual"];
+    //[app.mainVC setSpeed:[speed doubleValue]];
 }
 
 - (void)engineRPM:(NSDictionary*)dictionary
 {
 	NSLog(@"Got RPM with dict: %@", dictionary);
+    //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"RPM" message:[NSString stringWithFormat:@"Got RPM with dict: %@", dictionary] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    //[alert show];
+    
     
     //NSNumber* number = [dictionary objectForKey:[CDSEngineRPMSpeed suffix]];
 	//[value1 setText: [number stringValue] clearWhileSending:NO]; 
@@ -59,7 +62,8 @@
 {
 	//NSDictionary* number = [dictionary objectForKey:[CDSDrivingSteeringwheel suffix]];
 	//NSNumber* angle = [number objectForKey: @"angle"];
-	//[value2 setText: [angle stringValue] clearWhileSending:NO]; 
+	//NSLog(@"%@", number);
+    //[value2 setText: [angle stringValue] clearWhileSending:NO]; 
 }
 
 -(void)dealloc {
@@ -102,8 +106,13 @@
 										 textDatabaseMINI:nil 
 										  devCertificates:YES
 												 delegate:self] autorelease];
-	[app connectWithHostname: @"127.0.0.1" port:[IDApplication defaultPort]];
-	// Waiting for	-idApplicationDidConnect: ...
+	
+    //[app connectWithHostname: @"127.0.0.1" port:[IDApplication defaultPort]];
+	
+    //DEBUG ON THOMAS'S MINI
+    [app connectWithHostname: @"192.168.1.22" port:[IDApplication defaultPort]];
+	
+    // Waiting for	-idApplicationDidConnect: ...
 	// or			-idApplication: connectionFailedWithError: ...
 }	 
 
@@ -124,8 +133,8 @@
     // Bind to Properties
     IDCarDataService* ds = [[IDCarDataService alloc] initWithApplication:app];
     [ds bindProperty:CDSEngineRPMSpeed			target:self selector:@selector(engineRPM:)];
-    [ds bindProperty:CDSDrivingSteeringwheel	target:self selector:@selector(steeringWheel:)];
-    [ds bindProperty:CDSDrivingSpeedActual target:self selector:@selector(speedActual:)];
+    //[ds bindProperty:CDSDrivingSteeringwheel	target:self selector:@selector(steeringWheel:)];
+    //[ds bindProperty:CDSDrivingSpeedActual target:self selector:@selector(speedActual:)];
 	_busy = NO;
 	
 }

@@ -21,19 +21,6 @@
 
 @synthesize pageControl, viewControllers, scrollView;
 
-- (void)dealloc
-{
-    [super dealloc];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
 #pragma mark - View lifecycle
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
@@ -41,30 +28,26 @@
     [super viewDidLoad];
     
     [[[UIApplication sharedApplication].delegate facebook] requestWithGraphPath:@"me" andDelegate:[UIApplication sharedApplication].delegate];
-    
-	//[self swapLeaderboard];
     [[UIApplication sharedApplication] setStatusBarOrientation: UIInterfaceOrientationPortrait animated:NO];  
 
+    pageURLs = [[NSMutableArray arrayWithObjects:FEEDS_MOST_RECENT_N_QUERY, MAX_SPEED_QUERY, AVERAGE_SPEED_QUERY, TOTAL_DISTANCE_QUERY, RED_LIGHT_TIME_QUERY, nil] retain];
+    
 	NSMutableArray *controllers = [[NSMutableArray alloc] init];
-    for (unsigned i = 0; i < kNumberOfPages; i++)
+    for (unsigned i = 0; i < [pageURLs count]+1; i++)
     {
 		[controllers addObject:[NSNull null]];
     }
 	self.viewControllers = controllers;
     [controllers release];
-	
-	
-	stringParts = [[NSMutableArray alloc] initWithArray:[[NSString stringWithFormat:@"John Jessen isa noob"] componentsSeparatedByString:@" "]];
-	
-	
+    
 	scrollView.pagingEnabled = YES;
-    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * kNumberOfPages, scrollView.frame.size.height);
+    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * ([pageURLs count]+1), scrollView.frame.size.height);
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.scrollsToTop = NO;
     scrollView.delegate = self;
     
-    pageControl.numberOfPages = kNumberOfPages;
+    pageControl.numberOfPages = [pageURLs count]+1;
     pageControl.currentPage = 0;
 	
 	
@@ -76,21 +59,22 @@
 {
     if (page < 0)
         return;
-    if (page >= kNumberOfPages)
+    if (page >= [pageURLs count]+1)
         return;
     
     // replace the placeholder if necessary
      PageViewController *controller = [viewControllers objectAtIndex:page];
     if ((NSNull *)controller == [NSNull null])
     {
-		if (page == 0) {
+		if (page == 1) {
             controller = [[NewsFeedPageController alloc] init];
-        } else if (page == 5) {
+        } else if (page == 0) {
             controller = [[ProfilePageViewController alloc] init];
         } else {
             controller = [[PageViewController alloc] init];
 		}
-        controller.dataURLString = [self getDataURLString:page];
+        if(page!=0)
+            controller.dataURLString = [pageURLs objectAtIndex:page-1];
 		controller.titleString = [self getLeaderboardTitle:page];
         controller.pageNumber = page;
 		[controller loadDataFromURL];
@@ -114,47 +98,22 @@
     }
 }
 
--(NSString *)getDataURLString:(int)page {
-	switch (page) {
-		case 0:
-            return MINI_FEED_URL;
-        case 1:
-			return MAX_SPEED_LEADERBOARD_URL;
-			break;
-		case 2:
-			return TOTAL_DISTANCE_LEADERBOARD_URL;
-			break;
-        case 3:
-            return RED_LIGHT_TIME_LEADERBOARD_URL;
-        case PROFILE:
-            return nil;
-        case BREAKATHON_ROUTE:
-            return @"http://bunkermw.heroku.com/breakathon_routes/get_rankings_by_time";
-		default:
-			return AVERAGE_SPEED_LEADERBOARD_URL;
-			break;
-	}
-}
-
 -(NSString *)getLeaderboardTitle:(int)page {
 	switch (page) {
 		case 0:
-			return @"News Feed";
-			break;
-		case 1:
-			return @"Top Speed";
-			break;
-        case 2:
-            return @"Total Distance";
-        case 3:
-            return @"Time at Red Lights";
-        case PROFILE:
             return @"Driver Profile";
-        case BREAKATHON_ROUTE:
-            return @"Coho Coffee Challenge Route";
+        case 1:
+            return @"Mini Feed";
+        case 2:
+            return @"Max Speed";
+        case 3:
+            return @"Average Speed";
+        case 4:
+            return @"Total Distance";
+        case 5:
+            return @"Red Lights Seen";
         default:
-			return @"Average Speed";
-			break;
+            return @"Untitled";
 	}
 }
 

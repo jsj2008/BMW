@@ -8,23 +8,20 @@
 
 #import "DashboardViewController.h"
 #import "BMW_iOSAppDelegate.h"
-#import <AudioToolbox/AudioToolbox.h>
 #import "LightWidgetViewController.h"
+#import "DialWidgetViewController.h"
 
 @implementation DashboardViewController
 
 @synthesize leftView, rightView;
+@synthesize pageControl, viewControllers, scrollView;
+
+#define kNumberOfPages 3
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        dialWidgetVC = [[DialWidgetViewController alloc] init];
-        NSString *aiffPath = [[NSBundle mainBundle] pathForResource:@"130i" ofType:@"aif"];
-        NSURL *aiffURL = [NSURL fileURLWithPath:aiffPath];
-        OSStatus err = kAudioServicesNoError;
-        err = AudioServicesCreateSystemSoundID((CFURLRef) aiffURL, &soundID);
-       // [self.view addSubview:dialWidgetVC.view];
         // Custom initialization
     }
     return self;
@@ -46,50 +43,124 @@
 #pragma mark - View lifecycle
 
 -(void)viewWillAppear:(BOOL)animated {
-    AudioServicesPlaySystemSound (soundID);
-    
-    // [[self view] setBounds:CGRectMake(0, 0, 480, 320)];
-    // [[self view] setCenter:CGPointMake(160, 240)];
-    // [[self view] setTransform:CGAffineTransformMakeRotation(M_PI / 2)];
-    
-    speed = 1;
-    up = YES;
-    [self startup];
+
+    [[viewControllers objectAtIndex:0] viewWillAppear];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationLandscapeRight animated:NO];
 
-        [leftView addSubview:dialWidgetVC.view];
     
-    LightWidgetViewController *lwvc = [[LightWidgetViewController alloc] init];
-    [rightView addSubview:lwvc.view];
-    // Do any additional setup after loading the view from its nib.
-}
-
--(void)startup {
-    if (speed < 1) {
-        //stop
-    } else {
-        if (speed < 140 && up==YES) {
-            speed += 1;
-        }
-        else  {
-            speed -= 1;
-            up = NO;
-        }
-        
-        
-        [dialWidgetVC setSpeed1:speed];
-                [dialWidgetVC setSpeed2:speed];
-                [dialWidgetVC setSpeed3:speed];
-        [self performSelector:@selector(startup) withObject:nil afterDelay:.004];
+    NSMutableArray *controllers = [[NSMutableArray alloc] init];
+    for (unsigned i = 0; i < kNumberOfPages; i++)
+    {
+		[controllers addObject:[NSNull null]];
     }
+	self.viewControllers = controllers;
+    [controllers release];
+	
+	scrollView.pagingEnabled = YES;
+    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * kNumberOfPages, scrollView.frame.size.height);
+    scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.showsVerticalScrollIndicator = NO;
+    scrollView.scrollsToTop = NO;
+    scrollView.delegate = self;
+    
+    pageControl.numberOfPages = kNumberOfPages;
+    pageControl.currentPage = 0;
+	
+	
+	[self loadScrollViewWithPage:0];
+    [self loadScrollViewWithPage:1];
 
 }
+
+- (void)loadScrollViewWithPage:(int)page
+{
+    if (page < 0)
+        return;
+    if (page >= kNumberOfPages)
+        return;
+
+    UIViewController *controller = [viewControllers objectAtIndex:page];
+    
+    if ((NSNull *)controller == [NSNull null])
+    {
+        if (page == 0) {
+            controller = [[DialWidgetViewController alloc] init];
+        } else {
+            controller = [[MapViewController alloc] init];
+        }
+        [viewControllers replaceObjectAtIndex:page withObject:controller];
+        [controller release];
+    }
+    
+
+    if (controller.view.superview == nil)
+    {
+        CGRect frame = scrollView.frame;
+        frame.origin.x = frame.size.width * page;
+        frame.origin.y = 0;
+        controller.view.frame = frame;
+        [scrollView addSubview:controller.view];
+    }
+}
+
+- (IBAction)changePage:(id)sender
+{
+    int page = pageControl.currentPage;
+	
+    // load the visible page and the page on either side of it (to avoid flashes when the user starts scrolling)
+    [self loadScrollViewWithPage:page - 1];
+    [self loadScrollViewWithPage:page];
+    [self loadScrollViewWithPage:page + 1];
+    
+    //fake the call to viewdidload
+    
+	// update the scroll view to the appropriate page
+    CGRect frame = scrollView.frame;
+    frame.origin.x = frame.size.width * page;
+    frame.origin.y = 0;
+    [scrollView scrollRectToVisible:frame animated:YES];
+    
+	// Set the boolean used when scrolls originate from the UIPageControl. See scrollViewDidScroll: above.
+    pageControlUsed = YES;
+}
+
+
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)sender
+{
+    if (pageControlUsed) {
+        return;
+    }
+	
+    CGFloat pageWidth = scrollView.frame.size.width;
+    int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    if (pageControl.currentPage != page) {
+        pageControl.currentPage = page;
+        [[viewControllers objectAtIndex:page] viewWillAppear];
+    }
+    [self loadScrollViewWithPage:page - 1];
+    [self loadScrollViewWithPage:page];
+    [self loadScrollViewWithPage:page + 1];
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    pageControlUsed = NO;
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    pageControlUsed = NO;
+}
+
+
 
 - (void)viewDidUnload
 {

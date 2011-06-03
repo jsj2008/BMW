@@ -9,15 +9,20 @@
 #import <UIKit/UIKit.h>
 #import "DialWidgetViewController.h"
 
-@interface DashboardViewController : UIViewController {
-    DialWidgetViewController *dialWidgetVC;
-    IBOutlet UIView *leftView, *rightView;
-    
-    int speed;
-    BOOL up;
-    UInt32 soundID;
-}
+@interface DashboardViewController : UIViewController <UIScrollViewDelegate> {
+    UIScrollView *scrollView;
+	UIPageControl *pageControl;
+	NSMutableArray *viewControllers;
 
+	BOOL pageControlUsed;
+}
+-(IBAction)changePage:(id)sender;
+//-(void)loadScrollViewWithPage:(int)page;
+
+
+@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, retain) IBOutlet UIPageControl *pageControl;
+@property (nonatomic, retain) NSMutableArray *viewControllers;
 @property (nonatomic, retain) IBOutlet UIView *leftView, *rightView;
 
 @end

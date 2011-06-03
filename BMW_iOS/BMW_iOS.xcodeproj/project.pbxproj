@@ -38,7 +38,6 @@
 		7BD1350C132D9E9600150AA0 /* ImageProcessingGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD13505132D9E9600150AA0 /* ImageProcessingGLView.m */; };
 		7BD1350D132D9E9600150AA0 /* ImageProcessingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD13507132D9E9600150AA0 /* ImageProcessingViewController.m */; };
 		7BD1357A132DB86600150AA0 /* SensorReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD13578132DB86600150AA0 /* SensorReader.m */; };
-		7BD472EC133A5FFD001A9741 /* RoutingOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD472E9133A5FFC001A9741 /* RoutingOverlayViewController.m */; };
 		7BD472F2133A6031001A9741 /* RoutingOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BD472EF133A6031001A9741 /* RoutingOverlayViewController.xib */; };
 		7BD472F7133A6060001A9741 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD472F4133A6060001A9741 /* MapViewController.m */; };
 		7BD472FB133A606D001A9741 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BD472F8133A606D001A9741 /* MapViewController.xib */; };
@@ -88,13 +87,10 @@
 		D43AC55F138F2135007C86F3 /* DrivingProfile.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC541138F2134007C86F3 /* DrivingProfile.png */; };
 		D43AC560138F2135007C86F3 /* leaderboard-card_01.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC542138F2134007C86F3 /* leaderboard-card_01.png */; };
 		D43AC561138F2135007C86F3 /* leaderboard-card_01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC543138F2134007C86F3 /* leaderboard-card_01@2x.png */; };
-		D43AC562138F2135007C86F3 /* Routes.psd in Resources */ = {isa = PBXBuildFile; fileRef = D43AC544138F2134007C86F3 /* Routes.psd */; };
 		D43AC563138F2135007C86F3 /* Routing.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC545138F2135007C86F3 /* Routing.png */; };
 		D43AC564138F2135007C86F3 /* sample- speed dial.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC546138F2135007C86F3 /* sample- speed dial.png */; };
 		D43AC565138F2135007C86F3 /* streetlight bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC547138F2135007C86F3 /* streetlight bg.png */; };
 		D43AC566138F2135007C86F3 /* widget-basic bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D43AC548138F2135007C86F3 /* widget-basic bg.png */; };
-		D43AC567138F2135007C86F3 /* widget-speed dial 02.psd in Resources */ = {isa = PBXBuildFile; fileRef = D43AC549138F2135007C86F3 /* widget-speed dial 02.psd */; };
-		D43AC568138F2135007C86F3 /* widget-speed dial.psd in Resources */ = {isa = PBXBuildFile; fileRef = D43AC54A138F2135007C86F3 /* widget-speed dial.psd */; };
 		D43BDEAF1378F58800722E69 /* LeaderboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D43BDEAC1378F58800722E69 /* LeaderboardViewController.m */; };
 		D43BDEB01378F58800722E69 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D43BDEAE1378F58800722E69 /* PageViewController.m */; };
 		D43BDEB21378F58F00722E69 /* PageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D43BDEB11378F58F00722E69 /* PageViewController.xib */; };
@@ -129,6 +125,7 @@
 		D43DB63413261DE900DCAD92 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = D43DB61613261DE900DCAD92 /* Response.m */; };
 		D4707981136E8BCA000D8479 /* DialWidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D470797F136E8BCA000D8479 /* DialWidgetViewController.m */; };
 		D4707982136E8BCA000D8479 /* DialWidgetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4707980136E8BCA000D8479 /* DialWidgetViewController.xib */; };
+		D479D97E1396A9EF007F93B7 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = D479D97D1396A9EF007F93B7 /* Route.m */; };
 		D49C2556134B98C4003F493F /* Remote_source.xml in Resources */ = {isa = PBXBuildFile; fileRef = D49C2544134B98C4003F493F /* Remote_source.xml */; };
 		D49C2557134B98C4003F493F /* current.png in Resources */ = {isa = PBXBuildFile; fileRef = D49C2547134B98C4003F493F /* current.png */; };
 		D49C2558134B98C4003F493F /* destination.png in Resources */ = {isa = PBXBuildFile; fileRef = D49C2548134B98C4003F493F /* destination.png */; };
@@ -164,6 +161,7 @@
 		D4CAF79F134A6666002E1B53 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CAF79E134A6666002E1B53 /* ExternalAccessory.framework */; };
 		D4CAF7A1134A666D002E1B53 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CAF7A0134A666D002E1B53 /* Security.framework */; };
 		D4E14AFE1370D4AE009795FA /* WidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E14AFD1370D4AE009795FA /* WidgetViewController.m */; };
+		D4F3FE1F1397902400CF9C44 /* Crysta.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4F3FE1E1397902400CF9C44 /* Crysta.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,8 +220,6 @@
 		7BD13507132D9E9600150AA0 /* ImageProcessingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageProcessingViewController.m; sourceTree = "<group>"; };
 		7BD13577132DB86600150AA0 /* SensorReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorReader.h; sourceTree = "<group>"; };
 		7BD13578132DB86600150AA0 /* SensorReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorReader.m; sourceTree = "<group>"; };
-		7BD472E8133A5FFC001A9741 /* RoutingOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoutingOverlayViewController.h; sourceTree = "<group>"; };
-		7BD472E9133A5FFC001A9741 /* RoutingOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoutingOverlayViewController.m; sourceTree = "<group>"; };
 		7BD472EF133A6031001A9741 /* RoutingOverlayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RoutingOverlayViewController.xib; path = Classes/RoutingOverlayViewController.xib; sourceTree = "<group>"; };
 		7BD472F3133A6060001A9741 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		7BD472F4133A6060001A9741 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
@@ -373,6 +369,8 @@
 		D470797E136E8BCA000D8479 /* DialWidgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialWidgetViewController.h; sourceTree = "<group>"; };
 		D470797F136E8BCA000D8479 /* DialWidgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DialWidgetViewController.m; sourceTree = "<group>"; };
 		D4707980136E8BCA000D8479 /* DialWidgetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DialWidgetViewController.xib; path = ../../Classes/RemoteApp/DialWidgetViewController.xib; sourceTree = "<group>"; };
+		D479D97C1396A9EF007F93B7 /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Route.h; sourceTree = "<group>"; };
+		D479D97D1396A9EF007F93B7 /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Route.m; sourceTree = "<group>"; };
 		D49C2541134B98C4003F493F /* RemoteAppGfxResources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteAppGfxResources.h; sourceTree = "<group>"; };
 		D49C2542134B98C4003F493F /* RemoteAppIDs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteAppIDs.h; sourceTree = "<group>"; };
 		D49C2543134B98C4003F493F /* RemoteAppTextIDs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteAppTextIDs.h; sourceTree = "<group>"; };
@@ -421,6 +419,7 @@
 		D4CAF7A0134A666D002E1B53 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D4E14AFC1370D4AE009795FA /* WidgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WidgetViewController.h; path = ../WidgetViewController.h; sourceTree = "<group>"; };
 		D4E14AFD1370D4AE009795FA /* WidgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WidgetViewController.m; path = ../WidgetViewController.m; sourceTree = "<group>"; };
+		D4F3FE1E1397902400CF9C44 /* Crysta.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Crysta.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -506,6 +505,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D4F3FE1E1397902400CF9C44 /* Crysta.ttf */,
 				D49C25B9134B9ACD003F493F /* Images */,
 				D49C253E134B98C4003F493F /* RemoteApp */,
 				D4B8F364131E3D61002C1A44 /* DataOverlayViewController.xib */,
@@ -648,9 +648,9 @@
 				7BD472FF133A607C001A9741 /* CurrentLocationAnnotation.m */,
 				7BD472F3133A6060001A9741 /* MapViewController.h */,
 				7BD472F4133A6060001A9741 /* MapViewController.m */,
-				7BD472E8133A5FFC001A9741 /* RoutingOverlayViewController.h */,
-				7BD472E9133A5FFC001A9741 /* RoutingOverlayViewController.m */,
 				7BD472F8133A606D001A9741 /* MapViewController.xib */,
+				D479D97C1396A9EF007F93B7 /* Route.h */,
+				D479D97D1396A9EF007F93B7 /* Route.m */,
 			);
 			name = Routing;
 			sourceTree = "<group>";
@@ -1103,13 +1103,11 @@
 				D43AC55F138F2135007C86F3 /* DrivingProfile.png in Resources */,
 				D43AC560138F2135007C86F3 /* leaderboard-card_01.png in Resources */,
 				D43AC561138F2135007C86F3 /* leaderboard-card_01@2x.png in Resources */,
-				D43AC562138F2135007C86F3 /* Routes.psd in Resources */,
 				D43AC563138F2135007C86F3 /* Routing.png in Resources */,
 				D43AC564138F2135007C86F3 /* sample- speed dial.png in Resources */,
 				D43AC565138F2135007C86F3 /* streetlight bg.png in Resources */,
 				D43AC566138F2135007C86F3 /* widget-basic bg.png in Resources */,
-				D43AC567138F2135007C86F3 /* widget-speed dial 02.psd in Resources */,
-				D43AC568138F2135007C86F3 /* widget-speed dial.psd in Resources */,
+				D4F3FE1F1397902400CF9C44 /* Crysta.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1157,7 +1155,6 @@
 				7BD1350D132D9E9600150AA0 /* ImageProcessingViewController.m in Sources */,
 				7BD1357A132DB86600150AA0 /* SensorReader.m in Sources */,
 				7B236139132FD38700548F13 /* StatsTracker.m in Sources */,
-				7BD472EC133A5FFD001A9741 /* RoutingOverlayViewController.m in Sources */,
 				7BD472F7133A6060001A9741 /* MapViewController.m in Sources */,
 				7BD47304133A607C001A9741 /* AnnotationView.m in Sources */,
 				7BD47305133A607C001A9741 /* CurrentLocationAnnotation.m in Sources */,
@@ -1191,6 +1188,7 @@
 				7BDBBA79138DFBC700DF619A /* SBJsonWriter.m in Sources */,
 				D43AC526138E60FD007C86F3 /* NewsFeedPageController.m in Sources */,
 				D43AC52B138E7798007C86F3 /* ProfilePageViewController.m in Sources */,
+				D479D97E1396A9EF007F93B7 /* Route.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
