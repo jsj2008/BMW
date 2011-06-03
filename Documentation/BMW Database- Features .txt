@@ -22,6 +22,7 @@
       - Query for rankings: total redlights           (use URL '/leaderboard/redlight_count')
       - Query for rankings: total greenlights         (use URL '/leaderboard/greenlight_count')
       
+      I recommend getting data from this to populate user profile page
       - Query for user rank: total distance           (use URL '/leaderboard/total_distance/user_rank?udid=...')
       - Query for user rank: max speed                (use URL '/leaderboard/max_speed/user_rank?udid=...') (units: meters per sec)
       - Query for user rank: average speed            (use URL '/leaderboard/avg_speed/user_rank?udid=...') (units: meters per sec)
@@ -41,4 +42,7 @@
       - Modify current 'rankings' queries to take in new parameters. Work with Query Controller API (Minh & David)
       - Clean out deprecated database models (e.g.: incorrectly named models, columns, etc.) (David)
       - Look at generating unique IDs: http://rubyforge.org/projects/uuidtools/ (Minh Ly)
+      
+      
+      Look at the ad: Oracle EXADATA for cool presentation of data collection and its growing scales.
       
