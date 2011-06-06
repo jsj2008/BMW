@@ -18,6 +18,8 @@
 		7B053DF4132CF61200E2AB1C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B053DF1132CF61200E2AB1C /* OpenGLES.framework */; };
 		7B236139132FD38700548F13 /* StatsTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B236136132FD38700548F13 /* StatsTracker.m */; };
 		7B41784F1324926100BE9374 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B41784E1324926100BE9374 /* Accelerate.framework */; };
+		7B41A1CD139CC40C0019A3F5 /* leaderboard-card_08.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B41A1CB139CC40C0019A3F5 /* leaderboard-card_08.png */; };
+		7B41A1CE139CC40C0019A3F5 /* leaderboard-card_08@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B41A1CC139CC40C0019A3F5 /* leaderboard-card_08@2x.png */; };
 		7B4EC7F81313516E00175D77 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4EC7F61313516E00175D77 /* CoreMotion.framework */; };
 		7B4EC7F91313516E00175D77 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4EC7F71313516E00175D77 /* CoreLocation.framework */; };
 		7B80CC60131C465C00AD2BAA /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B80CC5F131C465C00AD2BAA /* CoreMedia.framework */; };
@@ -191,6 +193,8 @@
 		7B236136132FD38700548F13 /* StatsTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsTracker.m; sourceTree = "<group>"; };
 		7B2E4741132B478400755B8C /* BMW_iOS-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BMW_iOS-Info.plist"; sourceTree = "<group>"; };
 		7B41784E1324926100BE9374 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		7B41A1CB139CC40C0019A3F5 /* leaderboard-card_08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaderboard-card_08.png"; sourceTree = "<group>"; };
+		7B41A1CC139CC40C0019A3F5 /* leaderboard-card_08@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaderboard-card_08@2x.png"; sourceTree = "<group>"; };
 		7B4EC7F61313516E00175D77 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		7B4EC7F71313516E00175D77 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7B80CC5F131C465C00AD2BAA /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -952,6 +956,8 @@
 				D43AC541138F2134007C86F3 /* DrivingProfile.png */,
 				D43AC542138F2134007C86F3 /* leaderboard-card_01.png */,
 				D43AC543138F2134007C86F3 /* leaderboard-card_01@2x.png */,
+				7B41A1CB139CC40C0019A3F5 /* leaderboard-card_08.png */,
+				7B41A1CC139CC40C0019A3F5 /* leaderboard-card_08@2x.png */,
 				D43AC544138F2134007C86F3 /* Routes.psd */,
 				D43AC545138F2135007C86F3 /* Routing.png */,
 				D43AC546138F2135007C86F3 /* sample- speed dial.png */,
@@ -1108,6 +1114,8 @@
 				D43AC565138F2135007C86F3 /* streetlight bg.png in Resources */,
 				D43AC566138F2135007C86F3 /* widget-basic bg.png in Resources */,
 				D4F3FE1F1397902400CF9C44 /* Crysta.ttf in Resources */,
+				7B41A1CD139CC40C0019A3F5 /* leaderboard-card_08.png in Resources */,
+				7B41A1CE139CC40C0019A3F5 /* leaderboard-card_08@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
