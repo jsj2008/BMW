@@ -8,13 +8,19 @@
 
 #import <MapKit/MapKit.h>
 
-@interface CurrentLocationAnnotation : NSObject <MKAnnotation> {
-	
+@class Route;
+
+@interface RoutePinAnnotation : NSObject <MKAnnotation> {
+	//MKAnnotationView *annotationView;
+    BOOL isStart;
+    Route *parentRoute;
 }
 
+//@property (nonatomic, retain) MKAnnotationView *annotationView;
+@property BOOL isStart;
 @property (nonatomic, readwrite, assign) CLLocationCoordinate2D coordinate;
-
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *subtitle;
+@property (nonatomic, retain) Route *parentRoute;
 
 @end

@@ -89,10 +89,18 @@
     
     if ((NSNull *)controller == [NSNull null])
     {
-        if (page == 0) {
-            controller = [[DialWidgetViewController alloc] init];
-        } else {
-            controller = [[MapViewController alloc] init];
+        switch (page) {
+            case 0:
+                controller = [[DialWidgetViewController alloc] init];
+                break;
+            case 1:
+                controller = [[MapViewController alloc] init];
+                break;
+            case 2:
+                controller = [[LightWidgetViewController alloc] init];
+                break;
+            default:
+                break;
         }
         [viewControllers replaceObjectAtIndex:page withObject:controller];
         [controller release];

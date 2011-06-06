@@ -35,6 +35,9 @@
     }
 }
 
+-(void)viewWillAppear {
+    
+}
 -(void)updateLabels {
 	[red setText:[NSString stringWithFormat:@"%d", r]];
 	[yellow setText:[NSString stringWithFormat:@"%d", y]];

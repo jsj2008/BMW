@@ -11,17 +11,15 @@
 #import <CoreLocation/CoreLocation.h>
 #import "BMW_iOSAppDelegate.h"
 #import "AnnotationView.h"
-#import "CurrentLocationAnnotation.h"
+#import "RoutePinAnnotation.h"
 #import "Route.h"
 
 @interface MapViewController : UIViewController <MKMapViewDelegate> {
 	IBOutlet MKMapView *mapView;
 	Route *selectedRoute;
     NSMutableArray *routes;
-    
+    BOOL routeIsSelected;
 }
-- (IBAction)addPin:(id)sender;
-- (void)addPinToCoordinate:(CLLocationCoordinate2D)pinCoord;
 
-
+@property (nonatomic, retain) MKMapView *mapView;
 @end

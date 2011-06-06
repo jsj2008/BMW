@@ -13,6 +13,7 @@
 #import "DialWidgetViewController.h"
 #import "LightWidgetViewController.h"
 #import "SplitBarWidgetViewController.h"
+#import "RemoteAppWidgetController.h"
 
 @interface MainVC : IDViewController {
 	
@@ -26,10 +27,15 @@
 	IDLoadingLabel* stateLabel;
 	
 	MenuVC* menuVC;
-	NSTimer *imageTimer;
+	NSTimer *refreshTimer;
 	DialWidgetViewController *avgSpeedVC;
 	LightWidgetViewController *lightWidgetVC;
 	SplitBarWidgetViewController *carsPassedWidgetVC;
+    RemoteAppWidgetController *RAWidgetVC;
+    
+    WidgetViewController *currentWidget;
+    
+    IDStatusBar *statusBar;
 }
 @property(retain) IDButton* homeButton;
 @property(retain) IDButton* routeButton;

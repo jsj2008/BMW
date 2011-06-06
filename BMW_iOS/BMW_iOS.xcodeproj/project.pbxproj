@@ -42,7 +42,7 @@
 		7BD472F7133A6060001A9741 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD472F4133A6060001A9741 /* MapViewController.m */; };
 		7BD472FB133A606D001A9741 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BD472F8133A606D001A9741 /* MapViewController.xib */; };
 		7BD47304133A607C001A9741 /* AnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD472FD133A607C001A9741 /* AnnotationView.m */; };
-		7BD47305133A607C001A9741 /* CurrentLocationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD472FF133A607C001A9741 /* CurrentLocationAnnotation.m */; };
+		7BD47305133A607C001A9741 /* RoutePinAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD472FF133A607C001A9741 /* RoutePinAnnotation.m */; };
 		7BD47334133A609C001A9741 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD47331133A609C001A9741 /* MapKit.framework */; };
 		7BDBBA6F138DFBC700DF619A /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BDBBA54138DFBC700DF619A /* Facebook.m */; };
 		7BDBBA70138DFBC700DF619A /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7BDBBA57138DFBC700DF619A /* FBDialog.bundle */; };
@@ -126,6 +126,9 @@
 		D4707981136E8BCA000D8479 /* DialWidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D470797F136E8BCA000D8479 /* DialWidgetViewController.m */; };
 		D4707982136E8BCA000D8479 /* DialWidgetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4707980136E8BCA000D8479 /* DialWidgetViewController.xib */; };
 		D479D97E1396A9EF007F93B7 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = D479D97D1396A9EF007F93B7 /* Route.m */; };
+		D48869CF139C98C7003910A3 /* RemoteAppWidgetController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48869CD139C98C6003910A3 /* RemoteAppWidgetController.m */; };
+		D48869D0139C98C7003910A3 /* RemoteAppWidgetController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48869CE139C98C6003910A3 /* RemoteAppWidgetController.xib */; };
+		D48869D2139C993D003910A3 /* MINI_Background.png in Resources */ = {isa = PBXBuildFile; fileRef = D48869D1139C993D003910A3 /* MINI_Background.png */; };
 		D49C2556134B98C4003F493F /* Remote_source.xml in Resources */ = {isa = PBXBuildFile; fileRef = D49C2544134B98C4003F493F /* Remote_source.xml */; };
 		D49C2557134B98C4003F493F /* current.png in Resources */ = {isa = PBXBuildFile; fileRef = D49C2547134B98C4003F493F /* current.png */; };
 		D49C2558134B98C4003F493F /* destination.png in Resources */ = {isa = PBXBuildFile; fileRef = D49C2548134B98C4003F493F /* destination.png */; };
@@ -226,8 +229,8 @@
 		7BD472F8133A606D001A9741 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		7BD472FC133A607C001A9741 /* AnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationView.h; sourceTree = "<group>"; };
 		7BD472FD133A607C001A9741 /* AnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationView.m; sourceTree = "<group>"; };
-		7BD472FE133A607C001A9741 /* CurrentLocationAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentLocationAnnotation.h; sourceTree = "<group>"; };
-		7BD472FF133A607C001A9741 /* CurrentLocationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentLocationAnnotation.m; sourceTree = "<group>"; };
+		7BD472FE133A607C001A9741 /* RoutePinAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoutePinAnnotation.h; sourceTree = "<group>"; };
+		7BD472FF133A607C001A9741 /* RoutePinAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoutePinAnnotation.m; sourceTree = "<group>"; };
 		7BD47331133A609C001A9741 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7BDBBA50138DFBC700DF619A /* facebook-ios-sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "facebook-ios-sdk.xcodeproj"; sourceTree = "<group>"; };
 		7BDBBA53138DFBC700DF619A /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
@@ -260,7 +263,7 @@
 		7BFBCB6D134BCC15003ABB41 /* hsi_threshold.frag.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hsi_threshold.frag.glsl; sourceTree = "<group>"; };
 		D437EC181371F21F00AEA826 /* SplitBarWidgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitBarWidgetViewController.h; sourceTree = "<group>"; };
 		D437EC191371F21F00AEA826 /* SplitBarWidgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitBarWidgetViewController.m; sourceTree = "<group>"; };
-		D437EC1A1371F21F00AEA826 /* SplitBarWidgetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SplitBarWidgetViewController.xib; path = ../../Classes/RemoteApp/SplitBarWidgetViewController.xib; sourceTree = "<group>"; };
+		D437EC1A1371F21F00AEA826 /* SplitBarWidgetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplitBarWidgetViewController.xib; sourceTree = "<group>"; };
 		D43AC523138E60FD007C86F3 /* NewsFeedPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsFeedPageController.h; sourceTree = "<group>"; };
 		D43AC524138E60FD007C86F3 /* NewsFeedPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsFeedPageController.m; sourceTree = "<group>"; };
 		D43AC528138E7798007C86F3 /* ProfilePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilePageViewController.h; sourceTree = "<group>"; };
@@ -368,9 +371,13 @@
 		D43DB61613261DE900DCAD92 /* Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Response.m; sourceTree = "<group>"; };
 		D470797E136E8BCA000D8479 /* DialWidgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialWidgetViewController.h; sourceTree = "<group>"; };
 		D470797F136E8BCA000D8479 /* DialWidgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DialWidgetViewController.m; sourceTree = "<group>"; };
-		D4707980136E8BCA000D8479 /* DialWidgetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DialWidgetViewController.xib; path = ../../Classes/RemoteApp/DialWidgetViewController.xib; sourceTree = "<group>"; };
+		D4707980136E8BCA000D8479 /* DialWidgetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DialWidgetViewController.xib; sourceTree = "<group>"; };
 		D479D97C1396A9EF007F93B7 /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Route.h; sourceTree = "<group>"; };
 		D479D97D1396A9EF007F93B7 /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Route.m; sourceTree = "<group>"; };
+		D48869CC139C98C6003910A3 /* RemoteAppWidgetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteAppWidgetController.h; sourceTree = "<group>"; };
+		D48869CD139C98C6003910A3 /* RemoteAppWidgetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteAppWidgetController.m; sourceTree = "<group>"; };
+		D48869CE139C98C6003910A3 /* RemoteAppWidgetController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemoteAppWidgetController.xib; sourceTree = "<group>"; };
+		D48869D1139C993D003910A3 /* MINI_Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MINI_Background.png; sourceTree = "<group>"; };
 		D49C2541134B98C4003F493F /* RemoteAppGfxResources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteAppGfxResources.h; sourceTree = "<group>"; };
 		D49C2542134B98C4003F493F /* RemoteAppIDs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteAppIDs.h; sourceTree = "<group>"; };
 		D49C2543134B98C4003F493F /* RemoteAppTextIDs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteAppTextIDs.h; sourceTree = "<group>"; };
@@ -402,7 +409,7 @@
 		D4B8F364131E3D61002C1A44 /* DataOverlayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DataOverlayViewController.xib; path = Classes/DataOverlayViewController.xib; sourceTree = "<group>"; };
 		D4C46A31137127090024A4FC /* LightWidgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightWidgetViewController.h; sourceTree = "<group>"; };
 		D4C46A32137127090024A4FC /* LightWidgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightWidgetViewController.m; sourceTree = "<group>"; };
-		D4C46A33137127090024A4FC /* LightWidgetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LightWidgetViewController.xib; path = ../../Classes/RemoteApp/LightWidgetViewController.xib; sourceTree = "<group>"; };
+		D4C46A33137127090024A4FC /* LightWidgetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LightWidgetViewController.xib; sourceTree = "<group>"; };
 		D4CAF69C134A61EB002E1B53 /* iDrive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iDrive.framework; sourceTree = "<group>"; };
 		D4CAF75F134A6442002E1B53 /* RemoteAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteAppController.h; sourceTree = "<group>"; };
 		D4CAF760134A6442002E1B53 /* RemoteAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteAppController.m; sourceTree = "<group>"; };
@@ -644,8 +651,8 @@
 			children = (
 				7BD472FC133A607C001A9741 /* AnnotationView.h */,
 				7BD472FD133A607C001A9741 /* AnnotationView.m */,
-				7BD472FE133A607C001A9741 /* CurrentLocationAnnotation.h */,
-				7BD472FF133A607C001A9741 /* CurrentLocationAnnotation.m */,
+				7BD472FE133A607C001A9741 /* RoutePinAnnotation.h */,
+				7BD472FF133A607C001A9741 /* RoutePinAnnotation.m */,
 				7BD472F3133A6060001A9741 /* MapViewController.h */,
 				7BD472F4133A6060001A9741 /* MapViewController.m */,
 				7BD472F8133A606D001A9741 /* MapViewController.xib */,
@@ -715,6 +722,9 @@
 				D4C46A32137127090024A4FC /* LightWidgetViewController.m */,
 				D437EC181371F21F00AEA826 /* SplitBarWidgetViewController.h */,
 				D437EC191371F21F00AEA826 /* SplitBarWidgetViewController.m */,
+				D437EC1A1371F21F00AEA826 /* SplitBarWidgetViewController.xib */,
+				D4707980136E8BCA000D8479 /* DialWidgetViewController.xib */,
+				D4C46A33137127090024A4FC /* LightWidgetViewController.xib */,
 			);
 			name = "Widget Controllers";
 			sourceTree = "<group>";
@@ -860,9 +870,6 @@
 		D49C253E134B98C4003F493F /* RemoteApp */ = {
 			isa = PBXGroup;
 			children = (
-				D437EC1A1371F21F00AEA826 /* SplitBarWidgetViewController.xib */,
-				D4707980136E8BCA000D8479 /* DialWidgetViewController.xib */,
-				D4C46A33137127090024A4FC /* LightWidgetViewController.xib */,
 				D49C253F134B98C4003F493F /* RHMI XML */,
 				D49C2553134B98C4003F493F /* RemoteApp_dev.p12 */,
 				D49C2554134B98C4003F493F /* RemoteApp_dev.p7b */,
@@ -966,6 +973,7 @@
 		D4CAF758134A6442002E1B53 /* RemoteApp */ = {
 			isa = PBXGroup;
 			children = (
+				D48869D1139C993D003910A3 /* MINI_Background.png */,
 				D437EC091371F1BF00AEA826 /* Widget Controllers */,
 				D4CAF773134A646E002E1B53 /* MainVC.h */,
 				D4CAF774134A646E002E1B53 /* MainVC.m */,
@@ -975,6 +983,9 @@
 				D4CAF778134A646E002E1B53 /* RemoteApp.m */,
 				D4CAF75F134A6442002E1B53 /* RemoteAppController.h */,
 				D4CAF760134A6442002E1B53 /* RemoteAppController.m */,
+				D48869CC139C98C6003910A3 /* RemoteAppWidgetController.h */,
+				D48869CD139C98C6003910A3 /* RemoteAppWidgetController.m */,
+				D48869CE139C98C6003910A3 /* RemoteAppWidgetController.xib */,
 			);
 			path = RemoteApp;
 			sourceTree = "<group>";
@@ -1108,6 +1119,8 @@
 				D43AC565138F2135007C86F3 /* streetlight bg.png in Resources */,
 				D43AC566138F2135007C86F3 /* widget-basic bg.png in Resources */,
 				D4F3FE1F1397902400CF9C44 /* Crysta.ttf in Resources */,
+				D48869D0139C98C7003910A3 /* RemoteAppWidgetController.xib in Resources */,
+				D48869D2139C993D003910A3 /* MINI_Background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1157,7 +1170,7 @@
 				7B236139132FD38700548F13 /* StatsTracker.m in Sources */,
 				7BD472F7133A6060001A9741 /* MapViewController.m in Sources */,
 				7BD47304133A607C001A9741 /* AnnotationView.m in Sources */,
-				7BD47305133A607C001A9741 /* CurrentLocationAnnotation.m in Sources */,
+				7BD47305133A607C001A9741 /* RoutePinAnnotation.m in Sources */,
 				7BA6FF4C133B506900940874 /* ShaderProgram.m in Sources */,
 				D4CAF764134A6442002E1B53 /* RemoteAppController.m in Sources */,
 				D4CAF779134A646E002E1B53 /* MainVC.m in Sources */,
@@ -1189,6 +1202,7 @@
 				D43AC526138E60FD007C86F3 /* NewsFeedPageController.m in Sources */,
 				D43AC52B138E7798007C86F3 /* ProfilePageViewController.m in Sources */,
 				D479D97E1396A9EF007F93B7 /* Route.m in Sources */,
+				D48869CF139C98C7003910A3 /* RemoteAppWidgetController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

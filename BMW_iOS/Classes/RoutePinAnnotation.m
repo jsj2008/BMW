@@ -6,13 +6,15 @@
 //  Copyright __MyCompanyName__ 2010. All rights reserved.
 //
 
-#import "CurrentLocationAnnotation.h"
+#import "RoutePinAnnotation.h"
 
 
-@implementation CurrentLocationAnnotation
+@implementation RoutePinAnnotation
 @synthesize coordinate;
 @synthesize title;
 @synthesize subtitle;
+@synthesize isStart;
+@synthesize parentRoute;
 
 - (id)initWithCoordinate:(CLLocationCoordinate2D)coord {
     self = [super init];

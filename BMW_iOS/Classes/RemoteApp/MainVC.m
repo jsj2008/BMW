@@ -60,10 +60,11 @@
 		[self addWidget: viewImage2];
 		[self addWidget: viewImage3];
 		[self addWidget: stateLabel];
+
+        self.menuVC = [[[MenuVC alloc] initWithIdApplication:self.application hmiState:HST_Menu focusEvent:-1 titleModel:-1] autorelease];
 		
-		// Sub Views
-		self.menuVC = [[[MenuVC alloc] initWithIdApplication:self.application hmiState:HST_Menu focusEvent:-1 titleModel:-1] autorelease];
-		[self addSubViewController:menuVC];
+        
+        [self addSubViewController:menuVC];
 		
 	}
 	return self;
@@ -97,19 +98,20 @@
 	[destButton		setTarget:self	selector:@selector(destButtonClicked:)];
 	[lookupButton	setTarget:self	selector:@selector(lookupButtonClicked:)];
 	
-	[viewImage setPosition: CGPointMake(-50, 20)];
+	[viewImage setPosition: CGPointMake(-48, 40)];
 	[viewImage2 setPosition:CGPointMake(150,20)];
 	[viewImage3 setPosition:CGPointMake(350, 20)];
 	[stateLabel setPosition: CGPointMake(50, 50)];
 	
 	[stateLabel setHidesWhenStopped:NO];
 	
-	//NSTimer *tima = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateDashboardImage:) userInfo:nil repeats:YES];
-	
+    
+    avgSpeedVC = [[DialWidgetViewController alloc] init];
+	lightWidgetVC = [[LightWidgetViewController alloc] init];
+    refreshTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateDashboardImage:) userInfo:nil repeats:YES];
 	
 	[super rhmiDidStart];
 }
-
 
 /**
  * Override in Subclass
@@ -126,6 +128,11 @@
 	
 }
 
+-(void)updateDashboardImage:(id)sender {
+    if (viewImage) [viewImage setImage:[currentWidget imageRep] clearWhileSending:NO];
+    //[lookupButton buttonWasClicked:nil];
+    [statusBar setText:@"hello world"];
+}
 
 /**
  * Override in Subclass
@@ -143,16 +150,11 @@
  */
 -(void)homeButtonClicked:(IDButton*)button
 {
-	// Display View
-	[viewImage setImage: [UIImage imageNamed:@"Dashboard.png"]];
-	[stateLabel setText: nil];
-	
-	//imageTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(updateDashboardImage:) userInfo:nil repeats:YES];
-	//[stateLabel stopAnimating];
+    currentWidget = avgSpeedVC;
 }
 
 -(void)routeButtonClicked:(IDButton *)button {
-	[viewImage setImage:[UIImage imageNamed:@"Routing.png"]];
+	currentWidget = lightWidgetVC;
 	[stateLabel setText:@""];
 }
 

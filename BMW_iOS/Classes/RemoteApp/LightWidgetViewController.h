@@ -18,5 +18,5 @@
 -(void)incrementRed;
 -(void)incrementYellow;
 -(void)incrementGreen;
-
+-(void)viewWillAppear;
 @end
