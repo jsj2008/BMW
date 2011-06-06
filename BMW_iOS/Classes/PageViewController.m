@@ -56,6 +56,11 @@
 	[cell setSelected:NO];
 }
 
+-(void)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+	[cell setSelected:NO];
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	static NSString *CellIdentifier = @"Cell";
 	
