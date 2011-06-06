@@ -90,6 +90,8 @@ static ServerConnection * _sharedConnection;
     [queryParams setObject:[NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]] forKey:@"iphone_time"];
     [queryParams setObject:[[UIDevice currentDevice] uniqueIdentifier] forKey:@"udid"];
     
+    [queryParams addEntriesFromDictionary:post];
+    
     NSDictionary *queryDict = [NSDictionary dictionaryWithObjectsAndKeys:query,QUERY_KEY,queryParams,PARAMS_KEY, nil];
     
     NSString *postData = [NSString stringWithFormat:@"data=%@",[[NSArray arrayWithObjects:queryDict, nil] JSONRepresentation]];
@@ -158,6 +160,12 @@ static ServerConnection * _sharedConnection;
             [delegate receiveStatsFailed];
         CFDictionaryRemoveValue(connectionDelegateDict, connection);
     }
+}
+
+-(void)receiveStatsFailed
+{
+    //use this to debug which creates aren't sending the right data...
+    //NSLog(@"failed on a send...");
 }
 
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
