@@ -46,7 +46,7 @@
     if (profilePicture.image == nil) {
         [self performSelector:@selector(loadDataFromURL) withObject:nil afterDelay:2    ];
         BMW_iOSAppDelegate *del = [[UIApplication sharedApplication] delegate];
-#ifdef FACEBOOK
+#ifdef FB_CONNECT
         profilePicture.image = [del getUserPhoto];
         NSString *name = [del getUserFirstName];
         if(name==nil)
