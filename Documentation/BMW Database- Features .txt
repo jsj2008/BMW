@@ -7,6 +7,9 @@
       - JSON insert into model: mobile_lights         (use URL '/mobile_lights/create')     params: string udid, datetime iphone_time, int num_lights, float time_at_red, float time_at_green
       - JSON insert into model: car_trip_ranges       (use URL '/car_trip_ranges/create')   params: string udid, datetime iphone_time
       - JSON insert into model: profile_names         (use URL '/profile_names/create')     params: string udid, string user_name, string first_name, string last_name
+      - JSON insert into model: car_engines           (use URL '/car_engines/create')       params: string udid, datetime iphone_time, int rpm, int gear, float consumption, float torque, float temperature
+      - JSON insert into model: car_miscs             (use URL '/car_miscs/create')         params: string udid, datetime iphone_time, float speed, float steering_wheel_angle
+      - JSON insert into model: car_statuses          (use URL '/car_statuses/create')      params: string udid, datetime iphone_time, int headlight, int turn_signal, int windshield_wiper, int seatbelt, int passenger_seat
       
       - Retrieving recent achievements
         - Everytime you send a POST request to insert data into the backend, you will receive an array of any achievements you may have recently earned.
@@ -14,7 +17,7 @@
             {"unlocked_achievement": {"achievement_id":int, "achievement_name":string, "carma_points":int, "pic_address":string, "time_unlocked":datetime, "udid":string, "user_name":string}
         - Note: you can receive an empty array [] if no achievements were unlocked.
       
-      The below features' routes are deprecated. See Query Controller API to access them
+      The below features' routes are deprecated. See Query Controller API documentation to access them
       - Query for rankings: total distance            (use URL '/leaderboard/total_distance')
       - Query for rankings: max speed                 (use URL '/leaderboard/max_speed') (units: meters per sec)
       - Query for rankings: average speed             (use URL '/leaderboard/avg_speed') (units: meters per sec)
@@ -36,13 +39,10 @@
       
       
   + Features To Do
-      - Implement models for taking in car/HMI data (Minh Ly)
       - Implement query for finding average speed of location (boxing all points in vicinity) and finding n closest points (Minh Ly)
       - Modify the way distance is calculated using GPS coordinates; current Euclidean implementation is inaccurate (David Kamm)
       - Modify current 'rankings' queries to take in new parameters. Work with Query Controller API (Minh & David)
       - Clean out deprecated database models (e.g.: incorrectly named models, columns, etc.) (David)
       - Look at generating unique IDs: http://rubyforge.org/projects/uuidtools/ (Minh Ly)
       
-      
-      Look at the ad: Oracle EXADATA for cool presentation of data collection and its growing scales.
       

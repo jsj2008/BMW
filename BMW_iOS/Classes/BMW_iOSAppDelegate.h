@@ -16,8 +16,6 @@
 #import "DashboardViewController.h"
 #import "FBConnect.h"
 
-#define MPS_TO_MPH 2.23693629
-
 @class ImageProcessingViewController;
 
 extern NSString* BMWConnectedChanged;

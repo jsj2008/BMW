@@ -46,7 +46,7 @@
     if (profilePicture.image == nil) {
         [self performSelector:@selector(loadDataFromURL) withObject:nil afterDelay:2    ];
         BMW_iOSAppDelegate *del = [[UIApplication sharedApplication] delegate];
-#ifdef FACEBOOK
+#ifdef FB_CONNECT
         profilePicture.image = [del getUserPhoto];
         NSString *name = [del getUserFirstName];
         if(name==nil)
@@ -54,6 +54,18 @@
         titleLabel.text = [NSString stringWithFormat:@"%@'s Profile",[del getUserFirstName]];
 #endif
     }
+}
+
+//might be needed - not implemented now
+- (void)tableView: (UITableView*)tableView 
+  willDisplayCell: (UITableViewCell*)cell 
+forRowAtIndexPath: (NSIndexPath*)indexPath
+{
+    cell.backgroundColor = indexPath.row % 2 
+	? [UIColor colorWithRed:(45.0/255.0) green:(125.0/255.0) blue:(90.0/255.0) alpha:1.0]
+	: [UIColor colorWithRed:(7.0/255.0) green:(118.0/255.0) blue:(78.0/255.0) alpha:1.0];
+    cell.textLabel.backgroundColor = [UIColor clearColor];
+    cell.detailTextLabel.backgroundColor = [UIColor clearColor];
 }
 
 - (void)viewDidUnload
