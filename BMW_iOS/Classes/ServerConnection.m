@@ -152,7 +152,8 @@ static ServerConnection * _sharedConnection;
     id delegate;
     if(connectionDelegateDict!=nil&&CFDictionaryGetValueIfPresent(connectionDelegateDict, connection, &delegate))
     {
-        [delegate receiveStats:jsonArray];
+        if(jsonArray!=nil)//incase it comes back malformed...
+            [delegate receiveStats:jsonArray];
         CFDictionaryRemoveValue(connectionDelegateDict, connection);
     }
 }
