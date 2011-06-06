@@ -27,7 +27,11 @@
     //NSLog(@"%@",self.data);
     [self.tv reloadData];
     [self performSelector:@selector(loadDataFromURL) withObject:nil afterDelay:5];
+}
 
+-(void)receiveStatsFailed
+{
+    [self performSelector:@selector(loadDataFromURL) withObject:nil afterDelay:5];
 }
 
 -(void)viewDidLoad

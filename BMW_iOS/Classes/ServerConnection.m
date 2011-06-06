@@ -154,6 +154,8 @@ static ServerConnection * _sharedConnection;
     {
         if(jsonArray!=nil)//incase it comes back malformed...
             [delegate receiveStats:jsonArray];
+        else
+            [delegate receiveStatsFailed];
         CFDictionaryRemoveValue(connectionDelegateDict, connection);
     }
 }

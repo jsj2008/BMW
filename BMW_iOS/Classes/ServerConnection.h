@@ -51,6 +51,7 @@
 
 @protocol ServerConnectionDelegate <NSObject>
 -(void)receiveStats:(NSArray *)stats;
+-(void)receiveStatsFailed;
 @end
 
 @interface ServerConnection : NSObject <ServerConnectionDelegate>{
