@@ -76,7 +76,7 @@
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.textLabel.numberOfLines = 2;
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica Bold" size:15];
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	// Set up the cell...
 	return cell;
 }

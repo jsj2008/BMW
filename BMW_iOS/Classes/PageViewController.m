@@ -9,7 +9,7 @@
 #import "PageViewController.h"
 #import "SBJSON.h"
 #import "BMW_iOSAppDelegate.h"
-
+#define MPS_TO_MPH 2.23693629
 @implementation PageViewController
 
 @synthesize titleLabel, tv, dataURLString, data,titleString, pageNumber;	
