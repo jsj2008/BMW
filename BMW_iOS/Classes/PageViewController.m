@@ -92,7 +92,8 @@
     
     cell.textLabel.text = [NSString stringWithFormat:@"%d) %@: %@",indexPath.row+1,name, [self stringValueForPayload:[payload floatValue] AndPage:pageNumber]];
 	cell.textLabel.textColor = [UIColor whiteColor];
-		
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
 	// Set up the cell...
 	return cell;
 }
