@@ -20,6 +20,7 @@
 		7B41784F1324926100BE9374 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B41784E1324926100BE9374 /* Accelerate.framework */; };
 		7B41A1CD139CC40C0019A3F5 /* leaderboard-card_08.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B41A1CB139CC40C0019A3F5 /* leaderboard-card_08.png */; };
 		7B41A1CE139CC40C0019A3F5 /* leaderboard-card_08@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B41A1CC139CC40C0019A3F5 /* leaderboard-card_08@2x.png */; };
+		7B41A1D2139CD3660019A3F5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B41A1D1139CD3660019A3F5 /* MainViewController.m */; };
 		7B4EC7F81313516E00175D77 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4EC7F61313516E00175D77 /* CoreMotion.framework */; };
 		7B4EC7F91313516E00175D77 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4EC7F71313516E00175D77 /* CoreLocation.framework */; };
 		7B80CC60131C465C00AD2BAA /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B80CC5F131C465C00AD2BAA /* CoreMedia.framework */; };
@@ -195,6 +196,8 @@
 		7B41784E1324926100BE9374 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		7B41A1CB139CC40C0019A3F5 /* leaderboard-card_08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaderboard-card_08.png"; sourceTree = "<group>"; };
 		7B41A1CC139CC40C0019A3F5 /* leaderboard-card_08@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaderboard-card_08@2x.png"; sourceTree = "<group>"; };
+		7B41A1D0139CD3660019A3F5 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		7B41A1D1139CD3660019A3F5 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		7B4EC7F61313516E00175D77 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		7B4EC7F71313516E00175D77 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7B80CC5F131C465C00AD2BAA /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -464,6 +467,7 @@
 				D43BDEAA1378F56900722E69 /* Leaderboards */,
 				7B865D67136D42ED00A447EC /* CoreData */,
 				D4CAF758134A6442002E1B53 /* RemoteApp */,
+				7B41A1CF139CD31C0019A3F5 /* MainViewController */,
 				7BD13588132DBCF800150AA0 /* AppDelegate */,
 				7BD13563132DB79200150AA0 /* Image Processing */,
 				7BD13573132DB7A800150AA0 /* Stats Tracking */,
@@ -568,6 +572,15 @@
 				D43DB5CA13261DE900DCAD92 /* objective_resource */,
 			);
 			name = Libraries;
+			sourceTree = "<group>";
+		};
+		7B41A1CF139CD31C0019A3F5 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7B41A1D0139CD3660019A3F5 /* MainViewController.h */,
+				7B41A1D1139CD3660019A3F5 /* MainViewController.m */,
+			);
+			name = MainViewController;
 			sourceTree = "<group>";
 		};
 		7B865D67136D42ED00A447EC /* CoreData */ = {
@@ -1197,6 +1210,7 @@
 				D43AC526138E60FD007C86F3 /* NewsFeedPageController.m in Sources */,
 				D43AC52B138E7798007C86F3 /* ProfilePageViewController.m in Sources */,
 				D479D97E1396A9EF007F93B7 /* Route.m in Sources */,
+				7B41A1D2139CD3660019A3F5 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

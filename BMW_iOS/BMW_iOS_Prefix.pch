@@ -10,6 +10,8 @@
 
 #define DEBUG 1
 
+#define MPS_TO_MPH 2.23693629
+
 //types of builds
 //#define MAP_VIEW 1
 //#define IMAGE_PROCESSING_VIEW 1
