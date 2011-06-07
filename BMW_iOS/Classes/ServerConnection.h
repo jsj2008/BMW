@@ -29,6 +29,7 @@
 #define USER_AVERAGE_SPEED_QUERY @"user_rank_avg_speed"
 #define USER_TOTAL_DISANCE_QUERY @"user_rank_total_distance"
 #define USER_RED_LIGHT_TIME_QUERY @"user_rank_redlight_time"
+#define USER_RANK_CARMA_QUERY @"user_rank_carma_points"
 #define FEEDS_SINCE_TIME_QUERY @"feeds_since_time"
 #define FEEDS_MOST_RECENT_N_QUERY @"feeds_most_recent_n"
 

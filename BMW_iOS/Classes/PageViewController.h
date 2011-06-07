@@ -25,7 +25,7 @@
 @property (nonatomic, retain) IBOutlet UITableView *tv;
 @property (nonatomic, retain) IBOutlet UILabel *titleLabel;
 @property (nonatomic, retain) NSString *titleString;
-@property (nonatomic, retain) NSArray *data;
+@property (nonatomic, retain) NSMutableArray *data;
 @property int pageNumber;
 
 @end

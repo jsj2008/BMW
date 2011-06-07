@@ -10,8 +10,9 @@
 #import "PageViewController.h"
 
 
-@interface ProfilePageViewController : PageViewController {
+@interface ProfilePageViewController : PageViewController <UITableViewDelegate, UITableViewDataSource, ServerConnectionDelegate> {
     IBOutlet UIImageView *profilePicture;
+    IBOutlet UILabel *carmaPtsLabel;
 }
 
 @end
