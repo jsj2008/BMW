@@ -103,12 +103,13 @@
    // NSLog(@"Sending Lat: %f, Long: %f", latitude, longitude);
     //NSLog([NSString stringWithFormat:@"%@?latitude=%f&longitude=%f", SPEED_AT_LOCATION_URL, latitude, longitude]);
     
-        [ServerConnection sendGetRequestTo:[NSString stringWithFormat:@"%@?latitude=%f&longitude=%f", SPEED_AT_LOCATION_URL, latitude, longitude] delegate:self];
+        //[ServerConnection sendGetRequestTo:[NSString stringWithFormat:@"%@?latitude=%f&longitude=%f", SPEED_AT_LOCATION_URL, latitude, longitude] delegate:self];
+    [ServerConnection sendQuery:GET_AVERAGE_SPEED_QUERY withParams:sr.locationManager.location delegate:self];
 }
 
 -(void)receiveStats:(NSArray *)stats {
     if ([stats count] > 0) {
-        NSDictionary *dict = [stats objectAtIndex:0];
+        NSDictionary *dict = [[[stats objectAtIndex:0] objectForKey:@"response"] objectAtIndex:0];
         //NSString *blah = [dict objectForKey:@"blah"];
         double maxSpeed = [(NSNumber *)[dict objectForKey:@"max_speed"] doubleValue]*MPS_TO_MPH;
         double avgSpeed = [(NSNumber *)[dict objectForKey:@"avg_speed"] doubleValue]*MPS_TO_MPH;
