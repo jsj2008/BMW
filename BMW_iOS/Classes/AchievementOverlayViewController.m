@@ -14,9 +14,9 @@
 AchievementOverlayViewController *_shared;
 +(AchievementOverlayViewController *)shared
 {
-    if(_shared == nil)
-        _shared = [[AchievementOverlayViewController alloc] init];
-    return _shared;
+    //if(_shared == nil)
+    //    _shared = [[AchievementOverlayViewController alloc] init];
+    return nil;//_shared;
 }
 
 -(id)init
