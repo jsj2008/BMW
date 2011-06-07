@@ -44,5 +44,6 @@
       - Modify current 'rankings' queries to take in new parameters. Work with Query Controller API (Minh & David)
       - Clean out deprecated database models (e.g.: incorrectly named models, columns, etc.) (David)
       - Look at generating unique IDs: http://rubyforge.org/projects/uuidtools/ (Minh Ly)
+      - Importing and exporting. Look at http://devcenter.heroku.com/articles/taps for way to import/export data
       
       

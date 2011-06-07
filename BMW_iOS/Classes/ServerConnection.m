@@ -12,6 +12,7 @@
 #import "CLLocation+NSMutableDictionary.h"
 #import "CLHeading+NSMutableDictionary.h"
 #import "CMDeviceMotion+NSMutableDictionary.h"
+#import "AchievementOverlayViewController.h"
 
 @implementation ServerConnection
 
@@ -175,8 +176,9 @@ static ServerConnection * _sharedConnection;
 
 -(void)receiveStats:(NSArray *)stats
 {
-    //NSLog(@"success! %@",stats);
-    //do nothing
+    //Recieved an Achievement
+    NSLog(@"received achievements");
+    [[AchievementOverlayViewController shared] addToQueue:stats];
     return;
 }
 

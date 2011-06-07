@@ -66,9 +66,6 @@
 		cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
 	}
 	NSString *payload = [[self.data objectAtIndex:indexPath.row] objectForKey:@"payload"];
-	//payload = [NSNumber numberWithFloat:[payload floatValue]*2.2369 ];
-    //BMW_iOSAppDelegate *del = [[UIApplication sharedApplication] delegate];
-	//cell.textLabel.text = [NSString stringWithFormat:@"%d) %@: %f",indexPath.row+1,[del getNameForUDID:[[data objectAtIndex:indexPath.row] objectForKey:@"udid"]], [payload floatValue]];
 	if([payload isKindOfClass:[NSNull class]])
         cell.textLabel.text = @"null";
     else    

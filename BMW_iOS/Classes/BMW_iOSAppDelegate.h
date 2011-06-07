@@ -15,6 +15,8 @@
 #import "LeaderboardViewController.h"
 #import "DashboardViewController.h"
 #import "FBConnect.h"
+#import "MainViewController.h"
+#import "AchievementOverlayViewController.h"
 
 @class ImageProcessingViewController;
 
@@ -29,6 +31,8 @@ extern NSString* BMWConnectedChanged;
 	
 	RemoteAppController* bmwAppController;
     
+    AchievementOverlayViewController * a;
+    
     Facebook* _facebook;
     UIImage *userPhoto;
     NSString *userName;
@@ -40,7 +44,6 @@ extern NSString* BMWConnectedChanged;
 -(NSString *)getUserFirstName;
 -(CLLocation *)currentLocation;
 -(void)deviceWillRotateToInterfaceOrientation:(UIDeviceOrientation)orientation;
--(NSString *)getNameForUDID:(NSString *)udid;
 
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

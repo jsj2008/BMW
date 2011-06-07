@@ -70,10 +70,11 @@ static NSString* kAppId = @"211780665513835";
 	leaderboardVC = [[LeaderboardViewController alloc] init];
 	//[self.window addSubview:leaderboardVC.view];
     dashboardVC = [[DashboardViewController alloc] init];
+    a = [AchievementOverlayViewController shared];
+    [dashboardVC.view addSubview:a.view];
     //[self.window addSubview:dashboardVC.view];
     //DialWidgetViewController *dwVC = //[[DialWidgetViewController alloc] init];
     //[self.window addSubview:dashboardVC.view];
-    
     
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];    
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -103,6 +104,7 @@ static NSString* kAppId = @"211780665513835";
     {
         [leaderboardVC.view removeFromSuperview];
         [self.window addSubview:dashboardVC.view];
+        [a animate];
         NSLog(@"Landscape!");
         //[[SensorReader sharedReader] startReading];
     } else if (orientation == UIDeviceOrientationPortrait) {
@@ -124,48 +126,11 @@ static NSString* kAppId = @"211780665513835";
 #pragma mark -
 #pragma mark Memory management
 
-- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
-    /*
-     Free up as much memory as possible by purging cached data objects that can be recreated (or reloaded from disk) later.
-     */
-	//[viewController signalStop];
-	//[viewController signalStart];
-}
-
--(CLLocation *)currentLocation {
-	return nil;//viewController.currentLocation;
-}
-
 
 - (void)dealloc {
     [viewController release];
     [window release];
     [super dealloc];
-}
-
--(NSString *)getNameForUDID:(NSString *)udid
-{
-	if([udid compare:@"2d5a4b892d6c8237dcbc9e313d98dde8fc816dec"]==0)
-		return @"Rob B.";
-    if([udid compare:@"6600aad1f865a5febbfddb21301d5ad68f1903cb"]==0)
-		return @"Rob B.";
-	if([udid compare:@"76fe9b1185d4350bcd400d4268ea71b39c31b26c"]==0)
-		return @"Aaron S.";
-    if([udid compare:@"b680e1f3e17c7b5e75f5a43c5e4ba12e33a4fa27"]==0)
-		return @"Paul D.";
-    if([udid compare:@"09148136bbc4221eecc252bbc08e10631c52f925"]==0)
-		return @"Thomas F.";
-    if([udid compare:@"aab275dd918cffa7308c41c7244e03c0cc58a1b0"]==0)
-		return @"John J.";
-    if([udid compare:@"dde783d4f9841c85a213e7c1e737608ef99c05de"]==0)
-		return @"Arda K.";
-    if([udid compare:@"5c8c19663e018bc93d92f5f84f25687a0740295a"]==0)
-		return @"Jeremy K.";
-    if([udid compare:@"91a64e389ee78287ba9723091ce079fa14ba838c"]==0)
-		return @"Mike O.";
-    if([udid compare:@"f4ec23a15a8cb08929c97993808eac9fbf5a724e"]==0)
-		return @"Vignan P.";
-	return nil;
 }
 
 #if FB_CONNECT
@@ -177,7 +142,6 @@ static NSString* kAppId = @"211780665513835";
 
 - (void)fbDidLogin {
     NSLog(@"logged in");
-    [ServerConnection sendStats:[[[NSMutableDictionary alloc] init] autorelease] toURL:BREAKATHON_URL];
     [_facebook requestWithGraphPath:@"me/picture" andDelegate:self];
 }
 
@@ -238,11 +202,6 @@ static NSString* kAppId = @"211780665513835";
     if ([request.url rangeOfString:@"me/picture"].location != NSNotFound) {
         userPhoto = [[UIImage alloc] initWithData:result];
     }
-   // NSLog(@"%@", request.url);
-    //[[[UIAlertView alloc] initWithTitle:[result objectForKey:@"name"] message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-    
-    //NSLog(@"%@",result);
-    
     else if([result isKindOfClass:[NSDictionary class]])
     {
         [userName release];

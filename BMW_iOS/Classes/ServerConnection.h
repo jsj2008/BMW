@@ -15,7 +15,6 @@
 #define MOTION_URL @"http://bunkermw.heroku.com/mobile_motions/create"
 #define IMAGE_PROCESSING_URL @"http://bunkermw.heroku.com/mobile_lights/create"
 #define START_TRIP_URL @"http://bunkermw.heroku.com/car_trip_ranges/create"
-#define BREAKATHON_URL @"http://bunkermw.heroku.com/breakathon_routes/create"
 #define PROFILE_URL @"http://bunkermw.heroku.com/profile_names/create"
 
 #define CAR_ENGINE_URL @"http://bunkermw.heroku.com/car_engines/create"
@@ -33,6 +32,7 @@
 #define USER_AVERAGE_SPEED_QUERY @"user_rank_avg_speed"
 #define USER_TOTAL_DISANCE_QUERY @"user_rank_total_distance"
 #define USER_RED_LIGHT_TIME_QUERY @"user_rank_redlight_time"
+#define USER_RANK_CARMA_QUERY @"user_rank_carma_points"
 #define FEEDS_SINCE_TIME_QUERY @"feeds_since_time"
 #define FEEDS_MOST_RECENT_N_QUERY @"feeds_most_recent_n"
 

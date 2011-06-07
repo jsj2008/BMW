@@ -23,6 +23,8 @@
 		7B41A1D2139CD3660019A3F5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B41A1D1139CD3660019A3F5 /* MainViewController.m */; };
 		7B4EC7F81313516E00175D77 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4EC7F61313516E00175D77 /* CoreMotion.framework */; };
 		7B4EC7F91313516E00175D77 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4EC7F71313516E00175D77 /* CoreLocation.framework */; };
+		7B7582A6139DAD27007F6A9C /* app_logo_13@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B7582A5139DAD27007F6A9C /* app_logo_13@2x.png */; };
+		7B7582A8139DAD2C007F6A9C /* app_logo_13.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B7582A7139DAD2C007F6A9C /* app_logo_13.png */; };
 		7B80CC60131C465C00AD2BAA /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B80CC5F131C465C00AD2BAA /* CoreMedia.framework */; };
 		7B80CC6E131C466900AD2BAA /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B80CC6D131C466900AD2BAA /* CoreVideo.framework */; };
 		7B80CC7C131C46A800AD2BAA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B80CC7B131C46A800AD2BAA /* AVFoundation.framework */; };
@@ -59,6 +61,8 @@
 		7BDBBA78138DFBC700DF619A /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BDBBA69138DFBC700DF619A /* SBJsonParser.m */; };
 		7BDBBA79138DFBC700DF619A /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BDBBA6B138DFBC700DF619A /* SBJsonWriter.m */; };
 		7BDBBA7F138DFC0300DF619A /* FBConnect.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7BDBBA7E138DFC0300DF619A /* FBConnect.bundle */; };
+		7BF2F867139DD621009C8711 /* AchievementOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF2F865139DD621009C8711 /* AchievementOverlayViewController.m */; };
+		7BF2F868139DD621009C8711 /* AchievementOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BF2F866139DD621009C8711 /* AchievementOverlayViewController.xib */; };
 		7BFBCB6F134BCC15003ABB41 /* dilation.frag.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7BFBCB69134BCC15003ABB41 /* dilation.frag.glsl */; };
 		7BFBCB71134BCC15003ABB41 /* erosion.frag.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7BFBCB6B134BCC15003ABB41 /* erosion.frag.glsl */; };
 		7BFBCB73134BCC15003ABB41 /* hsi_threshold.frag.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7BFBCB6D134BCC15003ABB41 /* hsi_threshold.frag.glsl */; };
@@ -190,7 +194,7 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* BMW_iOSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMW_iOSAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* BMW_iOSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMW_iOSAppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* BMW_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMW_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* Carma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -209,6 +213,8 @@
 		7B41A1D1139CD3660019A3F5 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		7B4EC7F61313516E00175D77 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		7B4EC7F71313516E00175D77 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7B7582A5139DAD27007F6A9C /* app_logo_13@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app_logo_13@2x.png"; path = "../app_logo_13@2x.png"; sourceTree = "<group>"; };
+		7B7582A7139DAD2C007F6A9C /* app_logo_13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = app_logo_13.png; path = ../app_logo_13.png; sourceTree = "<group>"; };
 		7B80CC5F131C465C00AD2BAA /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		7B80CC6D131C466900AD2BAA /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		7B80CC7B131C46A800AD2BAA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -271,6 +277,9 @@
 		7BDBBA6A138DFBC700DF619A /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		7BDBBA6B138DFBC700DF619A /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		7BDBBA7E138DFC0300DF619A /* FBConnect.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBConnect.bundle; sourceTree = "<group>"; };
+		7BF2F864139DD621009C8711 /* AchievementOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementOverlayViewController.h; sourceTree = "<group>"; };
+		7BF2F865139DD621009C8711 /* AchievementOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementOverlayViewController.m; sourceTree = "<group>"; };
+		7BF2F866139DD621009C8711 /* AchievementOverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AchievementOverlayViewController.xib; sourceTree = "<group>"; };
 		7BFBCB69134BCC15003ABB41 /* dilation.frag.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dilation.frag.glsl; sourceTree = "<group>"; };
 		7BFBCB6B134BCC15003ABB41 /* erosion.frag.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = erosion.frag.glsl; sourceTree = "<group>"; };
 		7BFBCB6D134BCC15003ABB41 /* hsi_threshold.frag.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hsi_threshold.frag.glsl; sourceTree = "<group>"; };
@@ -485,6 +494,7 @@
 			isa = PBXGroup;
 			children = (
 				7BDBBA7E138DFC0300DF619A /* FBConnect.bundle */,
+				7BF2F863139DD5C9009C8711 /* AchievementOverlay */,
 				D43BDEAA1378F56900722E69 /* Leaderboards */,
 				7B865D67136D42ED00A447EC /* CoreData */,
 				D4CAF758134A6442002E1B53 /* RemoteApp */,
@@ -502,7 +512,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* BMW_iOS.app */,
+				1D6058910D05DD3D006BFB54 /* Carma.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -742,6 +752,16 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		7BF2F863139DD5C9009C8711 /* AchievementOverlay */ = {
+			isa = PBXGroup;
+			children = (
+				7BF2F864139DD621009C8711 /* AchievementOverlayViewController.h */,
+				7BF2F865139DD621009C8711 /* AchievementOverlayViewController.m */,
+				7BF2F866139DD621009C8711 /* AchievementOverlayViewController.xib */,
+			);
+			name = AchievementOverlay;
+			sourceTree = "<group>";
+		};
 		D437EC091371F1BF00AEA826 /* Widget Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -972,6 +992,8 @@
 			children = (
 				D49E18E0139D85200015115E /* LeftTurn2.png */,
 				D49E18DE139D84850015115E /* LeftTurne.png */,
+				7B7582A7139DAD2C007F6A9C /* app_logo_13.png */,
+				7B7582A5139DAD27007F6A9C /* app_logo_13@2x.png */,
 				D43AC52D138F2134007C86F3 /* 130i.aif */,
 				D49E18DC139D82F00015115E /* AchievementUnlocked.png */,
 				D43AC52E138F2134007C86F3 /* Achievements.png */,
@@ -1048,7 +1070,7 @@
 			);
 			name = BMW_iOS;
 			productName = BMW_iOS;
-			productReference = 1D6058910D05DD3D006BFB54 /* BMW_iOS.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* Carma.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1168,6 +1190,9 @@
 				D49E18DD139D82F00015115E /* AchievementUnlocked.png in Resources */,
 				D49E18DF139D84850015115E /* LeftTurne.png in Resources */,
 				D49E18E1139D85200015115E /* LeftTurn2.png in Resources */,
+				7B7582A6139DAD27007F6A9C /* app_logo_13@2x.png in Resources */,
+				7B7582A8139DAD2C007F6A9C /* app_logo_13.png in Resources */,
+				7BF2F868139DD621009C8711 /* AchievementOverlayViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1253,6 +1278,7 @@
 				7B41A1D2139CD3660019A3F5 /* MainViewController.m in Sources */,
 				D49E18DA139D822D0015115E /* AchievementUnlockedViewController.m in Sources */,
 				D49E18E4139DD1BF0015115E /* MenuAchievementsVC.m in Sources */,
+				7BF2F867139DD621009C8711 /* AchievementOverlayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1290,7 +1316,7 @@
 					"-lstdc++",
 					"-lz",
 				);
-				PRODUCT_NAME = BMW_iOS;
+				PRODUCT_NAME = Carma;
 			};
 			name = Debug;
 		};
@@ -1319,7 +1345,7 @@
 					"-lstdc++",
 					"-lz",
 				);
-				PRODUCT_NAME = BMW_iOS;
+				PRODUCT_NAME = Carma;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1409,7 +1435,7 @@
 					"-lstdc++",
 					"-lz",
 				);
-				PRODUCT_NAME = BMW_iOS;
+				PRODUCT_NAME = Carma;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Ad Hoc";

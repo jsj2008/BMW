@@ -83,9 +83,7 @@
         if(index != NSNotFound&&index+2<=[name length])
             name = [NSString stringWithFormat:@"%@.",[name substringToIndex:[name rangeOfString:@" "].location+2]];
     }
-    if(name == nil||[name isKindOfClass:[NSNull class]])
-        name = [del getNameForUDID:[[data objectAtIndex:indexPath.row] objectForKey:@"udid"]];
-    if([[[data objectAtIndex:indexPath.row] objectForKey:@"udid"] rangeOfString:@"-"].location != NSNotFound)
+    else if([[[data objectAtIndex:indexPath.row] objectForKey:@"udid"] rangeOfString:@"-"].location != NSNotFound)
         name = @"A Sim";
     if(name == nil)
         name = @"UNKNOWN";
