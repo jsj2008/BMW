@@ -73,23 +73,14 @@ CGImageRef CopyImageAndAddAlphaChannel(CGImageRef sourceImage) {
 -(UIImage *)imageRep {
     self.view.backgroundColor = [UIColor clearColor];
 	
-	if ([self.view.backgroundColor isEqual:[UIColor clearColor]]) {
-		NSLog(@"Background 'clear'");
-	}
+	if ([self.view.backgroundColor isEqual:[UIColor clearColor]]) {	}
 	
 	UIGraphicsBeginImageContextWithOptions(self.view.frame.size, YES, 1.0);
 	
 	//UIGraphicsBeginImageContextWithOptions(signatureView.bounds.size,YES,0.0)
 	
 	[self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    
-	//const float colorMasking[6] = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0}; 
-	//UIImage *image2 = [UIImage imageWithCGImage:CGImageCreateWithMaskingColors(image.CGImage, colorMasking)];
-	
-	UIImage *imgMasked = [self maskImage:[UIImage imageNamed:@"full_image.png"] withMask:[UIImage imageNamed:@"masked_image.png"]];
-
-	
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();	
 	UIGraphicsEndImageContext();
     return image;
 }

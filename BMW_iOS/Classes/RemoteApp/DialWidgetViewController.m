@@ -101,11 +101,9 @@
     float longitude = sr.locationManager.location.coordinate.longitude;
     
    // NSLog(@"Sending Lat: %f, Long: %f", latitude, longitude);
-    
     //NSLog([NSString stringWithFormat:@"%@?latitude=%f&longitude=%f", SPEED_AT_LOCATION_URL, latitude, longitude]);
     
         [ServerConnection sendGetRequestTo:[NSString stringWithFormat:@"%@?latitude=%f&longitude=%f", SPEED_AT_LOCATION_URL, latitude, longitude] delegate:self];
-
 }
 
 -(void)receiveStats:(NSArray *)stats {
@@ -124,6 +122,10 @@
         [topLabel setText:[NSString stringWithFormat:@"Max: %.1f mph, by %@", maxSpeed,[dict objectForKey:@"max_speed_user_name"]]];
         [bottomLabel setText:[NSString stringWithFormat:@"Avg: %.1f mph", avgSpeed]];
     }
+}
+
+-(void)receiveStatsFailed {
+    NSLog(@"Dial widget RECEIVE STATS FAILED");
 }
 
 /*

@@ -17,6 +17,9 @@
 #define START_TRIP_URL @"http://bunkermw.heroku.com/car_trip_ranges/create"
 #define PROFILE_URL @"http://bunkermw.heroku.com/profile_names/create"
 
+#define CAR_ENGINE_URL @"http://bunkermw.heroku.com/car_engines/create"
+#define CAR_MISC_URL @"http://bunkermw.heroku.com/car_miscs/create"
+
 //Query Controller Send URL
 #define QUERY_CONTROLLER_URL @"http://bunkermw.heroku.com/queries/create"
 #define QUERY_KEY @"query"

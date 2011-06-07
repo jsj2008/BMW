@@ -7,7 +7,7 @@
 //
 
 #import "AnnotationView.h"
-#import "CurrentLocationAnnotation.h"
+#import "RoutePinAnnotation.h"
 
 @interface AnnotationView () 
 @property (nonatomic, assign) BOOL hasBuiltInDraggingSupport;
@@ -22,14 +22,9 @@
 }
 
 - (id)initWithAnnotation:(id <MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier {
-	
-	self.hasBuiltInDraggingSupport = [[MKAnnotationView class] instancesRespondToSelector:NSSelectorFromString(@"isDraggable")];
-	
-	if (self.hasBuiltInDraggingSupport) {
 		if ((self = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:reuseIdentifier])) {
-			[self performSelector:NSSelectorFromString(@"setDraggable:") withObject:[NSNumber numberWithBool:YES]];
+			
 		}
-	}
 	self.canShowCallout = YES;
 	
 	return self;

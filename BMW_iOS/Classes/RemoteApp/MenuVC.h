@@ -9,12 +9,16 @@
 #import <Foundation/Foundation.h>
 #import <iDrive/iDrive.h>
 #import "ServerConnection.h"
+#import "RemoteAppIDs.h"
+#import "RemoteApp.h"
 
-@interface MenuVC : IDViewController {
+@interface MenuVC : IDViewController <ServerConnectionDelegate> {
 	IDTable* list;
+    NSMutableArray *rankingResults;
 }
 @property(retain) IDTable* list;
 
+NSComparisonResult comparator();
 -(void)populateList;
 -(void)listElementSelected:(NSNumber*)indexNum;
 

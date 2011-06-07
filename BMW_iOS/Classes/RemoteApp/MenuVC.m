@@ -7,8 +7,7 @@
 //
 
 #import "MenuVC.h"
-#import "RemoteAppIDs.h"
-#import "RemoteApp.h"
+
 
 @implementation MenuVC
 @synthesize list;
@@ -47,7 +46,8 @@
 {
 	[list setTargetView:((RemoteApp*)(self.application)).mainVC];	// Set the view that will be opened when an element is selected
 	[list setTarget:self selector:@selector(listElementSelected:)];			// Set the callback when an element is selected
-	[self populateList];
+	
+    [self populateList];
 	[super rhmiDidStart];
 }
 
@@ -71,7 +71,18 @@
  */
 -(void)didFocus:(BOOL)focused
 {
-	
+    if (!focused)return;
+    if (rankingResults) {
+        [rankingResults release];
+        rankingResults = nil;
+    }
+    rankingResults = [[NSMutableArray alloc] init];
+    
+    [ServerConnection sendQuery:@"user_rank_max_speed" withParams:nil delegate:self];
+    [ServerConnection sendQuery:@"user_rank_avg_speed" withParams:nil delegate:self];
+    [ServerConnection sendQuery:@"user_rank_total_distance" withParams:nil delegate:self];
+    [ServerConnection sendQuery:@"user_rank_redlight_time" withParams:nil delegate:self];
+    [ServerConnection sendQuery:@"user_rank_carma_points" withParams:nil delegate:self];
 }
 
 -(void)didBecomeVisible:(BOOL)visible
@@ -89,53 +100,44 @@
 	[super doDisconnect];
 }
 
+-(void)receiveStats:(NSArray *)stats
+{
+    NSLog(@"%@",stats);
+    NSDictionary *statDict = [[[stats objectAtIndex:0] objectForKey:@"response"] objectAtIndex:0];
+    if ([statDict objectForKey:@"rank"]) {
+        [statDict setValue:[[stats objectAtIndex:0] objectForKey:@"name"] forKey:@"rank_name"];
+        [rankingResults addObject:statDict];
+        [self populateList];
+    }
+   
+}
+
+-(void)receiveStatsFailed {
+    NSLog(@"MenuVC Receive Stats Failed");
+}
 
 -(void)populateList
 {
-	
-	
-	int rows = 10;
-	
+	[rankingResults sortUsingFunction:comparator context:NULL];
+    
+    int rows = [rankingResults count];	
 	// Fill HMI Table
 	[list setRows:rows columns:1];
-	
 	// Stations
-	int i;
-	for (i=0;i<rows;i++) {
-		
-		NSString* text;
-		
-		switch (i) {
-			case 0:
-				text = @"#14 Top Speed";
-				break;
-			case 1:
-				text = @"#209 Red Lights Run";
-				break;
-			case 2:
-				text = @"#67 Miles Per Gallon";
-				break;
-			case 3:
-				text = @"#1 Cars Passed";
-				break;
-			case 4:
-				text = @"#1 MINI's Passed";
-				break;
-			case 5:
-				text = @"#88 Smooth Braking";
-				break;
-			case 6:
-				text = @"#15 Stop Signs Encountered";
-				break;
-			default:
-				text = [[NSNumber numberWithInt:i] stringValue];
-				break;
-		}
-		
+	for (int i=0;i<rows;i++) {
+		NSDictionary *statDict = [rankingResults objectAtIndex:i];
+		NSString* text = [NSString stringWithFormat:@"#%d %@", [[statDict objectForKey:@"rank"] intValue], [statDict objectForKey:@"rank_name"]];
 		IDTableCell* cell = [IDTableCell tableCellWithString: text];
 		[list setCell:cell row:i column:0];
-	}	
+	}
 }
+
+NSComparisonResult comparator(id one, id two, void *context) {
+    NSNumber *n1 = [one objectForKey:@"rank"];
+    NSNumber *n2 = [two objectForKey:@"rank"];
+    return [n1 compare:n2];
+}
+
 
 
 -(void)listElementSelected:(NSNumber*)indexNum

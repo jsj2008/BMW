@@ -6,7 +6,6 @@ enum RemoteAppComponentIDs
 
   HAC_Goto_Main = 20,
   ACT_Home_Clicked = 12,
-  ACT_Current_Clicked = 13,
   ACT_Destination_Clicked = 14,
   ACT_Route_Clicked = 29,
   CAC_Lookup_Clicked = 10,
@@ -15,6 +14,9 @@ enum RemoteAppComponentIDs
   CAC_List_Elem_Selected = 25,
   ACT_List_Elem_Selected = 27,
   HAC_List_Elem_Selected_Target = 26,
+  CAC_Current_Clicked = 37,
+  HAC_Goto_Menu2 = 38,
+  ACT_Current_Clicked = 39,
   MDL_Image_View = 2,
   MDL_Image_Current = 4,
   MDL_Image_Dest = 5,
@@ -26,9 +28,12 @@ enum RemoteAppComponentIDs
   MDL_List_Target = 28,
   MDL_Image_View2 = 32,
   MDL_Image_View3 = 35,
+  MDL_List2 = 13,
+  MDL_List2_Target = 42,
   EVNT_Goto_Main = 22,
   HST_Main = 1,
   HST_Menu = 23,
+  HST_Menu2 = 40,
   IMG_View = 3,
   LBL_State = 9,
   IMG_View2 = 34,
@@ -39,6 +44,7 @@ enum RemoteAppComponentIDs
   BTN_Destination = 18,
   BTN_Lookup = 19,
   LST_List = 24,
+  LST_List2 = 41,
   BTN_Entry = 33
 };
 
