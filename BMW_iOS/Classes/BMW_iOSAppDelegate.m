@@ -70,10 +70,11 @@ static NSString* kAppId = @"211780665513835";
 	leaderboardVC = [[LeaderboardViewController alloc] init];
 	//[self.window addSubview:leaderboardVC.view];
     dashboardVC = [[DashboardViewController alloc] init];
+    a = [[AchievementOverlayViewController alloc] init];
+    [dashboardVC.view addSubview:a.view];
     //[self.window addSubview:dashboardVC.view];
     //DialWidgetViewController *dwVC = //[[DialWidgetViewController alloc] init];
     //[self.window addSubview:dashboardVC.view];
-    
     
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];    
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -103,6 +104,7 @@ static NSString* kAppId = @"211780665513835";
     {
         [leaderboardVC.view removeFromSuperview];
         [self.window addSubview:dashboardVC.view];
+        [a animate];
         NSLog(@"Landscape!");
         //[[SensorReader sharedReader] startReading];
     } else if (orientation == UIDeviceOrientationPortrait) {

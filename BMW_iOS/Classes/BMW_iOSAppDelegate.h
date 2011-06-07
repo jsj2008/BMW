@@ -16,6 +16,7 @@
 #import "DashboardViewController.h"
 #import "FBConnect.h"
 #import "MainViewController.h"
+#import "AchievementOverlayViewController.h"
 
 @class ImageProcessingViewController;
 
@@ -29,6 +30,8 @@ extern NSString* BMWConnectedChanged;
     DashboardViewController *dashboardVC;
 	
 	RemoteAppController* bmwAppController;
+    
+    AchievementOverlayViewController * a;
     
     Facebook* _facebook;
     UIImage *userPhoto;

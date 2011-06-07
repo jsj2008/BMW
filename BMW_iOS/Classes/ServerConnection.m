@@ -175,8 +175,7 @@ static ServerConnection * _sharedConnection;
 
 -(void)receiveStats:(NSArray *)stats
 {
-    NSLog(@"success! %@",stats);
-    //do nothing
+    //Recieved an Achievement
     return;
 }
 
