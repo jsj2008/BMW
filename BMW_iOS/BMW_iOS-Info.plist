@@ -12,6 +12,11 @@
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
 	<string></string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>app_logo_13@2x.png</string>
+		<string>app_logo_13.png</string>
+	</array>
 	<key>CFBundleIdentifier</key>
 	<string>com.bunkermw.bmwios</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -41,6 +46,10 @@
 	<true/>
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Crysta.ttf</string>
+	</array>
 	<key>UIApplicationExitsOnSuspend</key>
 	<true/>
 	<key>UIFileSharingEnabled</key>
@@ -53,9 +62,5 @@
 	<array/>
 	<key>UTImportedTypeDeclarations</key>
 	<array/>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Crysta.ttf</string>
-	</array>
 </dict>
 </plist>
