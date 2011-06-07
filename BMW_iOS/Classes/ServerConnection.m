@@ -94,7 +94,14 @@ static ServerConnection * _sharedConnection;
     [queryParams setObject:[[UIDevice currentDevice] uniqueIdentifier] forKey:@"udid"];
     
     //76fe9b1185d4350bcd400d4268ea71b39c31b26c
-    [queryParams addEntriesFromDictionary:post];
+    //[queryParams addEntriesFromDictionary:post];
+    NSMutableDictionary *statsDict;
+    if([post respondsToSelector:@selector(toDict)])
+        statsDict = [post toDict];
+    else
+        statsDict = post;
+    
+    [queryParams addEntriesFromDictionary:statsDict];
     
     NSDictionary *queryDict = [NSDictionary dictionaryWithObjectsAndKeys:query,QUERY_KEY,queryParams,PARAMS_KEY, nil];
     
