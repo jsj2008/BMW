@@ -89,8 +89,11 @@ static ServerConnection * _sharedConnection;
 {
     NSMutableDictionary *queryParams = [[[NSMutableDictionary alloc] init] autorelease];
     [queryParams setObject:[NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]] forKey:@"iphone_time"];
+    //[queryParams setObject:[[UIDevice currentDevice] uniqueIdentifier] forKey:@"udid"];
+    
     [queryParams setObject:[[UIDevice currentDevice] uniqueIdentifier] forKey:@"udid"];
     
+    //76fe9b1185d4350bcd400d4268ea71b39c31b26c
     [queryParams addEntriesFromDictionary:post];
     
     NSDictionary *queryDict = [NSDictionary dictionaryWithObjectsAndKeys:query,QUERY_KEY,queryParams,PARAMS_KEY, nil];

@@ -162,6 +162,8 @@
 {	
 	[[NSNotificationCenter defaultCenter] postNotificationName:BMWConnectedChanged object:nil userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:@"connected"]];
 	NSLog(@"Connected");
+    BMW_iOSAppDelegate *del = [[UIApplication sharedApplication] delegate];
+    del.isMiniConnected = YES;
     
     // Bind to Properties
     IDCarDataService* ds = [[IDCarDataService alloc] initWithApplication:app];
@@ -185,6 +187,8 @@
 
 -(void)idApplicationDidDisconnect:(IDApplication*)appication
 {	
+    BMW_iOSAppDelegate *del = [[UIApplication sharedApplication] delegate];
+    del.isMiniConnected = NO;
 	self.app = nil;
 	_busy = NO;
 	[[NSNotificationCenter defaultCenter] postNotificationName:BMWConnectedChanged object:[NSNumber numberWithBool:NO]];
@@ -193,6 +197,8 @@
 
 -(void)idApplication:(IDApplication*)appication connectionFailedWithError:(NSError*)error
 {	
+    BMW_iOSAppDelegate *del = [[UIApplication sharedApplication] delegate];
+    del.isMiniConnected = NO;
     NSLog(@"idApplication connectionFailedWithError: %@",[error description]);
 	self.app = nil;
 	_busy = NO;

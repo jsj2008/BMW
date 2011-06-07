@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "WidgetViewController.h"
+#import "ServerConnection.h"
 
-@interface DialWidgetViewController : WidgetViewController {
+@interface DialWidgetViewController : WidgetViewController <ServerConnectionDelegate> {
 	IBOutlet UILabel *topLabel, *bottomLabel;
 	IBOutlet UIImageView *dial1, *dial2, *dial3;
+    
+    IBOutlet UIImageView *backgroundImage;
+    
     NSTimer *updateTimer;
     
     int speed;

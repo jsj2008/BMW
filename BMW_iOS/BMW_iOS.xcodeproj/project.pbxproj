@@ -176,6 +176,8 @@
 		D4CAF79D134A665B002E1B53 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CAF79C134A665B002E1B53 /* CoreTelephony.framework */; };
 		D4CAF79F134A6666002E1B53 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CAF79E134A6666002E1B53 /* ExternalAccessory.framework */; };
 		D4CAF7A1134A666D002E1B53 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CAF7A0134A666D002E1B53 /* Security.framework */; };
+		D4DBCA69139E28E700F9A5DC /* ProfileWidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DBCA67139E28DE00F9A5DC /* ProfileWidgetViewController.m */; };
+		D4DBCA6A139E28E700F9A5DC /* ProfileWidgetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4DBCA68139E28E100F9A5DC /* ProfileWidgetViewController.xib */; };
 		D4E14AFE1370D4AE009795FA /* WidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E14AFD1370D4AE009795FA /* WidgetViewController.m */; };
 		D4F3FE1F1397902400CF9C44 /* Crysta.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4F3FE1E1397902400CF9C44 /* Crysta.ttf */; };
 /* End PBXBuildFile section */
@@ -454,6 +456,9 @@
 		D4CAF79C134A665B002E1B53 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		D4CAF79E134A6666002E1B53 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		D4CAF7A0134A666D002E1B53 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D4DBCA66139E28DE00F9A5DC /* ProfileWidgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileWidgetViewController.h; sourceTree = "<group>"; };
+		D4DBCA67139E28DE00F9A5DC /* ProfileWidgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileWidgetViewController.m; sourceTree = "<group>"; };
+		D4DBCA68139E28E100F9A5DC /* ProfileWidgetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileWidgetViewController.xib; sourceTree = "<group>"; };
 		D4E14AFC1370D4AE009795FA /* WidgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WidgetViewController.h; path = ../WidgetViewController.h; sourceTree = "<group>"; };
 		D4E14AFD1370D4AE009795FA /* WidgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WidgetViewController.m; path = ../WidgetViewController.m; sourceTree = "<group>"; };
 		D4F3FE1E1397902400CF9C44 /* Crysta.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Crysta.ttf; sourceTree = "<group>"; };
@@ -771,14 +776,17 @@
 				D470797F136E8BCA000D8479 /* DialWidgetViewController.m */,
 				D4C46A31137127090024A4FC /* LightWidgetViewController.h */,
 				D4C46A32137127090024A4FC /* LightWidgetViewController.m */,
+				D4C46A33137127090024A4FC /* LightWidgetViewController.xib */,
 				D437EC181371F21F00AEA826 /* SplitBarWidgetViewController.h */,
 				D437EC191371F21F00AEA826 /* SplitBarWidgetViewController.m */,
 				D437EC1A1371F21F00AEA826 /* SplitBarWidgetViewController.xib */,
 				D4707980136E8BCA000D8479 /* DialWidgetViewController.xib */,
-				D4C46A33137127090024A4FC /* LightWidgetViewController.xib */,
 				D49E18D7139D822C0015115E /* AchievementUnlockedViewController.h */,
 				D49E18D8139D822C0015115E /* AchievementUnlockedViewController.m */,
 				D49E18D9139D822D0015115E /* AchievementUnlockedViewController.xib */,
+				D4DBCA66139E28DE00F9A5DC /* ProfileWidgetViewController.h */,
+				D4DBCA67139E28DE00F9A5DC /* ProfileWidgetViewController.m */,
+				D4DBCA68139E28E100F9A5DC /* ProfileWidgetViewController.xib */,
 			);
 			name = "Widget Controllers";
 			sourceTree = "<group>";
@@ -1193,6 +1201,7 @@
 				7B7582A6139DAD27007F6A9C /* app_logo_13@2x.png in Resources */,
 				7B7582A8139DAD2C007F6A9C /* app_logo_13.png in Resources */,
 				7BF2F868139DD621009C8711 /* AchievementOverlayViewController.xib in Resources */,
+				D4DBCA6A139E28E700F9A5DC /* ProfileWidgetViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1279,6 +1288,7 @@
 				D49E18DA139D822D0015115E /* AchievementUnlockedViewController.m in Sources */,
 				D49E18E4139DD1BF0015115E /* MenuAchievementsVC.m in Sources */,
 				7BF2F867139DD621009C8711 /* AchievementOverlayViewController.m in Sources */,
+				D4DBCA69139E28E700F9A5DC /* ProfileWidgetViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

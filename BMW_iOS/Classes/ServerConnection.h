@@ -21,7 +21,8 @@
 #define CAR_MISC_URL @"http://bunkermw.heroku.com/car_miscs/create"
 
 //Query Controller Send URL
-#define QUERY_CONTROLLER_URL @"http://bunkermw.heroku.com/queries/create"
+//#define QUERY_CONTROLLER_URL @"http://bunkermw.heroku.com/queries/create"
+#define QUERY_CONTROLLER_URL @"http://localhost:3000/queries/create"
 #define QUERY_KEY @"query"
 #define PARAMS_KEY @"params"
 #define MAX_SPEED_QUERY @"rankings_max_speed"
@@ -35,6 +36,10 @@
 #define USER_RANK_CARMA_QUERY @"user_rank_carma_points"
 #define FEEDS_SINCE_TIME_QUERY @"feeds_since_time"
 #define FEEDS_MOST_RECENT_N_QUERY @"feeds_most_recent_n"
+#define AVERAGE_CONSUMPTION_QUERY @"rankings_avg_consumption"
+
+#define CURRENT_SPEEDS_FOR_UDID_QUERY @"current_speeds_for_udid"
+
 
 //Queries
 #define SPEED_AT_LOCATION_URL @"http://bunkermw.heroku.com/mobile_gps/get_avg_speed_of_location"

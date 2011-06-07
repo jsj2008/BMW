@@ -8,6 +8,7 @@
 
 #import "LightWidgetViewController.h"
 #import "ServerConnection.h"
+#import "BMW_iOSAppDelegate.h"
 
 @implementation LightWidgetViewController
 
@@ -35,7 +36,10 @@
 }
 
 -(void)viewWillAppear {
-    
+    BMW_iOSAppDelegate *del = [[UIApplication sharedApplication] delegate];
+    if (![del isMiniConnected]) {
+        backgroundImage.hidden = YES;
+    }
 }
 -(void)updateLabels {
 	[red setText:[NSString stringWithFormat:@"%d", r]];
@@ -59,9 +63,10 @@
 }
 
 -(void)updateWidget:(id)sender {    
-    r++;
-    [self updateLabels];
-    //[ServerConnection sendQuery:@"user_rank_redlight_time" withParams:nil delegate:self];    
+    //r++;
+    //[self updateLabels];
+    [ServerConnection sendQuery:@"user_rank_redlight_time" withParams:nil delegate:self];    
+    [ServerConnection sendQuery:@"user_rank_redlight_count" withParams:nil delegate:self];
 }
 
 -(void)receiveStats:(NSArray *)stats {
@@ -69,9 +74,14 @@
     
     if ([stats count] > 0) {
         NSDictionary *dict = [stats objectAtIndex:0];
-        r = [[dict objectForKey:@"payload"] intValue];
-        [self updateLabels];
+        if ([[dict objectForKey:@"query"] isEqual:@"user_rank_redlight_count"]) {
+            r = [[dict objectForKey:@"payload"] intValue];
+        } else if ([[dict objectForKey:@"query"] isEqual:@"user_rank_redlight_time"]) {
+            [totalTimeLabel setText:[NSString stringWithFormat:@"Total Red Light Time: %.0f minutes", [[dict objectForKey:@"payload"] floatValue]]];
+        }
+        
     }
+    [self updateLabels];
 }
 
 

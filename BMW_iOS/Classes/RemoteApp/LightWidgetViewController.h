@@ -11,8 +11,10 @@
 
 @interface LightWidgetViewController : WidgetViewController {
 	IBOutlet UILabel *red, *yellow, *green;
+    IBOutlet UILabel *totalTimeLabel;
 	int r, y, g;
     NSTimer *updateTimer;
+    IBOutlet UIImageView *backgroundImage;
 }
 
 -(void)incrementRed;

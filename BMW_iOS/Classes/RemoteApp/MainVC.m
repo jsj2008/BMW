@@ -114,6 +114,8 @@
     avgSpeedVC = [[DialWidgetViewController alloc] init];
 	lightWidgetVC = [[LightWidgetViewController alloc] init];
     achievementUnlockedVC = [[AchievementUnlockedViewController alloc] init];
+    profileVC = [[ProfileWidgetViewController alloc] init];
+    
     refreshTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateDashboardImage:) userInfo:nil repeats:YES];
 	
 	[super rhmiDidStart];
@@ -171,7 +173,7 @@
 
 -(void)destButtonClicked:(IDButton*)button
 {
-	currentWidget = achievementUnlockedVC;
+	currentWidget = profileVC;
 }
 
 -(void)lookupButtonClicked:(IDButton*)button

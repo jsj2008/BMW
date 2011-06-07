@@ -110,6 +110,9 @@
         case 3:
             return [NSString stringWithFormat:@"%.1f mph", num*MPS_TO_MPH];
             break;
+        case 6:
+            return [NSString stringWithFormat:@"%.1f gal/hour", num*1];
+            break;
         default:
             return [NSString stringWithFormat:@"%.1f", num];
             break;

@@ -15,6 +15,7 @@
 #import "SplitBarWidgetViewController.h"
 #import "RemoteAppWidgetController.h"
 #import "AchievementUnlockedViewController.h"
+#import "ProfileWidgetViewController.h"
 
 @class MenuAchievementsVC;
 @class MenuVC;
@@ -37,6 +38,7 @@
 	LightWidgetViewController *lightWidgetVC;
 	SplitBarWidgetViewController *carsPassedWidgetVC;
     AchievementUnlockedViewController *achievementUnlockedVC;
+    ProfileWidgetViewController *profileVC;
     WidgetViewController *currentWidget;
     
     IDStatusBar *statusBar;

@@ -106,6 +106,8 @@ static int itemID = 0;
     if(manager.heading!=nil)
         [ServerConnection sendStats:manager.heading toURL:HEADING_URL];
 #endif
+    
+    NSLog(@"GPS Sent");
 }
 
 - (void)dealloc {

@@ -25,6 +25,7 @@ static NSString* kAppId = @"211780665513835";
 @synthesize managedObjectModel=__managedObjectModel;
 @synthesize persistentStoreCoordinator=__persistentStoreCoordinator;
 @synthesize facebook = _facebook;
+@synthesize isMiniConnected;
 
 
 #pragma mark -
@@ -61,6 +62,7 @@ static NSString* kAppId = @"211780665513835";
 #if IMAGE_PROCESSING_VIEW && HIDE_IMAGE_PROCESSING_VIEW
 	[viewController.view removeFromSuperview];
 #endif
+    isMiniConnected = NO;
 	self.bmwAppController = [[[RemoteAppController alloc] init] autorelease];
 //#if TARGET_IPHONE_SIMULATOR && HMI_CONNECTION
 	[bmwAppController accessoryDidStart:nil]; // fake it

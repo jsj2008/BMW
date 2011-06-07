@@ -37,6 +37,7 @@ extern NSString* BMWConnectedChanged;
     UIImage *userPhoto;
     NSString *userName;
     NSString *userFirstName;
+    BOOL isMiniConnected;
 }
 
 -(UIImage *)getUserPhoto;
@@ -54,7 +55,7 @@ extern NSString* BMWConnectedChanged;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property(readonly) Facebook *facebook;
-
+@property BOOL isMiniConnected;
 
 @end
 
