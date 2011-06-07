@@ -140,7 +140,6 @@ static NSString* kAppId = @"211780665513835";
 
 - (void)fbDidLogin {
     NSLog(@"logged in");
-    [ServerConnection sendStats:[[[NSMutableDictionary alloc] init] autorelease] toURL:BREAKATHON_URL];
     [_facebook requestWithGraphPath:@"me/picture" andDelegate:self];
 }
 
