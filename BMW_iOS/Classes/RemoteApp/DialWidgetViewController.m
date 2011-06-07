@@ -121,7 +121,7 @@
         if (currSpeed == -1) currSpeed = 0;
         [self setSpeed2:currSpeed*MPS_TO_MPH];
         [self setSpeed3:maxSpeed];
-        [topLabel setText:[NSString stringWithFormat:@"Max: %.1f mph, by %@", maxSpeed,[(BMW_iOSAppDelegate *)[[UIApplication sharedApplication] delegate] getNameForUDID:maxSpeedUDID]]];
+        [topLabel setText:[NSString stringWithFormat:@"Max: %.1f mph, by %@", maxSpeed,[dict objectForKey:@"max_speed_user_name"]]];
         [bottomLabel setText:[NSString stringWithFormat:@"Avg: %.1f mph", avgSpeed]];
     }
 }

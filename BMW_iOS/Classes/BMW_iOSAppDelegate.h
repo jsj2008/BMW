@@ -15,6 +15,7 @@
 #import "LeaderboardViewController.h"
 #import "DashboardViewController.h"
 #import "FBConnect.h"
+#import "MainViewController.h"
 
 @class ImageProcessingViewController;
 
@@ -40,7 +41,6 @@ extern NSString* BMWConnectedChanged;
 -(NSString *)getUserFirstName;
 -(CLLocation *)currentLocation;
 -(void)deviceWillRotateToInterfaceOrientation:(UIDeviceOrientation)orientation;
--(NSString *)getNameForUDID:(NSString *)udid;
 
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
