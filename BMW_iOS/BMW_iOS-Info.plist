@@ -14,8 +14,8 @@
 	<string></string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>app_logo_13@2x.png</string>
 		<string>app_logo_13.png</string>
+		<string>app_logo_13@2x.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
 	<string>com.bunkermw.bmwios</string>
