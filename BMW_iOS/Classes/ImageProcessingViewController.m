@@ -10,9 +10,9 @@
 #define UPDATE_INTERVAL 5.0f/2.0f;
 #define RED_THRESHOLD 200
 #define BASE_SIZE 320*480
-#define RED_LIGHT @"red_count"
-#define GREEN_LIGHT @"green_count"
-#define YELLOW_LIGHT @"yellow_count"
+#define NUM_LIGHTS @"num_lights"
+#define TIME_AT_RED @"time_at_red"
+#define TIME_AT_GREEN @"time_at_green"
 #define RED 1
 #define GREEN 2
 #define YELLOW 3
@@ -714,12 +714,6 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
 
     //printf("red blobs: %d out of total: %d\n", redBlobs, nBlob);
     //printf("green blobs: %d out of total: %d\n", greenBlobs, nBlob);
-        
-    //send stats
-#ifdef SEND_LIGHTS
-    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:redBlobs],RED_LIGHT, [NSNumber numberWithInt:greenBlobs], GREEN_LIGHT, nil];
-    [ServerConnection sendStats:dictionary toURL:IMAGE_PROCESSING_URL];
-#endif
     
     //draw image to iphone
     glActiveTexture(GL_TEXTURE0);
@@ -793,6 +787,11 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
     } else if (lastIMP){
         double greenTimeIntervalInSeconds = difftime(startTime, time(NULL));
         //send green lights and red lights
+        //send stats
+#ifdef SEND_LIGHTS
+        NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithDouble:numLights],NUM_LIGHTS,[NSNumber numberWithDouble:redTimeIntervalInSeconds],TIME_AT_RED,[NSNumber numberWithDouble:greenTimeIntervalInSeconds],TIME_AT_GREEN,nil];
+        [ServerConnection sendStats:dictionary toURL:IMAGE_PROCESSING_URL];
+#endif
         redTimeIntervalInSeconds = -1; //after sending 
         [self freeTrackBlobsBlobs];
     }

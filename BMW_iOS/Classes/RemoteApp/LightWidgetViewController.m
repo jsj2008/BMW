@@ -8,6 +8,7 @@
 
 #import "LightWidgetViewController.h"
 #import "ServerConnection.h"
+#import "BMW_iOSAppDelegate.h"
 
 @implementation LightWidgetViewController
 
@@ -25,16 +26,21 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
 	r = 0;
 	y = 0;
 	g = 0;
 	[self updateLabels];
     if (!updateTimer) {
-        updateTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(updateDial:) userInfo:nil repeats:YES];
+        updateTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(updateWidget:) userInfo:nil repeats:YES];
     }
 }
 
+-(void)viewWillAppear {
+    BMW_iOSAppDelegate *del = [[UIApplication sharedApplication] delegate];
+    if (![del isMiniConnected]) {
+        backgroundImage.hidden = YES;
+    }
+}
 -(void)updateLabels {
 	[red setText:[NSString stringWithFormat:@"%d", r]];
 	[yellow setText:[NSString stringWithFormat:@"%d", y]];
@@ -56,19 +62,31 @@
 	[self updateLabels];
 }
 
--(void)updateDial:(id)sender {
-    NSLog([NSString stringWithFormat:@"%@?udid=%@", RED_LIGHT_COUNT_URL, [[UIDevice currentDevice] uniqueIdentifier]]);
-    
-    [ServerConnection sendGetRequestTo:[NSString stringWithFormat:@"%@?udid=%@", RED_LIGHT_COUNT_URL, [[UIDevice currentDevice] uniqueIdentifier]] delegate:self];
-    
+-(void)updateWidget:(id)sender {    
+    //r++;
+    //[self updateLabels];
+    [ServerConnection sendQuery:@"user_rank_redlight_time" withParams:nil delegate:self];    
+    [ServerConnection sendQuery:@"user_rank_redlight_count" withParams:nil delegate:self];
 }
 
 -(void)receiveStats:(NSArray *)stats {
+    NSLog(@"%@", stats);
+    
     if ([stats count] > 0) {
         NSDictionary *dict = [stats objectAtIndex:0];
-        r = [[dict objectForKey:@"payload"] intValue];
-        [self updateLabels];
+        if ([[dict objectForKey:@"query"] isEqual:@"user_rank_redlight_count"]) {
+            r = [[dict objectForKey:@"payload"] intValue];
+        } else if ([[dict objectForKey:@"query"] isEqual:@"user_rank_redlight_time"]) {
+            [totalTimeLabel setText:[NSString stringWithFormat:@"Total Red Light Time: %.0f minutes", [[dict objectForKey:@"payload"] floatValue]]];
+        }
+        
     }
+    [self updateLabels];
+}
+
+
+-(void)receiveStatsFailed {
+    NSLog(@"Light widget RECEIVE STATS FAILED");
 }
 
 /*

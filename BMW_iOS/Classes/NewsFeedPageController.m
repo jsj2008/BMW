@@ -25,15 +25,16 @@
 -(void)loadDataFromURL
 {
     //NSString *d = [NSString stringWithContentsOfURL:[NSURL URLWithString:dataURLString]];
-    NSString *params = [NSString stringWithFormat:@"udid=%@&n=%d", [[UIDevice currentDevice] uniqueIdentifier], 10];
-    NSLog(@"%@ + %@", dataURLString, params);
+    NSDictionary *dict = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:10] forKey:@"n"];
     
-    [ServerConnection sendPostRequestTo:dataURLString postData:params delegate:self];
+    [ServerConnection sendQuery:FEEDS_MOST_RECENT_N_QUERY withParams:dict delegate:self];
 }
 
 -(void)receiveStats:(NSArray *)stats
 {
-    self.data = stats;
+    self.data = [[stats objectAtIndex:0] objectForKey:@"response"];
+    //self.titleString = [[stats objectAtIndex:0] objectForKey:@"title"];
+    //NSLog(@"%@",self.data);
     [self.tv reloadData];
     [self performSelector:@selector(loadDataFromURL) withObject:nil afterDelay:5];
 }
@@ -65,14 +66,14 @@
 		cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
 	}
 	NSString *payload = [[self.data objectAtIndex:indexPath.row] objectForKey:@"payload"];
-	//payload = [NSNumber numberWithFloat:[payload floatValue]*2.2369 ];
-    //BMW_iOSAppDelegate *del = [[UIApplication sharedApplication] delegate];
-	//cell.textLabel.text = [NSString stringWithFormat:@"%d) %@: %f",indexPath.row+1,[del getNameForUDID:[[data objectAtIndex:indexPath.row] objectForKey:@"udid"]], [payload floatValue]];
-	cell.textLabel.text = payload;
+	if([payload isKindOfClass:[NSNull class]])
+        cell.textLabel.text = @"null";
+    else    
+        cell.textLabel.text = payload;
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.textLabel.numberOfLines = 2;
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica Bold" size:15];
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	// Set up the cell...
 	return cell;
 }

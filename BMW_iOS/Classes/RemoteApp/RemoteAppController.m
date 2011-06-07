@@ -12,6 +12,7 @@
 @implementation RemoteAppController
 @synthesize app;
 
+#define kDataTimeInterval 5
 
 -(id)init {
 	if ((self = [super init])) {
@@ -34,37 +35,69 @@
 //#if TARGET_IPHONE_SIMULATOR
 	//	[self accessoryDidStart:nil];
 //#endif
+        
+        carMiscDict = [[NSMutableDictionary alloc] init];
+        carEngineDict = [[NSMutableDictionary alloc] init];
+        [self sendCarMiscData];
+        [self sendCarEngineData];
 	}
 	return self;
 }
 
+-(void)sendCarEngineData {
+    [ServerConnection sendStats:carEngineDict toURL:CAR_ENGINE_URL];
+    [self performSelector:@selector(sendCarMiscData) withObject:nil afterDelay:kDataTimeInterval];
+    NSLog(@"Sending CAR_ENGINE_DATA");
+}
 
+-(void)sendCarMiscData {
+    [ServerConnection sendStats:carMiscDict toURL:CAR_MISC_URL];
+    [self performSelector:@selector(sendCarMiscData) withObject:nil afterDelay:kDataTimeInterval];
+    NSLog(@"Sending CAR_MISC_DATA");
+}
 
 - (void)speedActual:(NSDictionary*)dictionary
 {
-	//NSLog(@"Got Speed with dict: %@", dictionary);
-    //NSNumber *speed = [dictionary objectForKey:@"speedActual"];
-    //[app.mainVC setSpeed:[speed doubleValue]];
+    [carMiscDict setObject:[dictionary objectForKey:@"speedActual"] forKey:@"speed"];
 }
 
 - (void)engineRPM:(NSDictionary*)dictionary
 {
 	NSLog(@"Got RPM with dict: %@", dictionary);
-    //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"RPM" message:[NSString stringWithFormat:@"Got RPM with dict: %@", dictionary] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    //[alert show];
-    
-    
-    //NSNumber* number = [dictionary objectForKey:[CDSEngineRPMSpeed suffix]];
-	//[value1 setText: [number stringValue] clearWhileSending:NO]; 
+    [carEngineDict setObject:[dictionary objectForKey:@"RPMSpeed"] forKey:@"rpm"];
 }
 
 - (void)steeringWheel:(NSDictionary*)dictionary
 {
-	//NSDictionary* number = [dictionary objectForKey:[CDSDrivingSteeringwheel suffix]];
-	//NSNumber* angle = [number objectForKey: @"angle"];
-	//NSLog(@"%@", number);
-    //[value2 setText: [angle stringValue] clearWhileSending:NO]; 
+	NSNumber* angle = [[dictionary objectForKey:@"steeringWheel"] objectForKey:@"angle"];
+    [carMiscDict setObject:angle forKey:@"steering_wheel_angle"];
 }
+
+- (void)engineConsumption:(NSDictionary*)dictionary {
+    [carEngineDict setObject:[dictionary objectForKey:@"consumption"] forKey:@"consumption"];
+}
+- (void)engineTorque:(NSDictionary*)dictionary {
+    [carEngineDict setObject:[dictionary objectForKey:@"torque"] forKey:@"torque"];
+}
+- (void)headlightStatus:(NSDictionary*)dictionary {
+    
+}
+- (void)turnSignalStatus:(NSDictionary*)dictionary {
+    
+}
+- (void)windshieldWiperStatus:(NSDictionary*)dictionary {
+    
+}
+- (void)drivingOdometer:(NSDictionary*)dictionary {
+    
+}
+- (void)acceleration:(NSDictionary*)dictionary {
+    
+}
+- (void)acceleratorPedal:(NSDictionary*)dictionary {
+    
+}
+
 
 -(void)dealloc {
 	self.app = nil;
@@ -107,10 +140,10 @@
 										  devCertificates:YES
 												 delegate:self] autorelease];
 	
-    //[app connectWithHostname: @"127.0.0.1" port:[IDApplication defaultPort]];
+    [app connectWithHostname: @"127.0.0.1" port:[IDApplication defaultPort]];
 	
     //DEBUG ON THOMAS'S MINI
-    [app connectWithHostname: @"192.168.1.22" port:[IDApplication defaultPort]];
+    //[app connectWithHostname: @"192.168.1.22" port:[IDApplication defaultPort]];
 	
     // Waiting for	-idApplicationDidConnect: ...
 	// or			-idApplication: connectionFailedWithError: ...
@@ -129,18 +162,33 @@
 {	
 	[[NSNotificationCenter defaultCenter] postNotificationName:BMWConnectedChanged object:nil userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:@"connected"]];
 	NSLog(@"Connected");
+    BMW_iOSAppDelegate *del = [[UIApplication sharedApplication] delegate];
+    del.isMiniConnected = YES;
     
     // Bind to Properties
     IDCarDataService* ds = [[IDCarDataService alloc] initWithApplication:app];
-    [ds bindProperty:CDSEngineRPMSpeed			target:self selector:@selector(engineRPM:)];
-    //[ds bindProperty:CDSDrivingSteeringwheel	target:self selector:@selector(steeringWheel:)];
-    //[ds bindProperty:CDSDrivingSpeedActual target:self selector:@selector(speedActual:)];
-	_busy = NO;
+    //[ds bindProperty:CDSEngineRPMSpeed interval:kDataTimeInterval target:self selector:@selector(engineRPM:)];
+    [ds bindProperty:CDSEngineRPMSpeed interval:kDataTimeInterval	target:self selector:@selector(engineRPM:)];
+    [ds bindProperty:CDSDrivingSteeringwheel interval:kDataTimeInterval	target:self selector:@selector(steeringWheel:)];
+    [ds bindProperty:CDSDrivingSpeedActual interval:kDataTimeInterval target:self selector:@selector(speedActual:)];
+	[ds bindProperty:CDSEngineConsumption interval:kDataTimeInterval target:self selector:@selector(engineConsumption:)];
+	[ds bindProperty:CDSEngineTorque interval:kDataTimeInterval target:self selector:@selector(engineTorque:)];
+/*  [ds bindProperty:CDSDrivingSpeedActual interval:kDataTimeInterval target:self selector:@selector(headlightStatus:)];
+	[ds bindProperty:CDSDrivingSpeedActual interval:kDataTimeInterval target:self selector:@selector(turnSignalStatus:)];
+	[ds bindProperty:CDSDrivingSpeedActual interval:kDataTimeInterval target:self selector:@selector(windshieldWiperStatus:)];
+	[ds bindProperty:CDSDrivingOdometer interval:kDataTimeInterval target:self selector:@selector(drivingOdometer:)];
+	[ds bindProperty:CDSDrivingAcceleration interval:kDataTimeInterval target:self selector:@selector(acceleration:)];
+	[ds bindProperty:CDSDrivingAcceleratorPedal interval:kDataTimeInterval target:self selector:@selector(acceleratorPedal:)];
+  */  
+    
+    _busy = NO;
 	
 }
 
 -(void)idApplicationDidDisconnect:(IDApplication*)appication
 {	
+    BMW_iOSAppDelegate *del = [[UIApplication sharedApplication] delegate];
+    del.isMiniConnected = NO;
 	self.app = nil;
 	_busy = NO;
 	[[NSNotificationCenter defaultCenter] postNotificationName:BMWConnectedChanged object:[NSNumber numberWithBool:NO]];
@@ -149,6 +197,8 @@
 
 -(void)idApplication:(IDApplication*)appication connectionFailedWithError:(NSError*)error
 {	
+    BMW_iOSAppDelegate *del = [[UIApplication sharedApplication] delegate];
+    del.isMiniConnected = NO;
     NSLog(@"idApplication connectionFailedWithError: %@",[error description]);
 	self.app = nil;
 	_busy = NO;

@@ -1,0 +1,56 @@
+Storyboard script
+=== OVERALL IDEA ===
+
+- 3 short videos displaying different ways users can use our app'
+- wrap it altogether thematically with some tagline "customizing your driving experience?"
+"socializing your driving experience?" "making it competitive"? Something catchy.
+
+
+John's ideas:
+  - 3 30sec episodes-- each displaying  a feature of our app
+  - Episode 1: 2 friend argue about who can get form pt A to B.
+  They decide to race and one beats the other. Display a change in rank.
+  - A challenger approaches: a 3rd unknown beats them both and they are
+  both alerted on their phone. The victor? An old grandma.
+  
+Rob's ideas:
+  - Feature: competitive aspect
+  - Feature: Achievement, Newsfeed
+  - HMI integration
+
+My ideas:
+  - *silent music* Title page. "Bunker Motor Warriors" presents
+  - *sound of footsteps* title page fades out and we see the title page
+  of our app screen. Zoom out more, we see a hand holding it; *look up* we
+  are approaching a car.
+  - *Enter the car, prop the phone to to windshield, start the car, rev engine
+  HMI boots up. *Music cue: tempo beat.
+  
+  - Tempo: *fastforward past most of the driving scene until we hit something
+  interesting.
+  
+  -Example: *pause in slow motion at stop light, zoom in at intersection light.
+  Box it, highlight it, mimic the way our image processing processes the light.
+      - Return to the HMI/iPhone screen. Show the light counter increment. *Ding ding*
+      
+  -Example: drive more. Zoom in at our menu dashboard, show our avg  speed going
+  faster than the road's avg speed. *Flicker achievement unlocked*
+      - Scroll through a list of achievements you can unlock. scroll faster
+      - focus on few of them
+  
+  - Example: show some routes stuff. Show a map displaying our car's position
+  and competitors.
+  
+  - Example: as we drive. Zoom out (camera pans out of the car exterior)
+      - keep zooming out until car is a small speck.
+      - then reveal the small box that encapsulates our individual driver.
+      - start showing more boxes fill in. then more. then more
+          - we now see a grid of all these drivers, all these cars, all
+          this data streaming in. Where does it go? The BACKEND.
+      = Show all these boxes stream out to lines, and all these lines
+        begin to converge and reach the leaderboards.
+  - slide through leaderboards. show our user rank (moving up?)
+    - zoom out again, we see a hand sliding through the leaderboards
+      from the phone view. Then pan out more. We see the person
+      now out of the car, checking out our app out of phone
+    - Looks at us. *fade out*

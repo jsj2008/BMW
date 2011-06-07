@@ -12,6 +12,7 @@
 #import "CLLocation+NSMutableDictionary.h"
 #import "CLHeading+NSMutableDictionary.h"
 #import "CMDeviceMotion+NSMutableDictionary.h"
+#import "AchievementOverlayViewController.h"
 
 @implementation ServerConnection
 
@@ -88,7 +89,19 @@ static ServerConnection * _sharedConnection;
 {
     NSMutableDictionary *queryParams = [[[NSMutableDictionary alloc] init] autorelease];
     [queryParams setObject:[NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]] forKey:@"iphone_time"];
+    //[queryParams setObject:[[UIDevice currentDevice] uniqueIdentifier] forKey:@"udid"];
+    
     [queryParams setObject:[[UIDevice currentDevice] uniqueIdentifier] forKey:@"udid"];
+    
+    //76fe9b1185d4350bcd400d4268ea71b39c31b26c
+    //[queryParams addEntriesFromDictionary:post];
+    NSMutableDictionary *statsDict;
+    if([post respondsToSelector:@selector(toDict)])
+        statsDict = [post toDict];
+    else
+        statsDict = post;
+    
+    [queryParams addEntriesFromDictionary:statsDict];
     
     NSDictionary *queryDict = [NSDictionary dictionaryWithObjectsAndKeys:query,QUERY_KEY,queryParams,PARAMS_KEY, nil];
     
@@ -152,9 +165,18 @@ static ServerConnection * _sharedConnection;
     id delegate;
     if(connectionDelegateDict!=nil&&CFDictionaryGetValueIfPresent(connectionDelegateDict, connection, &delegate))
     {
-        [delegate receiveStats:jsonArray];
+        if(jsonArray!=nil)//incase it comes back malformed...
+            [delegate receiveStats:jsonArray];
+        else
+            [delegate receiveStatsFailed];
         CFDictionaryRemoveValue(connectionDelegateDict, connection);
     }
+}
+
+-(void)receiveStatsFailed
+{
+    //use this to debug which creates aren't sending the right data...
+    //NSLog(@"failed on a send...");
 }
 
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
@@ -164,8 +186,9 @@ static ServerConnection * _sharedConnection;
 
 -(void)receiveStats:(NSArray *)stats
 {
-    //NSLog(@"success! %@",stats);
-    //do nothing
+    //Recieved an Achievement
+    NSLog(@"received achievements");
+    [[AchievementOverlayViewController shared] addToQueue:stats];
     return;
 }
 

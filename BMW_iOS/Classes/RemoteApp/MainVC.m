@@ -7,9 +7,11 @@
 //
 
 #import "MainVC.h"
-#import "RemoteAppIDs.h"
 #import "BMW_iOSAppDelegate.h"
 #include <stdlib.h>
+#import "MenuVC.h"
+#import "MenuAchievementsVC.h"
+
 
 
 @implementation MainVC
@@ -20,7 +22,7 @@
 @synthesize lookupButton;
 @synthesize viewImage, viewImage2, viewImage3;
 @synthesize stateLabel;
-@synthesize menuVC;
+@synthesize menuVC, achievementsListVC;
 
 
 -(id)initWithIdApplication:(IDApplication*)_idApplication 
@@ -60,10 +62,13 @@
 		[self addWidget: viewImage2];
 		[self addWidget: viewImage3];
 		[self addWidget: stateLabel];
-		
-		// Sub Views
-		self.menuVC = [[[MenuVC alloc] initWithIdApplication:self.application hmiState:HST_Menu focusEvent:-1 titleModel:-1] autorelease];
-		[self addSubViewController:menuVC];
+
+        self.menuVC = [[[MenuVC alloc] initWithIdApplication:self.application hmiState:HST_Menu focusEvent:-1 titleModel:-1] autorelease];
+        self.achievementsListVC = [[[MenuAchievementsVC alloc] initWithIdApplication:self.application hmiState:HST_Menu2 focusEvent:-1 titleModel:-1] autorelease];
+        
+        
+        [self addSubViewController:menuVC];
+        [self addSubViewController:achievementsListVC];
 		
 	}
 	return self;
@@ -78,6 +83,7 @@
 	self.viewImage = nil;
 	self.stateLabel = nil;
 	self.menuVC = nil;
+    self.achievementsListVC = nil;
 	self.viewImage2 = nil;
 	[super dealloc];
 }
@@ -97,19 +103,23 @@
 	[destButton		setTarget:self	selector:@selector(destButtonClicked:)];
 	[lookupButton	setTarget:self	selector:@selector(lookupButtonClicked:)];
 	
-	[viewImage setPosition: CGPointMake(-50, 20)];
+	[viewImage setPosition: CGPointMake(-48, 40)];
 	[viewImage2 setPosition:CGPointMake(150,20)];
 	[viewImage3 setPosition:CGPointMake(350, 20)];
 	[stateLabel setPosition: CGPointMake(50, 50)];
 	
 	[stateLabel setHidesWhenStopped:NO];
 	
-	//NSTimer *tima = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateDashboardImage:) userInfo:nil repeats:YES];
-	
+    
+    avgSpeedVC = [[DialWidgetViewController alloc] init];
+	lightWidgetVC = [[LightWidgetViewController alloc] init];
+    achievementUnlockedVC = [[AchievementUnlockedViewController alloc] init];
+    profileVC = [[ProfileWidgetViewController alloc] init];
+    
+    refreshTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateDashboardImage:) userInfo:nil repeats:YES];
 	
 	[super rhmiDidStart];
 }
-
 
 /**
  * Override in Subclass
@@ -126,6 +136,12 @@
 	
 }
 
+-(void)updateDashboardImage:(id)sender {
+    if (viewImage) [viewImage setImage:[currentWidget imageRep] clearWhileSending:NO];
+    else [viewImage setImage:nil];
+    //[lookupButton buttonWasClicked:nil];
+    [statusBar setText:@"hello world"];
+}
 
 /**
  * Override in Subclass
@@ -143,36 +159,26 @@
  */
 -(void)homeButtonClicked:(IDButton*)button
 {
-	// Display View
-	[viewImage setImage: [UIImage imageNamed:@"Dashboard.png"]];
-	[stateLabel setText: nil];
-	
-	//imageTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(updateDashboardImage:) userInfo:nil repeats:YES];
-	//[stateLabel stopAnimating];
+    currentWidget = avgSpeedVC;
 }
 
 -(void)routeButtonClicked:(IDButton *)button {
-	[viewImage setImage:[UIImage imageNamed:@"Routing.png"]];
-	[stateLabel setText:@""];
+	currentWidget = lightWidgetVC;
 }
 
 -(void)currentButtonClicked:(IDButton*)button
 {
-	[viewImage setImage: [UIImage imageNamed:@"Achievements.png"]];
-	//[stateLabel startAnimating];
-	[stateLabel setText: @""];
+    currentWidget = nil;
 }
 
 -(void)destButtonClicked:(IDButton*)button
 {
-	[viewImage setImage: [UIImage imageNamed:@"DrivingProfile.png"]];
-	[stateLabel setText: @""];
+	currentWidget = profileVC;
 }
 
 -(void)lookupButtonClicked:(IDButton*)button
 {
-	[viewImage setImage: nil];
-	[stateLabel setText: @"Leaderboards"];
+	currentWidget = nil;
 }
 
 -(void)setSpeed:(double)speed {

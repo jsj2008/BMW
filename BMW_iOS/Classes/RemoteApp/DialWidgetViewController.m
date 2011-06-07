@@ -9,7 +9,6 @@
 #import "DialWidgetViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import <AudioToolbox/AudioToolbox.h>
-#import "ServerConnection.h"
 #import "StatsTracker.h"
 #import "SensorReader.h"
 #import "BMW_iOSAppDelegate.h"
@@ -55,6 +54,10 @@
 
 
 -(void)viewWillAppear {
+    BMW_iOSAppDelegate *del = [[UIApplication sharedApplication] delegate];
+    if (![del isMiniConnected]) {
+        backgroundImage.hidden = YES;
+    }
 
     AudioServicesPlaySystemSound (soundID);
     speed = 1;
@@ -71,8 +74,10 @@
     [topLabel setFont:[UIFont fontWithName:@"Crystal" size:36.0]];
     [bottomLabel setFont:[UIFont fontWithName:@"Crystal" size:26.0]];
     
+
+    
     if (!updateTimer) {
-        updateTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(updateDial:) userInfo:nil repeats:YES];
+        updateTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(updateDial:) userInfo:nil repeats:YES];
     }
 }
 
@@ -101,16 +106,17 @@
     float longitude = sr.locationManager.location.coordinate.longitude;
     
    // NSLog(@"Sending Lat: %f, Long: %f", latitude, longitude);
-    
     //NSLog([NSString stringWithFormat:@"%@?latitude=%f&longitude=%f", SPEED_AT_LOCATION_URL, latitude, longitude]);
     
-        [ServerConnection sendGetRequestTo:[NSString stringWithFormat:@"%@?latitude=%f&longitude=%f", SPEED_AT_LOCATION_URL, latitude, longitude] delegate:self];
-
+        //[ServerConnection sendGetRequestTo:[NSString stringWithFormat:@"%@?latitude=%f&longitude=%f", SPEED_AT_LOCATION_URL, latitude, longitude] delegate:self];
+    
+//    [ServerConnection sendQuery:CURRENT_SPEEDS_FOR_UDID_QUERY withParams:nil delegate:self];
+    [ServerConnection sendQuery:GET_AVERAGE_SPEED_QUERY withParams:sr.locationManager.location delegate:self];
 }
 
 -(void)receiveStats:(NSArray *)stats {
     if ([stats count] > 0) {
-        NSDictionary *dict = [stats objectAtIndex:0];
+        NSDictionary *dict = [[[stats objectAtIndex:0] objectForKey:@"response"] objectAtIndex:0];
         //NSString *blah = [dict objectForKey:@"blah"];
         double maxSpeed = [(NSNumber *)[dict objectForKey:@"max_speed"] doubleValue]*MPS_TO_MPH;
         double avgSpeed = [(NSNumber *)[dict objectForKey:@"avg_speed"] doubleValue]*MPS_TO_MPH;
@@ -121,9 +127,13 @@
         if (currSpeed == -1) currSpeed = 0;
         [self setSpeed2:currSpeed*MPS_TO_MPH];
         [self setSpeed3:maxSpeed];
-        [topLabel setText:[NSString stringWithFormat:@"Max: %.1f mph, by %@", maxSpeed,[(BMW_iOSAppDelegate *)[[UIApplication sharedApplication] delegate] getNameForUDID:maxSpeedUDID]]];
+        [topLabel setText:[NSString stringWithFormat:@"Max: %.1f mph, by %@", maxSpeed,[dict objectForKey:@"max_speed_user_name"]]];
         [bottomLabel setText:[NSString stringWithFormat:@"Avg: %.1f mph", avgSpeed]];
     }
+}
+
+-(void)receiveStatsFailed {
+    NSLog(@"Dial widget RECEIVE STATS FAILED");
 }
 
 /*

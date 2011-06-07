@@ -9,7 +9,7 @@
 #import "PageViewController.h"
 #import "SBJSON.h"
 #import "BMW_iOSAppDelegate.h"
-
+#define MPS_TO_MPH 2.23693629
 @implementation PageViewController
 
 @synthesize titleLabel, tv, dataURLString, data,titleString, pageNumber;	
@@ -27,7 +27,11 @@
     //NSLog(@"%@",self.data);
     [self.tv reloadData];
     [self performSelector:@selector(loadDataFromURL) withObject:nil afterDelay:5];
+}
 
+-(void)receiveStatsFailed
+{
+    [self performSelector:@selector(loadDataFromURL) withObject:nil afterDelay:5];
 }
 
 -(void)viewDidLoad
@@ -56,6 +60,11 @@
 	[cell setSelected:NO];
 }
 
+-(void)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+	[cell setSelected:NO];
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	static NSString *CellIdentifier = @"Cell";
 	
@@ -74,16 +83,15 @@
         if(index != NSNotFound&&index+2<=[name length])
             name = [NSString stringWithFormat:@"%@.",[name substringToIndex:[name rangeOfString:@" "].location+2]];
     }
-    if(name == nil||[name isKindOfClass:[NSNull class]])
-        name = [del getNameForUDID:[[data objectAtIndex:indexPath.row] objectForKey:@"udid"]];
-    if([[[data objectAtIndex:indexPath.row] objectForKey:@"udid"] rangeOfString:@"-"].location != NSNotFound)
+    else if([[[data objectAtIndex:indexPath.row] objectForKey:@"udid"] rangeOfString:@"-"].location != NSNotFound)
         name = @"A Sim";
     if(name == nil)
         name = @"UNKNOWN";
     
     cell.textLabel.text = [NSString stringWithFormat:@"%d) %@: %@",indexPath.row+1,name, [self stringValueForPayload:[payload floatValue] AndPage:pageNumber]];
 	cell.textLabel.textColor = [UIColor whiteColor];
-		
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
 	// Set up the cell...
 	return cell;
 }
@@ -101,6 +109,9 @@
             break;
         case 3:
             return [NSString stringWithFormat:@"%.1f mph", num*MPS_TO_MPH];
+            break;
+        case 6:
+            return [NSString stringWithFormat:@"%.1f gal/hour", num*1];
             break;
         default:
             return [NSString stringWithFormat:@"%.1f", num];

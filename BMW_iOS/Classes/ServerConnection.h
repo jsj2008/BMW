@@ -15,11 +15,14 @@
 #define MOTION_URL @"http://bunkermw.heroku.com/mobile_motions/create"
 #define IMAGE_PROCESSING_URL @"http://bunkermw.heroku.com/mobile_lights/create"
 #define START_TRIP_URL @"http://bunkermw.heroku.com/car_trip_ranges/create"
-#define BREAKATHON_URL @"http://bunkermw.heroku.com/breakathon_routes/create"
 #define PROFILE_URL @"http://bunkermw.heroku.com/profile_names/create"
 
+#define CAR_ENGINE_URL @"http://bunkermw.heroku.com/car_engines/create"
+#define CAR_MISC_URL @"http://bunkermw.heroku.com/car_miscs/create"
+
 //Query Controller Send URL
-#define QUERY_CONTROLLER_URL @"http://bunkermw.heroku.com/queries/create"
+//#define QUERY_CONTROLLER_URL @"http://bunkermw.heroku.com/queries/create"
+#define QUERY_CONTROLLER_URL @"http://localhost:3000/queries/create"
 #define QUERY_KEY @"query"
 #define PARAMS_KEY @"params"
 #define MAX_SPEED_QUERY @"rankings_max_speed"
@@ -30,8 +33,14 @@
 #define USER_AVERAGE_SPEED_QUERY @"user_rank_avg_speed"
 #define USER_TOTAL_DISANCE_QUERY @"user_rank_total_distance"
 #define USER_RED_LIGHT_TIME_QUERY @"user_rank_redlight_time"
+#define USER_RANK_CARMA_QUERY @"user_rank_carma_points"
+#define GET_AVERAGE_SPEED_QUERY @"location_avg_speed_box"
 #define FEEDS_SINCE_TIME_QUERY @"feeds_since_time"
 #define FEEDS_MOST_RECENT_N_QUERY @"feeds_most_recent_n"
+#define AVERAGE_CONSUMPTION_QUERY @"rankings_avg_consumption"
+
+#define CURRENT_SPEEDS_FOR_UDID_QUERY @"current_speeds_for_udid"
+
 
 //Queries
 #define SPEED_AT_LOCATION_URL @"http://bunkermw.heroku.com/mobile_gps/get_avg_speed_of_location"
@@ -51,6 +60,7 @@
 
 @protocol ServerConnectionDelegate <NSObject>
 -(void)receiveStats:(NSArray *)stats;
+-(void)receiveStatsFailed;
 @end
 
 @interface ServerConnection : NSObject <ServerConnectionDelegate>{

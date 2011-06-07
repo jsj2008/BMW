@@ -15,8 +15,8 @@
 #import "LeaderboardViewController.h"
 #import "DashboardViewController.h"
 #import "FBConnect.h"
-
-#define MPS_TO_MPH 2.23693629
+#import "MainViewController.h"
+#import "AchievementOverlayViewController.h"
 
 @class ImageProcessingViewController;
 
@@ -31,10 +31,13 @@ extern NSString* BMWConnectedChanged;
 	
 	RemoteAppController* bmwAppController;
     
+    AchievementOverlayViewController * a;
+    
     Facebook* _facebook;
     UIImage *userPhoto;
     NSString *userName;
     NSString *userFirstName;
+    BOOL isMiniConnected;
 }
 
 -(UIImage *)getUserPhoto;
@@ -42,7 +45,6 @@ extern NSString* BMWConnectedChanged;
 -(NSString *)getUserFirstName;
 -(CLLocation *)currentLocation;
 -(void)deviceWillRotateToInterfaceOrientation:(UIDeviceOrientation)orientation;
--(NSString *)getNameForUDID:(NSString *)udid;
 
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -53,7 +55,7 @@ extern NSString* BMWConnectedChanged;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property(readonly) Facebook *facebook;
-
+@property BOOL isMiniConnected;
 
 @end
 

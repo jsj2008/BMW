@@ -15,7 +15,7 @@
 #import "NewsFeedPageController.h"
 #import "ProfilePageViewController.h"
 
-#define kNumberOfPages 7
+#define kNumberOfPages 8
 
 @implementation LeaderboardViewController
 
@@ -30,7 +30,7 @@
     [[[UIApplication sharedApplication].delegate facebook] requestWithGraphPath:@"me" andDelegate:[UIApplication sharedApplication].delegate];
     [[UIApplication sharedApplication] setStatusBarOrientation: UIInterfaceOrientationPortrait animated:NO];  
 
-    pageURLs = [[NSMutableArray arrayWithObjects:FEEDS_MOST_RECENT_N_QUERY, MAX_SPEED_QUERY, AVERAGE_SPEED_QUERY, TOTAL_DISTANCE_QUERY, RED_LIGHT_TIME_QUERY, nil] retain];
+    pageURLs = [[NSMutableArray arrayWithObjects:FEEDS_MOST_RECENT_N_QUERY, MAX_SPEED_QUERY, AVERAGE_SPEED_QUERY, TOTAL_DISTANCE_QUERY, RED_LIGHT_TIME_QUERY, AVERAGE_CONSUMPTION_QUERY, nil] retain];
     
 	NSMutableArray *controllers = [[NSMutableArray alloc] init];
     for (unsigned i = 0; i < [pageURLs count]+1; i++)
@@ -112,6 +112,8 @@
             return @"Total Distance";
         case 5:
             return @"Red Lights Seen";
+        case 6:
+            return @"Average Fuel Consumption";
         default:
             return @"Untitled";
 	}
