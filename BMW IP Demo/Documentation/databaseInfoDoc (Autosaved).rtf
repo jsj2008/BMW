@@ -1,0 +1,212 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf350
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 Open/Close command so we know this is a separate drive.\
+\
+\
+every time\
+
+\i UDID\
+Time
+\i0 \
+---\
+location:\
+\pard\pardeftab720\ql\qnatural
+
+\f1\fs26 \cf0 \{"udid":"2d5a4b892d6c8237dcbc9e313d98dde8fc816dec","latitude":37.42060624125402,"longitude":-122.1687692448718,"altitude":1473.02223,"course":302.399,"horz_acc":1777.3,"vert_acc":993.32,"iphone_time":1303788727.992793,"speed":1000.0\}
+\f0\fs24 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+\cf0 \
+heading:\
+\pard\pardeftab720\ql\qnatural
+
+\f1\fs26 \cf0 \{"udid":"2d5a4b892d6c8237dcbc9e313d98dde8fc816dec","mag_heading":37.42060624125402,"true_heading":-122.1687692448718,"heading_acc_x":1473.02223,"heading_acc_y":302.399,"heading_acc_z":1777.3,"iphone_time":1303788727.992793\}\
+\
+
+\f0\fs24 acceleration:\
+
+\f1\fs26 \{"udid":"2d5a4b892d6c8237dcbc9e313d98dde8fc816dec","accel_x":1473.02223,"accel_y":302.399,"accel_z":1777.3,"iphone_time":1303788727.992793\}
+\f0\fs24 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+\cf0 \
+velocity:\
+\pard\pardeftab720\ql\qnatural
+
+\f1\fs26 \cf0 \{"udid":"2d5a4b892d6c8237dcbc9e313d98dde8fc816dec","velocity_x":1473.02223,"velocity_y":302.399,"velocity_z":1777.3,"iphone_time":1303788727.992793\}
+\f0\fs24 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+\cf0 \
+rotation:\
+\pard\pardeftab720\ql\qnatural
+
+\f1\fs26 \cf0 \{"udid":"2d5a4b892d6c8237dcbc9e313d98dde8fc816dec","roll":1473.02223,"pitch":302.399,"yaw":1777.3,"rot_rate_x":1.003,"rot_rate_y":2.377,"rot_rate_z":3.2001,"iphone_time":1303788727.992793\}
+\f0\fs24 \
+\
+\{"udid":"a","roll":1.0,"pitch":1.0,"yaw":1.0,"rot_rate_x":1.0,"rot_rate_y":1.0,"rot_rate_z":1.0, "accel_x":1.0,"accel_y":1.0,"accel_z":1.0,"grav_x":1.0,"grav_y":1.0,"grav_z":1.0,
+\f1\fs26 "iphone_time":1303788727.992793
+\f0\fs24 \}\
+\
+\
+mag_heading\
+true_heading\
+heading_acc\
+x\
+y\
+z\
+\
+rails generate scaffold remove_heading_acc_x_to_Mobile_Headings\
+rails generate scaffold remove_heading_acc_y_to_Mobile_Headings\
+rails generate scaffold remove_heading_acc_z_to_Mobile_Headings\
+\
+rails generate scaffold Mobile_Light did:string iphone_time:datetime red_count:integer green_count:integer\
+\
+rails generate scaffold Mobile_Headings udid:string iphone_time:datetime mag_heading:float true_heading:float heading_acc:float x:float y:float z:float\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+\cf0 rails generate scaffold Mobile_Headings udid:string iphone_time:datetime mag_heading:float true_heading:float heading_acc_x:float heading_acc_y:float heading_acc_z:float\
+\
+rails generate scaffold Mobile_Locations udid:string iphone_time:datetime latitude:float longitude:float altitude:float course:float horz_acc:float vert_acc:float \
+\
+rails generate scaffold Mobile_GPS udid:string iphone_time:datetime latitude:float longitude:float altitude:float course:float horz_acc:float vert_acc:float speed:float \
+\
+rails generate scaffold Mobile_Rotation udid:string iphone_time:datetime roll:float pitch:float yaw:float rot_rate_x:float rot_rate_y:float rot_rate_z:float\
+\
+rails generate scaffold Mobile_Acceleration udid:string iphone_time:datetime accel_x:float accel_y:float accel_z:float\
+\
+gravity\
+\
+rails generate scaffold Mobile_Motion udid:string iphone_time:datetime roll:float pitch:float yaw:float rot_rate_x:float rot_rate_y:float rot_rate_z:float accel_x:float accel_y:float accel_z:float grav_x:float grav_y:float grav_z:float\
+\
+\{\
+\
+\
+rails generate scaffold Mobile_Velocity udid:string iphone_time:datetime velocity_x:float velocity_y:float velocity_z:float\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+rails generate scaffold GPSLocation udid:string iphone_time:datetime latitude:float longitude:float altitude:float course:float horz_acc:float vert_acc:float\
+\
+rails generate scaffold GPSHeading udid:string iphone_time:datetime mag_heading:float true_heading:float acc_x:float acc_y:float acc_z:float\
+\
+rails generate scaffold Motion did:string iphone_time:datetime roll:float pitch:float yaw:float rot_rate_x:float rot_rate_y:float rot_rate_z:float accel_x:float accel_y:float accel_z:float gravity_x:float gravity_y:float gravity_z:float\
+\
+
+\b GPS\
+Location
+\i\b0 \
+Latitude\
+Longitude\
+Altitude\
+Course\
+horizontalAccuracy\
+verticalAccuracy
+\i0 \
+
+\b Heading - may not be necessary with course\
+
+\i\b0 magneticHeading
+\i0 \
+The value in this property represents the heading relative to the magnetic North Pole, which is different from the geographic North Pole. The value 0 means the device is pointed toward magnetic north, 90 means it is pointed east, 180 means it is pointed south, and so on. The value in this property should always be valid.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
+
+\i \cf0 trueHeading
+\i0 \
+The value in this property represents the heading relative to the geographic North Pole. The value 0 means the device is pointed toward true north, 90 means it is pointed due east, 180 means it is pointed due south, and so on. A negative value indicates that the heading could not be determined.\
+
+\i headingAccuracy\
+x\
+y\
+z
+\i0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+\cf0 ---\
+
+\b Device Motion\
+
+\b0 Attitude (radians):\
+
+\i roll\
+pitch\
+yaw
+\i0 \
+\
+rotationRate:\
+
+\i x
+\i0 \
+The X-axis rotation rate in radians per second. The sign follows the right hand rule: If the right hand is wrapped around the X axis such that the tip of the thumb points toward positive X, a positive rotation is one toward the tips of the other four fingers.\
+
+\i y
+\i0 \
+The Y-axis rotation rate in radians per second. The sign follows the right hand rule: If the right hand is wrapped around the Y axis such that the tip of the thumb points toward positive Y, a positive rotation is one toward the tips of the other four fingers.\
+
+\i z
+\i0 \
+The Z-axis rotation rate in radians per second. The sign follows the right hand rule: If the right hand is wrapped around the Z axis such that the tip of the thumb points toward positive Z, a positive rotation is one toward the tips of the other four fingers.\
+\
+userAcceleration\
+
+\i x
+\i0 \
+X-axis acceleration in G's (gravitational force).\
+
+\i y
+\i0 \
+Y-axis acceleration in G's (gravitational force).\
+
+\i z
+\i0 \
+Z-axis acceleration in G's (gravitational force).\
+\
+gravity\
+
+\i x
+\i0 \
+X-axis acceleration in G's (gravitational force).\
+
+\i y
+\i0 \
+Y-axis acceleration in G's (gravitational force).\
+
+\i z
+\i0 \
+Z-axis acceleration in G's (gravitational force).\
+\
+Queries\
+-----------\
+Avg road speed (based on current location)\
+# of red lights stopped at\
+Lifetime/trip averages\
+ 	speed\
+	attitude\
+	heading\
+Lifetime/trip maxes\
+You vs. Avg road speed lifetime\
+X out of Y people Speed Rankings\
+\
+Out of car experience\
+----------------------\
+(we want this to be % or #rank)\
+max speed\
+avg speed\
+atltitude\
+total time at red lights\
+number of red lights\
+fastest 0 to 60\
+total distance\
+longest disparity driven\
+\
+}
