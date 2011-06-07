@@ -10,12 +10,15 @@
 
 
 @interface AchievementOverlayViewController : UIViewController {
-    IBOutlet UIImageView *achievementImage;
+    IBOutlet UIWebView *achievementImage;
     IBOutlet UILabel *achievementLabel;
+    BOOL animating;
     NSMutableArray *queue;
 }
 
-@property (nonatomic, retain) IBOutlet UIImageView *achievementImage;
+@property (nonatomic, retain) IBOutlet UIWebView *achievementImage;
 @property (nonatomic, retain) IBOutlet UILabel *achievementLabel;
+
++(AchievementOverlayViewController *)shared;
 
 @end

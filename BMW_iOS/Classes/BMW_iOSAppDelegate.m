@@ -70,7 +70,7 @@ static NSString* kAppId = @"211780665513835";
 	leaderboardVC = [[LeaderboardViewController alloc] init];
 	//[self.window addSubview:leaderboardVC.view];
     dashboardVC = [[DashboardViewController alloc] init];
-    a = [[AchievementOverlayViewController alloc] init];
+    a = [AchievementOverlayViewController shared];
     [dashboardVC.view addSubview:a.view];
     //[self.window addSubview:dashboardVC.view];
     //DialWidgetViewController *dwVC = //[[DialWidgetViewController alloc] init];

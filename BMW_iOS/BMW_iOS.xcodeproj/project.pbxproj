@@ -63,8 +63,6 @@
 		7BDBBA7F138DFC0300DF619A /* FBConnect.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7BDBBA7E138DFC0300DF619A /* FBConnect.bundle */; };
 		7BF2F867139DD621009C8711 /* AchievementOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF2F865139DD621009C8711 /* AchievementOverlayViewController.m */; };
 		7BF2F868139DD621009C8711 /* AchievementOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BF2F866139DD621009C8711 /* AchievementOverlayViewController.xib */; };
-		7BF2F86F139DD7E2009C8711 /* Unlock-Red_Brick.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF2F86D139DD7E1009C8711 /* Unlock-Red_Brick.png */; };
-		7BF2F870139DD7E2009C8711 /* Unlock-Red_Brick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF2F86E139DD7E2009C8711 /* Unlock-Red_Brick@2x.png */; };
 		7BFBCB6F134BCC15003ABB41 /* dilation.frag.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7BFBCB69134BCC15003ABB41 /* dilation.frag.glsl */; };
 		7BFBCB71134BCC15003ABB41 /* erosion.frag.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7BFBCB6B134BCC15003ABB41 /* erosion.frag.glsl */; };
 		7BFBCB73134BCC15003ABB41 /* hsi_threshold.frag.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7BFBCB6D134BCC15003ABB41 /* hsi_threshold.frag.glsl */; };
@@ -273,8 +271,6 @@
 		7BF2F864139DD621009C8711 /* AchievementOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementOverlayViewController.h; sourceTree = "<group>"; };
 		7BF2F865139DD621009C8711 /* AchievementOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementOverlayViewController.m; sourceTree = "<group>"; };
 		7BF2F866139DD621009C8711 /* AchievementOverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AchievementOverlayViewController.xib; sourceTree = "<group>"; };
-		7BF2F86D139DD7E1009C8711 /* Unlock-Red_Brick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Unlock-Red_Brick.png"; sourceTree = "<group>"; };
-		7BF2F86E139DD7E2009C8711 /* Unlock-Red_Brick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Unlock-Red_Brick@2x.png"; sourceTree = "<group>"; };
 		7BFBCB69134BCC15003ABB41 /* dilation.frag.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dilation.frag.glsl; sourceTree = "<group>"; };
 		7BFBCB6B134BCC15003ABB41 /* erosion.frag.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = erosion.frag.glsl; sourceTree = "<group>"; };
 		7BFBCB6D134BCC15003ABB41 /* hsi_threshold.frag.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hsi_threshold.frag.glsl; sourceTree = "<group>"; };
@@ -503,8 +499,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				7BF2F86D139DD7E1009C8711 /* Unlock-Red_Brick.png */,
-				7BF2F86E139DD7E2009C8711 /* Unlock-Red_Brick@2x.png */,
 				7BDBBA4F138DFBC700DF619A /* FBConnect */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -1160,8 +1154,6 @@
 				7B7582A6139DAD27007F6A9C /* app_logo_13@2x.png in Resources */,
 				7B7582A8139DAD2C007F6A9C /* app_logo_13.png in Resources */,
 				7BF2F868139DD621009C8711 /* AchievementOverlayViewController.xib in Resources */,
-				7BF2F86F139DD7E2009C8711 /* Unlock-Red_Brick.png in Resources */,
-				7BF2F870139DD7E2009C8711 /* Unlock-Red_Brick@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

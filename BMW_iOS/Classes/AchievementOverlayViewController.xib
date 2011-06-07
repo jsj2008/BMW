@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<string>IBUIImageView</string>
+			<string>IBUIWebView</string>
 			<string>IBUIView</string>
 			<string>IBUILabel</string>
 			<string>IBProxyObject</string>
@@ -38,30 +38,31 @@
 				<string key="IBProxiedObjectIdentifier">IBFirstResponder</string>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
-			<object class="IBUIView" id="132611407">
+			<object class="IBUIView" id="739077151">
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">293</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<object class="IBUIImageView" id="436372997">
-						<reference key="NSNextResponder" ref="132611407"/>
-						<int key="NSvFlags">274</int>
+					<object class="IBUIWebView" id="407452828">
+						<reference key="NSNextResponder" ref="739077151"/>
+						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{10, 10}, {143, 60}}</string>
-						<reference key="NSSuperview" ref="132611407"/>
+						<reference key="NSSuperview" ref="739077151"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="600225888"/>
-						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">Unlock-Red_Brick.png</string>
+						<reference key="NSNextKeyView" ref="200248070"/>
+						<object class="NSColor" key="IBUIBackgroundColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MSAxIDEAA</bytes>
 						</object>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<int key="IBUIDataDetectorTypes">1</int>
+						<bool key="IBUIDetectsPhoneNumbers">YES</bool>
 					</object>
-					<object class="IBUILabel" id="600225888">
-						<reference key="NSNextResponder" ref="132611407"/>
+					<object class="IBUILabel" id="200248070">
+						<reference key="NSNextResponder" ref="739077151"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{161, 29}, {149, 21}}</string>
-						<reference key="NSSuperview" ref="132611407"/>
+						<reference key="NSSuperview" ref="739077151"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -88,7 +89,7 @@
 				<string key="NSFrameSize">{320, 80}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="436372997"/>
+				<reference key="NSNextKeyView"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
 					<bytes key="NSRGB">MCAwLjUwMTk2MDgxNCAwLjI1MDk4MDQwNwA</bytes>
@@ -103,17 +104,9 @@
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">achievementImage</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="436372997"/>
-					</object>
-					<int key="connectionID">8</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">achievementLabel</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="600225888"/>
+						<reference key="destination" ref="200248070"/>
 					</object>
 					<int key="connectionID">9</int>
 				</object>
@@ -121,9 +114,17 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">view</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="132611407"/>
+						<reference key="destination" ref="739077151"/>
 					</object>
 					<int key="connectionID">13</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">achievementImage</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="407452828"/>
+					</object>
+					<int key="connectionID">15</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -148,23 +149,23 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">4</int>
-						<reference key="object" ref="132611407"/>
+						<reference key="object" ref="739077151"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="436372997"/>
-							<reference ref="600225888"/>
+							<reference ref="200248070"/>
+							<reference ref="407452828"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">7</int>
-						<reference key="object" ref="600225888"/>
-						<reference key="parent" ref="132611407"/>
+						<reference key="object" ref="200248070"/>
+						<reference key="parent" ref="739077151"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">5</int>
-						<reference key="object" ref="436372997"/>
-						<reference key="parent" ref="132611407"/>
+						<int key="objectID">14</int>
+						<reference key="object" ref="407452828"/>
+						<reference key="parent" ref="739077151"/>
 					</object>
 				</object>
 			</object>
@@ -174,8 +175,8 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>-1.CustomClassName</string>
 					<string>-2.CustomClassName</string>
+					<string>14.IBPluginDependency</string>
 					<string>4.IBPluginDependency</string>
-					<string>5.IBPluginDependency</string>
 					<string>7.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
@@ -199,7 +200,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">13</int>
+			<int key="maxID">15</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -216,7 +217,7 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>UIImageView</string>
+							<string>UIWebView</string>
 							<string>UILabel</string>
 						</object>
 					</object>
@@ -231,7 +232,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBToOneOutletInfo">
 								<string key="name">achievementImage</string>
-								<string key="candidateClassName">UIImageView</string>
+								<string key="candidateClassName">UIWebView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">achievementLabel</string>
@@ -254,10 +255,6 @@
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">Unlock-Red_Brick.png</string>
-			<string key="NS.object.0">{143, 60}</string>
-		</object>
 		<string key="IBCocoaTouchPluginVersion">301</string>
 	</data>
 </archive>
