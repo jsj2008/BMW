@@ -27,7 +27,7 @@
   </pluginmanifest>
   <pluginApp>
     <comment></comment>
-    <text>MINI 360</text>
+    <text>Project CARMA</text>
     <applicationType>OnlineServices</applicationType>
     <entryButton>
       <id>BTN_Entry</id>
@@ -45,10 +45,6 @@
       <raAction>
         <id>ACT_Home_Clicked</id>
         <numericId>12</numericId>
-      </raAction>
-      <raAction>
-        <id>ACT_Current_Clicked</id>
-        <numericId>13</numericId>
       </raAction>
       <raAction>
         <id>ACT_Destination_Clicked</id>
@@ -87,6 +83,22 @@
             <numericId>26</numericId>
             <targetModel>MDL_List_Target</targetModel>
           </hmiAction>
+        </actions>
+      </combinedAction>
+      <combinedAction>
+        <id>CAC_Current_Clicked</id>
+        <numericId>37</numericId>
+        <actions>
+          <hmiAction>
+            <id>HAC_Goto_Menu2</id>
+            <actionType></actionType>
+            <numericId>38</numericId>
+            <target>HST_Menu2</target>
+          </hmiAction>
+          <raAction>
+            <id>ACT_Current_Clicked</id>
+            <numericId>39</numericId>
+          </raAction>
         </actions>
       </combinedAction>
     </actions>
@@ -141,6 +153,14 @@
         <id>MDL_Image_View3</id>
         <numericId>35</numericId>
       </raImageModel>
+      <raListModel>
+        <id>MDL_List2</id>
+        <numericId>13</numericId>
+      </raListModel>
+      <raIntModel>
+        <id>MDL_List2_Target</id>
+        <numericId>42</numericId>
+      </raIntModel>
     </models>
     <events>
       <actionEvent>
@@ -152,7 +172,7 @@
     <hmiStates>
       <toolbarHmiState>
         <id>HST_Main</id>
-        <text>MINI 360</text>
+        <text>Project CARMA</text>
         <numericId>1</numericId>
         <optionComponents/>
         <components>
@@ -195,7 +215,7 @@
             <id>BTN_Current</id>
             <numericId>17</numericId>
             <tooltipText></tooltipText>
-            <action>ACT_Current_Clicked</action>
+            <action>CAC_Current_Clicked</action>
             <imageModel>MDL_Image_Current</imageModel>
           </button>
           <button>
@@ -217,7 +237,7 @@
       </toolbarHmiState>
       <hmiState>
         <id>HST_Menu</id>
-        <text>Current MINI Rankings</text>
+        <text>Current Rankings</text>
         <numericId>23</numericId>
         <optionComponents/>
         <components>
@@ -226,6 +246,19 @@
             <numericId>24</numericId>
             <action>CAC_List_Elem_Selected</action>
             <model>MDL_List</model>
+          </list>
+        </components>
+      </hmiState>
+      <hmiState>
+        <id>HST_Menu2</id>
+        <text>Achievements</text>
+        <numericId>40</numericId>
+        <components>
+          <list>
+            <id>LST_List2</id>
+            <numericId>41</numericId>
+            <action>CAC_Current_Clicked</action>
+            <model>MDL_List2</model>
           </list>
         </components>
       </hmiState>

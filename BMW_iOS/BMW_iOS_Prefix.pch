@@ -20,7 +20,7 @@
 #define HMI_CONNECTION 1
 #define SENSOR_READER 1
 #define LEADERBOARD_DISPLAY 1
-#define FB_CONNECT 1
+//#define FB_CONNECT 1
 
 //Server Send
 #define SEND_MOTION 1

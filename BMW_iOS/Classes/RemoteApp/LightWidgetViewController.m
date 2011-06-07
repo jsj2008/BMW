@@ -25,13 +25,12 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
 	r = 0;
 	y = 0;
 	g = 0;
 	[self updateLabels];
     if (!updateTimer) {
-        updateTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(updateDial:) userInfo:nil repeats:YES];
+        updateTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(updateWidget:) userInfo:nil repeats:YES];
     }
 }
 
@@ -59,19 +58,25 @@
 	[self updateLabels];
 }
 
--(void)updateDial:(id)sender {
-    NSLog([NSString stringWithFormat:@"%@?udid=%@", RED_LIGHT_COUNT_URL, [[UIDevice currentDevice] uniqueIdentifier]]);
-    
-    [ServerConnection sendGetRequestTo:[NSString stringWithFormat:@"%@?udid=%@", RED_LIGHT_COUNT_URL, [[UIDevice currentDevice] uniqueIdentifier]] delegate:self];
-    
+-(void)updateWidget:(id)sender {    
+    r++;
+    [self updateLabels];
+    //[ServerConnection sendQuery:@"user_rank_redlight_time" withParams:nil delegate:self];    
 }
 
 -(void)receiveStats:(NSArray *)stats {
+    NSLog(@"%@", stats);
+    
     if ([stats count] > 0) {
         NSDictionary *dict = [stats objectAtIndex:0];
         r = [[dict objectForKey:@"payload"] intValue];
         [self updateLabels];
     }
+}
+
+
+-(void)receiveStatsFailed {
+    NSLog(@"Light widget RECEIVE STATS FAILED");
 }
 
 /*

@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <iDrive/iDrive.h>
-#import "MenuVC.h"
+
 
 #import "DialWidgetViewController.h"
 #import "LightWidgetViewController.h"
 #import "SplitBarWidgetViewController.h"
 #import "RemoteAppWidgetController.h"
+#import "AchievementUnlockedViewController.h"
+
+@class MenuAchievementsVC;
+@class MenuVC;
 
 @interface MainVC : IDViewController {
 	
@@ -27,12 +31,12 @@
 	IDLoadingLabel* stateLabel;
 	
 	MenuVC* menuVC;
-	NSTimer *refreshTimer;
+	MenuAchievementsVC *achievementsListVC;
+    NSTimer *refreshTimer;
 	DialWidgetViewController *avgSpeedVC;
 	LightWidgetViewController *lightWidgetVC;
 	SplitBarWidgetViewController *carsPassedWidgetVC;
-    RemoteAppWidgetController *RAWidgetVC;
-    
+    AchievementUnlockedViewController *achievementUnlockedVC;
     WidgetViewController *currentWidget;
     
     IDStatusBar *statusBar;
@@ -47,6 +51,7 @@
 @property(retain) IDLabel* stateLabel;
 
 @property(retain) MenuVC* menuVC;
+@property(retain) MenuAchievementsVC* achievementsListVC;
 
 -(void)setSpeed:(double)speed;
 

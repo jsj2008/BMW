@@ -7,9 +7,11 @@
 //
 
 #import "MainVC.h"
-#import "RemoteAppIDs.h"
 #import "BMW_iOSAppDelegate.h"
 #include <stdlib.h>
+#import "MenuVC.h"
+#import "MenuAchievementsVC.h"
+
 
 
 @implementation MainVC
@@ -20,7 +22,7 @@
 @synthesize lookupButton;
 @synthesize viewImage, viewImage2, viewImage3;
 @synthesize stateLabel;
-@synthesize menuVC;
+@synthesize menuVC, achievementsListVC;
 
 
 -(id)initWithIdApplication:(IDApplication*)_idApplication 
@@ -62,9 +64,11 @@
 		[self addWidget: stateLabel];
 
         self.menuVC = [[[MenuVC alloc] initWithIdApplication:self.application hmiState:HST_Menu focusEvent:-1 titleModel:-1] autorelease];
-		
+        self.achievementsListVC = [[[MenuAchievementsVC alloc] initWithIdApplication:self.application hmiState:HST_Menu2 focusEvent:-1 titleModel:-1] autorelease];
+        
         
         [self addSubViewController:menuVC];
+        [self addSubViewController:achievementsListVC];
 		
 	}
 	return self;
@@ -79,6 +83,7 @@
 	self.viewImage = nil;
 	self.stateLabel = nil;
 	self.menuVC = nil;
+    self.achievementsListVC = nil;
 	self.viewImage2 = nil;
 	[super dealloc];
 }
@@ -108,6 +113,7 @@
     
     avgSpeedVC = [[DialWidgetViewController alloc] init];
 	lightWidgetVC = [[LightWidgetViewController alloc] init];
+    achievementUnlockedVC = [[AchievementUnlockedViewController alloc] init];
     refreshTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateDashboardImage:) userInfo:nil repeats:YES];
 	
 	[super rhmiDidStart];
@@ -130,6 +136,7 @@
 
 -(void)updateDashboardImage:(id)sender {
     if (viewImage) [viewImage setImage:[currentWidget imageRep] clearWhileSending:NO];
+    else [viewImage setImage:nil];
     //[lookupButton buttonWasClicked:nil];
     [statusBar setText:@"hello world"];
 }
@@ -155,26 +162,21 @@
 
 -(void)routeButtonClicked:(IDButton *)button {
 	currentWidget = lightWidgetVC;
-	[stateLabel setText:@""];
 }
 
 -(void)currentButtonClicked:(IDButton*)button
 {
-	[viewImage setImage: [UIImage imageNamed:@"Achievements.png"]];
-	//[stateLabel startAnimating];
-	[stateLabel setText: @""];
+    currentWidget = nil;
 }
 
 -(void)destButtonClicked:(IDButton*)button
 {
-	[viewImage setImage: [UIImage imageNamed:@"DrivingProfile.png"]];
-	[stateLabel setText: @""];
+	currentWidget = achievementUnlockedVC;
 }
 
 -(void)lookupButtonClicked:(IDButton*)button
 {
-	[viewImage setImage: nil];
-	[stateLabel setText: @"Leaderboards"];
+	currentWidget = nil;
 }
 
 -(void)setSpeed:(double)speed {
