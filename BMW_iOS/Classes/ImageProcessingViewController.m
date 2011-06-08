@@ -1,7 +1,32 @@
-//
-//  ImageProcessingViewController.m
-//  ImageProcessing
-//
+/* 
+ * ImageProcessingViewController.m
+ *
+ * CS210: Carma Application
+ * ---------------------------------
+ * The following is the implementation of the traffic light detection algorithm
+ * used in the Carma application. The step-by-step process of this algorithm is
+ * outlined on our documemtation wiki at the following link:
+ * http://bunkermotorwarriors.pbworks.com/w/page/37816126/Image-Processing-Algorithm
+ * 
+ * The algorithm starts when startImageProcessing is called. This call is generally
+ * made when our application has determined that the user has stopped moving. This 
+ * then triggers the full-functioning algorithm described in the link above to 
+ * determine red blobs which may be potential stop lights. After this initial call, 
+ * blobs are stored and a reduced version of the algorithm which does not do blob
+ * detection searches for green blobs in a square around the red blobs found in the
+ * initial image, on subsequent images. 
+ *
+ * In each square box, a ratio of red-to-green
+ * is checked on each subsequent frame. If at any point before the algorithm stops 
+ * the ratio shrinks by at least a factor of 10, it is determined that the blob was
+ * indeed a traffic light. This information along with the time we spent waiting at
+ * said red light is sent to our backend. We then reset the timer which determines how
+ * long we wait at red lights to see how long we wait at the subsequent green light.
+ *
+ * When our applicationd determines our car has started moving again, the algorithm
+ * stops looking for lights and, if lights were found, the amount of time waiting 
+ * at the green traffic light is sent to our backend. 
+ */
 
 #import "ImageProcessingViewController.h"
 #import "ServerConnection.h"
@@ -56,16 +81,25 @@ static bool lastIMP = NO;
 static int trackBlobsIndex = -1;
 static time_t startTime;
 
+/*
+ * This function is called when the car stops moving.
+ */
+
 + (void) startImageProcessing
 {
     runImageProcessing = YES;
     trackBlobsIndex = -1;
-    NSLog(@"start IMP");
+    //NSLog(@"start IMP");
 }
+
+/*
+ * This function is called when the car starts moving. 
+ */
+
 + (void) stopImageProcessing
 {
     runImageProcessing = NO;
-    NSLog(@"stop IMP");
+    //NSLog(@"stop IMP");
 }
 
 #pragma mark -
@@ -96,17 +130,6 @@ static time_t startTime;
     numLights = -1;
 }
 
-
--(void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)didReceiveMemoryWarning 
-{
-    [super didReceiveMemoryWarning];
-}
-
 - (void) deallocTrackBlobs
 {
     for (int i = 0; i < trackBlobsIndex; i++) {
@@ -132,6 +155,12 @@ static time_t startTime;
 	label[l2] = label[l1];
 	return label[l1];
 }
+
+/*
+ * The following function finds connected components in a binary image and stores the labeled 
+ * components from src in dst. The function also returns a list of the boundary pixels in each blob
+ * found.
+ */
 
 - (int) LabelRegions:(GLubyte*)src withDestination:(GLubyte*)dst Boundaries: (Blob**)boundaries
 {
@@ -238,6 +267,12 @@ static time_t startTime;
     return nBlob;
 }
 
+/*
+ * The following function is called on a blob to determine how circular it is. This is done
+ * by determining the center point of the blob and the difference in the minimum and maximum
+ * radii of the blob.
+ */
+
 bool circleTest(Blob *blob)
 {
 	BlobPoint *next = blob->points;
@@ -266,10 +301,19 @@ bool circleTest(Blob *blob)
 	return (rMax - rMin)/(rMax + rMin) < .8;
 }
 
+/*
+ * This function checks to see that a box boundary is within the FrameBuffer Object bounds.
+ */
+
 bool checkFBOBounds(int x, int y)
 {
     return x >= 0 && x < FBO_WIDTH && y >= 0 && y < FBO_HEIGHT;
 }
+
+/*
+ * This function is used to draw boxes around blobs which may be stop lights, and fill in black
+ * boxes with blobs determined not to be stoplights. This function is used for demo purposes.
+ */
 
 /*
 void drawRectangle(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight, bool fillBlack)
@@ -294,6 +338,10 @@ void drawRectangle(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight, bo
 }
 */
 
+/*
+ * This function frees the boundary blob points stored.
+ */
+
 void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
 {
 	for (int i = 1; i <= nBlob; i++){
@@ -316,6 +364,10 @@ void FreeAllRegions (Blob* boundaries[], int nBlob, GLubyte *labels)
     free(labels);
 }
 
+/*
+ * This function determines the ratio of red and green pixels in a box containing a red blob.
+ */
+
 float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight)
 {
     float totalRed = 1;
@@ -333,6 +385,12 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
     }
     return totalRed/totalGreen;
 }
+
+/*
+ * This function is a depracated version of our full image processing algorithm called on subsequent 
+ * frames from the camera after determining a set of bounded areas in the frame which may contain
+ * traffic lights.
+ */
 
 - (void)subsequentDrawFrame
 {
@@ -362,7 +420,7 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
     glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
     
-	// Use shader program.
+    //BLUR THE IMAGE VERTICALLY
 	[glView setPositionThresholdFramebuffer];
     
     shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"vertical_blur.frag.glsl"];
@@ -383,6 +441,7 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
 	
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);    
     
+    //BLUR THE IMAGE HORIZONTALLY
     shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"horizontal_blur.frag.glsl"];
     
 	[glView setDisplayFramebuffer];
@@ -401,6 +460,7 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
 	
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     
+    //CONVERT RGB TO HSI
     shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"hsi_threshold.frag.glsl"];
     
 	[shader setAsActive];
@@ -418,6 +478,7 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
 	
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     
+    //ERODE THE IMAGE
     shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"erosion.frag.glsl"];
     
 	[shader setAsActive];
@@ -441,6 +502,7 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
 	
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     
+    //DILATE THE IMAGE
     shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"dilation.frag.glsl"];
     [shader setAsActive];
 	
@@ -467,6 +529,7 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
     
     glReadPixels(0, 0, FBO_WIDTH, FBO_HEIGHT, GL_RGBA, GL_UNSIGNED_BYTE, rawPositionPixels);
     
+    //CHECK NEW RED-GREEN-RATIOS IN TRACKED BLOB BOXES
     int numberOfLights = 0;
     
     for (int i = 0; i < trackBlobsIndex; i++) {
@@ -493,6 +556,12 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
     
     if (numLights < 0 && numberOfLights > 0) numLights = numberOfLights;
 }
+
+/*
+ * This function is the full stop light detecting algorithm called when startImageProcessing begins. In addition
+ * to the image conversion done in subsequentDrawFrame, this function also does corresponding component labeling
+ * and circle detection.
+ */
 
 - (void)initialDrawFrame
 {
@@ -522,9 +591,9 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
     glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
     
-	// Use shader program.
 	[glView setPositionThresholdFramebuffer];
     
+    //BLUR IMAGE VERTICALLY
     shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"vertical_blur.frag.glsl"];
 	[shader setAsActive];
     
@@ -542,6 +611,7 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
 	
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);    
     
+    //BLUR IMAGE HORIZONTALLY
     shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"horizontal_blur.frag.glsl"];
 
 	[glView setDisplayFramebuffer];
@@ -560,6 +630,7 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
 	
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     
+    //CONVERT RGB TO HSI
     shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"hsi_threshold.frag.glsl"];
     [shader setAsActive];
 	
@@ -576,6 +647,7 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
 	
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     
+    //ERODE IMAGE
     shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"erosion.frag.glsl"];
     
 	[shader setAsActive];
@@ -599,6 +671,7 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
 	
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     
+    //DILATE IMAGE
     shader = [ShaderProgram programWithVertexShader:@"default.vsh" andFragmentShader:@"dilation.frag.glsl"];
     
 	//[glView setDisplayFramebuffer];
@@ -625,6 +698,7 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
     
     [glView presentFramebuffer];
     
+    //LABEL CORRESPONDING COMPONENTS AND STORE THEM
     glReadPixels(0, 0, FBO_WIDTH, FBO_HEIGHT, GL_RGBA, GL_UNSIGNED_BYTE, rawPositionPixels);
     
     Blob* boundaries[BASE_SIZE];
@@ -635,6 +709,7 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
     
 	int nBlob = [self LabelRegions:rawPositionPixels withDestination:labels Boundaries:boundaries];
     
+    //VALIDATE POTENTIAL LIGHTS AND STORE IN trackBlobs
     trackBlobs = malloc(sizeof(Blob *)*nBlob);
     
     trackBlobsIndex = 0;
@@ -684,14 +759,17 @@ float getRedGreenRatio(GLubyte *frame, BlobPoint lowerLeft, BlobPoint upperRight
 
 		bool fillBlack = false;
         
+        //throw out if blob is too big or too small
         if (blob->numPoints < 30 || blob->numPoints > 500) {
             fillBlack = true; 
         }
         
+        //throw out if blob is in the bottom of the image
         if (!fillBlack && blob->lowerLeft.y > FBO_HEIGHT*.7) {
             fillBlack = true;
         }
         
+        //throw out if the blob is not circular
 		if (!fillBlack && !circleTest(blob)) {
             fillBlack = true;
         }
