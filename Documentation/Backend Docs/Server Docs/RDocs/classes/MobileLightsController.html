@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: MobileLightsController</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">MobileLightsController</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/app/controllers/mobile_lights_controller_rb.html">
+                app/controllers/mobile_lights_controller.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="ApplicationController.html">
+                ApplicationController
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000195">create</a>&nbsp;&nbsp;
+      <a href="#M000197">destroy</a>&nbsp;&nbsp;
+      <a href="#M000194">edit</a>&nbsp;&nbsp;
+      <a href="#M000191">index</a>&nbsp;&nbsp;
+      <a href="#M000190">is_udid_valid</a>&nbsp;&nbsp;
+      <a href="#M000193">new</a>&nbsp;&nbsp;
+      <a href="#M000189">sanitize</a>&nbsp;&nbsp;
+      <a href="#M000192">show</a>&nbsp;&nbsp;
+      <a href="#M000196">update</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000195" class="method-detail">
+        <a name="M000195"></a>
+
+        <div class="method-heading">
+          <a href="#M000195" class="method-signature">
+          <span class="method-name">create</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Creates a mobile light entry from a POST request to /mobile_lights/create.
+The data field of the POST request contains the parameters.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000195-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000195-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/controllers/mobile_lights_controller.rb, line 72</span>
+72:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create</span>
+73:     <span class="ruby-identifier">time_before</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+74:  
+75:     <span class="ruby-identifier">j</span> = <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">JSON</span>.<span class="ruby-identifier">decode</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:data</span>].<span class="ruby-identifier">gsub</span>(<span class="ruby-value str">'\\'</span>,<span class="ruby-value str">''</span>))
+76: 
+77:     <span class="ruby-ivar">@mobile_light</span> = <span class="ruby-constant">MobileLight</span>.<span class="ruby-identifier">new</span>()
+78:     <span class="ruby-ivar">@mobile_light</span>.<span class="ruby-identifier">udid</span> = <span class="ruby-identifier">j</span>[<span class="ruby-value str">&quot;udid&quot;</span>]
+79:     <span class="ruby-ivar">@mobile_light</span>.<span class="ruby-identifier">iphone_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">at</span>(<span class="ruby-identifier">j</span>[<span class="ruby-value str">&quot;iphone_time&quot;</span>].<span class="ruby-identifier">to_f</span>)
+80:     
+81:     <span class="ruby-ivar">@mobile_light</span>.<span class="ruby-identifier">num_lights</span> = <span class="ruby-identifier">j</span>[<span class="ruby-value str">&quot;num_lights&quot;</span>]
+82:     <span class="ruby-ivar">@mobile_light</span>.<span class="ruby-identifier">time_at_red</span> = <span class="ruby-identifier">j</span>[<span class="ruby-value str">&quot;time_at_red&quot;</span>]
+83:     <span class="ruby-ivar">@mobile_light</span>.<span class="ruby-identifier">time_at_green</span> = <span class="ruby-identifier">j</span>[<span class="ruby-value str">&quot;time_at_green&quot;</span>]
+84: 
+85:     <span class="ruby-ivar">@mobile_light</span>.<span class="ruby-identifier">save</span>
+86:     
+87:     <span class="ruby-identifier">time_after</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+88:     <span class="ruby-identifier">output</span> = <span class="ruby-constant">UnlockedAchievement</span>.<span class="ruby-identifier">get_user_achievements_within_range</span>(<span class="ruby-ivar">@mobile_light</span>.<span class="ruby-identifier">udid</span>, <span class="ruby-identifier">time_before</span>, <span class="ruby-identifier">time_after</span>)
+89:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">output</span>
+90:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000197" class="method-detail">
+        <a name="M000197"></a>
+
+        <div class="method-heading">
+          <a href="#M000197" class="method-signature">
+          <span class="method-name">destroy</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+DELETE /mobile_lights/1 DELETE /mobile_lights/1.xml
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000197-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000197-source">
+<pre>
+     <span class="ruby-comment cmt"># File app/controllers/mobile_lights_controller.rb, line 110</span>
+110:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">destroy</span>
+111:     <span class="ruby-ivar">@mobile_light</span> = <span class="ruby-constant">MobileLight</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:id</span>])
+112:     <span class="ruby-ivar">@mobile_light</span>.<span class="ruby-identifier">destroy</span>
+113: 
+114:     <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+115:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">mobile_lights_url</span>) }
+116:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">head</span> <span class="ruby-identifier">:ok</span> }
+117:     <span class="ruby-keyword kw">end</span>
+118:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000194" class="method-detail">
+        <a name="M000194"></a>
+
+        <div class="method-heading">
+          <a href="#M000194" class="method-signature">
+          <span class="method-name">edit</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+GET /mobile_lights/1/edit
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000194-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000194-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/controllers/mobile_lights_controller.rb, line 67</span>
+67:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">edit</span>
+68:     <span class="ruby-ivar">@mobile_light</span> = <span class="ruby-constant">MobileLight</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:id</span>])
+69:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000191" class="method-detail">
+        <a name="M000191"></a>
+
+        <div class="method-heading">
+          <a href="#M000191" class="method-signature">
+          <span class="method-name">index</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+GET /mobile_lights GET /mobile_lights.xml
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000191-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000191-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/controllers/mobile_lights_controller.rb, line 35</span>
+35:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">index</span>
+36:     <span class="ruby-ivar">@mobile_lights</span> = <span class="ruby-constant">MobileLight</span>.<span class="ruby-identifier">all</span>
+37: 
+38:     <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+39:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment cmt"># index.html.erb</span>
+40:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-identifier">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@mobile_lights</span> }
+41:     <span class="ruby-keyword kw">end</span>
+42:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000190" class="method-detail">
+        <a name="M000190"></a>
+
+        <div class="method-heading">
+          <a href="#M000190" class="method-signature">
+          <span class="method-name">is_udid_valid</span><span class="method-args">(udid)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Validation criteria for udid.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000190-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000190-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/controllers/mobile_lights_controller.rb, line 24</span>
+24:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">is_udid_valid</span>(<span class="ruby-identifier">udid</span>)
+25:     <span class="ruby-identifier">num</span> = <span class="ruby-identifier">udid</span>.<span class="ruby-identifier">count</span> <span class="ruby-value str">&quot;-&quot;</span>
+26:     <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">udid</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">10</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">num</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>)
+27:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span>
+28:     <span class="ruby-keyword kw">else</span>
+29:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span>
+30:     <span class="ruby-keyword kw">end</span>
+31:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000193" class="method-detail">
+        <a name="M000193"></a>
+
+        <div class="method-heading">
+          <a href="#M000193" class="method-signature">
+          <span class="method-name">new</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+GET /mobile_lights/new GET /mobile_lights/new.xml
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000193-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000193-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/controllers/mobile_lights_controller.rb, line 57</span>
+57:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">new</span>
+58:     <span class="ruby-ivar">@mobile_light</span> = <span class="ruby-constant">MobileLight</span>.<span class="ruby-identifier">new</span>
+59: 
+60:     <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+61:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment cmt"># new.html.erb</span>
+62:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-identifier">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@mobile_light</span> }
+63:     <span class="ruby-keyword kw">end</span>
+64:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000189" class="method-detail">
+        <a name="M000189"></a>
+
+        <div class="method-heading">
+          <a href="#M000189" class="method-signature">
+          <span class="method-name">sanitize</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Deletes all entries which do not meet validation criteria. Will migrate
+functionality to active record validations.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000189-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000189-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/controllers/mobile_lights_controller.rb, line 3</span>
+ 3:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sanitize</span>
+ 4:     <span class="ruby-identifier">user_ids</span> = <span class="ruby-constant">MobileLight</span>.<span class="ruby-identifier">group</span>(<span class="ruby-identifier">:udid</span>).<span class="ruby-identifier">select</span>(<span class="ruby-identifier">:udid</span>)
+ 5:     <span class="ruby-identifier">array</span> = []
+ 6:     <span class="ruby-identifier">array</span>.<span class="ruby-identifier">push</span>(<span class="ruby-value str">&quot;Sanity check&quot;</span>)
+ 7:     <span class="ruby-identifier">user_ids</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">user</span><span class="ruby-operator">|</span>
+ 8:       <span class="ruby-identifier">udid</span> = <span class="ruby-identifier">user</span>[<span class="ruby-identifier">:udid</span>]
+ 9:       <span class="ruby-identifier">is_valid</span> = <span class="ruby-identifier">is_udid_valid</span>(<span class="ruby-identifier">udid</span>)
+10:       <span class="ruby-identifier">array</span>.<span class="ruby-identifier">push</span>(<span class="ruby-node">&quot;udid #{udid}: #{is_valid}&quot;</span>)
+11: 
+12:       <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">is_valid</span>
+13:         <span class="ruby-comment cmt">#delete all entries with this udid</span>
+14:         <span class="ruby-constant">MobileLight</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">:udid</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">user</span>[<span class="ruby-identifier">:udid</span>]).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">entry</span><span class="ruby-operator">|</span>
+15:           <span class="ruby-identifier">entry</span>.<span class="ruby-identifier">destroy</span>
+16:         <span class="ruby-keyword kw">end</span>
+17:       <span class="ruby-keyword kw">end</span>
+18:     <span class="ruby-keyword kw">end</span>
+19:     
+20:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">array</span>
+21:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000192" class="method-detail">
+        <a name="M000192"></a>
+
+        <div class="method-heading">
+          <a href="#M000192" class="method-signature">
+          <span class="method-name">show</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+GET /mobile_lights/1 GET /mobile_lights/1.xml
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000192-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000192-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/controllers/mobile_lights_controller.rb, line 46</span>
+46:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">show</span>
+47:     <span class="ruby-ivar">@mobile_light</span> = <span class="ruby-constant">MobileLight</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:id</span>])
+48: 
+49:     <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+50:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment cmt"># show.html.erb</span>
+51:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-identifier">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@mobile_light</span> }
+52:     <span class="ruby-keyword kw">end</span>
+53:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000196" class="method-detail">
+        <a name="M000196"></a>
+
+        <div class="method-heading">
+          <a href="#M000196" class="method-signature">
+          <span class="method-name">update</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+PUT /mobile_lights/1 PUT /mobile_lights/1.xml
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000196-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000196-source">
+<pre>
+     <span class="ruby-comment cmt"># File app/controllers/mobile_lights_controller.rb, line 94</span>
+ 94:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update</span>
+ 95:     <span class="ruby-ivar">@mobile_light</span> = <span class="ruby-constant">MobileLight</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:id</span>])
+ 96: 
+ 97:     <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+ 98:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@mobile_light</span>.<span class="ruby-identifier">update_attributes</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:mobile_light</span>])
+ 99:         <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span>(<span class="ruby-ivar">@mobile_light</span>, <span class="ruby-identifier">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'Mobile light was successfully updated.'</span>) }
+100:         <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">head</span> <span class="ruby-identifier">:ok</span> }
+101:       <span class="ruby-keyword kw">else</span>
+102:         <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;edit&quot;</span> }
+103:         <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-identifier">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@mobile_light</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-identifier">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:unprocessable_entity</span> }
+104:       <span class="ruby-keyword kw">end</span>
+105:     <span class="ruby-keyword kw">end</span>
+106:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

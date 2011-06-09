@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: ProfileCarConsumption</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">ProfileCarConsumption</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/app/models/profile_car_consumption_rb.html">
+                app/models/profile_car_consumption.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                ActiveRecord::Base
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000186">get_avg_consumption_table</a>&nbsp;&nbsp;
+      <a href="#M000185">get_user_rank_in_avg_consumption</a>&nbsp;&nbsp;
+      <a href="#M000188">reset_avg_consumption_calculation</a>&nbsp;&nbsp;
+      <a href="#M000187">update_avg_consumption</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000186" class="method-detail">
+        <a name="M000186"></a>
+
+        <div class="method-heading">
+          <a href="#M000186" class="method-signature">
+          <span class="method-name">get_avg_consumption_table</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns table of lifetime average consumption sorted in descending order.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000186-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000186-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/profile_car_consumption.rb, line 20</span>
+20:    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">get_avg_consumption_table</span>
+21:      <span class="ruby-identifier">table</span> = <span class="ruby-constant">ProfileCarConsumption</span>.<span class="ruby-identifier">joins</span>(<span class="ruby-value str">&quot;LEFT OUTER JOIN profile_names ON profile_names.udid = profile_car_consumptions.udid&quot;</span>) 
+22:      <span class="ruby-identifier">table</span> = <span class="ruby-identifier">table</span>.<span class="ruby-identifier">order</span>(<span class="ruby-value str">&quot;avg_consumption DESC&quot;</span>).<span class="ruby-identifier">select</span>(<span class="ruby-value str">&quot;profile_car_consumptions.udid AS udid, user_name, avg_consumption AS payload&quot;</span>)
+23:      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">table</span>
+24:    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000185" class="method-detail">
+        <a name="M000185"></a>
+
+        <div class="method-heading">
+          <a href="#M000185" class="method-signature">
+          <span class="method-name">get_user_rank_in_avg_consumption</span><span class="method-args">(user_id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns rank of user user_id in lifetime average consumption table.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000185-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000185-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/profile_car_consumption.rb, line 4</span>
+ 4:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">get_user_rank_in_avg_consumption</span>(<span class="ruby-identifier">user_id</span>)
+ 5:     <span class="ruby-ivar">@user_rank</span> = [] 
+ 6:     <span class="ruby-identifier">avg_consumption_table</span> = <span class="ruby-identifier">get_avg_consumption_table</span>
+ 7:    
+ 8:     <span class="ruby-identifier">i</span> = <span class="ruby-value">1</span>
+ 9:     <span class="ruby-identifier">avg_consumption_table</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">entry</span><span class="ruby-operator">|</span>
+10:       <span class="ruby-keyword kw">if</span> <span class="ruby-constant">String</span>(<span class="ruby-identifier">user_id</span>) <span class="ruby-operator">==</span> <span class="ruby-identifier">entry</span>[<span class="ruby-identifier">:udid</span>]
+11:         <span class="ruby-ivar">@user_rank</span>.<span class="ruby-identifier">push</span>({<span class="ruby-identifier">:rank</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">i</span>, <span class="ruby-identifier">:udid</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">user_id</span>, <span class="ruby-identifier">:user_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">entry</span>[<span class="ruby-identifier">:user_name</span>], <span class="ruby-identifier">:payload</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">entry</span>[<span class="ruby-identifier">:payload</span>]})
+12:         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@user_rank</span>
+13:       <span class="ruby-keyword kw">end</span>
+14:       <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+15:     <span class="ruby-keyword kw">end</span>
+16:     <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@user_rank</span>
+17:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000188" class="method-detail">
+        <a name="M000188"></a>
+
+        <div class="method-heading">
+          <a href="#M000188" class="method-signature">
+          <span class="method-name">reset_avg_consumption_calculation</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Recomputes the aggregates for average consumption.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000188-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000188-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/profile_car_consumption.rb, line 37</span>
+37:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset_avg_consumption_calculation</span>
+38:     <span class="ruby-identifier">user_id</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">udid</span>
+39: 
+40:     <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
+41:     <span class="ruby-identifier">total_consumption</span> = <span class="ruby-value">0</span>
+42:     
+43:     <span class="ruby-identifier">user_consumptions</span> = <span class="ruby-constant">CarEngine</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">:udid</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">user_id</span>).<span class="ruby-identifier">select</span>(<span class="ruby-value str">&quot;udid,consumption&quot;</span>)
+44:     <span class="ruby-identifier">user_consumptions</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">user_consumption</span><span class="ruby-operator">|</span>
+45:       <span class="ruby-identifier">consumption</span> = <span class="ruby-identifier">user_consumption</span>[<span class="ruby-identifier">:consumption</span>]
+46:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">consumption</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">0</span><span class="ruby-value">.0</span>
+47:         <span class="ruby-identifier">total_consumption</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">consumption</span>
+48:         <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+49:       <span class="ruby-keyword kw">end</span>
+50:     <span class="ruby-keyword kw">end</span>
+51:     
+52:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">i</span><span class="ruby-operator">&gt;</span><span class="ruby-value">0</span>
+53:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">avg_consumption</span> = (<span class="ruby-identifier">total_consumption</span><span class="ruby-operator">/</span><span class="ruby-identifier">i</span>)
+54:     <span class="ruby-keyword kw">else</span>
+55:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">avg_consumption</span> = <span class="ruby-value">0</span>
+56:     <span class="ruby-keyword kw">end</span>
+57:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">consumption_count</span> = <span class="ruby-identifier">i</span>
+58:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">save</span>
+59:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000187" class="method-detail">
+        <a name="M000187"></a>
+
+        <div class="method-heading">
+          <a href="#M000187" class="method-signature">
+          <span class="method-name">update_avg_consumption</span><span class="method-args">(consumption)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Updates the average consumption aggregate.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000187-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000187-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/profile_car_consumption.rb, line 27</span>
+27:    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update_avg_consumption</span>(<span class="ruby-identifier">consumption</span>)
+28:      <span class="ruby-identifier">new_total</span> = <span class="ruby-constant">Float</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">consumption_count</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)
+29:      <span class="ruby-identifier">new_avg</span> = (<span class="ruby-constant">Float</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">consumption_count</span>))<span class="ruby-operator">/</span><span class="ruby-identifier">new_total</span><span class="ruby-operator">*</span><span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">avg_consumption</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">consumption</span><span class="ruby-operator">/</span><span class="ruby-identifier">new_total</span>)
+30:      
+31:      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">avg_consumption</span> = <span class="ruby-identifier">new_avg</span>
+32:      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">consumption_count</span> = <span class="ruby-identifier">new_total</span>
+33:      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">save</span>
+34:    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
